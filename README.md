@@ -6,6 +6,9 @@ PRAGMA foreign_keys = ON;
 
 DROP TABLE IF EXISTS Pessoa;
 DROP TABLE IF EXISTS Membro; 
+DROP TABLE IF EXISTS Funcionario;
+DROP TABLE IF EXISTS Personaltrainer;
+DROP TABLE IF EXISTS Nutricionista;
 
 
 CREATE TABLE Pessoa(
@@ -26,5 +29,19 @@ CREATE TABLE Membro(
     imc INTEGER,
     personaltrainer TEXT REFERENCES Personaltrainer,
     nutricionista TEXT REFERENCES Nutricionista
+);
+
+CREATE TABLE Funcionario(
+    id INTEGER REFERENCES Pessoa,
+    nr_funcionario INTEGER PRIMARY KEY,
+    ginasio TEXT REFERENCES Ginasio
+);
+
+CREATE TABLE Personaltrainer(
+    nr_funcionario INTEGER PRIMARY KEY
+);
+
+CREATE TABLE Nutricionista(
+    nr_funcionario INTEGER PRIMARY KEY
 );
 
