@@ -9,6 +9,8 @@ DROP TABLE IF EXISTS Membro;
 DROP TABLE IF EXISTS Funcionario;
 DROP TABLE IF EXISTS Personaltrainer;
 DROP TABLE IF EXISTS Nutricionista;
+DROP TABLE IF EXISTS Treino;
+DROP TABLE IF EXISTS Ginasio;
 
 
 CREATE TABLE Pessoa(
@@ -45,3 +47,16 @@ CREATE TABLE Nutricionista(
     nr_funcionario INTEGER PRIMARY KEY
 );
 
+CREATE TABLE Treino(
+    data TEXT PRIMARY KEY,
+    hora_entrada INTEGER PRIMARY KEY,
+    hora_saida INTEGER,
+    duracao_t INTEGER,
+    ginasio NAME REFERENCES Ginasio,
+    membro NAME REFERENCES Membro
+);
+
+CREATE TABLE Ginasio(
+    nome TEXT PRIMARY KEY,
+    morada TEXT
+);
