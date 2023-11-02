@@ -48,12 +48,13 @@ CREATE TABLE Nutricionista(
 );
 
 CREATE TABLE Treino(
-    data TEXT PRIMARY KEY,
-    hora_entrada INTEGER PRIMARY KEY,
+    data TEXT,
+    hora_entrada INTEGER,
     hora_saida INTEGER,
     duracao_t INTEGER,
     ginasio NAME REFERENCES Ginasio,
-    membro NAME REFERENCES Membro
+    membro NAME REFERENCES Membro,
+    PRIMARY KEY(data, hora_entrada)
 );
 
 CREATE TABLE Ginasio(
