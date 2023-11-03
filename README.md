@@ -11,6 +11,11 @@ DROP TABLE IF EXISTS Personaltrainer;
 DROP TABLE IF EXISTS Nutricionista;
 DROP TABLE IF EXISTS Treino;
 DROP TABLE IF EXISTS Ginasio;
+DROP TABLE IF EXISTS MembroGinasio;
+DROP TABLE IF EXISTS Plano;
+DROP TABLE IF EXISTS Tipo;
+DROP TABLE IF EXISTS Aulagrupo;
+DROP TABLE IF EXISTS Inscricao_ag;
 
 
 CREATE TABLE Pessoa(
@@ -60,4 +65,45 @@ CREATE TABLE Treino(
 CREATE TABLE Ginasio(
     nome TEXT PRIMARY KEY,
     morada TEXT
+);
+
+CREATE TABLE Ginasio(
+    nome TEXT PRIMARY KEY,
+    morada TEXT
+);
+
+CREATE TABLE MembroGinasio(
+    membro TEXT REFERENCES Membro,
+    ginasio TEXT REFERENCES Ginasio,
+    PRIMARY KEY(membro, ginasio) 
+);
+
+CREATE TABLE Plano(
+    data_adesao TEXT PRIMARY KEY,
+    membro TEXT REFERENCES Membro
+);
+
+CREATE TABLE Tipo(
+    preco INTEGER PRIMARY KEY,
+    tempo_treino INTEGER,
+    plano TEXT REFERENCES Plano
+);
+
+CREATE TABLE Aulagrupo(
+    nome TEXT PRIMARY KEY,
+    data TEXT,
+    hora_inicio INTEGER,
+    hora_fim INTEGER,
+    duracao_ag INTEGER,
+    capacidade INTEGER,
+    pt1 TEXT REFERENCES Personaltrainer,
+    pt2 TEXT REFERENCES Personaltrainer,
+    ginasio TEXT REFERENCES Ginasio
+);
+
+CREATE TABLE Inscricao_ag(
+    qntd_membros INTEGER,
+    membro TEXT REFERENCES Membro,
+    aulagrupo TEXT REFERENCES Aulagrupo,
+    PRIMARY KEY(membro, aulagrupo)
 );
