@@ -1,0 +1,196 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+}
+/* cabeçalho*/
+header {
+    background-color: #b9c5cd;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+/*rodapé*/
+footer {
+    background-color: #b9c5cd;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+#logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    max-width: 100px; /* Ajuste conforme necessário */
+}
+
+
+.clubes a, #signup a {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #c69791;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/*Para centrar, colocando todos na mesma página, os botões dos diferentes ginásios*/
+.clubes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Isso permite que os botões quebrem para a próxima linha se não couberem */
+}
+
+
+.club-logo {
+    max-width: 100px; /* Ajuste conforme necessário */
+    margin-bottom: 10px; /* Espaço entre a imagem e o texto */
+    /*width: px; /* Ajuste o valor conforme necessário */ 
+    height: auto;
+}
+
+.clubes a:hover, #signup a:hover {
+    background-color: #c4938e;
+}
+
+.club-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style: none;
+   
+}
+.club-info a {
+    text-decoration: none; /* Remove o sublinhado */
+    color: black;
+}
+.club-info li {
+    text-align: center;
+    max-width: 300px;
+    padding: 20px;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Faz cada item ocupar a mesma largura */
+    flex-basis: calc(50% - 20px); /* Calcula a largura com margens para 2 itens por linha */
+}
+
+ .hamburger {   /*tirar a check box */
+    display: none;
+}
+
+
+/* Relativo às páginas de cada clube*/
+.club-logo{
+    display: block; /* Certifique-se de que a imagem é exibida como bloco */
+    margin: 0 auto; /* Define as margens superior e inferior como 0 e centraliza horizontalmente */
+}
+
+.mapa {
+    display: block; /* Certifique-se de que a imagem é exibida como bloco */
+    margin: 0 auto; /* Define as margens superior e inferior como 0 e centraliza horizontalmente */
+}
+
+.club-info2{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    list-style: none; /*queria meter os pontos junto dos serviços, mas não consigo*/
+    margin-bottom: 100px;
+}
+
+.comochegar{
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+/* Para a barra na pag inicial */
+.barra a, #signup a {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #c69791;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.barra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Isso permite que os botões quebrem para a próxima linha se não couberem */
+}
+
+
+/*Imagens na página inicial*/
+
+.imagensiniciais {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.imagens {
+    text-align: center;
+    width: 24%; /* Ajuste conforme necessário */
+}
+
+.imagens img {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+
+.imagens p {
+    margin-top: 5px;
+}
+
+.escolherGymFlex {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.textoimagensiniciais{
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+
+
+/*.club-info {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.club-info li {
+    text-align: center;
+    max-width: 300px;
+    padding: 20px;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    flex-basis: calc(50% - 20px);
+}*/
+
