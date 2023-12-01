@@ -15,7 +15,7 @@
 
 
     <div class="barra">
-        <a href="#" class="sobre nós">Sobre nós</a>
+       <!--<a href="gymflexporto.html" class="sobre nós">Sobre nós</a>-->
         <a href="clubes.html" class="clubes">Clubes</a>
         <a href="#" class="serviços">Serviços</a>
         <a href="info.html" class="info">INFO</a>
@@ -58,19 +58,26 @@
     <section id="contato">
         <h2>Entre em Contato</h2>
         <p>Tem alguma dúvida ou deseja obter mais informações? Preencha o formulário abaixo e entraremos em contato em breve.</p>
-        <form action="#" method="post">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="nome" required>
-
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="mensagem">Mensagem:</label>
-            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-
+        <form action="#" method="post" style="max-width: 400px; margin: 0 auto;">
+            <div style="display: flex; flex-direction: column; margin-bottom: 15px;">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+            </div>
+    
+            <div style="display: flex; flex-direction: column; margin-bottom: 15px;">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+    
+            <div style="display: flex; flex-direction: column; margin-bottom: 15px;">
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+            </div>
+    
             <button type="submit">Enviar Mensagem</button>
         </form>
     </section>
+
 
 
     <footer>
