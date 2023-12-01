@@ -183,8 +183,8 @@ footer {
 }
 
 .imagens img {
-    width: 100%;
-    border: 1px solid #ccc;
+    width: 70%;
+    border: 2px solid #ccc;
     border-radius: 20px;
 }
 
