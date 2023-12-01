@@ -1,0 +1,171 @@
+@font-face {
+    font-family: Montserrat;
+    src: url("./fonts/Montserrat-Medium.ttf");
+}
+    
+@font-face {
+    font-family: Montserrat Bold;
+    src: url("./fonts/Montserrat-Bold.ttf");
+}
+
+body {
+    font-family: Montserrat, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+}
+
+/* cabeçalho*/
+header {
+    font-family: Montserrat Bold, sans-serif;
+    background-color: #b9c5cd;
+    color: white;
+    padding: 70px;
+    text-align: center;
+}
+
+/* Para a barra na pag inicial */
+.barra a, #signup a {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #c69791;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.barra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Isso permite que os botões quebrem para a próxima linha se não couberem */
+}
+
+/*rodapé*/
+footer {
+    background-color: #b9c5cd;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+#logo {
+    position: absolute;
+    top: 10px;
+    left: 100px;
+    max-width: 200px; /* Ajuste conforme necessário */
+}
+
+
+
+/* Específico para a pág info */
+
+#info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 45px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 35px;
+    margin-block-start: 5px;
+    margin-block-end: 5px;
+}
+
+#intro  {
+    text-align: center;
+    font-size: 20px;
+    margin-block-start: 5px;
+    margin-block-end: 20px;
+}
+
+
+#Categoria {
+    background-color: white;
+    border-radius: 5px;
+}
+
+#Categoria > summary {
+    text-align: center;
+    font-weight: bold;
+}
+
+#Pergunta > summary {
+    background-color: rgba(107, 97, 97, 0.35);
+    border-radius: 5px;
+}
+
+#Pergunta > p {
+    text-indent: 20px;
+}
+
+#Categoria {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 350px;
+    margin-right: 350px;
+    padding: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+#Categoria > details {
+    margin: 10px;
+    padding: 10px;
+}
+
+summary {
+    display: block; /* isto tá a fazer com q a seta dos details original desapareça mas acho q n é suposto*/
+    position: relative; 
+    cursor: pointer;
+    padding-left: 30px !important; /* só funciona com !important ??? */
+    font-size: 18px;
+    padding: 10px;
+}
+
+details > p {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+summary:before {
+    content: '';
+    border-width: .4rem;
+    border-style: solid;
+    border-color: transparent transparent transparent black; /* seta para baixo = quadrado com 3 bordas transparentes */
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    transform: rotate(0);
+    transform-origin: .2rem 50%;
+    transition: .25s transform ease;
+  }
+  
+  details[open] > summary:before {
+    transform: rotate(90deg);
+  }
+
+  #Categoria > summary:before {
+    display: none;
+  }
+
+
+  #Contactos > p {
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  a {
+    color: rgba(107, 97, 97, 1);
+    font-weight: bold;
+  }

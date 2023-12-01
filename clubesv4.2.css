@@ -1,6 +1,6 @@
 body {
     font-family: 'Arial', sans-serif;
-    background-color: rgb(40, 70, 161)), 245, 245);
+    background-color: rgb(40, 70, 161)  /*), 245, 245);*/ /*Ver isto que acho que estava a mais */
     color: #333;
     margin: 0;
     padding: 0;
@@ -129,6 +129,8 @@ footer {
     box-sizing: border-box;
     border: 1px solid #ccc;
     text-align: center;
+    background-color:  whitesmoke; /*cor de fundo de cada retângulo com as características*/
+    font-weight: bold;
 }
 
 .retangulo img {
