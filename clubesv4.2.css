@@ -113,8 +113,38 @@ footer {
 .comochegar{
     text-align: center;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 25px;
 }
+
+.caracteristicas {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.retangulo {
+    width: calc(33.33% - 20px);
+    margin: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+.retangulo img {
+    max-width: 25%;
+    height: auto;
+    float: left;
+    margin-bottom: 10px;
+}
+
+.caracteristicastexto{
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+
+
 
 /* Para a barra na pag inicial */
 .barra a, #signup a {
