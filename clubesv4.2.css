@@ -26,8 +26,10 @@ footer {
     position: absolute;
     top: 10px;
     left: 10px;
-    max-width: 100px; /* Ajuste conforme necessário */
+    max-width: 200px; /* Ajuste conforme necessário */
 }
+
+
 
 
 .clubes a, #signup a {
