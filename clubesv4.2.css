@@ -209,6 +209,50 @@ footer {
 }
 
 
+/* PARA O FORMS DO ENTRE EM CONTACTO*/
+
+#contato {
+    background-color: #f2f2f2; /* Cor de fundo cinza */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 10px; /* Borda arredondada */
+    max-width: 600px; /* Largura máxima */
+    margin: 0 auto; /* Centralização horizontal */
+}
+
+#contato h2 {
+    text-align: center; /* Centralizar texto */
+}
+
+#contato form {
+    max-width: 400px; /* Largura máxima do formulário */
+    margin: 0 auto; /* Centralizar formulário dentro da seção */
+}
+
+#contato label {
+    margin-bottom: 5px; /* Espaçamento inferior entre rótulo e campo de entrada */
+}
+
+#contato input,
+#contato textarea {
+    width: 100%; /* Preencher a largura do contêiner pai */
+    padding: 10px; /* Espaçamento interno */
+    margin-bottom: 10px; /* Espaçamento inferior entre campos */
+    border: 1px solid #ccc; /* Borda simples */
+    border-radius: 5px; /* Borda arredondada */
+}
+
+#contato button {
+    background-color: #333; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    padding: 10px; /* Espaçamento interno */
+    border: none; /* Remover borda */
+    border-radius: 5px; /* Borda arredondada */
+    cursor: pointer; /* Cursor de ponteiro ao passar */
+}
+
+#contato button:hover {
+    background-color: #555; /* Cor de fundo do botão ao passar */
+}
 
 
 /*.club-info {
