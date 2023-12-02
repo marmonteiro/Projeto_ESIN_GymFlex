@@ -10,10 +10,11 @@
 
 body {
     font-family: Montserrat, sans-serif;
-    background-color: #f5f5f5;
+    background-color:rgba(221, 192, 192, 1);
     color: #333;
     margin: 0;
 }
+
 
 /* cabeçalho*/
 header {
