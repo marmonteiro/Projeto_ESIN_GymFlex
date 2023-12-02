@@ -125,7 +125,7 @@ footer {
 }
 
 .retangulo {
-    width: calc(33.33% - 20px);
+    width: calc(33% - 20px);
     margin: 10px;
     padding: 20px;
     box-sizing: border-box;
@@ -133,7 +133,10 @@ footer {
     text-align: center;
     background-color:  whitesmoke; /*cor de fundo de cada retângulo com as características*/
     font-weight: bold;
+    font-size: 15px;
+    border-radius: 10px;
 }
+
 
 .retangulo img {
     max-width: 25%;
@@ -254,24 +257,93 @@ footer {
     background-color: #555; /* Cor de fundo do botão ao passar */
 }
 
-
-/*.club-info {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+/*Página inicial -> avaliação*/
+.feedback{
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.club-info li {
+.feedback-mensagem {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.botões button {
+    background-color: #ddd;
+    border: none;
+    color: black;
+    padding: 10px 20px;
     text-align: center;
-    max-width: 300px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.feedback2 {
+    background-color: #f0f0f0;
     padding: 20px;
+    text-align: center;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.feedback-mensagem {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.feedback-form {
+    text-align: center;
+}
+
+.feedback-form textarea {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.feedback-form button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+/* Relativo à página PLANOS*/
+.planos {
+    display: flex;
+    justify-content: space-between;
+}
+
+.retangulo_planos {
+    width: calc(33% - 20px);
     margin: 10px;
-    background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    flex: 1;
-    flex-basis: calc(50% - 20px);
-}*/
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    background-color: whitesmoke;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
+
+
+
+
+
 
