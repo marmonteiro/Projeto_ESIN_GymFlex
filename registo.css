@@ -58,11 +58,9 @@ footer {
     text-align: center;
 }
 
+/*Registo*/
 
-
-/* CSS for the login form */
-
-#login {
+#registo {
     text-align: center;
     margin: 5rem 0;
 }
@@ -77,7 +75,9 @@ div {
     margin-bottom: 10px;
 }
 
+input[type="text"],
 input[type="email"],
+input[type="tel"],
 input[type="password"],
 input[type="submit"] {
     font-size: 20px;
@@ -85,14 +85,16 @@ input[type="submit"] {
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    width: 20rem;
+    width: 25rem;
     box-sizing: border-box;
     margin-top: 5px;
 }
 
 /* Placeholder styles for the input */
+input[type="tel"]::placeholder,
 input[type="email"]::placeholder,
-input[type="password"]::placeholder {
+input[type="text"]::placeholder,
+input[type="password"]::placeholder{
     font-size: 16px;
     color: #999;
     position: absolute;
@@ -103,12 +105,9 @@ input[type="password"]::placeholder {
 }
 
 /* When input is focused */
-input[type="email"]:focus::placeholder,
-input[type="password"]:focus::placeholder,
-input[type="email"]:focus-visible::placeholder,
-input[type="password"]:focus-visible::placeholder,
-input[type="email"]:valid::placeholder,
-input[type="password"]:valid::placeholder {
+input[type="tel"]:focus::placeholder,input[type="email"]:focus::placeholder,input[type="text"]:focus::placeholder,input[type="password"]:focus::placeholder,
+input[type="tel"]:focus-visible::placeholder,input[type="email"]:focus-visible::placeholder,input[type="text"]:focus-visible::placeholder,input[type="password"]:focus-visible::placeholder,
+input[type="tel"]:valid::placeholder,input[type="email"]:valid::placeholder,input[type="text"]:valid::placeholder,input[type="password"]:valid::placeholder {
     top: 25%;
     font-size: 12px;
     color: #c69791;
@@ -121,10 +120,51 @@ input[type="submit"] {
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 10%;
+    width: 100%;
     margin-top: 20px;
 }
 
 input[type="submit"]:hover {
     background-color: #b37e77;
+}
+
+input[type="date"] {
+    color: #999;
+    font-size: 20px;
+    position: relative;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 14rem;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+label {
+    font-size: 16px;
+    color: #999;
+}
+
+select {
+    font-size: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 25rem;
+    box-sizing: border-box;
+    margin-top: 5px;
+    color: #999;
+  }
+  
+  /* Placeholder styles for the select */
+  select option[disabled]:first-child {
+    color: #999;
+  }
+  
+/*boxes de informação*/
+#escolha_plano {
+    background-color: rgba(107, 97, 97, 0.20);
+    border-radius: 10px;
+    padding: 0.8rem;
+    margin-bottom: 2rem;
 }
