@@ -94,7 +94,7 @@ th {
 
 /* Adicione o estilo para mostrar as vagas ao passar o mouse */
 td:hover::after {
-    content: "Vagas Disponíveis: " attr(data-vagas);
+    content: "Lotação Máxima: " attr(data-vagas); /*VER NA BASE DE DADOS */
     display: block;
     margin-top: 10px;
     font-size: 14px;
