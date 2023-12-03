@@ -45,10 +45,8 @@ header {
     flex-wrap: wrap; /* Isso permite que os botões quebrem para a próxima linha se não couberem */
 }
 
-/*rodapé*/
 footer {
-    background-color: #b9c5cd;
-    color: white;
+    background-color: rgba(189, 165, 165, 1);
     padding: 20px;
     text-align: center;
 }

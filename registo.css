@@ -51,9 +51,8 @@ header {
     /* Isso permite que os botões quebrem para a próxima linha se não couberem */
 }
 
-/*rodapé*/
 footer {
-    background-color: rgba(221, 192, 192, 1);
+    background-color: rgba(189, 165, 165, 1);
     padding: 20px;
     text-align: center;
 }
@@ -79,6 +78,7 @@ input[type="text"],
 input[type="email"],
 input[type="tel"],
 input[type="password"],
+input[type="number"],
 input[type="submit"] {
     font-size: 20px;
     position: relative;
@@ -94,6 +94,7 @@ input[type="submit"] {
 input[type="tel"]::placeholder,
 input[type="email"]::placeholder,
 input[type="text"]::placeholder,
+input[type="number"]::placeholder,
 input[type="password"]::placeholder{
     font-size: 16px;
     color: #999;
@@ -107,7 +108,8 @@ input[type="password"]::placeholder{
 /* When input is focused */
 input[type="tel"]:focus::placeholder,input[type="email"]:focus::placeholder,input[type="text"]:focus::placeholder,input[type="password"]:focus::placeholder,
 input[type="tel"]:focus-visible::placeholder,input[type="email"]:focus-visible::placeholder,input[type="text"]:focus-visible::placeholder,input[type="password"]:focus-visible::placeholder,
-input[type="tel"]:valid::placeholder,input[type="email"]:valid::placeholder,input[type="text"]:valid::placeholder,input[type="password"]:valid::placeholder {
+input[type="tel"]:valid::placeholder,input[type="email"]:valid::placeholder,input[type="text"]:valid::placeholder,input[type="password"]:valid::placeholder,
+input[type="number"]:focus::placeholder,input[type="number"]:focus-visible::placeholder,input[type="number"]:valid::placeholder{
     top: 25%;
     font-size: 12px;
     color: #c69791;

@@ -1,3 +1,10 @@
+<?php
+session_start();
+
+$msg = $_SESSION['msg'];
+unset($_SESSION['msg']);
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -11,7 +18,7 @@
 <body>
   <header>
     <a href="paginicial.html">
-      <img id="logo" src="./images/gymflex_logo.svg" alt="Logotipo">
+      <img id="logo" src="./imagens/gymflex_logo.svg" alt="Logotipo">
     </a>
   </header>
   <!--<nav id="menu">
@@ -23,7 +30,8 @@
 
   <section id="registo">
     <h1>Registo</h1>
-    <form>
+    <form action="action_registo.php" method="post">
+
       <section id="info_pessoal">
         <div>
           <input type="text" id="fullname" name="fullname" placeholder="Nome Completo" required>
@@ -41,7 +49,21 @@
           <input type="text" id="nif" name="nif" placeholder="NIF" required>
         </div>
       </section>
-      <section id="info login">
+
+      <section id="imc_calculation">
+        <div>
+          <input type="number" id="height" name="height" placeholder="Altura (cm)" required>
+        </div>
+        <div>
+          <input type="number" id="weight" name="weight" placeholder="Peso (kg)" required>
+        </div>
+        <div>
+          <!-- insert imc calculation here -->
+        </div>
+      </section>
+
+
+      <section id="info_login">
         <div>
           <input type="email" id="email" name="email" placeholder="Email" required>
         </div>
@@ -49,6 +71,7 @@
           <input type="password" id="password" name="password" placeholder="Password" required>
         </div>
       </section>
+
       <section id="escolha_plano">
         <div>
           <p>Escolha o seu Plano:</p>
@@ -61,10 +84,24 @@
         </div>
       </section>
 
-      <div>
-        <input type="submit" value="Registar">
-      </div>
+      <section id="termos_condicoes">
+        <div>
+          <input type="checkbox" id="termos" name="termos" required>
+          <label for="termos">Li e aceito os <a href="termos_condicoes.html">Termos e Condições</a>.</label>
+        </div>
+
+        <div>
+          <input type="submit" value="Registar">
+        </div>
+      </section>
+
     </form>
+    <?php if (isset($msg)) { ?>
+      <p>
+        <?php echo $msg ?>
+      </p>
+    <?php } ?>
+
   </section>
   <footer>
     <p>Qualquer dúvida não hesite em contactar, teremos uma equipa ao seu dispor.</p>

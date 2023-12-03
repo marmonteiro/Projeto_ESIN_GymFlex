@@ -51,9 +51,9 @@ header {
     /* Isso permite que os botões quebrem para a próxima linha se não couberem */
 }
 
-/*rodapé*/
+
 footer {
-    background-color: rgba(221, 192, 192, 1);
+    background-color: rgba(189, 165, 165, 1);
     padding: 20px;
     text-align: center;
 }
@@ -64,7 +64,7 @@ footer {
 
 #login {
     text-align: center;
-    margin: 5rem 0;
+    margin: 2.5rem 0;
 }
 
 form {
@@ -82,7 +82,7 @@ input[type="password"],
 input[type="submit"] {
     font-size: 20px;
     position: relative;
-    padding: 20px;
+    padding: 18px;
     border: 1px solid #ddd;
     border-radius: 5px;
     width: 20rem;
@@ -121,10 +121,41 @@ input[type="submit"] {
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    width: 10%;
     margin-top: 20px;
 }
 
 input[type="submit"]:hover {
     background-color: #b37e77;
+}
+
+#registo {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+#registe_se > a  {
+    padding: 1rem;;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: rgba(189, 165, 165, 1);
+    color: white;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#registe_se > a:hover {
+    background-color: rgb(155, 134, 134);
+}
+
+#msg_erro {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 0.5rem 0;
 }

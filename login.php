@@ -1,3 +1,20 @@
+<?php
+session_start();
+
+$msg = $_SESSION['msg'];
+unset($_SESSION['msg']);
+
+try {
+  $dbh = new PDO('sqlite:sql/gymflex.db');
+  $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+  $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
+} catch (PDOException $e) {
+  $error_msg = $e->getMessage();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -11,20 +28,15 @@
 <body>
   <header>
     <a href="paginicial.html">
-      <img id="logo" src="./images/gymflex_logo.svg" alt="Logotipo">
+      <img id="logo" src="./imagens/gymflex_logo.svg" alt="Logotipo">
     </a>
+
   </header>
-
-
-  <!--<nav id="menu">
-      <input type="checkbox" id="hamburger"> 
-      <label class="hamburger" for="hamburger"></label>
-    </nav>-->
 
   <section id="login">
     <h1>Área de Cliente</h1>
     <p>Por favor, introduza os seus dados de login para aceder à sua Área de Cliente.</p>
-    <form>
+    <form action="action_login.php" method="post">
       <div>
         <input type="email" required name="email" placeholder="E-mail">
       </div>
@@ -33,6 +45,17 @@
       </div>
       <input type="submit" value="Login">
     </form>
+  </section>
+  
+    <?php if (isset($msg)) { ?>
+      <p id="msg_erro">
+        <?php echo $msg ?>
+      </p>
+    <?php } ?>
+  
+  <section id="registo">
+    <p>Ainda não és membro? De que estás à espera?</p>
+    <p id="registe_se"><a href="registo.html">Regista-te aqui!</a></p>
   </section>
 
   <footer>
