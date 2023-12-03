@@ -33,23 +33,23 @@
     </div> 
     
     <!-- <div class="clubes">
-        <?php
-        $query = "SELECT * FROM ginasio"; ir buscar tabela ginásio
-        $resultado = $conexao->query($query);
+        // <?php
+       // $query = "SELECT * FROM ginasio"; ir buscar tabela ginásio
+        //$resultado = $conexao->query($query);
     
-        if ($resultado->num_rows > 0) {
-            while ($row = $resultado->fetch_assoc()) {
-                $nome_clube = $row['nome_clube'];
-                $link_clube = $row['link_clube'];
-                echo "<a href=\"$link_clube\" class=\"clube\">$nome_clube</a>";
-            }
-        } else {
-            echo "Sem clubes disponíveis no momento.";
-        }
+        // if ($resultado->num_rows > 0) {
+           // while ($row = $resultado->fetch_assoc()) {
+               // $nome_clube = $row['nome_clube'];
+               // $link_clube = $row['link_clube'];
+                //echo "<a href=\"$link_clube\" class=\"clube\">$nome_clube</a>";
+            //}
+       // } else {
+            //echo "Sem clubes disponíveis no momento.";
+        //}
     
         // Fechar a conexão
-        $conexao->close();
-        ?>
+        //$conexao->close();
+        //?> 
     </div> -->
 
     <?php
