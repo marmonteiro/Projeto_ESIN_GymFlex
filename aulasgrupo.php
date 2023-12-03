@@ -18,8 +18,8 @@
             <a href="planos.html" class="serviços">Planos</a>
             <a href="aulasgrupo.html" class="info">Aulas de Grupo</a>
             <a href="info.html" class="info">Ajuda</a>
-            <a href="#" class="inscreva-se">Inscreva-se</a>
-            <a href="login.html" id="signup">Login: área de cliente</a>
+            <a href="register.php" class="inscreva-se">Inscreva-se</a>
+            <a href="login.php" id="signup">Login: área de cliente</a>
         </div>
     </header>
     
