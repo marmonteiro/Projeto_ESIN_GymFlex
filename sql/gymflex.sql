@@ -148,7 +148,6 @@ VALUES
   (2, 'Morada Madeira'),
   (3, 'Morada Amarante');
 
--- Add mock data to Pessoa table
 INSERT INTO Pessoa (nome, morada, nif, nr_telemovel, email, data_nascimento) 
 VALUES 
   ('João Silva', 'Rua Principal 123', 123456789, '912345678', 'joao@example.com', '1990-05-20'),
