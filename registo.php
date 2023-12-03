@@ -18,8 +18,8 @@ unset($_SESSION['msg']);
 <body>
   <header>
     <a href="paginicial.html">
-      <img id="logo" src="./imagens/gymflex_logo.svg" alt="Logotipo">
-    </a>
+      <img id="logo" src="imagens/gymflex_logo.svg" alt="Logotipo">
+  </a>
   </header>
   <!--<nav id="menu">
   
