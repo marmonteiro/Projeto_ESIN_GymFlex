@@ -341,7 +341,10 @@ footer {
 
 
 
-
-
-
+/* Para a página dos planos */
+.planos_duvidas{
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+}
 
