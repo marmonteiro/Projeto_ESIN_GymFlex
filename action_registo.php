@@ -44,7 +44,7 @@ try {
     $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    insertUser($email, $password);
+    insertUser($email,$password);
     $_SESSION['msg'] = 'Registration successful!';
     header('Location: paginicial.php');
 } catch (PDOException $e) {
