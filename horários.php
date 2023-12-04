@@ -155,7 +155,7 @@ unset($_SESSION['msg']);
     <!-- Mensagem e botão para não membros -->
     <div class="mensagem">
         <p>Inscreve-te já como membro para puderes usufruir destas aulas</p>
-        <a href="register.html" class="button"> Inscreve-te aqui! </a>
+        <a href="registo.php" class="button"> Inscreve-te aqui! </a>
     </div>
 
     <!-- Mensagem e botão para membros -->
