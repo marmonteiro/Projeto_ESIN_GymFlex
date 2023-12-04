@@ -341,7 +341,25 @@ footer {
 
 
 
+/* Para a página dos planos */
+.planos_duvidas{
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+}
 
 
+.botao_planos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#c69791;
+    color: black;
+    text-decoration: none;
+    padding: 10px 20px; 
+    text-decoration: none; 
+    border: none; 
+    font-weight: bold;
+}
 
 

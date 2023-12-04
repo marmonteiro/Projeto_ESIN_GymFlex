@@ -31,12 +31,23 @@
             <a href="ajuda.php" class="ajuda">Ajuda</a>
         </div>
 
+<<<<<<< HEAD:paginicial.php
         <?php if (isset($_SESSION['email'])) { ?>
             <div> <a href="action_logout.php" class="button">Logout</a></div>
         <?php } else { ?>
             <a href="registo.php" class="inscreva-se">Inscreva-se</a>
             <a href="login.php" id="signup">Login: área de cliente</a>
         <?php } ?>
+=======
+    <div class="barra">
+        <a href="clubes.html" class="clubes">Clubes</a>
+        <a href="planos.html" class="serviços">Planos</a>
+        <a href="aulasgrupo.php" class="info">Aulas de Grupo</a>
+        <a href="info.html" class="info">Ajuda</a>
+        <a href="registo.php" class="inscreva-se">Inscreva-se</a>
+        <a href="login.php" id="login">Login: área de cliente</a>
+    </div>
+>>>>>>> 439d809d60588cc97c5aa556f53ef1a650895ae7:paginicial.html
     </header>
 
     <div class="escolherGymFlex">

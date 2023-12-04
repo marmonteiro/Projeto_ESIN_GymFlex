@@ -108,7 +108,11 @@ try {
     $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+<<<<<<< HEAD
     insertUser($nome, $data_nascimento, $nr_telemovel, $email, $password, $nif, $tipo_plano, $altura, $peso, $morada, $sexo);
+=======
+    insertUser($email,$password);
+>>>>>>> 439d809d60588cc97c5aa556f53ef1a650895ae7
     $_SESSION['msg'] = 'Registration successful!';
     header('Location: paginicial.html');
 
