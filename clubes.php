@@ -24,6 +24,8 @@ unset($_SESSION['msg']);
         <a href="paginicial.php">
             <img id="logo" src="imagens/gymflex_logo.svg" alt="Logotipo">
         </a>
+        <h1>GymFlex: Diferentes clubes em diferentes cidades.</h1>
+        <h2>Escolha a cidade mais perto de si e venha treinar connosco.</h2>
 
         <div class="barra">
             <a href="clubes.php" class="clubes">Clubes</a>
