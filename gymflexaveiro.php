@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GymFlex Porto</title>
+    <title>GymFlex Aveiro</title>
     <link rel="stylesheet" href="clubesv4.2.css"> 
 </head>
 <body>
@@ -11,13 +11,13 @@
         <a href="paginicial.html">
             <img id="logo" src="imagens/gymflex_logo.svg" alt="Logotipo">
         </a>
-        <h1>GymFlex Braga</h1>
-        <h2>O seu ginásio em Braga.</h2>
-        <h3>Situados na Rua Francisco Sanches, esperamos a sua visita.</h3>
+        <h1>GymFlex Aveiro</h1>
+        <h2>O seu ginásio na veneza portuguesa.</h2>
+        <h3>Situados na Rua Mário Sacramento, esperamos a sua visita.</h3>
     </header>
-
-     <!-- VER AQUI -->
-     <?php if (isset($_SESSION['email'])) { ?>
+    
+    <!-- VER AQUI -->
+    <?php if (isset($_SESSION['email'])) { ?>
         <a href="action_logout.php" class="button">Logout</a>
         <a href="area_cliente.php" class="button">Área de Cliente</a>
     <?php } else { ?>
@@ -26,13 +26,12 @@
     <?php } ?>
 
     <div class="club-info">
-        <p>GymFlex Braga: Rua Francisco Sanches, nº 12</p>
+        <p>GymFlex Aveiro: Rua Mário Sacramento, nº 32</p>
         <p>Contacto telefónico: 923524352</p>
-        <p>Email: gymflex.braga@gmail.com</p> 
-
+        <p>Email: gymflex.aveiro@gmail.com</p> 
     </div>
-
-    <!--<div class="club-info2">
+    
+    <!-- <div class="club-info2">
         <p>Todos os serviços disponíveis neste ginásio:</p>
         <ul>
           <li>Treino autónomo</li>
@@ -40,12 +39,9 @@
           <li>Aulas de grupo</li>
           <li>Serviço de nutrição</li>
       </ul>
-    </div> -->
-   
-      
-    <!-- <img class="club-logo" src="porto.png" alt="Ginásio Logo"> -->
+      </div>-->
+    <!-- <img class="club-logo" src="aveiro.png" alt="Ginásio Logo"> -->
 
-     
     <div class="caracteristicastexto">
         <p>Características do clube:</p>
     </div>
@@ -94,28 +90,23 @@
         <!--<p>Consulta os diferentes planos disponíveis <a href="info.html">aqui</a>.</p>-->
         <p>Como chegar:</p>
     </div>
-    <img class="mapa" src="imagens/gymflexbraga.png" alt="Mapa GymFlex Braga"> 
+    <img class="mapa" src="imagens/gymflexaveiro.png" alt="Mapa GymFlex Aveiro"> 
     
     <div class="horarios">
         <p> Horário do ginásio:</p>
         <ul>
             <li>Sábados das 9h às 21h.</li>
-            <li>2ª Feira a 6ª Feira das 7h às 22h.</li>
+            <li>2ª Feira a 6ª Feira das 7h às 23h.</li>
             <li>Domingos e Feriados das 9h às 18h.</li>
         </ul>
         <p> Clube aberto todo o ano, exceto a 25 de dezembro e 1 de janeiro. </p>
         <p> Todas as atividades encerram 30 minutos antes do encerramento do Clube. </p>
     </div>
 
-
-
-
-   <footer>
+    <footer>
         <p>Qualquer dúvida não hesite em contactar, teremos uma equipa ao seu dispor.</p>
         <p>&copy; GymFlex, 2023</p>
-    </footer> 
-
-
-
+    </footer>
 </body>
 </html>
+

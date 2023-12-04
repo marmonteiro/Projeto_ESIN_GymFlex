@@ -15,6 +15,14 @@
         <h2>O seu ginásio na veneza portuguesa.</h2>
         <h3>Situados na Rua Mário Sacramento, esperamos a sua visita.</h3>
     </header>
+    
+    <?php if (isset($_SESSION['email'])) { ?>
+        <a href="action_logout.php" class="button">Logout</a>
+        <a href="area_cliente.php" class="button">Área de Cliente</a>
+    <?php } else { ?>
+        <a href="registo.php" class="inscreva-se">Inscreva-se</a>
+        <a href="login.php" id="signup">Login: área de cliente</a>
+    <?php } ?>
 
     <div class="club-info">
         <p>GymFlex Aveiro: Rua Mário Sacramento, nº 32</p>
