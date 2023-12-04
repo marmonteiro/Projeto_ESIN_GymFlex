@@ -31,17 +31,6 @@
         <p>Email: gymflex.lisboa@gmail.com</p> 
 
     </div>
-   <!-- <div class="club-info2">
-        <p>Todos os serviços disponíveis neste ginásio:</p>
-        <ul>
-          <li>Treino autónomo</li>
-          <li>Treino acompanhado (PT)</li>
-          <li>Aulas de grupo</li>
-          <li>Serviço de nutrição</li>
-      </ul>
-      </div>-->
-    <!-- <img class="club-logo" src="guimaraes.png" alt="Ginásio Logo"> -->
-     
 
     <div class="caracteristicastexto">
         <p>Características do clube:</p>
@@ -52,10 +41,7 @@
             <img src="imagens/chuveiro.png" alt="Imagem 1">
             <p>Balneários com chuveiros</p>
         </div>
-        <!--<div class="retangulo">
-            <img src="imagens/cacifos.png" alt="Imagem 1">
-            <p>Cacifos gratuitos</p>
-        </div>-->
+
         <div class="retangulo">
             <img src="imagens/aulasgrupo.png" alt="Imagem 1">
             <p>Diferentes estúdios para aulas de grupo</p>

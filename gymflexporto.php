@@ -32,17 +32,6 @@
 
     </div>
     
-    <!-- <div class="club-info2">
-      <p>Todos os serviços disponíveis neste ginásio:</p>
-      <ul>
-        <li>Treino autónomo</li>
-        <li>Treino acompanhado (PT)</li>
-        <li>Aulas de grupo</li>
-        <li>Serviço de nutrição</li>
-    </ul>
-    </div> -->
-    <!-- <img class="club-logo" src="porto.png" alt="Ginásio Logo"> -->
-
     
   <div class="caracteristicastexto">
       <p>Características do clube:</p>
