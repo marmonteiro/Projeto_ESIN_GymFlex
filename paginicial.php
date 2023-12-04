@@ -1,25 +1,28 @@
 <?php
-    session_start();
-    if (isset($_SESSION['email'])) {
-        $email = $_SESSION['email'];
-    } else {
-        $email = null;
-    }
-    $msg = $_SESSION['msg'];
-    unset($_SESSION['msg']);
+session_start();
+if (isset($_SESSION['email'])) {
+    $email = $_SESSION['email'];
+} else {
+    $email = null;
+}
+$msg = $_SESSION['msg'];
+unset($_SESSION['msg']);
 ?>
 
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Inicial</title>
+    <title>GymFlex</title>
+    <link rel="icon" href="imagens/gymflex_logo_head.svg">
     <link rel="stylesheet" href="clubesv4.2.css">
 </head>
+
 <body>
 
-<header>
+    <header>
         <a href="paginicial.php">
             <img id="logo" src="imagens/gymflex_logo.svg" alt="Logotipo">
         </a>
@@ -31,35 +34,25 @@
             <a href="ajuda.php" class="ajuda">Ajuda</a>
         </div>
 
-<<<<<<< HEAD:paginicial.php
         <?php if (isset($_SESSION['email'])) { ?>
-            <div> <a href="action_logout.php" class="button">Logout</a></div>
+            <a href="action_logout.php" class="button">Logout</a>
+            <a href="area_cliente.php" class="button">Área de Cliente</a>
         <?php } else { ?>
             <a href="registo.php" class="inscreva-se">Inscreva-se</a>
             <a href="login.php" id="signup">Login: área de cliente</a>
         <?php } ?>
-=======
-    <div class="barra">
-        <a href="clubes.html" class="clubes">Clubes</a>
-        <a href="planos.html" class="serviços">Planos</a>
-        <a href="aulasgrupo.php" class="info">Aulas de Grupo</a>
-        <a href="info.html" class="info">Ajuda</a>
-        <a href="registo.php" class="inscreva-se">Inscreva-se</a>
-        <a href="login.php" id="login">Login: área de cliente</a>
-    </div>
->>>>>>> 439d809d60588cc97c5aa556f53ef1a650895ae7:paginicial.html
     </header>
 
     <div class="escolherGymFlex">
-    <p>Porquê o GymFlex?</p>
+        <p>Porquê o GymFlex?</p>
     </div>
 
     <div class="imagensiniciais">
         <div class="imagens">
             <img src="imagens/fidelização.png" alt="Imagem 1">
             <div class="textoimagensiniciais">
-              <p> Com Fidelização ou Sem</p>
-             </div>
+                <p> Com Fidelização ou Sem</p>
+            </div>
         </div>
         <div class="imagens">
             <img src="imagens/horario.png" alt="Imagem 2">
@@ -80,13 +73,14 @@
             </div>
         </div>
     </div>
-    <p> 
+    <p>
 
     </p>
 
     <section id="contato">
         <h2>Entre em Contato</h2>
-        <p>Tem alguma dúvida ou deseja obter mais informações? Preencha o formulário abaixo e entraremos em contato em breve.</p>
+        <p>Tem alguma dúvida ou deseja obter mais informações? Preencha o formulário abaixo e entraremos em contato em
+            breve.</p>
         <form action="#" method="post" style="max-width: 400px; margin: 0 auto;">
             <div style="display: flex; flex-direction: column; margin-bottom: 15px;">
                 <label for="nome">Nome:</label>
@@ -97,17 +91,17 @@
                 <label for="clube">Clube de Interesse:</label>
                 <input type="clube de interesse" id="clube de interesse" name="clube de interesse" required>
             </div>
-    
+
             <div style="display: flex; flex-direction: column; margin-bottom: 15px;">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
             </div>
-    
+
             <div style="display: flex; flex-direction: column; margin-bottom: 15px;">
                 <label for="mensagem">Mensagem:</label>
                 <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
             </div>
-    
+
             <button type="submit">Enviar Mensagem</button>
         </form>
     </section>
@@ -126,12 +120,13 @@
             <button value="5">5</button>
         </div>
     </div>
-    
+
 
     <div class="feedback2">
         <p class="feedback-mensagem">Envie-nos as suas sugestões de melhoria</p>
         <form class="feedback-form">
-            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Digite a sua sugestão aqui" required></textarea>
+            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Digite a sua sugestão aqui"
+                required></textarea>
             <button type="submit">Enviar Sugestão</button>
         </form>
     </div>
@@ -145,4 +140,5 @@
         <p>&copy; GymFlex, 2023</p>
     </footer>
 </body>
+
 </html>

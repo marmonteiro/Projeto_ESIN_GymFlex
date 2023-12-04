@@ -83,7 +83,7 @@ try {
         </div>
 
         <?php if (isset($_SESSION['email'])) { ?>
-            <div> <a href="action_logout.php" class="button">Logout</a></div>
+            <a href="action_logout.php" class="button">Logout</a>
         <?php } else { ?>
             <a href="registo.php" class="inscreva-se">Inscreva-se</a>
             <a href="login.php" id="signup">Login: área de cliente</a>
@@ -125,13 +125,13 @@ try {
         <div id="dados_fisicos">
             <h3>Dados Físicos</h3>
             <p>Altura:
-                <?php echo $altura ?> cm
+                <?php echo $altura/100 ?> m
             </p>
             <p>Peso:
                 <?php echo $peso ?> kg
             </p>
             <p>IMC:
-                <?php echo $imc ?>
+                <?php printf("%.1f", $imc) ?>
             </p>
         </div>
 

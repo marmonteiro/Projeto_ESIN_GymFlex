@@ -15,13 +15,13 @@ unset($_SESSION['msg']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planos</title>
+    <title>GymFlex</title>
+    <link rel="icon" href="imagens/gymflex_logo_head.svg">
     <link rel="stylesheet" href="clubesv4.2.css">
 </head>
 
 <body>
     <header>
-<<<<<<< HEAD:planos.php
         <a href="paginicial.php">
             <img id="logo" src="imagens/gymflex_logo.svg" alt="Logotipo">
         </a>
@@ -31,30 +31,17 @@ unset($_SESSION['msg']);
             <a href="planos.php" class="planos">Planos</a>
             <a href="aulasgrupo.php" class="info">Aulas de Grupo</a>
             <a href="ajuda.php" class="ajuda">Ajuda</a>
-=======
-        <a href="paginicial.html">
-            <img id="logo" src="imagens/gymflex_logo.svg" alt="Logotipo">
-        </a>
-        <h1>GymFlex: Diferentes clubes em diferentes cidades.</h1>
-        <h2>Descobra qual a melhor adesão para ti.</h2>
-        <div class="barra">
-            <a href="clubes.html" class="clubes">Clubes</a>
-            <a href="planos.html" class="serviços">Planos</a>
-            <a href="aulasgrupo.php" class="info">Aulas de Grupo</a>
-            <a href="info.html" class="info">Ajuda</a>
-            <a href="registo.php" class="inscreva-se">Inscreva-se</a>
-            <a href="login.php" id="login">Login: área de cliente</a>
->>>>>>> 439d809d60588cc97c5aa556f53ef1a650895ae7:planos.html
         </div>
 
         <?php if (isset($_SESSION['email'])) { ?>
-            <div> <a href="action_logout.php" class="button">Logout</a></div>
+            <a href="action_logout.php" class="button">Logout</a>
+            <a href="area_cliente.php" class="button">Área de Cliente</a>
         <?php } else { ?>
             <a href="registo.php" class="inscreva-se">Inscreva-se</a>
             <a href="login.php" id="signup">Login: área de cliente</a>
         <?php } ?>
     </header>
-    
+
 
     <div class="planos">
         <div class="retangulo_planos">
@@ -99,7 +86,8 @@ unset($_SESSION['msg']);
     </div>
 
     <div class="planos_duvidas">
-        <p>Queres vir treinar connosco e tens alguma dúvida sobre os planos? Entra em contacto, estamos disponíveis para ti. </p>
+        <p>Queres vir treinar connosco e tens alguma dúvida sobre os planos? Entra em contacto, estamos disponíveis para
+            ti. </p>
         <p>Email: gymflex.geral@gmail.com</p>
         <p>Telemóvel: 923524352</p>
     </div>

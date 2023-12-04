@@ -35,7 +35,8 @@ unset($_SESSION['msg']);
         </div>
 
         <?php if (isset($_SESSION['email'])) { ?>
-            <div> <a href="action_logout.php" class="button">Logout</a></div>
+            <a href="action_logout.php" class="button">Logout</a>
+            <a href="area_cliente.php" class="button">Área de Cliente</a>
         <?php } else { ?>
             <a href="registo.php" class="inscreva-se">Inscreva-se</a>
             <a href="login.php" id="signup">Login: área de cliente</a>
