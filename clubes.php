@@ -42,18 +42,18 @@ unset($_SESSION['msg']);
     </header>
 
     <div class="clubes">
-        <a href="gymflexporto.html" class="porto">GmyFlex Porto</a>
-        <a href="gymflexaveiro.html" class="aveiro">GymFlex Aveiro</a>
-        <a href="gymflexlisboa.html" class="lisboa">GymFlex Lisboa</a>
-        <a href="gymflexmadeira.html" class="madeira">GymFlex Madeira</a>
-        <a href="gymflexbraga.html" class="braga">GymFlex Braga</a>
-        <a href="gymflexguimaraes.html" class="guimarães">GymFlex Guimarães</a>
+        <a href="gymflexporto.php" class="porto">GmyFlex Porto</a>
+        <a href="gymflexaveiro.php" class="aveiro">GymFlex Aveiro</a>
+        <a href="gymflexlisboa.php" class="lisboa">GymFlex Lisboa</a>
+        <a href="gymflexmadeira.php" class="madeira">GymFlex Madeira</a>
+        <a href="gymflexbraga.php" class="braga">GymFlex Braga</a>
+        <a href="gymflexguimaraes.php" class="guimarães">GymFlex Guimarães</a>
     </div>
 
     <ul class="club-info">
         <li>
             <img class="club-logo" src="imagens/porto.png" alt="Ginásio Logo">
-            <a href="gymflexporto.html">GymFlex Porto: Rua das Flores, nº26 <br>
+            <a href="gymflexporto.php">GymFlex Porto: Rua das Flores, nº26 <br>
                 <!-- <span>Contacto telefónico: 923524352</span> <br>
                 <span>Email: gymflex.porto@gmail.com</span> -->
             </a>
@@ -61,7 +61,7 @@ unset($_SESSION['msg']);
 
         <li>
             <img class="club-logo" src="imagens/aveiro.png" alt="Ginásio Logo">
-            <a href="gymflexaveiro.html">GymFlex Aveiro: Rua Mário Sacramento, nº 32 <br>
+            <a href="gymflexaveiro.php">GymFlex Aveiro: Rua Mário Sacramento, nº 32 <br>
                 <!-- <span>Contacto telefónico: 923524352</span> <br>
                 <span>Email: gymflex.aveiro@gmail.com</span> -->
             </a>
@@ -69,7 +69,7 @@ unset($_SESSION['msg']);
 
         <li>
             <img class="club-logo" src="imagens/lisboa.png" alt="Ginásio Logo">
-            <a href="gymflexlisboa.html">GymFlex Lisboa: Travessa de Campo de Ourique, nº 6 <br>
+            <a href="gymflexlisboa.php">GymFlex Lisboa: Travessa de Campo de Ourique, nº 6 <br>
                 <!-- <span>Contacto telefónico: 923524352</span> <br>
                 <span>Email: gymflex.lisboa@gmail.com</span> -->
             </a>
@@ -77,21 +77,21 @@ unset($_SESSION['msg']);
 
         <li>
             <img class="club-logo" src="imagens/madeira.png" alt="Ginásio Logo">
-            <a href="gymflexmadeira.html">GymFlex Madeira: Rua da Ajuda, nº 8 <br>
+            <a href="gymflexmadeira.php">GymFlex Madeira: Rua da Ajuda, nº 8 <br>
                 <!-- <span>Contacto telefónico: 923524352</span> <br>
                 <span>Email: gymflex.madeira@gmail.com</span> -->
             </a>
         </li>
         <li>
             <img class="club-logo" src="imagens/braga.png" alt="Ginásio Logo">
-            <a href="gymflexbraga.html">GymFlex Braga: Rua Francisco Sanches, nº 12 <br>
+            <a href="gymflexbraga.php">GymFlex Braga: Rua Francisco Sanches, nº 12 <br>
                 <!-- <span>Contacto telefónico: 923524352</span> <br>
                 <span>Email: gymflex.madeira@gmail.com</span> -->
             </a>
         </li>
         <li>
             <img class="club-logo" src="imagens/guimaraes.png" alt="Ginásio Logo">
-            <a href="gymflexguimaraes.html">GymFlex Guimarães: Rua 31 de janeiro, nº 8 <br>
+            <a href="gymflexguimaraes.php">GymFlex Guimarães: Rua 31 de janeiro, nº 8 <br>
                 <!-- <span>Contacto telefónico: 923524352</span> <br>
                 <span>Email: gymflex.madeira@gmail.com</span> -->
             </a>
