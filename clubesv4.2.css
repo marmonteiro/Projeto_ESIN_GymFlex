@@ -374,3 +374,30 @@ th, td {
 th {
     background-color: #f5f5f5;
 }
+
+/* Adicione o estilo para mostrar as vagas ao passar o mouse */
+td:hover::after {
+    content: "Lotação Máxima: " attr(data-vagas); /*VER NA BASE DE DADOS */
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+.mensagem {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #333;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.button:hover {
+    background-color: #555;
+}
