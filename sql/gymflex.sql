@@ -31,12 +31,12 @@ CREATE TABLE Membro (
     personaltrainer INTEGER,
     nutricionista INTEGER,
     inscricoes_ag INTEGER,
+    sexo VARCHAR(1),
     FOREIGN KEY (id) REFERENCES Pessoa(id),
     FOREIGN KEY (personaltrainer) REFERENCES Personaltrainer(id),
     FOREIGN KEY (nutricionista) REFERENCES Nutricionista(id),
     CHECK (peso > 0),
-    CHECK (altura > 0),
-    CHECK (imc = peso / (altura * altura))
+    CHECK (altura > 0)
     --CHECK (TIMEDIFF('now', (SELECT data_nascimento FROM Pessoa WHERE id = Membro.id)) >= '16 years') Idade do membro é superior a 16 anos
 );
 
@@ -89,7 +89,8 @@ CREATE TABLE Ginasio (
 
 -- Tabela Tipo
 CREATE TABLE Tipo_p (
-    preco DECIMAL PRIMARY KEY,
+    nome VARCHAR(255) PRIMARY KEY,
+    preco DECIMAL,
     tempo_treino INTEGER NOT NULL,
     quantidade_ag INTEGER NOT NULL,
     CHECK (preco > 0),
@@ -105,7 +106,7 @@ CREATE TABLE Plano (
     membro INTEGER,
     tipo_p INTEGER,
     FOREIGN KEY (membro) REFERENCES Membro(id),
-    FOREIGN KEY (tipo_p) REFERENCES Tipo_p(preco)
+    FOREIGN KEY (tipo_p) REFERENCES Tipo_p(nome)
     --se um Membro tiver mais que uma data_adesao, então a diferença entre elas terá de ser superior ou igual a 5 meses:
     --CHECK ((SELECT COUNT(*) FROM Plano AS p WHERE p.membro = membro AND julianday('now') - julianday(data_adesao) < 150) <= 1) -- não funciona	
     
@@ -185,26 +186,24 @@ VALUES
   ((SELECT id FROM Pessoa WHERE nome = 'Inês Marques'));
 
 
-INSERT INTO Membro (pwd, peso, altura, imc, personaltrainer, nutricionista)
+INSERT INTO Membro (pwd, peso, altura, imc, sexo ,personaltrainer, nutricionista)
 VALUES 
-  ('0b14d501a594442a01c6859541bcb3e8164d183d32937b851835442f69d5c94e', 70.5, 1.75, (70.5 / (1.75 * 1.75)), (SELECT id FROM Pessoa WHERE nome = 'Carlos Pereira'), (SELECT id FROM Pessoa WHERE nome = 'Sofia Costa')),
-  ('6cf615d5bcaac778352a8f1f3360d23f02f34ec182e259897fd6ce485d7870d4', 65.0, 1.65, (65.0 / (1.65 * 1.65)), (SELECT id FROM Pessoa WHERE nome = 'Ana Rodrigues'), (SELECT id FROM Pessoa WHERE nome = 'Jorge Fernandes')),
-  ('5906ac361a137e2d286465cd6588ebb5ac3f5ae955001100bc41577c3d751764', 68.0, 1.60, (68.0 / (1.60 * 1.60)), (SELECT id FROM Pessoa WHERE nome = 'Rui Oliveira'), (SELECT id FROM Pessoa WHERE nome = 'Inês Marques'));
+  ('0b14d501a594442a01c6859541bcb3e8164d183d32937b851835442f69d5c94e', 70.5, 1.75, (70.5 / (1.75 * 1.75)), 'M' , (SELECT id FROM Pessoa WHERE nome = 'Carlos Pereira'), (SELECT id FROM Pessoa WHERE nome = 'Sofia Costa')),
+  ('6cf615d5bcaac778352a8f1f3360d23f02f34ec182e259897fd6ce485d7870d4', 65.0, 1.65, (65.0 / (1.65 * 1.65)), 'F' , (SELECT id FROM Pessoa WHERE nome = 'Ana Rodrigues'), (SELECT id FROM Pessoa WHERE nome = 'Jorge Fernandes')),
+  ('5906ac361a137e2d286465cd6588ebb5ac3f5ae955001100bc41577c3d751764', 68.0, 1.60, (68.0 / (1.60 * 1.60)), 'M' , (SELECT id FROM Pessoa WHERE nome = 'Rui Oliveira'), (SELECT id FROM Pessoa WHERE nome = 'Inês Marques'));
 
 
-
-
-INSERT INTO Tipo_p (preco, tempo_treino, quantidade_ag)
+INSERT INTO Tipo_p (nome,preco, tempo_treino, quantidade_ag)
 VALUES 
-  (20.00, 20, 5),
-  (30.00, 40, 10),
-  (40.00, 60, 15);
+  ('Básico', 20.00, 20, 5),
+  ('Intermédio', 30.00, 40, 10),
+  ('Avançado', 40.00, 60, 15);
 
 INSERT INTO Plano (data_adesao, membro, tipo_p)
 VALUES 
-  ('2020-01-01', 1, 20.00),
-  ('2020-01-02', 2, 30.00)
-  ('2020-01-03', 3, 40.00);
+  ('2020-01-01', 1, 'Básico'),
+  ('2020-01-02', 2, 'Intermédio'),
+  ('2020-01-03', 3, 'Avançado');
 
 INSERT INTO Tipo_ag (nome, capacidade, data_ag, hora_inicio, hora_fim)
 VALUES 

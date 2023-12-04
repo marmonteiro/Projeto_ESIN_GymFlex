@@ -1,3 +1,14 @@
+<?php
+    session_start();
+    if (isset($_SESSION['email'])) {
+        $email = $_SESSION['email'];
+    } else {
+        $email = null;
+    }
+    $msg = $_SESSION['msg'];
+    unset($_SESSION['msg']);
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
 <head>
@@ -8,22 +19,24 @@
 </head>
 <body>
 
-    <header>
-        <a href="paginicial.html">
+<header>
+        <a href="paginicial.php">
             <img id="logo" src="imagens/gymflex_logo.svg" alt="Logotipo">
         </a>
-        <h1>GymFlex: Diferentes clubes em diferentes cidades.</h1>
-   
 
+        <div class="barra">
+            <a href="clubes.php" class="clubes">Clubes</a>
+            <a href="planos.php" class="planos">Planos</a>
+            <a href="aulasgrupo.php" class="info">Aulas de Grupo</a>
+            <a href="ajuda.php" class="ajuda">Ajuda</a>
+        </div>
 
-    <div class="barra">
-        <a href="clubes.html" class="clubes">Clubes</a>
-        <a href="planos.html" class="serviços">Planos</a>
-        <a href="aulasgrupo.html" class="info">Aulas de Grupo</a>
-        <a href="info.html" class="info">Ajuda</a>
-        <a href="registo.php" class="inscreva-se">Inscreva-se</a>
-        <a href="login.php" id="login">Login: área de cliente</a>
-    </div>
+        <?php if (isset($_SESSION['email'])) { ?>
+            <div> <a href="action_logout.php" class="button">Logout</a></div>
+        <?php } else { ?>
+            <a href="registo.php" class="inscreva-se">Inscreva-se</a>
+            <a href="login.php" id="signup">Login: área de cliente</a>
+        <?php } ?>
     </header>
 
     <div class="escolherGymFlex">

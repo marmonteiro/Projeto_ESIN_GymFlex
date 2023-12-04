@@ -21,16 +21,30 @@ try {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clubes</title>
+  <title>GymFlex</title>
+  <link rel="icon" href="imagens/gymflex_logo_head.svg">
   <link rel="stylesheet" href="login.css">
 </head>
 
 <body>
   <header>
-    <a href="paginicial.html">
-     <img id="logo" src="imagens/gymflex_logo.svg" alt="Logotipo">
+    <a href="paginicial.php">
+      <img id="logo" src="imagens/gymflex_logo.svg" alt="Logotipo">
     </a>
 
+    <div class="barra">
+      <a href="clubes.php" class="clubes">Clubes</a>
+      <a href="planos.php" class="planos">Planos</a>
+      <a href="aulasgrupo.php" class="info">Aulas de Grupo</a>
+      <a href="ajuda.php" class="ajuda">Ajuda</a>
+    </div>
+
+    <?php if (isset($_SESSION['email'])) { ?>
+      <div> <a href="action_logout.php" class="button">Logout</a></div>
+    <?php } else { ?>
+      <a href="registo.php" class="inscreva-se">Inscreva-se</a>
+      <a href="login.php" id="signup">Login: área de cliente</a>
+    <?php } ?>
   </header>
 
   <section id="login">
@@ -46,13 +60,13 @@ try {
       <input type="submit" value="Login">
     </form>
   </section>
-  
-    <?php if (isset($msg)) { ?>
-      <p id="msg_erro">
-        <?php echo $msg ?>
-      </p>
-    <?php } ?>
-  
+
+  <?php if (isset($msg)) { ?>
+    <p id="msg_erro">
+      <?php echo $msg ?>
+    </p>
+  <?php } ?>
+
   <section id="registo">
     <p>Ainda não és membro? De que estás à espera?</p>
     <p id="registe_se"><a href="registo.html">Regista-te aqui!</a></p>

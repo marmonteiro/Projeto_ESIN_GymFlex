@@ -1,29 +1,47 @@
+<?php
+session_start();
+if (isset($_SESSION['email'])) {
+    $email = $_SESSION['email'];
+} else {
+    $email = null;
+}
+$msg = $_SESSION['msg'];
+unset($_SESSION['msg']);
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clubes</title>
+    <title>GymFlex</title>
+    <link rel="icon" href="imagens/gymflex_logo_head.svg">
     <link rel="stylesheet" href="clubesv4.2.css">
 </head>
+
 <body>
     <header>
-        <a href="paginicial.html">
+        <a href="paginicial.php">
             <img id="logo" src="imagens/gymflex_logo.svg" alt="Logotipo">
         </a>
-        <h1>GymFlex: Diferentes clubes em diferentes cidades.</h1>
 
         <div class="barra">
-            <a href="clubes.html" class="clubes">Clubes</a>
-            <a href="planos.html" class="serviços">Planos</a>
-            <a href="aulasgrupo.html" class="info">Aulas de Grupo</a>
-            <a href="info.html" class="info">Ajuda</a>
-            <a href="#" class="inscreva-se">Inscreva-se</a>
-            <a href="login.html" id="signup">Login: área de cliente</a>
+            <a href="clubes.php" class="clubes">Clubes</a>
+            <a href="planos.php" class="planos">Planos</a>
+            <a href="aulasgrupo.php" class="info">Aulas de Grupo</a>
+            <a href="ajuda.php" class="ajuda">Ajuda</a>
         </div>
+
+        <?php if (isset($_SESSION['email'])) { ?>
+            <div> <a href="action_logout.php" class="button">Logout</a></div>
+        <?php } else { ?>
+            <a href="registo.php" class="inscreva-se">Inscreva-se</a>
+            <a href="login.php" id="signup">Login: área de cliente</a>
+        <?php } ?>
     </header>
 
-   <!-- <div class="clubes">
+    <!-- <div class="clubes">
         <a href="gymflexporto.html" class="porto">GmyFlex Porto</a>
         <a href="gymflexaveiro.html" class="aveiro">GymFlex Aveiro</a>
         <a href="gymflexlisboa.html" class="lisboa">GymFlex Lisboa</a>
@@ -31,9 +49,9 @@
         <a href="gymflexbraga.html" class="braga">GymFlex Braga</a>
         <a href="gymflexguimaraes.html" class="guimarães">GymFlex Guimarães</a>
     </div> -->
-    
 
-    
+
+
 
     <ul class="club-info">
         <li>
@@ -87,4 +105,5 @@
         <p>&copy; GymFlex, 2023</p>
     </footer>
 </body>
+
 </html>

@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Inicial</title>
-    <link rel="stylesheet" href="horarios.css">
+    <title>GymFlex</title>
+    <link rel="icon" href="imagens/gymflex_logo_head.svg">
+    <link rel="stylesheet" href="clubesv4.2.css">
 </head>
+
 <body>
 
     <header>
-        <a href="paginicial.html">
+        <a href="paginicial.php">
             <img id="logo" src="imagens/gymflex_logo.svg" alt="Logotipo">
         </a>
-   
+
         <div class="barra">
-            <a href="clubes.html" class="clubes">Clubes</a>
-            <a href="#" class="serviços">Planos</a>
-            <a href="aulasgrupo.html" class="info">Aulas de Grupo</a>
-            <a href="info.html" class="info">Ajuda</a>
-            <a href="#" class="inscreva-se">Inscreva-se</a>
-            <a href="login.html" id="signup">Login: área de cliente</a>
+            <a href="clubes.php" class="clubes">Clubes</a>
+            <a href="planos.php" class="planos">Planos</a>
+            <a href="aulasgrupo.php" class="info">Aulas de Grupo</a>
+            <a href="ajuda.php" class="ajuda">Ajuda</a>
         </div>
+
+        <?php if (isset($_SESSION['email'])) { ?>
+            <div> <a href="action_logout.php" class="button">Logout</a></div>
+        <?php } else { ?>
+            <a href="registo.php" class="inscreva-se">Inscreva-se</a>
+            <a href="login.php" id="signup">Login: área de cliente</a>
+        <?php } ?>
     </header>
 
     <section id="horarios">
@@ -111,7 +119,7 @@
                 </tr>
                 <tr>
                     <td>19:00 - 20:00</td>
-                    <td>  Body Pump </td>
+                    <td> Body Pump </td>
                     <td> Xpress Abs </td>
                     <td> Cycling </td>
                     <td> Pilates </td>
@@ -132,21 +140,21 @@
         </table>
     </section>
 
-            <!-- Mensagem e botão para não membros -->
-            <div class="mensagem">
-                <p>Inscreve-te já como membro para puderes usufruir destas aulas</p>
-                <a href="register.html" class="button"> Inscreve-te aqui! </a>
-            </div>
-    
-            <!-- Mensagem e botão para membros -->
-            <div class="mensagem">
-                <p>Caso já sejas membro, garante já a tua vaga</p>
-                <a href="link_para_inscricao_aula_grupo" class="button"> Marcações </a>
-            </div>
-        </section>
-        <p>
+    <!-- Mensagem e botão para não membros -->
+    <div class="mensagem">
+        <p>Inscreve-te já como membro para puderes usufruir destas aulas</p>
+        <a href="register.html" class="button"> Inscreve-te aqui! </a>
+    </div>
 
-        </p>
+    <!-- Mensagem e botão para membros -->
+    <div class="mensagem">
+        <p>Caso já sejas membro, garante já a tua vaga</p>
+        <a href="link_para_inscricao_aula_grupo" class="button"> Marcações </a>
+    </div>
+    </section>
+    <p>
+
+    </p>
     <footer>
         <p>Qualquer dúvida não hesite em contactar, teremos uma equipa ao seu dispor.</p>
         <p>Email: gymflex.geral@gmail.com</p>
@@ -155,4 +163,5 @@
     </footer>
 
 </body>
+
 </html>

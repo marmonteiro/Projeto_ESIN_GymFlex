@@ -1,5 +1,17 @@
+<?php
+session_start();
+if (isset($_SESSION['email'])) {
+    $email = $_SESSION['email'];
+} else {
+    $email = null;
+}
+$msg = $_SESSION['msg'];
+unset($_SESSION['msg']);
+?>
+
 <!DOCTYPE html>
 <html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +21,23 @@
 
 <body>
     <header>
-        <img id="logo" src="imagens/gymflex_logo.svg" alt="Logotipo">
-        <h1>GymFlex: Diferentes clubes em diferentes cidades.</h1>
-        <h1>Conheça os diferentes planos que temos disponíveis para si.</h1>
-        <div id="signup">
-            <a href="login.html">Login: Área de cliente</a>
+        <a href="paginicial.php">
+            <img id="logo" src="imagens/gymflex_logo.svg" alt="Logotipo">
+        </a>
+
+        <div class="barra">
+            <a href="clubes.php" class="clubes">Clubes</a>
+            <a href="planos.php" class="planos">Planos</a>
+            <a href="aulasgrupo.php" class="info">Aulas de Grupo</a>
+            <a href="ajuda.php" class="ajuda">Ajuda</a>
         </div>
+
+        <?php if (isset($_SESSION['email'])) { ?>
+            <div> <a href="action_logout.php" class="button">Logout</a></div>
+        <?php } else { ?>
+            <a href="registo.php" class="inscreva-se">Inscreva-se</a>
+            <a href="login.php" id="signup">Login: área de cliente</a>
+        <?php } ?>
     </header>
 
     <div class="planos">

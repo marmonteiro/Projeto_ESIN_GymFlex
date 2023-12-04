@@ -4,6 +4,7 @@
   // get email and password from HTTP parameters
   $email = $_POST['email'];
   $password = $_POST['password'];
+  
 
   // check if email and password are correct
   function loginSuccess($email, $password) {
@@ -24,11 +25,16 @@ try {
         $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
         $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
-        if (loginSuccess($email, $password)) {
+        if ($user = loginSuccess($email, $password)) {
           $_SESSION['email'] = $email;
-          header('Location: area_cliente.html');
-          exit();
-        } else {
+          $_SESSION['nome'] = $user['nome'];
+          $_SESSION['sexo'] = $user['sexo'];
+          
+
+          header('Location: area_cliente.php'); // login successful
+          exit(); 
+
+        } else { // login failed
           $_SESSION['msg'] = 'E-mail ou Password incorretos!';
         }
     

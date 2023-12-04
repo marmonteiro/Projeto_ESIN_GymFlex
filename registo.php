@@ -17,16 +17,25 @@ unset($_SESSION['msg']);
 
 <body>
   <header>
-    <a href="paginicial.html">
+    <a href="paginicial.php">
       <img id="logo" src="imagens/gymflex_logo.svg" alt="Logotipo">
-  </a>
-  </header>
-  <!--<nav id="menu">
-  
-  <input type="checkbox" id="hamburger"> 
-  <label class="hamburger" for="hamburger"> </label>
+    </a>
 
-</nav>-->
+    <div class="barra">
+      <a href="clubes.php" class="clubes">Clubes</a>
+      <a href="planos.php" class="planos">Planos</a>
+      <a href="aulasgrupo.php" class="info">Aulas de Grupo</a>
+      <a href="ajuda.php" class="ajuda">Ajuda</a>
+    </div>
+
+    <?php if (isset($_SESSION['email'])) { ?>
+      <div> <a href="action_logout.php" class="button">Logout</a></div>
+    <?php } else { ?>
+      <a href="registo.php" class="inscreva-se">Inscreva-se</a>
+      <a href="login.php" id="signup">Login: área de cliente</a>
+    <?php } ?>
+  </header>
+
 
   <section id="registo">
     <h1>Registo</h1>
@@ -34,16 +43,16 @@ unset($_SESSION['msg']);
 
       <section id="info_pessoal">
         <div>
-          <input type="text" id="fullname" name="fullname" placeholder="Nome Completo" required>
+          <input type="text" id="nome" name="nome" placeholder="Nome Completo" required>
         </div>
         <div>
-          <input type="tel" id="phone" name="phone" placeholder="Nº Telemóvel" required>
+          <input type="tel" id="nr_telemovel" name="nr_telemovel" placeholder="Nº Telemóvel" required>
         </div>
         <div>
-          <input type="text" id="address" name="address" placeholder="Morada" required>
+          <input type="text" id="morada" name="morada" placeholder="Morada" required>
         </div>
-        <div><label for="birthdate">Data de Nascimento: </label>
-          <input type="date" id="birthdate" name="birthdate" required>
+        <div><label for="data_nascimento">Data de Nascimento: </label>
+          <input type="date" id="data_nascimento" name="data_nascimento" required>
         </div>
         <div>
           <input type="text" id="nif" name="nif" placeholder="NIF" required>
@@ -52,13 +61,14 @@ unset($_SESSION['msg']);
 
       <section id="imc_calculation">
         <div>
-          <input type="number" id="height" name="height" placeholder="Altura (cm)" required>
+          <input type="number" id="altura" name="altura" placeholder="Altura (cm)" required>
         </div>
         <div>
-          <input type="number" id="weight" name="weight" placeholder="Peso (kg)" required>
+          <input type="number" id="peso" name="peso" placeholder="Peso (kg)" required>
         </div>
         <div>
-          <!-- insert imc calculation here -->
+          <input type="radio" name="sexo" value="M"> Masculino
+          <input type="radio" name="sexo" value="F"> Feminino
         </div>
       </section>
 
@@ -75,11 +85,11 @@ unset($_SESSION['msg']);
       <section id="escolha_plano">
         <div>
           <p>Escolha o seu Plano:</p>
-          <select id="plan" name="plan" required>
+          <select id="tipo_plano" name="tipo_plano" required>
             <option value="" disabled selected>Selecione um plano</option>
-            <option value="basico">Plano Básico</option>
-            <option value="medio">Plano Médio</option>
-            <option value="avancado">Plano Avançado</option>
+            <option value="Básico">Plano Básico</option>
+            <option value="Intermédio">Plano Intermédio</option>
+            <option value="Avançado">Plano Avançado</option>
           </select>
         </div>
       </section>

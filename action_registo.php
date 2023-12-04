@@ -1,41 +1,105 @@
 <?php
 session_start();
 
+$nome = $_POST['nome'];
+$data_nascimento = $_POST['data_nascimento'];
+$nr_telemovel = $_POST['nr_telemovel'];
+$nif = $_POST['nif'];
+$tipo_plano = $_POST['tipo_plano'];
+$altura = $_POST['altura'];
+$peso = $_POST['peso'];
+$sexo = $_POST['sexo'];
+$morada = $_POST['morada'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-function insertUser($nome, $data_nascimento, $nr_telemovel, $email, $password, $nif, $tipo_plano, $altura, $peso, $morada)
+function assignNutricionista($dbh)
+{
+    // vai buscar um id com menos clientes
+    $stmt = $dbh->query('SELECT Nutricionista.id, COUNT(Membro.nutricionista) AS nr_clients 
+    FROM Nutricionista 
+    LEFT JOIN Membro ON Nutricionista.id = Membro.nutricionista 
+    GROUP BY Nutricionista.id 
+    ORDER BY nr_clients ASC 
+    LIMIT 1');
+    $nutricionista = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $nutricionista['id'];
+}
+
+function assignPT($dbh)
+{
+    // vai buscar um id do PT com menos clientes
+    $stmt = $dbh->query('SELECT Personaltrainer.id, COUNT(Membro.personaltrainer) AS nr_clients 
+    FROM Personaltrainer 
+    LEFT JOIN Membro ON Personaltrainer.id = Membro.personaltrainer 
+    GROUP BY Personaltrainer.id 
+    ORDER BY nr_clients ASC 
+    LIMIT 1');
+
+    $personalTrainer = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $personalTrainer['id'];
+}
+
+
+function insertUser($nome, $data_nascimento, $nr_telemovel, $email, $password, $nif, $tipo_plano, $altura, $peso, $morada, $sexo)
 {
     global $dbh;
     $hashedPassword = hash('sha256', $password);
     
-    // Insert into Pessoa table
-    $stmtPessoa = $dbh->prepare('INSERT INTO Pessoa (nome_completo, nr_telemovel, morada, data_nascimento, nif) VALUES (?, ?, ?, ?, ?)');
-    $stmtPessoa->execute(array($nome, $nr_telemovel, $morada, $data_nascimento, $nif));
 
-    // Retrieve last inserted ID for Pessoa (assuming Pessoa has an auto-increment primary key)
+    // inserir dados na tabela Pessoa
+    $stmtPessoa = $dbh->prepare('INSERT INTO Pessoa (email, nome, nr_telemovel, morada, data_nascimento, nif) VALUES (?, ?, ?, ?, ?, ?)');
+    $stmtPessoa->execute(array($email, $nome, $nr_telemovel, $morada, $data_nascimento, $nif));
+
+    // vai guardar o id da pessoa que acabou de ser inserida
     $pessoaID = $dbh->lastInsertId();
 
-    // Insert into Membro table
-    $stmtMembro = $dbh->prepare('INSERT INTO Membro (pwd, altura, peso, pessoa_id) VALUES (?, ?, ?, ?)');
-    $stmtMembro->execute(array($hashedPassword, $altura, $peso, $pessoaID));
-
-    // Insert into Plano table (assuming a date is associated with the plan)
-    $date = date("Y-m-d"); // Example: Current date
-    $stmtPlano = $dbh->prepare('INSERT INTO Plano (tipo_p, data_associada, membro_id) VALUES (?, ?, ?)');
-    $stmtPlano->execute(array($tipo_plano, $date, $pessoaID));
-}
+    // inserir dados na tabela Membro
+    $stmtMembro = $dbh->prepare('INSERT INTO Membro (pwd, altura, peso, sexo, id, inscricoes_ag) VALUES (?, ?, ?, ?, ?, ?)');
+    $stmtMembro->execute(array($hashedPassword, $altura, $peso, $sexo, $pessoaID, 0));
     
+    $imc = $peso / ($altura * $altura); // calcula o imc
+    $stmtMembroIMC = $dbh->prepare('UPDATE Membro SET imc = ? WHERE id = ?');
+    $stmtMembroIMC->execute(array($imc, $pessoaID));
+
+
+    // inserir dados na tabela Plano
+    $date = date("Y-m-d"); // data do registo
+    $stmtPlano = $dbh->prepare('INSERT INTO Plano (tipo_p, data_adesao, membro) VALUES (?, ?, ?)');
+    $stmtPlano->execute(array($tipo_plano, $date, $pessoaID));
+
+
+
+    // Dá o nutricionista com menos clientes ao novo membro
+    $randomNutricionista = assignNutricionista($dbh);
+
+    // Update da tabela Membro com o nutricionista random
+    $stmtNutricionista = $dbh->prepare('UPDATE Membro SET nutricionista = ? WHERE id = ?');
+    $stmtNutricionista->execute(array($randomNutricionista, $pessoaID));
+
+    if ($tipo_plano === 'Intermédio' || $tipo_plano === 'Avançado') {
+        // Dá o PT com menos clientes ao novo membro se o plano for Intermédio ou Avançado
+        $randomPT = assignPT($dbh);
+
+        // Update da tabela Membro com o PT
+        $stmtPT = $dbh->prepare('UPDATE Membro SET personaltrainer = ? WHERE id = ?');
+        $stmtPT->execute(array($randomPT, $pessoaID));
+    }
+
+}
+
+
+//Error Handling
 
 if (strlen($email) == 0) {
-    $_SESSION['msg'] = 'Invalid E-mail!';
-    header('Location: registration.php');
+    $_SESSION['msg'] = 'E-mail inválido.';
+    header('Location: registo.php');
     die();
 }
 
 if (strlen($password) < 8) {
-    $_SESSION['msg'] = 'Password must have at least 8 characters.';
-    header('Location: registration.php');
+    $_SESSION['msg'] = 'Password deve ter mais que 8 caracteres.';
+    header('Location: registo.php');
     die();
 }
 
@@ -44,17 +108,18 @@ try {
     $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    insertUser($email, $password);
+    insertUser($nome, $data_nascimento, $nr_telemovel, $email, $password, $nif, $tipo_plano, $altura, $peso, $morada, $sexo);
     $_SESSION['msg'] = 'Registration successful!';
-    header('Location: paginicial.php');
+    header('Location: paginicial.html');
+
 } catch (PDOException $e) {
     $error_msg = $e->getMessage();
 
     if (strpos($error_msg, 'UNIQUE')) {
-        $_SESSION['msg'] = 'E-mail already exists!';
+        $_SESSION['msg'] = 'E-mail já está registado!';
     } else {
-        $_SESSION['msg'] = "Registration failed! ($error_msg)";
+        $_SESSION['msg'] = "Registo falhou! ($error_msg)";
     }
-    header('Location: registration.php');
+    header('Location: registo.php');
 }
 ?>

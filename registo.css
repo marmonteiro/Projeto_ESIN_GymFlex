@@ -106,10 +106,10 @@ input[type="password"]::placeholder{
 }
 
 /* When input is focused */
-input[type="tel"]:focus::placeholder,input[type="email"]:focus::placeholder,input[type="text"]:focus::placeholder,input[type="password"]:focus::placeholder,
-input[type="tel"]:focus-visible::placeholder,input[type="email"]:focus-visible::placeholder,input[type="text"]:focus-visible::placeholder,input[type="password"]:focus-visible::placeholder,
-input[type="tel"]:valid::placeholder,input[type="email"]:valid::placeholder,input[type="text"]:valid::placeholder,input[type="password"]:valid::placeholder,
-input[type="number"]:focus::placeholder,input[type="number"]:focus-visible::placeholder,input[type="number"]:valid::placeholder{
+input[type="tel"]:focus::placeholder,input[type="email"]:focus::placeholder,input[type="text"]:focus::placeholder,input[type="password"]:focus::placeholder,input[type="number"]:focus::placeholder
+input[type="tel"]:focus-visible::placeholder,input[type="email"]:focus-visible::placeholder,input[type="text"]:focus-visible::placeholder,input[type="password"]:focus-visible::placeholder,input[type="number"]:focus-visible::placeholder,
+input[type="tel"]:valid::placeholder,input[type="email"]:valid::placeholder,input[type="text"]:valid::placeholder,input[type="password"]:valid::placeholder,input[type="number"]:valid::placeholder
+{
     top: 25%;
     font-size: 12px;
     color: #c69791;
@@ -130,7 +130,7 @@ input[type="submit"]:hover {
     background-color: #b37e77;
 }
 
-input[type="date"] {
+input[type="date"], input[type="number"] {
     color: #999;
     font-size: 20px;
     position: relative;
