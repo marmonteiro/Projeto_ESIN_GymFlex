@@ -149,8 +149,9 @@ footer {
     font-size: 25px;
 }
 
-
-
+.inscreva-se{
+    text-align: center; 
+}
 
 /* Para a barra na pag inicial */
 .barra a, #signup a {
