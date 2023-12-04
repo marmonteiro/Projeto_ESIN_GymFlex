@@ -70,7 +70,7 @@ unset($_SESSION['msg']);
         </div>
 
         <div class="button-container">
-            <a href="horários.html" class="button">Ver Horários</a>
+            <a href="horários.php" class="button">Ver Horários</a>
             <div class="button-rectangle"></div>
         </div>
     </div>
