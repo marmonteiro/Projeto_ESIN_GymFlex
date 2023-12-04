@@ -158,13 +158,14 @@ unset($_SESSION['msg']);
         <a href="registo.php" class="button"> Inscreve-te aqui! </a>
     </div>
 
-    <!-- Mensagem e botão para membros -->
-    <div class="mensagem">
+    <!-- Mensagem e botão para membros    <div class="mensagem">
         <p>Caso já sejas membro, garante já a tua vaga</p>
-        <a href="link_para_inscricao_aula_grupo" class="button"> Marcações </a>
+        <a href="marcaçoes_aula.php" class="button"> Marcações </a>
     </div>
     </section>
-    <p>
+    <p> -->
+
+
 
     </p>
     <footer>
