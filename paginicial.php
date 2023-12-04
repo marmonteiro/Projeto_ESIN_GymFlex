@@ -52,7 +52,7 @@ unset($_SESSION['msg']);
         <div class="imagens">
             <img src="imagens/fidelização.png" alt="Imagem 1">
             <div class="textoimagensiniciais">
-                <p> Com Fidelização ou Sem</p>
+                <p> Sem Fidelização</p>
             </div>
         </div>
         <div class="imagens">
