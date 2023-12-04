@@ -31,6 +31,7 @@ footer {
 
 
 
+/* PÁGINA DOS CLUBES*/
 
 .clubes a, #signup a {
     display: inline-flex;
@@ -45,7 +46,7 @@ footer {
     transition: background-color 0.3s ease;
 }
 
-/*Para centrar, colocando todos na mesma página, os botões dos diferentes ginásios*/
+     /*Para centrar, colocando todos na mesma página, os botões dos diferentes ginásios*/
 .clubes {
     display: flex;
     justify-content: center;
@@ -53,11 +54,9 @@ footer {
     flex-wrap: wrap; /* Isso permite que os botões quebrem para a próxima linha se não couberem */
 }
 
-
 .club-logo {
-    max-width: 100px; /* Ajuste conforme necessário */
+    max-width: 100px; 
     margin-bottom: 10px; /* Espaço entre a imagem e o texto */
-    /*width: px; /* Ajuste o valor conforme necessário */ 
     height: auto;
 }
 
@@ -93,8 +92,7 @@ footer {
 } 
 
 
-
-/* Relativo às páginas de cada clube*/
+/* RELATIVO às páginas de CADA CLUBE INDIVIDUALMENTE */
 .club-logo{
     display: block; /* Certifique-se de que a imagem é exibida como bloco */
     margin: 0 auto; /* Define as margens superior e inferior como 0 e centraliza horizontalmente */
@@ -135,7 +133,6 @@ footer {
     font-weight: bold;
 }
 
-
 .retangulo img {
     max-width: 25%;
     height: auto;
@@ -153,7 +150,8 @@ footer {
     text-align: center; 
 }
 
-/* Para a barra na pag inicial */
+/*PÁGINA INICIAL*/
+      /* Para a barra na pag inicial */
 .barra a, #signup a {
     display: inline-flex;
     flex-direction: column;
@@ -175,8 +173,7 @@ footer {
 }
 
 
-/*Imagens na página inicial*/
-
+      /*Imagens na página inicial*/
 .imagensiniciais {
     display: flex;
     justify-content: space-between;
@@ -210,9 +207,7 @@ footer {
     font-size: 15px;
 }
 
-
-/* PARA O FORMS DO ENTRE EM CONTACTO*/
-
+      /* PARA O FORMS DO ENTRE EM CONTACTO*/
 #contato {
     background-color: #f2f2f2; /* Cor de fundo cinza */
     padding: 20px; /* Espaçamento interno */
@@ -236,8 +231,8 @@ footer {
 
 #contato input,
 #contato textarea {
-    width: 100%; /* Preencher a largura do contêiner pai */
-    padding: 10px; /* Espaçamento interno */
+    width: 100%; 
+    padding: 10px; 
     margin-bottom: 10px; /* Espaçamento inferior entre campos */
     border: 1px solid #ccc; /* Borda simples */
     border-radius: 5px; /* Borda arredondada */
@@ -256,7 +251,7 @@ footer {
     background-color: #555; /* Cor de fundo do botão ao passar */
 }
 
-/*Página inicial -> avaliação*/
+        /*Página inicial -> AVALIAÇÃO*/
 .feedback{
     background-color: #f0f0f0;
     padding: 20px;
@@ -321,8 +316,7 @@ footer {
 }
 
 
-
-/* Relativo à página PLANOS*/
+/* RELATIVO À PÁGINA PLANOS*/
 .planos {
     display: flex;
     justify-content: space-between;
@@ -340,15 +334,11 @@ footer {
     border-radius: 10px;
 }
 
-
-
-/* Para a página dos planos */
 .planos_duvidas{
     font-weight: bold;
     font-size: 15px;
     text-align: center;
 }
-
 
 .botao_planos {
     display: flex;
