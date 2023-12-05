@@ -4,7 +4,7 @@ session_start();
 $msg = $_SESSION['msg'];
 unset($_SESSION['msg']);
 
-
+// Ir buscar dados à base de dados //
 try {
     $dbh = new PDO('sqlite:sql/gymflex.db');
     $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
@@ -64,7 +64,7 @@ try {
                 <h2><?= $plano['nome'] ?></h2>
                 <p>Preço: R$ <?= $plano['preco'] ?></p>
                 <p>Tempo de Treino: <?= $plano['tempo_treino'] ?> horas</p>
-                <p>Quantidade de Agendamentos: <?= $plano['quantidade_ag'] ?></p>
+                <p>Quantidade de Aulas de grupo: <?= $plano['quantidade_ag'] ?></p>
             </div>
         <?php endforeach; ?>
     </div>
