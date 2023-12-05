@@ -198,7 +198,7 @@ VALUES
   ('5906ac361a137e2d286465cd6588ebb5ac3f5ae955001100bc41577c3d751764', 68.0, 160, (68.0 / (1.60 * 1.60)), 'M' , (SELECT id FROM Pessoa WHERE nome = 'Rui Oliveira'), (SELECT id FROM Pessoa WHERE nome = 'Inês Marques'));
 
 
-INSERT INTO Tipo_p (nome,preco, tempo_treino, quantidade_ag)
+INSERT INTO Tipo_p (nome, preco, tempo_treino, quantidade_ag)
 VALUES 
   ('Básico', 20.00, 15, 5),
   ('Intermédio', 30.00, 30, 10),

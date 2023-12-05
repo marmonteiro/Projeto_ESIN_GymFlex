@@ -11,7 +11,9 @@ try {
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-    $nome_plano = $_GET['nome'];;
+    $nome_plano = $_GET['nome']; //Não está a ir buscar os nomes!! Penso que seja por ser primary key da tabela 
+    echo "Nome do plano: $nome_plano"; //Fiz isto para verificar que efetivamente o array dos nomes está vazio
+    // $nome_plano = 'Básico'; // Se lhe der aqui o nome do plano ele imprimi direito 
     $stmt = $dbh->prepare('SELECT * FROM Tipo_p WHERE nome = ?');
     $stmt->execute(array($nome_plano));
     $planos = $stmt->fetchAll();
@@ -62,9 +64,9 @@ try {
         <?php foreach ($planos as $plano): ?>
             <div class="plano">
                 <h2><?= $plano['nome'] ?></h2>
-                <p>Preço: R$ <?= $plano['preco'] ?></p>
-                <p>Tempo de Treino: <?= $plano['tempo_treino'] ?> horas</p>
-                <p>Quantidade de Aulas de grupo: <?= $plano['quantidade_ag'] ?></p>
+                <p>Preço: <?= $plano['preco'] ?> €/mês</p>
+                <p>Tempo de Treino: <?= $plano['tempo_treino'] ?> horas/mês</p>
+                <p>Quantidade de Aulas de grupo: <?= $plano['quantidade_ag'] ?> /mês</p>
             </div>
         <?php endforeach; ?>
     </div>
