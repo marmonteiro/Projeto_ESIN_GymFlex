@@ -76,11 +76,11 @@ unset($_SESSION['msg']);
 
     </p>
 
-    <section id="contato">
+     <!--<section id="contato">
         <h2>Entre em Contato</h2>
         <p>Tem alguma dúvida ou deseja obter mais informações? Preencha o formulário abaixo e entraremos em contato em
             breve.</p>
-        <form action="#" method="post" style="max-width: 400px; margin: 0 auto;">
+        <form action="formulario.php" method="post" style="max-width: 400px; margin: 0 auto;">
             <div style="display: flex; flex-direction: column; margin-bottom: 15px;">
                 <label for="nome">Nome:</label>
                 <input type="text" id="nome" name="nome" required>
@@ -103,8 +103,8 @@ unset($_SESSION['msg']);
 
             <button type="submit">Enviar Mensagem</button>
         </form>
-    </section>
-    <p>
+    </section> 
+    <p> 
 
     </p>
 
@@ -128,7 +128,7 @@ unset($_SESSION['msg']);
                 required></textarea>
             <button type="submit">Enviar Sugestão</button>
         </form>
-    </div>
+    </div> -->
 
 
 
