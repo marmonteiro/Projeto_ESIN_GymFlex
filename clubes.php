@@ -10,9 +10,13 @@ try {
     $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $stmt = $dbh->prepare('SELECT id FROM Ginasio');
+    $stmt = $dbh->prepare('SELECT nome FROM Ginasio');
     $stmt->execute();
     $clubes = $stmt->fetchAll(PDO::FETCH_COLUMN);
+
+    $stmt = $dbh->prepare('SELECT mapa_url FROM Ginasio');
+    $stmt->execute();
+    $mapa_url = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
 } catch (PDOException $e) {
     $error_msg = $e->getMessage();
@@ -56,46 +60,14 @@ try {
 
     <div class="clubes">
     <?php
-    foreach ($clubes as $id_ginasio) {
-        echo "<a href='gym_info.php?id_ginasio=$id_ginasio'><button>$id_ginasio</button></a><br>";
-    }
+        for ($i = 0; $i < count($clubes); $i++) {
+            echo "<a href='gym_info.php?nome_ginasio=" . $clubes[$i] . "'>" . $clubes[$i] . "<img src='" . $mapa_url[$i] . "' alt='Clube Logo'></a> <br>";
+        }
     ?>
 
     </div>
 
-    <ul class="club-info">
-        <li>
-            <img class="club-logo" src="imagens/porto.png" alt="Ginásio Logo">
-            <a href="gymflexporto.php">GymFlex Porto: Rua das Flores, nº26 <br>
-            </a>
-        </li>
-
-        <li>
-            <img class="club-logo" src="imagens/madeira.png" alt="Ginásio Logo">
-            <a href="gymflexaveiro.php">GymFlex Madeira: Rua da Ajuda, nº 8 <br>
-            </a>
-        </li>
-
-        <li>
-            <img class="club-logo" src="imagens/lisboa.png" alt="Ginásio Logo">
-            <a href="gymflexlisboa.php">GymFlex Lisboa: Travessa de Campo de Ourique, nº 6 <br>
-            </a>
-        </li>
-
-        <li>
-            <img class="club-logo" src="imagens/madeira.png" alt="Ginásio Logo">
-            <a href="gymflexmadeira.php">GymFlex Madeira: Rua da Ajuda, nº 8 <br>
-            </a>
-        </li>
-        <li>
-            <img class="club-logo" src="imagens/braga.png" alt="Ginásio Logo">
-            <a href="gymflexbraga.php">GymFlex Braga: Rua Francisco Sanches, nº 12 <br>
-        </li>
-        <li>
-            <img class="club-logo" src="imagens/guimaraes.png" alt="Ginásio Logo">
-            <a href="gymflexguimaraes.php">GymFlex Guimarães: Rua 31 de janeiro, nº 8 <br>
-            </a>
-        </li>
+    
     </ul>
     <footer>
         <p>Qualquer dúvida não hesite em contactar, teremos uma equipa ao seu dispor.</p>

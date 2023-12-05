@@ -124,8 +124,8 @@ CREATE TABLE Aulagrupo (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     qntd_membros INTEGER NOT NULL,
     ginasio INTEGER NOT NULL,
-    tipo_ag VARCHAR(255) NOT NULL,
-    FOREIGN KEY (tipo_ag) REFERENCES Tipo_ag(nome),
+    tipo_ag INTEGER NOT NULL,
+    FOREIGN KEY (tipo_ag) REFERENCES Tipo_ag(id),
     FOREIGN KEY (ginasio) REFERENCES Ginasio(id),
     CHECK (qntd_membros > 0)
     --CHECK (qntd_membros <= capacidade FROM Tipo_ag WHERE tipo_ag = Aulagrupo.tipo_ag) 
@@ -133,9 +133,10 @@ CREATE TABLE Aulagrupo (
 );
 
 CREATE TABLE Tipo_ag(
-    nome VARCHAR(255) PRIMARY KEY,
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome VARCHAR(255) NOT NULL,
     capacidade INT NOT NULL,
-    data_ag DATE NOT NULL,
+    dia_semana VARCHAR(255) NOT NULL,
     hora_inicio TIME NOT NULL,
     hora_fim TIME,
     duracao_ag TIME, -- tou a assumir que cada tipo de aula tem data e horas fixas, acho q é mais simples
@@ -209,7 +210,7 @@ VALUES
   ('2020-01-02', 2, 'Intermédio'),
   ('2020-01-03', 3, 'Avançado');
 
-INSERT INTO Tipo_ag (nome, capacidade, data_ag, hora_inicio, hora_fim)
+/* INSERT INTO Tipo_ag (nome, capacidade, dia_semana, hora_inicio, hora_fim)
 VALUES 
   ('Pilates', 10, 'Segunda-Feira', '08:00', '09:30'),
   ('Pilates', 10, 'Terça-Feira', '10:00', '11:30'),
@@ -250,10 +251,10 @@ VALUES
   ('Xpress Abs', 15,'Quarta-Feira','12:00', '13:30'),
   ('Xpress Abs', 15,'Quinta-Feira', '10:00', '11:30'),
   ('Xpress Abs', 15,'Sexta-Feira', '14:30', '15:30'),
-  ('Xpress Abs', 15,'Sábado', '17:30', '18:30');
+  ('Xpress Abs', 15,'Sábado', '17:30', '18:30'); */
 
 
-INSERT INTO Aulagrupo (qntd_membros, ginasio, tipo_ag)
+/* INSERT INTO Aulagrupo (qntd_membros, ginasio, tipo_ag)
 VALUES 
   (0, 1, 'Zumba'),
   (20, 2, 'Zumba'),
@@ -272,4 +273,4 @@ VALUES
   (0, 3, 'Body Pump'),
   (0, 1, 'Body Step'),
   (0, 2, 'Body Step'),
-  (0, 3, 'Body Step');
+  (0, 3, 'Body Step'); */
