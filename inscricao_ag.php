@@ -4,6 +4,40 @@ session_start();
 $msg = $_SESSION['msg'];
 unset($_SESSION['msg']);
 
+$gym = $_POST['gym'];
+
+function fetchInscricoesInfoByEmail($email)
+{
+    global $dbh;
+    $stmt = $dbh->prepare('
+    SELECT Membro.inscricoes_ag, Plano.data_adesao, Tipo_p.quantidade_ag
+    FROM Membro
+    INNER JOIN Pessoa ON Membro.id = Pessoa.id
+    INNER JOIN Plano ON Plano.membro = Pessoa.id
+    INNER JOIN Tipo_p ON Tipo_p.nome = Plano.tipo_p
+    WHERE Pessoa.email = ?
+    
+');
+
+    $stmt->execute(array($_SESSION['email']));
+    $userDetails = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $userDetails;
+}
+
+function fetchAGInfoByGym($gym)
+{
+    global $dbh;
+    $stmt = $dbh->prepare('
+    SELECT Aula_grupo.nome, Aula_grupo.hora, Aula_grupo.dia, Aula_grupo.duracao, Aula_grupo.limite, Aula_grupo.ginasio
+    FROM Aula_grupo
+    WHERE Aula_grupo.ginasio = ?
+    ');
+
+    $stmt->execute(array($gym));
+    $gymInfo = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $gymInfo;
+
+}
 
 try {
     $dbh = new PDO('sqlite:sql/gymflex.db', $email, $password);
@@ -14,22 +48,12 @@ try {
         exit();
     }
 
-    $stmt = $dbh->prepare('
-            SELECT Membro.inscricoes_ag, Plano.data_adesao, Tipo_p.quantidade_ag
-            FROM Membro
-            INNER JOIN Pessoa ON Membro.id = Pessoa.id
-            INNER JOIN Plano ON Plano.membro = Pessoa.id
-            INNER JOIN Tipo_p ON Tipo_p.nome = Plano.tipo_p
-            WHERE Pessoa.email = ?
-            
-        ');
-
-    $stmt->execute(array($_SESSION['email']));
-    $userDetails = $stmt->fetch(PDO::FETCH_ASSOC);
-
+    $userDetails = fetchInscricoesInfoByEmail($_SESSION['email']);
     $inscricoes_ag = $userDetails['inscricoes_ag'];
     $data_adesao = $userDetails['data_adesao'];
     $quantidade_ag = $userDetails['quantidade_ag'];
+
+
 
 
 } catch (PDOException $e) {
@@ -80,7 +104,37 @@ try {
 
     <section id="incricao_ag">
         <h1>Inscrição em Aulas de Grupo</h1>
-        <p>Pode-se inscrever em mais <?php echo ($quantidade_ag-$inscricoes_ag) ?> ? aulas de grupo este mês.</p>
+        <p>Pode-se inscrever em mais
+            <?php echo ($quantidade_ag - $inscricoes_ag) ?> aulas de grupo este mês.
+        </p>
+
+        <!-- Selecionar ginásio -->
+        <form method="post" action="inscricao_ag.php">
+            <label for="gym">Escolhe o clube mais perto de ti:</label>
+            <select name="gym" id="gym">
+                <option value="Porto">Porto</option>
+                <option value="Amarante">Amarante</option>
+                <option value="Madeira">Lisboa</option>
+            </select>
+            <input type="submit">
+        </form>
+
+        <!-- Display Available Classes -->
+        <div>
+            <!-- Loop through the fetched gym classes and display the details -->
+            <?php
+            // Assuming $gymClasses is an array containing fetched classes for the selected gym
+            foreach ($gymAG as $Pilates) {
+                echo '<div class="class">';
+                echo '<img src="' . $Pilates["imagem"] . '" alt="' . $Pilates["nome"] . '">';
+                echo '<div class="overlay">';
+                echo '<p>' . $Pilates["nome"] . '</p>';
+                echo '</div>';
+                echo '</div>';
+            }
+            ?>
+        </div>
+
 
 
 </body>

@@ -1,12 +1,12 @@
 <?php
   session_start();
 
-  // get email and password from HTTP parameters
+  // vai buscar dados do formulário
   $email = $_POST['email'];
   $password = $_POST['password'];
   
 
-  // check if email and password are correct
+  // verificar se a combinacao email/password existe na base de dados
   function loginSuccess($email, $password) {
     global $dbh;
     $stmt = $dbh->prepare('
@@ -19,8 +19,8 @@
     return $stmt->fetch();
   }
 
-  function fetchNomeByEmail($email) {
-    global $dbh; // Ensure $dbh is accessible within the function
+  function fetchNomeByEmail($email) { //Tendo o email, vai buscar o nome do user
+    global $dbh; 
 
     $stmt = $dbh->prepare('
         SELECT Pessoa.nome
@@ -34,7 +34,7 @@
     if ($result) {
         return $result['nome'];
     } else {
-        return null; // If no matching email is found, return null or handle as appropriate
+        return null;
     }
 }
 

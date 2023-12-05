@@ -38,22 +38,18 @@ try {
     // vai buscar os nomes do nutricionista e do personal trainer
     $stmtNutricionista = $dbh->prepare('SELECT nome FROM Pessoa WHERE id = ?');
     $stmtPersonalTrainer = $dbh->prepare('SELECT nome FROM Pessoa WHERE id = ?');
-
     $stmtNutricionista->execute([$nutricionista_id]);
     $stmtPersonalTrainer->execute([$personaltrainer_id]);
-
     $nutricionista_nome = $stmtNutricionista->fetchColumn();
     $personaltrainer_nome = $stmtPersonalTrainer->fetchColumn();
 
+    //calculo da proxima prestação
     $data_atual = time();
     $data_adesao_form = strtotime($data_adesao);
-
     $dia_adesao = date('d', $data_adesao_form); // dia da data de adesão
-
     $prox_pagam_form = strtotime("next month", $data_atual);
     $mes_proxpagam = date('m', $prox_pagam_form); // mês da próxima prestação
     $ano_proxpagam = date('Y', $prox_pagam_form); // ano da próxima prestação
-    
     $prox_pagam = $ano_proxpagam . '-' . $mes_proxpagam . '-' . $dia_adesao ;
 
 
