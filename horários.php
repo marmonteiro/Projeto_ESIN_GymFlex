@@ -9,16 +9,15 @@ try {
     $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $stmt = $dbh->prepare('SELECT nome, dia_semana, hora_inicio, hora_fim FROM Tipo_ag');
+    $stmt = $dbh->prepare('SELECT * FROM Tipo_ag WHERE nome = ?');
     $stmt->execute();
-    $horarios = $stmt->fetchAll();
-
-    print_r($horarios);
-
-} catch (PDOException $e) {
+    $horarios = $stmt->fetchAll();} 
+    
+    catch (PDOException $e) {
     $error_msg = $e->getMessage();
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt">
@@ -98,7 +97,7 @@ try {
                 '19:00 - 20:00',
                 '20:00 - 21:00'
             );
-// A partir daqui isto já não guarda      o nome nas célulasssss
+// A partir daqui isto já não guarda      o nome nas celilas
             foreach ($timeSlots as $timeSlot) {
                 echo '<tr>';
                 echo '<td>' . $timeSlot . '</td>';
