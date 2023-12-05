@@ -1,12 +1,22 @@
 <?php
 session_start();
-if (isset($_SESSION['email'])) {
-    $email = $_SESSION['email'];
-} else {
-    $email = null;
-}
+
 $msg = $_SESSION['msg'];
 unset($_SESSION['msg']);
+
+
+try {
+    $dbh = new PDO('sqlite:sql/gymflex.db');
+    $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $stmt = $dbh->prepare('SELECT nome, dia_semana, hora_inicio, hora_fim FROM Tipo_ag');
+    $stmt->execute();
+    $horarios = $stmt->fetchAll();
+
+} catch (PDOException $e) {
+    $error_msg = $e->getMessage();
+}
 ?>
 
 <!DOCTYPE html>
@@ -43,117 +53,66 @@ unset($_SESSION['msg']);
         <?php } ?>
     </header>
 
-    <section id="horarios">
+<?php
+
+$horarios = array();
+
+// Preencher o array com os dados da consulta
+while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+    $nome_aula = $row["nome"];
+    $dia_semana = $row["dia_semana"];
+    $hora_inicio = $row["hora_inicio"];
+    $hora_fim = $row["hora_fim"];
+
+    // Adicionar os dados ao array organizado por hora
+    $horarios[$hora_inicio][$dia_semana] = $nome_aula;
+}
+?>
+
+<?php echo '<section id="horarios">
         <h2>Horários</h2>
         <p>Confira nossos horários de aulas de grupo e escolha o momento que melhor se adequa à sua agenda.</p>
         <table>
             <thead>
                 <tr>
-                    <th></th>
                     <th>Segunda-feira</th>
                     <th>Terça-feira</th>
                     <th>Quarta-feira</th>
                     <th>Quinta-feira</th>
                     <th>Sexta-feira</th>
-                    <th> Sábado </th>
-                    <th> Domingo </th>
+                    <th>Sábado</th>
+                    <th>Domingo</th>
                 </tr>
             </thead>
-            
-<!--             <tbody>
-                <tr>
-                    <td>08:00 - 09:30</td>
-                    <td> Pilates </td>
-                    <td> Cycling </td>
-                    <td> Pilates</td>
-                    <td> Body Step </td>
-                    <td> Zumba </td>
-                    <td> - </td>
-                    <td> - </td>
-                </tr>
-                <tr>
-                    <td>10:00 - 11:30</td>
-                    <td> Cycling </td>
-                    <td> Pilates </td>
-                    <td> Cycling </td>
-                    <td> Xpress abs</td>
-                    <td> Pilates </td>
-                    <td> Pilates </td>
-                    <td> Cycling </td>
-                </tr>
-                <tr>
-                    <td> 12:00 - 13:30</td>
-                    <td> Body Step </td>
-                    <td> Body Pump </td>
-                    <td> Xpress Abs </td>
-                    <td> Zumba </td>
-                    <td> Body Step </td>
-                    <td> Body Step </td>
-                    <td> Body Pump </td>
-                </tr>
-                <tr>
-                    <td>13:30 - 14:30</td>
-                    <td> - </td>
-                    <td> - </td>
-                    <td> - </td>
-                    <td> - </td>
-                    <td> - </td>
-                    <td> - </td>
-                    <td> - </td>
-                </tr>
-                <tr>
-                    <td>14:30 - 15:30</td>
-                    <td> Zumba </td>
-                    <td> - </td>
-                    <td> Body Step </td>
-                    <td> Cycling </td>
-                    <td> Xpress Abs</td>
-                    <td> Body Pump </td>
-                    <td> Pilates </td>
-                </tr>
-                <tr>
-                    <td>16:00 - 17:30</td>
-                    <td> Cycling </td>
-                    <td> Zumba </td>
-                    <td> - </td>
-                    <td> Zumba </td>
-                    <td> Body Pump </td>
-                    <td> Zumba </td>
-                    <td> Body Step </td>
-                </tr>
-                <tr>
-                    <td>17:30 - 18:30</td>
-                    <td> - </td>
-                    <td> Body Step</td>
-                    <td> Zumba </td>
-                    <td> Body Pump</td>
-                    <td> - </td>
-                    <td> Xpress Abs</td>
-                </tr>
-                <tr>
-                    <td>19:00 - 20:00</td>
-                    <td> Body Pump </td>
-                    <td> Xpress Abs </td>
-                    <td> Cycling </td>
-                    <td> Pilates </td>
-                    <td> Cycling </td>
-                    <td> Cycling </td>
-                </tr>
-                <tr>
-                    <td>20:00 - 21:00</td>
-                    <td> Xpress Abs </td>
-                    <td> Cycling </td>
-                    <td> Body Pump </td>
-                    <td> - </td>
-                    <td> Pilates </td>
-                </tr>
+            <tbody>';
 
-                <!-- Adicione mais linhas conforme necessário -->
-            </tbody>
-        </table>
-    </section>
- -->
-    <!-- Mensagem e botão para não membros -->
+  // Loop para preencher as linhas da tabela
+foreach ($horarios as $hora => $dias) {
+    echo '<tr>
+            <td>' . $hora . '</td>';
+
+    // Loop para preencher as colunas para cada dia da semana
+    $dias_semana = array('Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado', 'Domingo');
+    foreach ($dias_semana as $dia) {
+        // Verifica se existe aula para o dia e hora específicos
+        if (isset($dias[$dia])) {
+            // Exibe o nome da aula
+            echo '<td>' . $dias[$dia] . '<br>' . $hora . '</td>';
+        } else {
+            // Se não houver aula, exibe um traço
+            echo '<td>-</td>';
+        }
+    }
+
+    echo '</tr>';
+}
+
+echo '</tbody>
+    </table>
+</section>';
+?>
+
+
     <div class="mensagem">
         <p>Inscreve-te já como membro para puderes usufruir destas aulas</p>
         <a href="registo.php" class="button"> Inscreve-te aqui! </a>
