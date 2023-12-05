@@ -11,16 +11,14 @@ try {
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-    $nome_plano = $_GET['nome'];;
-    $stmt = $dbh->prepare('SELECT * FROM Tipo_p WHERE nome = ?');
-    $stmt->execute(array($nome_plano));
-    $planos = $stmt->fetchAll();
-    var_dump($planos);
+    $stmt = $dbh->prepare('SELECT nome, imagem_url FROM Ginasio');
+    $stmt->execute();
+    $clubes = $stmt->fetchAll();
+
 
 } catch (PDOException $e) {
     $error_msg = $e->getMessage();
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -57,9 +55,102 @@ try {
         <?php } ?>
     </header>
 
-   <!-- Mostrar os planos -->
-   <div class="planos">
-        <?php foreach ($planos as $plano): ?>
+
+<?php
+session_start();
+
+$dbh = new PDO('sqlite:sql/gymflex.db');
+$dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+$msg = $_SESSION['msg'];
+unset($_SESSION['msg']);
+
+$nome_plano = $_GET['nome_tipo_p'];
+
+// Ir buscar nome do plano:
+function fetchTipo_PInfoById($nome_plano)
+{
+    global $dbh;
+    $stmt = $dbh->prepare('
+    SELECT * FROM Tipo_p WHERE nome = ?
+    ');
+
+    $stmt = $dbh->prepare('SELECT * FROM Tipo_p WHERE nome = ?');
+    $stmt->execute(array($nome_plano));
+    $nome_plano = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $nome_plano;
+}
+
+// Ir buscar preço do plano:
+function fetchPrecoByPlano($nome_plano)
+{
+    global $dbh;
+    $stmt = $dbh->prepare('
+            SELECT preco AS preco_plano
+            FROM Tipo_p WHERE nome = ?
+        ');
+
+    $stmt->execute(array($nome_plano));
+    $precoplano = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $precoplano;
+}
+
+// Ir buscar tempo de treino do plano:
+function fetchTempo_treinoByPlano($nome_plano)
+{
+    global $dbh;
+    $stmt = $dbh->prepare('
+            SELECT tempo_treino AS tempo_treino
+            FROM Tipo_p WHERE nome = ?
+        ');
+
+    $stmt->execute(array($nome_plano));
+    $tempo_treino = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $tempo_treino;
+}
+
+// Ir buscar tempo de treino do plano:
+function fetchQuantidade_agByPlano($nome_plano)
+{
+    global $dbh;
+    $stmt = $dbh->prepare('
+            SELECT quantidade_ag AS quantidade_ag
+            FROM Tipo_p WHERE nome = ?
+        ');
+
+    $stmt->execute(array($nome_plano));
+    $quantidade_ag = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $quantidade_ag;
+}
+
+try {
+    $infoPlano = fetchTipo_PInfoById($nome_plano);
+
+    $nome_plano = $infoPlano['nome'];
+    $preco_plano = $infoPlano['preco'];
+    $tempo_treino_plano = $infoPlano['tempo_treino'];
+    $mapa_ginasio = $infoPlano['quantidade_ag'];
+
+
+} catch (PDOException $e) {
+    $error_msg = $e->getMessage();
+} 
+
+?>
+
+<div class="planos">
+        <div class="plano">
+            <h2><?= $nome_plano ?></h2>
+            <p>Preço: R$ <?= $preco_plano ?></p>
+            <p>Tempo de Treino: <?= $tempo_treino_plano ?> horas</p>
+            <p>Quantidade de Agendamentos: <?= $quantidade_ag ?></p>
+        </div>
+</div>
+
+<!-- Mostrar os planos -->
+<div class="planos">
+<?php foreach ($nome_plano as $plano): ?>
             <div class="plano">
                 <h2><?= $plano['nome'] ?></h2>
                 <p>Preço: R$ <?= $plano['preco'] ?></p>
@@ -67,10 +158,9 @@ try {
                 <p>Quantidade de Agendamentos: <?= $plano['quantidade_ag'] ?></p>
             </div>
         <?php endforeach; ?>
-    </div>
+</div>
 
 
-<!-- HTML de antes --> 
     <div class="planos">
         <div class="retangulo_planos">
             <p>Plano Básico</p>

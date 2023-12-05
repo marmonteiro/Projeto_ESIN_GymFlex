@@ -11,16 +11,14 @@ try {
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-    $nome_plano = $_GET['nome'];;
+    $nome_plano = $_GET['nome_tipo_p'];
     $stmt = $dbh->prepare('SELECT * FROM Tipo_p WHERE nome = ?');
     $stmt->execute(array($nome_plano));
     $planos = $stmt->fetchAll();
-    var_dump($planos);
 
 } catch (PDOException $e) {
     $error_msg = $e->getMessage();
 }
-
 ?>
 
 <!DOCTYPE html>
@@ -70,7 +68,6 @@ try {
     </div>
 
 
-<!-- HTML de antes --> 
     <div class="planos">
         <div class="retangulo_planos">
             <p>Plano Básico</p>
