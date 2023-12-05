@@ -83,7 +83,12 @@ CREATE TABLE Treino (
 -- Tabela Ginasio
 CREATE TABLE Ginasio (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    morada VARCHAR(255) NOT NULL UNIQUE
+    morada VARCHAR(255) NOT NULL UNIQUE,
+    nome VARCHAR(255) NOT NULL UNIQUE,
+    email VARCHAR(255) UNIQUE,
+    nr_telefone VARCHAR(20) UNIQUE,
+    mapa_url VARCHAR(255),
+    imagem_url VARCHAR(255)
 );
 
 
@@ -143,24 +148,24 @@ CREATE TABLE Tipo_ag(
 -- php: qntd_membros corresponde à soma de clientes que se inscreveram numa certa Aulagrupo
 
 
-INSERT INTO Ginasio (id, morada)
+INSERT INTO Ginasio (id, morada, nome, email, nr_telefone, mapa_url, imagem_url)
 VALUES 
-  (1, 'Morada Porto'),
-  (2, 'Morada Madeira'),
-  (3, 'Morada Amarante');
+  (1, 'Rua das Flores nº26', 'GymFlex Porto', 'gymflex.porto@gmail.com', '923524352','imagens/gymflexporto.png','imagens/porto.png'),
+  (2, 'Rua 31 de janeiro nº 12', 'GymFlex Amarante','gymflex.amarante@gmail.com','934566789','imagens/gymflexamarante.png','imagens/amarante.png'),
+  (3, 'Rua da Ajuda nº8','GymFlex Madeira','gymflex.madeira@gmail.com','934567890','imagens/gymflexmadeira.png','imagens/madeira.png');
 
 INSERT INTO Pessoa (nome, morada, nif, nr_telemovel, email, data_nascimento) 
 VALUES 
-  ('João Silva', 'Rua Principal 123', 123456789, '912345678', 'joao@example.com', '1990-05-20'),
-  ('Maria Sousa', 'Avenida Central 456', 987654321, '923456789', 'maria@example.com', '1985-12-15'),
-  ('Pedro Almeida', 'Rua das Flores 789', 246813579, '933456789', 'pedro@example.com', '1998-03-10'),
-  ('Marta Santos', 'Travessa da Praia 357', 135792468, '944567890', 'marta@example.com', '2001-08-25'),
-  ('Carlos Pereira', 'Avenida da Liberdade 789', 567891234, '955678901', 'carlos@example.com', '1980-09-30'),
-  ('Ana Rodrigues', 'Rua do Carmo 159', 987123456, '966789012', 'ana@example.com', '1995-06-18'),
-  ('Rui Oliveira', 'Praça da República 753', 345678912, '977890123', 'rui@example.com', '1978-11-05'),
-  ('Sofia Costa', 'Largo do Rossio 951', 891234567, '988901234', 'sofia@example.com', '1992-04-30'),
-  ('Jorge Fernandes', 'Rua do Comércio 246', 678912345, '999012345', 'jorge@example.com', '1987-02-12'),
-  ('Inês Marques', 'Avenida dos Aliados 753', 456789123, '910123456', 'ines@example.com', '2000-10-08');
+  ('João Silva', 'Rua Principal 123', 123456789, '912345678', 'joao@gmail.com', '1990-05-20'),
+  ('Maria Sousa', 'Avenida Central 456', 987654321, '923456789', 'maria@hotmail.com', '1985-12-15'),
+  ('Pedro Almeida', 'Rua das Flores 789', 246813579, '933456789', 'pedro@gmail.com', '1998-03-10'),
+  ('Marta Santos', 'Travessa da Praia 357', 135792468, '944567890', 'marta@gmail.com', '2001-08-25'),
+  ('Carlos Pereira', 'Avenida da Liberdade 789', 567891234, '955678901', 'carlos@hotmail.com', '1980-09-30'),
+  ('Ana Rodrigues', 'Rua do Carmo 159', 987123456, '966789012', 'ana@gmail.com', '1995-06-18'),
+  ('Rui Oliveira', 'Praça da República 753', 345678912, '977890123', 'rui@hotmail.com', '1978-11-05'),
+  ('Sofia Costa', 'Largo do Rossio 951', 891234567, '988901234', 'sofia@gmail.com', '1992-04-30'),
+  ('Jorge Fernandes', 'Rua do Comércio 246', 678912345, '999012345', 'jorge@gmail.com', '1987-02-12'),
+  ('Inês Marques', 'Avenida dos Aliados 753', 456789123, '910123456', 'ines@gmail.com', '2000-10-08');
 
 INSERT INTO Funcionario (id, ginasio)
 VALUES 
@@ -194,9 +199,9 @@ VALUES
 
 INSERT INTO Tipo_p (nome,preco, tempo_treino, quantidade_ag)
 VALUES 
-  ('Básico', 20.00, 20, 5),
-  ('Intermédio', 30.00, 40, 10),
-  ('Avançado', 40.00, 60, 15);
+  ('Básico', 20.00, 15, 5),
+  ('Intermédio', 30.00, 30, 10),
+  ('Avançado', 40.00, 55, 15);
 
 INSERT INTO Plano (data_adesao, membro, tipo_p)
 VALUES 
@@ -206,12 +211,65 @@ VALUES
 
 INSERT INTO Tipo_ag (nome, capacidade, data_ag, hora_inicio, hora_fim)
 VALUES 
-  ('Zumba', 20, '2020-01-01', '10:00:00', '11:00:00'),
-  ('Yoga', 15, '2020-01-01', '11:00:00', '12:00:00'),
-  ('Pilates', 10, '2020-01-01', '12:00:00', '13:00:00');
+  ('Pilates', 10, 'Segunda-Feira', '08:00', '09:30'),
+  ('Pilates', 10, 'Terça-Feira', '10:00', '11:30'),
+  ('Pilates', 10, 'Quarta-Feira', '08:00', '09:30'),
+  ('Pilates', 10, 'Quinta-Feira', '19:00', '20:00'),
+  ('Pilates', 10, 'Sexta-Feira', '10:00', '11:30'),
+  ('Pilates', 10, 'Sábado', '10:00', '11:30'),
+  ('Pilates', 10, 'Domingo', '14:30', '15:30'),
+  ('Cycling', 15,'Segunda-Feira', '10:00','11:30'),
+  ('Cycling', 15,'Terça-Feira', '20:00', '21:00'),
+  ('Cycling', 15,'Quarta-Feira','10:00', '11:30'),
+  ('Cycling', 15,'Quinta-Feira', '14:30', '15:30'),
+  ('Cycling', 15,'Sexta-Feira', '19:00', '20:00'),
+  ('Cycling', 15,'Sábado', '19:00', '20:00'),
+  ('Cycling', 15,'Domingo','14:30', '15:30'),
+  ('Body Step', 15,'Segunda-Feira', '12:00','13:30'),
+  ('Body Step', 15,'Terça-Feira', '17:30', '18:30'),
+  ('Body Step', 15,'Quarta-Feira','14:30', '15:30'),
+  ('Body Step', 15,'Quinta-Feira', '08:00', '09:30'),
+  ('Body Step', 15,'Sexta-Feira', '12:00', '13:30'),
+  ('Body Step', 15,'Sábado', '12:00', '13:30'),
+  ('Body Step', 15,'Domingo','16:00', '17:30'),
+  ('Body Pump', 18,'Segunda-Feira', '19:00','20:00'),
+  ('Body Pump', 18,'Terça-Feira', '12:00', '13:30'),
+  ('Body Pump', 18,'Quarta-Feira','20:00', '21:00'),
+  ('Body Pump', 18,'Quinta-Feira', '17:30', '18:30'),
+  ('Body Pump', 18,'Sexta-Feira', '16:00', '17:30'),
+  ('Body Pump', 18,'Sábado', '14:30', '15:30'),
+  ('Body Pump', 18,'Domingo','12:00', '13:30'),
+  ('Zumba', 18,'Segunda-Feira', '14:30','15:30'),
+  ('Zumba', 18,'Terça-Feira', '16:00', '17:30'),
+  ('Zumba', 18,'Quarta-Feira','17:30', '18:30'),
+  ('Zumba', 18,'Quinta-Feira', '12:00', '13:30'),
+  ('Zumba', 18,'Sexta-Feira', '08:00', '09:30'),
+  ('Zumba', 18,'Sábado', '16:00', '17:30'),
+  ('Xpress Abs', 15,'Segunda-Feira', '20:00','21:00'),
+  ('Xpress Abs', 15,'Terça-Feira', '19:00', '20:00'),
+  ('Xpress Abs', 15,'Quarta-Feira','12:00', '13:30'),
+  ('Xpress Abs', 15,'Quinta-Feira', '10:00', '11:30'),
+  ('Xpress Abs', 15,'Sexta-Feira', '14:30', '15:30'),
+  ('Xpress Abs', 15,'Sábado', '17:30', '18:30');
+
 
 INSERT INTO Aulagrupo (qntd_membros, ginasio, tipo_ag)
 VALUES 
-  (2, 1, 'Zumba'),
-  (1, 1, 'Yoga'),
-  (1, 2, 'Pilates');
+  (0, 1, 'Zumba'),
+  (20, 2, 'Zumba'),
+  (19, 3, 'Zumba'),
+  (0, 1, 'Cycling'),
+  (0, 2, 'Cycling'),
+  (0, 3, 'Cycling'),
+  (0, 1, 'Pilates'),
+  (0, 2, 'Pilates'),
+  (0, 3, 'Pilates'),
+  (0, 1,'Xpress Abs'),
+  (0, 2,'Xpress Abs'),
+  (0, 3,'Xpress Abs'),
+  (0, 1, 'Body Pump'),
+  (0, 2, 'Body Pump'),
+  (0, 3, 'Body Pump'),
+  (0, 1, 'Body Step'),
+  (0, 2, 'Body Step'),
+  (0, 3, 'Body Step');

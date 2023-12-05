@@ -1,12 +1,22 @@
 <?php
 session_start();
-if (isset($_SESSION['email'])) {
-    $email = $_SESSION['email'];
-} else {
-    $email = null;
-}
+
 $msg = $_SESSION['msg'];
 unset($_SESSION['msg']);
+
+
+try {
+    $dbh = new PDO('sqlite:sql/gymflex.db');
+    $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $stmt = $dbh->prepare('SELECT id FROM Ginasio');
+    $stmt->execute();
+    $clubes = $stmt->fetchAll(PDO::FETCH_COLUMN);
+
+} catch (PDOException $e) {
+    $error_msg = $e->getMessage();
+}
 ?>
 
 <!DOCTYPE html>
@@ -43,59 +53,47 @@ unset($_SESSION['msg']);
         <?php } ?>
     </header>
 
+
     <div class="clubes">
-        <a href="gymflexporto.php" class="porto">GmyFlex Porto</a>
-        <a href="gymflexaveiro.php" class="aveiro">GymFlex Aveiro</a>
-        <a href="gymflexlisboa.php" class="lisboa">GymFlex Lisboa</a>
-        <a href="gymflexmadeira.php" class="madeira">GymFlex Madeira</a>
-        <a href="gymflexbraga.php" class="braga">GymFlex Braga</a>
-        <a href="gymflexguimaraes.php" class="guimarães">GymFlex Guimarães</a>
+    <?php
+    foreach ($clubes as $id_ginasio) {
+        echo "<a href='gym_info.php?id_ginasio=$id_ginasio'><button>$id_ginasio</button></a><br>";
+    }
+    ?>
+
     </div>
 
     <ul class="club-info">
         <li>
             <img class="club-logo" src="imagens/porto.png" alt="Ginásio Logo">
             <a href="gymflexporto.php">GymFlex Porto: Rua das Flores, nº26 <br>
-                <!-- <span>Contacto telefónico: 923524352</span> <br>
-                <span>Email: gymflex.porto@gmail.com</span> -->
             </a>
         </li>
 
         <li>
-            <img class="club-logo" src="imagens/aveiro.png" alt="Ginásio Logo">
-            <a href="gymflexaveiro.php">GymFlex Aveiro: Rua Mário Sacramento, nº 32 <br>
-                <!-- <span>Contacto telefónico: 923524352</span> <br>
-                <span>Email: gymflex.aveiro@gmail.com</span> -->
+            <img class="club-logo" src="imagens/madeira.png" alt="Ginásio Logo">
+            <a href="gymflexaveiro.php">GymFlex Madeira: Rua da Ajuda, nº 8 <br>
             </a>
         </li>
 
         <li>
             <img class="club-logo" src="imagens/lisboa.png" alt="Ginásio Logo">
             <a href="gymflexlisboa.php">GymFlex Lisboa: Travessa de Campo de Ourique, nº 6 <br>
-                <!-- <span>Contacto telefónico: 923524352</span> <br>
-                <span>Email: gymflex.lisboa@gmail.com</span> -->
             </a>
         </li>
 
         <li>
             <img class="club-logo" src="imagens/madeira.png" alt="Ginásio Logo">
             <a href="gymflexmadeira.php">GymFlex Madeira: Rua da Ajuda, nº 8 <br>
-                <!-- <span>Contacto telefónico: 923524352</span> <br>
-                <span>Email: gymflex.madeira@gmail.com</span> -->
             </a>
         </li>
         <li>
             <img class="club-logo" src="imagens/braga.png" alt="Ginásio Logo">
             <a href="gymflexbraga.php">GymFlex Braga: Rua Francisco Sanches, nº 12 <br>
-                <!-- <span>Contacto telefónico: 923524352</span> <br>
-                <span>Email: gymflex.madeira@gmail.com</span> -->
-            </a>
         </li>
         <li>
             <img class="club-logo" src="imagens/guimaraes.png" alt="Ginásio Logo">
             <a href="gymflexguimaraes.php">GymFlex Guimarães: Rua 31 de janeiro, nº 8 <br>
-                <!-- <span>Contacto telefónico: 923524352</span> <br>
-                <span>Email: gymflex.madeira@gmail.com</span> -->
             </a>
         </li>
     </ul>
