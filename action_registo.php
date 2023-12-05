@@ -13,6 +13,8 @@ $morada = $_POST['morada'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
+$idade = date_diff(date_create($data_nascimento), date_create('today'))->y; // calcula a idade
+
 function assignNutricionista($dbh)
 {
     // vai buscar um id com menos clientes
@@ -50,6 +52,7 @@ function insertUser($nome, $data_nascimento, $nr_telemovel, $email, $password, $
     // inserir dados na tabela Pessoa
     $stmtPessoa = $dbh->prepare('INSERT INTO Pessoa (email, nome, nr_telemovel, morada, data_nascimento, nif) VALUES (?, ?, ?, ?, ?, ?)');
     $stmtPessoa->execute(array($email, $nome, $nr_telemovel, $morada, $data_nascimento, $nif));
+    
 
     // vai guardar o id da pessoa que acabou de ser inserida
     $pessoaID = $dbh->lastInsertId();
@@ -103,6 +106,12 @@ if (strlen($password) < 8) {
     die();
 }
 
+
+if ($idade < 16) {
+    $_SESSION['msg'] = 'Idade mínima é 16 anos.';
+    header('Location: registo.php');
+    die();
+}
 try {
     $dbh = new PDO('sqlite:sql/gymflex.db');
     $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);

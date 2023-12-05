@@ -32,7 +32,9 @@ unset($_SESSION['msg']);
     <?php if (isset($_SESSION['email'])) { ?>
       <a href="action_logout.php" class="button">Logout</a>
       <a href="area_cliente.php" class="button">Área de Cliente</a>
-      <p>Olá, <?php echo $_SESSION['nome'] ?>!</p>
+      <p>Olá,
+        <?php echo $_SESSION['nome'] ?>!
+      </p>
     <?php } else { ?>
       <a href="login.php" id="signup">Login: área de cliente</a>
     <?php } ?>
@@ -41,6 +43,11 @@ unset($_SESSION['msg']);
 
   <section id="registo">
     <h1>Registo</h1>
+    <?php if (isset($msg)) { ?>
+      <p>
+        <?php echo $msg ?>
+      </p>
+    <?php } ?>
     <form action="action_registo.php" method="post">
 
       <section id="info_pessoal">
@@ -48,7 +55,7 @@ unset($_SESSION['msg']);
           <input type="text" id="nome" name="nome" placeholder="Nome Completo" required>
         </div>
         <div>
-          <input type="tel" id="nr_telemovel" name="nr_telemovel" placeholder="Nº Telemóvel" required>
+          <input type="tel" id="nr_telemovel" name="nr_telemovel" placeholder="Nº Telemóvel (+351)" required>
         </div>
         <div>
           <input type="text" id="morada" name="morada" placeholder="Morada" required>
@@ -108,11 +115,7 @@ unset($_SESSION['msg']);
       </section>
 
     </form>
-    <?php if (isset($msg)) { ?>
-      <p>
-        <?php echo $msg ?>
-      </p>
-    <?php } ?>
+
 
   </section>
   <footer>

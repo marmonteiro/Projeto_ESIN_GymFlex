@@ -10,13 +10,11 @@ try {
     $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $stmt = $dbh->prepare('SELECT nome FROM Ginasio');
-    $stmt->execute();
-    $clubes = $stmt->fetchAll(PDO::FETCH_COLUMN);
 
-    $stmt = $dbh->prepare('SELECT mapa_url FROM Ginasio');
+    $stmt = $dbh->prepare('SELECT nome, imagem_url FROM Ginasio');
     $stmt->execute();
-    $mapa_url = $stmt->fetchAll(PDO::FETCH_COLUMN);
+    $clubes = $stmt->fetchAll();
+
 
 } catch (PDOException $e) {
     $error_msg = $e->getMessage();
@@ -59,12 +57,12 @@ try {
 
 
     <div class="clubes">
-    <?php
-        for ($i = 0; $i < count($clubes); $i++) {
-            echo "<a href='gym_info.php?nome_ginasio=" . $clubes[$i] . "'>" . $clubes[$i] . "<img src='" . $mapa_url[$i] . "' alt='Clube Logo'></a> <br>";
-        }
-    ?>
-
+        <?php foreach ($clubes as $clube): ?>
+            <a href='gym_info.php?nome_ginasio=<?= $clube['nome'] ?>'>
+                <?= $clube['nome'] ?>
+                <img src='<?= $clube['imagem_url'] ?>' alt='Clube Logo'>
+            </a><br>
+        <?php endforeach; ?>
     </div>
 
     
