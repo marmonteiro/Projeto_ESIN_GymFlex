@@ -1,4 +1,14 @@
 <!DOCTYPE html>
+<?php
+session_start();
+if (isset($_SESSION['email'])) {
+    $email = $_SESSION['email'];
+} else {
+    $email = null;
+}
+$msg = $_SESSION['msg'];
+unset($_SESSION['msg']);
+?>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
