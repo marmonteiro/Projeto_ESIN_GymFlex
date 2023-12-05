@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <?php
 session_start();
 if (isset($_SESSION['email'])) {
@@ -9,6 +9,7 @@ if (isset($_SESSION['email'])) {
 $msg = $_SESSION['msg'];
 unset($_SESSION['msg']);
 ?>
+<!DOCTYPE html>
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
