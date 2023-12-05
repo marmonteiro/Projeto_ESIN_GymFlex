@@ -210,42 +210,42 @@ VALUES
   ('2020-01-02', 2, 'Intermédio'),
   ('2020-01-03', 3, 'Avançado');
 
-/* INSERT INTO Tipo_ag (nome, capacidade, dia_semana, hora_inicio, hora_fim)
+INSERT INTO Tipo_ag (nome, capacidade, dia_semana, hora_inicio, hora_fim)
 VALUES 
-  ('Pilates', 10, 'Segunda-Feira', '08:00', '09:30'),
-  ('Pilates', 10, 'Terça-Feira', '10:00', '11:30'),
-  ('Pilates', 10, 'Quarta-Feira', '08:00', '09:30'),
+/*   ('Pilates', 10, 'Segunda-Feira', '08:00', '09:30'),
+ */  ('Pilates', 10, 'Terça-Feira', '10:00', '11:30'),
+ /*  ('Pilates', 10, 'Quarta-Feira', '08:00', '09:30'),
   ('Pilates', 10, 'Quinta-Feira', '19:00', '20:00'),
   ('Pilates', 10, 'Sexta-Feira', '10:00', '11:30'),
   ('Pilates', 10, 'Sábado', '10:00', '11:30'),
-  ('Pilates', 10, 'Domingo', '14:30', '15:30'),
+  ('Pilates', 10, 'Domingo', '14:30', '15:30'), */
   ('Cycling', 15,'Segunda-Feira', '10:00','11:30'),
-  ('Cycling', 15,'Terça-Feira', '20:00', '21:00'),
+ /*  ('Cycling', 15,'Terça-Feira', '20:00', '21:00'),
   ('Cycling', 15,'Quarta-Feira','10:00', '11:30'),
   ('Cycling', 15,'Quinta-Feira', '14:30', '15:30'),
   ('Cycling', 15,'Sexta-Feira', '19:00', '20:00'),
   ('Cycling', 15,'Sábado', '19:00', '20:00'),
-  ('Cycling', 15,'Domingo','14:30', '15:30'),
-  ('Body Step', 15,'Segunda-Feira', '12:00','13:30'),
-  ('Body Step', 15,'Terça-Feira', '17:30', '18:30'),
+  ('Cycling', 15,'Domingo','14:30', '15:30'), */
+ /*  ('Body Step', 15,'Segunda-Feira', '12:00','13:30'),
+  ('Body Step', 15,'Terça-Feira', '17:30', '18:30'), */
   ('Body Step', 15,'Quarta-Feira','14:30', '15:30'),
-  ('Body Step', 15,'Quinta-Feira', '08:00', '09:30'),
+  /* ('Body Step', 15,'Quinta-Feira', '08:00', '09:30'),
   ('Body Step', 15,'Sexta-Feira', '12:00', '13:30'),
   ('Body Step', 15,'Sábado', '12:00', '13:30'),
-  ('Body Step', 15,'Domingo','16:00', '17:30'),
-  ('Body Pump', 18,'Segunda-Feira', '19:00','20:00'),
+  ('Body Step', 15,'Domingo','16:00', '17:30'), */
+  /* ('Body Pump', 18,'Segunda-Feira', '19:00','20:00'),
   ('Body Pump', 18,'Terça-Feira', '12:00', '13:30'),
-  ('Body Pump', 18,'Quarta-Feira','20:00', '21:00'),
+  ('Body Pump', 18,'Quarta-Feira','20:00', '21:00'), */
   ('Body Pump', 18,'Quinta-Feira', '17:30', '18:30'),
-  ('Body Pump', 18,'Sexta-Feira', '16:00', '17:30'),
+ /*  ('Body Pump', 18,'Sexta-Feira', '16:00', '17:30'),
   ('Body Pump', 18,'Sábado', '14:30', '15:30'),
-  ('Body Pump', 18,'Domingo','12:00', '13:30'),
-  ('Zumba', 18,'Segunda-Feira', '14:30','15:30'),
+  ('Body Pump', 18,'Domingo','12:00', '13:30'), */
+ /*  ('Zumba', 18,'Segunda-Feira', '14:30','15:30'),
   ('Zumba', 18,'Terça-Feira', '16:00', '17:30'),
   ('Zumba', 18,'Quarta-Feira','17:30', '18:30'),
-  ('Zumba', 18,'Quinta-Feira', '12:00', '13:30'),
+  ('Zumba', 18,'Quinta-Feira', '12:00', '13:30'), */
   ('Zumba', 18,'Sexta-Feira', '08:00', '09:30'),
-  ('Zumba', 18,'Sábado', '16:00', '17:30'),
+ /*  ('Zumba', 18,'Sábado', '16:00', '17:30'), */
   ('Xpress Abs', 15,'Segunda-Feira', '20:00','21:00'),
   ('Xpress Abs', 15,'Terça-Feira', '19:00', '20:00'),
   ('Xpress Abs', 15,'Quarta-Feira','12:00', '13:30'),

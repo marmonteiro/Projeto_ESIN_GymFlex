@@ -59,7 +59,8 @@ unset($_SESSION['msg']);
                     <th> Domingo </th>
                 </tr>
             </thead>
-            <tbody>
+            
+<!--             <tbody>
                 <tr>
                     <td>08:00 - 09:30</td>
                     <td> Pilates </td>
@@ -151,7 +152,7 @@ unset($_SESSION['msg']);
             </tbody>
         </table>
     </section>
-
+ -->
     <!-- Mensagem e botão para não membros -->
     <div class="mensagem">
         <p>Inscreve-te já como membro para puderes usufruir destas aulas</p>
