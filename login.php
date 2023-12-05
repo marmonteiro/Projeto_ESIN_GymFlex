@@ -9,7 +9,6 @@ try {
   $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
   $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-
 } catch (PDOException $e) {
   $error_msg = $e->getMessage();
 }
@@ -42,6 +41,7 @@ try {
     <?php if (isset($_SESSION['email'])) { ?>
       <a href="action_logout.php" class="button">Logout</a>
       <a href="area_cliente.php" class="button">Área de Cliente</a>
+      <p>Olá, <?php echo $_SESSION['nome'] ?>!</p>
     <?php } else { ?>
       <a href="registo.php" class="inscreva-se">Inscreva-se</a>
     <?php } ?>

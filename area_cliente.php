@@ -21,7 +21,6 @@ try {
     $stmt->execute(array($_SESSION['email']));
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
-    // Assuming you have stored these values in your Membro table
     $nome = $user['nome'];
     $data_nascimento = $user['data_nascimento'];
     $nr_telemovel = $user['nr_telemovel'];
@@ -46,9 +45,17 @@ try {
     $nutricionista_nome = $stmtNutricionista->fetchColumn();
     $personaltrainer_nome = $stmtPersonalTrainer->fetchColumn();
 
-    $data_adesao_form = strtotime($data_adesao); // conversão da data de adesão de string para timestamp
-    $prox_pagam_form = strtotime('+1 month', $data_adesao_form); // adição de 1 mês à data de adesão
-    $prox_pagam = date('Y-m-d', $prox_pagam_form); // conversão da data de pagamento para string
+    $data_atual = time();
+    $data_adesao_form = strtotime($data_adesao);
+
+    $dia_adesao = date('d', $data_adesao_form); // dia da data de adesão
+
+    $prox_pagam_form = strtotime("next month", $data_atual);
+    $mes_proxpagam = date('m', $prox_pagam_form); // mês da próxima prestação
+    $ano_proxpagam = date('Y', $prox_pagam_form); // ano da próxima prestação
+    
+    $prox_pagam = $ano_proxpagam . '-' . $mes_proxpagam . '-' . $dia_adesao ;
+
 
 } catch (PDOException $e) {
     //  connection errors
@@ -125,7 +132,7 @@ try {
         <div id="dados_fisicos">
             <h3>Dados Físicos</h3>
             <p>Altura:
-                <?php echo $altura/100 ?> m
+                <?php echo $altura / 100 ?> m
             </p>
             <p>Peso:
                 <?php echo $peso ?> kg

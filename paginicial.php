@@ -1,13 +1,10 @@
 <?php
 session_start();
-if (isset($_SESSION['email'])) {
-    $email = $_SESSION['email'];
-} else {
-    $email = null;
-}
+
 $msg = $_SESSION['msg'];
 unset($_SESSION['msg']);
 ?>
+
 
 <!DOCTYPE html>
 <html lang="pt">
@@ -38,6 +35,7 @@ unset($_SESSION['msg']);
         <?php if (isset($_SESSION['email'])) { ?>
             <a href="action_logout.php" class="button">Logout</a>
             <a href="area_cliente.php" class="button">Área de Cliente</a>
+            <p>Olá, <?php echo $_SESSION['nome'] ?>!</p>
         <?php } else { ?>
             <a href="registo.php" class="inscreva-se">Inscreva-se</a>
             <a href="login.php" id="signup">Login: área de cliente</a>

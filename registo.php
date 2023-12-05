@@ -32,6 +32,7 @@ unset($_SESSION['msg']);
     <?php if (isset($_SESSION['email'])) { ?>
       <a href="action_logout.php" class="button">Logout</a>
       <a href="area_cliente.php" class="button">Área de Cliente</a>
+      <p>Olá, <?php echo $_SESSION['nome'] ?>!</p>
     <?php } else { ?>
       <a href="login.php" id="signup">Login: área de cliente</a>
     <?php } ?>

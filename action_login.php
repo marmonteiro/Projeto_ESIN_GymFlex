@@ -19,6 +19,26 @@
     return $stmt->fetch();
   }
 
+  function fetchNomeByEmail($email) {
+    global $dbh; // Ensure $dbh is accessible within the function
+
+    $stmt = $dbh->prepare('
+        SELECT Pessoa.nome
+        FROM Pessoa
+        WHERE Pessoa.email = ?
+    ');
+
+    $stmt->execute(array($email));
+    $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($result) {
+        return $result['nome'];
+    } else {
+        return null; // If no matching email is found, return null or handle as appropriate
+    }
+}
+
+
     // if email and password are correct, create session
 try {
         $dbh = new PDO('sqlite:sql/gymflex.db');
@@ -27,10 +47,8 @@ try {
     
         if ($user = loginSuccess($email, $password)) {
           $_SESSION['email'] = $email;
-          $_SESSION['nome'] = $user['nome'];
-          $_SESSION['sexo'] = $user['sexo'];
+          $_SESSION['nome'] = fetchNomeByEmail($email);
           
-
           header('Location: area_cliente.php'); // login successful
           exit(); 
 
