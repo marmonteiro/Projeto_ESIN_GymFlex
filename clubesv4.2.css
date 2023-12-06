@@ -11,6 +11,7 @@ header {
     color: white;
     padding: 20px;
     text-align: center;
+    display: flex;
 }
 
 
@@ -24,11 +25,11 @@ footer {
 
 #logo {
     position: absolute;
+    display: flex;
     top: 10px;
     left: 10px;
-    max-width: 200px; /* Ajuste conforme necessário */
+    max-width: 200px; 
 }
-
 
 
 /* PÁGINA DOS CLUBES*/
@@ -94,12 +95,12 @@ footer {
 
 /* RELATIVO às páginas de CADA CLUBE INDIVIDUALMENTE */
 .club-logo{
-    display: block; /* Certifique-se de que a imagem é exibida como bloco */
+    display: block; 
     margin: 0 auto; /* Define as margens superior e inferior como 0 e centraliza horizontalmente */
 }
 
 .mapa {
-    display: block; /* Certifique-se de que a imagem é exibida como bloco */
+    display: block; 
     margin: 0 auto; /* Define as margens superior e inferior como 0 e centraliza horizontalmente */
 }
 
