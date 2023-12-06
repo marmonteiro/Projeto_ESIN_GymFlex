@@ -54,6 +54,7 @@ try {
         <a href="paginicial.php">
             <img id="logo" src="imagens/gymflex_logo.svg" alt="Logotipo">
         </a>
+        <h1>GymFlex: Diferentes clubes em diferentes cidades</h1>
 
         <div class="barra">
             <a href="clubes.php" class="clubes">Clubes</a>
@@ -78,9 +79,10 @@ try {
         <?php foreach($tipo_p_info as $plano): ?>
             <div class="retangulo_planos">
                 <div>
-                    <h3>
-                        <?php echo $plano['nome']; ?>
-                    </h3>
+                    <h2> Plano 
+                       <?php echo $plano['nome']; ?>
+                    </h2>
+        
                     <p>Preço mensal:
                         <?php echo $plano['preco']; ?> €
                     </p>
@@ -90,6 +92,8 @@ try {
                     <p>Número de aulas de grupo:
                         <?php echo $plano['quantidade_ag']; ?>
                     </p>
+                    <p>Acompanhamento contínuo por nutrição </p>
+                    <p>Cancelamento gratuito a qualquer momento </p>
                 </div>
                 <div class="botao_planos">
                     <a href="registo.php" class="planos">Inscreva-se</a>
