@@ -87,7 +87,7 @@ try {
                <p>Tempo de Treino:
                  <?php echo $plano['tempo_treino']; ?> horas
                </p>
-               <p>Quantidade de Aulas de Grupo:
+               <p>Número de aulas de grupo que pode frequentar:
                  <?php echo $plano['quantidade_ag']; ?> 
                </p>
            </div>
