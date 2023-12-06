@@ -11,7 +11,6 @@ try {
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-<<<<<<< HEAD
     $stmt = $dbh->prepare('SELECT * FROM Tipo_p');
     $stmt->execute();
     $tipo_p_info = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -25,15 +24,13 @@ try {
     }
 
 
-=======
-    $nome_plano = $_GET['nome']; //Não está a ir buscar os nomes!! Penso que seja por ser primary key da tabela 
-    echo "Nome do plano: $nome_plano"; //Fiz isto para verificar que efetivamente o array dos nomes está vazio
-    $nome_plano = 'Básico'; // Se lhe der aqui o nome do plano aparece direito no site 
-    $stmt = $dbh->prepare( 'SELECT * FROM Tipo_p WHERE nome = ?');
-    $stmt->execute(array($nome_plano));
-    $planos = $stmt->fetchAll();
-    var_dump($planos); 
->>>>>>> c0abdd22461c6583a5ec497169113559615e3fd0
+    //$nome_plano = $_GET['nome']; //Não está a ir buscar os nomes!! Penso que seja por ser primary key da tabela 
+    //echo "Nome do plano: $nome_plano"; //Fiz isto para verificar que efetivamente o array dos nomes está vazio
+    //$nome_plano = 'Básico'; // Se lhe der aqui o nome do plano aparece direito no site 
+    //$stmt = $dbh->prepare( 'SELECT * FROM Tipo_p WHERE nome = ?');
+   // $stmt->execute(array($nome_plano));
+    //$planos = $stmt->fetchAll();
+    //var_dump($planos); 
 
 } catch (PDOException $e) {
     $error_msg = $e->getMessage();
@@ -77,30 +74,33 @@ try {
         <?php } ?>
     </header>
 
-
-
-    <h2>Plan Information</h2>
-
-    <?php foreach($tipo_p_info as $plano): ?>
-        <div>
-            <h3>
-                <?php echo $plano['nome']; ?>
-            </h3>
-            <p>Preço:
-                <?php echo $plano['preco']; ?>
-            </p>
-            <p>Tempo de Treino:
-                <?php echo $plano['tempo_treino']; ?> horas
-            </p>
-            <p>Quantidade de Aulas em Grupo:
-                <?php echo $plano['quantidade_ag']; ?>
-            </p>
-        </div>
-    <?php endforeach; ?>    
+  <div class="planos">
+      <div class="retangulo_planos">
+         <?php foreach($tipo_p_info as $plano): ?>
+           <div>
+               <h3>
+                 <?php echo $plano['nome']; ?>
+               </h3>
+               <p>Preço mensal:
+                  <?php echo $plano['preco'];  ?> €
+               </p>
+               <p>Tempo de Treino:
+                 <?php echo $plano['tempo_treino']; ?> horas
+               </p>
+               <p>Quantidade de Aulas de Grupo:
+                 <?php echo $plano['quantidade_ag']; ?> 
+               </p>
+           </div>
+           <div class="botao_planos">
+             <a href="registo.php" class="planos">Inscreva-se</a>
+           </div>
+         <?php endforeach; ?>   
+      </div> 
+   </div>
 
 
     <!-- HTML de antes -->
-    <div class="planos">
+    <!-- <div class="planos">
         <div class="retangulo_planos">
             <p>Plano Básico</p>
             <ul>
@@ -140,7 +140,7 @@ try {
                 <a href="registo.php" class="planos">Inscreva-se</a>
             </div>
         </div>
-    </div>
+    </div> --> 
 
     <div class="planos_duvidas">
         <p>Queres vir treinar connosco e tens alguma dúvida sobre os planos? Entra em contacto, estamos disponíveis para
