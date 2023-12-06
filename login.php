@@ -28,10 +28,10 @@ try {
 <body>
   <header>
     <a href="paginicial.php">
-      <img id="logo" src="imagens/gymflex_logo.svg" alt="Logotipo">
+      <img id="logo_login" src="imagens/gymflex_logo.svg" alt="Logotipo">
     </a>
 
-    <div class="barra">
+    <div class="barra_login">
       <a href="clubes.php" class="clubes">Clubes</a>
       <a href="planos.php" class="planos">Planos</a>
       <a href="aulasgrupo.php" class="info">Aulas de Grupo</a>
