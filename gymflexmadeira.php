@@ -15,7 +15,7 @@ unset($_SESSION['msg']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GymFlex Porto</title>
-    <link rel="stylesheet" href="clubesv4.2.css"> <!-- Certifique-se de incluir o mesmo arquivo CSS -->
+    <link rel="stylesheet" href="estetica.css"> <!-- Certifique-se de incluir o mesmo arquivo CSS -->
 </head>
 <body>
     <header>

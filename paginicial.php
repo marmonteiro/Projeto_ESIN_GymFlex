@@ -14,7 +14,7 @@ unset($_SESSION['msg']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GymFlex</title>
     <link rel="icon" href="imagens/gymflex_logo_head.svg">
-    <link rel="stylesheet" href="clubesv4.2.css">
+    <link rel="stylesheet" href="estetica.css">
 </head>
 
 <body>
