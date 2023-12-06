@@ -13,11 +13,11 @@ try {
 
     $nome_plano = $_GET['nome']; //Não está a ir buscar os nomes!! Penso que seja por ser primary key da tabela 
     echo "Nome do plano: $nome_plano"; //Fiz isto para verificar que efetivamente o array dos nomes está vazio
-    // $nome_plano = 'Básico'; // Se lhe der aqui o nome do plano aparece direito no site 
-    $stmt = $dbh->prepare('SELECT * FROM Tipo_p WHERE nome = ?');
+    $nome_plano = 'Básico'; // Se lhe der aqui o nome do plano aparece direito no site 
+    $stmt = $dbh->prepare( 'SELECT * FROM Tipo_p WHERE nome = ?');
     $stmt->execute(array($nome_plano));
     $planos = $stmt->fetchAll();
-    var_dump($planos);
+    var_dump($planos); 
 
 } catch (PDOException $e) {
     $error_msg = $e->getMessage();
