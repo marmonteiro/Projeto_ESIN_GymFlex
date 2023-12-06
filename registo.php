@@ -13,16 +13,16 @@ unset($_SESSION['msg']);
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GymFlex</title>
   <link rel="icon" href="imagens/gymflex_logo_head.svg">
-  <link rel="stylesheet" href="registo.css">
+  <link rel="stylesheet" href="estetica.css">
 </head>
 
 <body>
   <header>
     <a href="paginicial.php">
-      <img id="logo" src="imagens/gymflex_logo.svg" alt="Logotipo">
+      <img id="logo_registo" src="imagens/gymflex_logo.svg" alt="Logotipo">
     </a>
 
-    <div class="barra">
+    <div class="barra_registo">
       <a href="clubes.php" class="clubes">Clubes</a>
       <a href="planos.php" class="planos">Planos</a>
       <a href="aulasgrupo.php" class="info">Aulas de Grupo</a>
