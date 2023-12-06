@@ -4,16 +4,16 @@ session_start();
 $msg = $_SESSION['msg'];
 unset($_SESSION['msg']);
 
-
+$aulas = array();
 try {
     $dbh = new PDO('sqlite:sql/gymflex.db');
     $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-    $stmt = $dbh->prepare('SELECT nome, data_inicio, data_fim, imagem_aulagrupo FROM Tipo_ag');
+    $stmt = $dbh->prepare('SELECT nome, capacidade, dia_semana, hora_inicio, hora_fim, imagem_aulagrupo FROM Tipo_ag');
     $stmt->execute();
-    $clubes = $stmt->fetchAll();
+    $aulas = $stmt->fetchAll();
 
 
 } catch (PDOException $e) {
@@ -59,20 +59,24 @@ try {
         <h1>Aulas de Grupo</h1>
         <div class="classes">
             <?php
-                if ($clubes) {
-                    foreach ($clubes as $club) {
-                        echo '<div class="class">';
-                        echo '<img src="' . $row["imagem_aulagrupo"] . '" alt="' . $row["nome"] . '">';
-                        echo '<div class="overlay">';
-                        echo '<p>' . $row["nome"] . '</p>';
-                        echo '<p>Horário: ' . $row["hora_inicio"] . ' - ' . $row["hora_fim"] . '</p>';
-                        echo '</div>';
-                        echo '</div>';
-                    }
-                 } else {
-                    echo "No classes found.";
+            if (isset($aulas) && !empty($aulas)){
+                foreach ($aulas as $aula) {
+                    echo '<div class="class">';
+                    echo '<img src="' . $aula['imagem_aulagrupo'] . '" alt="' . $aula['nome'] . '">';
+                    echo '<div class="overlay">';
+                    echo '<p>' . $aula['nome'] . '</p>';
+                    echo '<p> Capacidade:' .$aula['capacidade'] . '</p>';
+                    echo 'p Dia da Semana:' .$aula['dia_semana'] . '</p>';
+                    echo '<p>Horário: ' . $aula['hora_inicio'] . ' - ' . $aula['hora_fim'] . '</p>';
+                    echo '</div>';
+                    echo '</div>';
                 }
-            // Lista de aulas de grupo
+                var_dump($aulas);
+        }  else {
+            echo 'No classes found.';
+        }
+    ?>
+<!--             // Lista de aulas de grupo
             /* $aulas = array(
                 array("imagem" => "imagens/bodypump.jpeg", "nome" => "Body Pump"),
                 array("imagem" => "imagens/cycling.jpeg", "nome" => "Cycling"),
@@ -90,8 +94,7 @@ try {
                 echo '<p>' . $aula["nome"] . '</p>';
                 echo '</div>';
                 echo '</div>';
-            } */
-            ?> 
+            } */ -->
         </div>
 
         <div class="mensagem">
@@ -111,5 +114,4 @@ try {
     </footer>
 
 </body>
-
 </html>
