@@ -59,19 +59,19 @@ try {
         <h1>Aulas de Grupo</h1>
         <div class="classes">
             <?php
-                        if ($clubes->num_rows > 0) {
-                            while ($row = $clubes->fetch_assoc()) {
-                                echo '<div class="class">';
-                                echo '<img src="' . $row["imagem_aulagrupo"] . '" alt="' . $row["nome"] . '">';
-                                echo '<div class="overlay">';
-                                echo '<p>' . $row["nome"] . '</p>';
-                                echo '<p>Horário: ' . $row["hora_inicio"] . ' - ' . $row["hora_fim"] . '</p>';
-                                echo '</div>';
-                                echo '</div>';
-                            }
-                        } else {
-                            echo "No classes found.";
-                        }
+                if ($clubes) {
+                    foreach ($clubes as $club) {
+                        echo '<div class="class">';
+                        echo '<img src="' . $row["imagem_aulagrupo"] . '" alt="' . $row["nome"] . '">';
+                        echo '<div class="overlay">';
+                        echo '<p>' . $row["nome"] . '</p>';
+                        echo '<p>Horário: ' . $row["hora_inicio"] . ' - ' . $row["hora_fim"] . '</p>';
+                        echo '</div>';
+                        echo '</div>';
+                    }
+                 } else {
+                    echo "No classes found.";
+                }
             // Lista de aulas de grupo
             /* $aulas = array(
                 array("imagem" => "imagens/bodypump.jpeg", "nome" => "Body Pump"),
