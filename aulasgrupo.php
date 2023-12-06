@@ -11,7 +11,7 @@ try {
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-    $stmt = $dbh->prepare('SELECT nome, capacidade, dia_semana, hora_inicio, hora_fim, imagem_aulagrupo FROM Tipo_ag');
+    $stmt = $dbh->prepare('SELECT * FROM Tipo_ag');
     $stmt->execute();
     $aulas = $stmt->fetchAll();
 

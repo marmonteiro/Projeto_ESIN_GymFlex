@@ -142,7 +142,7 @@ CREATE TABLE Aulagrupo (
     FOREIGN KEY (ginasio) REFERENCES Ginasio(id),
     CHECK (qntd_membros > 0)
     --CHECK (qntd_membros <= capacidade FROM Tipo_ag WHERE tipo_ag = Aulagrupo.tipo_ag) 
-    
+    imagem_ag VARCHAR(255)
 );
 
 -- php: qntd_membros corresponde à soma de clientes que se inscreveram numa certa Aulagrupo
@@ -220,23 +220,11 @@ VALUES
 
 
 
-INSERT INTO Aulagrupo (qntd_membros, ginasio, tipo_ag)
+INSERT INTO Aulagrupo (qntd_membros, ginasio, tipo_ag, imagem_ag)
 VALUES 
-  (0, 1, 'Zumba'),
-  (20, 2, 'Zumba'),
-  (19, 3, 'Zumba'),
-  (0, 1, 'Cycling'),
-  (0, 2, 'Cycling'),
-  (0, 3, 'Cycling'),
-  (0, 1, 'Pilates'),
-  (0, 2, 'Pilates'),
-  (0, 3, 'Pilates'),
-  (0, 1,'Xpress Abs'),
-  (0, 2,'Xpress Abs'),
-  (0, 3,'Xpress Abs'),
-  (0, 1, 'Body Pump'),
-  (0, 2, 'Body Pump'),
-  (0, 3, 'Body Pump'),
-  (0, 1, 'Body Step'),
-  (0, 2, 'Body Step'),
-  (0, 3, 'Body Step'); 
+  (0, 1, 'Zumba','imagens/zumba.jpeg'),
+  (0, 1, 'Cycling','imagens/cycling.jpeg'),
+  (0, 1, 'Pilates', 'imagens/pilates.jpeg'),
+  (0, 1,'Xpress Abs','imagens/xpressabs.jpeg'),
+  (0, 1, 'Body Pump', 'imagens/bodypump.jpeg'),
+  (0, 1, 'Body Step','imagens/bodystep.jpeg');
