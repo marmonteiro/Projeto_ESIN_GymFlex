@@ -319,12 +319,14 @@ footer {
 /* RELATIVO À PÁGINA PLANOS*/
 .planos {
     display: flex;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
+    justify-content: center
 }
 
 .retangulo_planos {
-    width: calc(33% - 20px);
-    margin: 10px;
+    /*width: calc(33% - 20px);*/
+    width:80%;
+    margin: 10px auto;
     padding: 20px;
     box-sizing: border-box;
     border: 1px solid #ccc;
@@ -332,6 +334,7 @@ footer {
     font-weight: bold;
     font-size: 15px;
     border-radius: 10px;
+    text-align: center;
 }
 
 .planos_duvidas{
