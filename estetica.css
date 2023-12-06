@@ -424,9 +424,10 @@ body {
 }
 
 /* cabeçalho*/
-header {
+/*JÁ TEMOS UM HEADER LÁ EM CIMA */ /*ISTO É SÓ PARA ME ORGANIZAR*/
+/*header {
     background-color:rgba(221, 192, 192, 1);
-}
+}*/
 
 #logo_login {
     max-width: 100%;
