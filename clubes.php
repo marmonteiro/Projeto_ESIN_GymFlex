@@ -28,7 +28,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clubes</title>
-    <link rel="stylesheet" href="clubesv4.2.css">
+    <link rel="stylesheet" href="estetica.css">
 </head>
 
 <body>

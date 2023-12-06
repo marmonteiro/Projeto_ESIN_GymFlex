@@ -87,7 +87,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GymFlex</title>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="estetica.css">
 </head>
 
 <body>
@@ -98,6 +98,12 @@ try {
         <h1>
             <?php echo $nome_ginasio ?>
         </h1>
+        <div class="barra">
+            <a href="clubes.php" class="clubes">Clubes</a>
+            <a href="planos.php" class="planos">Planos</a>
+            <a href="aulasgrupo.php" class="info">Aulas de Grupo</a>
+            <a href="ajuda.php" class="ajuda">Ajuda</a>
+        </div>
     </header>
 
     <?php if (isset($_SESSION['email'])) { ?>
@@ -121,12 +127,18 @@ try {
         <p>Email:
             <?php echo $email_ginasio ?>
         </p>
+        <!-- <img class="imagem clube" src="<?php echo $imagem_ginasio ?>" alt="GymFlex Porto"> -->
+    </div>
+    
+    <div class="titulos_clubes">
+           <p>Como chegar:</p>
         <img class="mapa" src="<?php echo $mapa_ginasio ?>" alt="Mapa GymFlex">
-        <img class="imagem clube" src="<?php echo $imagem_ginasio ?>" alt="GymFlex Porto">
     </div>
 
     <div>
-        <p>A nossa equipa:</p>
+        <div class="titulos_clubes">
+           <p>A nossa equipa:</p>
+        </div>
         <table>
             <tr>
                 <td>
