@@ -1,12 +1,24 @@
 <?php
 session_start();
-if (isset($_SESSION['email'])) {
-    $email = $_SESSION['email'];
-} else {
-    $email = null;
-}
+
 $msg = $_SESSION['msg'];
 unset($_SESSION['msg']);
+
+
+try {
+    $dbh = new PDO('sqlite:sql/gymflex.db');
+    $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
+    $stmt = $dbh->prepare('SELECT nome, data_inicio, data_fim FROM Ginasio');
+    $stmt->execute();
+    $clubes = $stmt->fetchAll();
+
+
+} catch (PDOException $e) {
+    $error_msg = $e->getMessage();
+}
 ?>
 
 <!DOCTYPE html>

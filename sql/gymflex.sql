@@ -142,7 +142,8 @@ CREATE TABLE Tipo_ag(
     duracao_ag TIME, -- tou a assumir que cada tipo de aula tem data e horas fixas, acho q é mais simples
     CHECK (hora_fim IS NULL OR hora_fim > hora_inicio),
     CHECK (duracao_ag = (strftime('%s', hora_fim) - strftime('%s', hora_inicio))),
-    CHECK (capacidade > 0)
+    CHECK (capacidade > 0),
+    imagem_aulagrupo VARCHAR(255)
 );
 
 
@@ -210,19 +211,18 @@ VALUES
   ('2020-01-02', 2, 'Intermédio'),
   ('2020-01-03', 3, 'Avançado');
 
-INSERT INTO Tipo_ag (nome, capacidade, dia_semana, hora_inicio, hora_fim)
+INSERT INTO Tipo_ag (nome, capacidade, dia_semana, hora_inicio, hora_fim, imagem_aulagrupo)
 VALUES 
 
-  ('Pilates', 10, 'Terça-Feira', '10:00', '11:30'),
-  ('Cycling', 15,'Segunda-Feira', '10:00','11:30'),
-  ('Body Step', 15,'Quarta-Feira','14:30', '15:30'),
-  ('Pilates Clínicos', 10, 'Quarta-Feira','10:00','11:30'),
-  ('Body Pump', 18,'Quinta-Feira', '17:30', '18:30'),
-  ('Body Combat', 15,'Quinta-Feira', '12:00', '13:30'),
-  ('Zumba', 18,'Sexta-Feira', '17:30', '18:30'),
-  ('Yoga', 20, 'Sexta-Feira', '16:00','17:30'),
-  ('Xpress Abs', 15,'Sábado', '17:30', '18:30'),
-  ('Yoga', 15,'Sábado', '12:30', '13:30'); 
+  ('Pilates', 10, 'Terça-Feira', '10:00', '11:30', 'imagens/pilates.jpeg'),
+  ('Cycling', 15,'Segunda-Feira', '10:00','11:30', 'imagens/cycling.jpeg'),
+  ('Body Step', 15,'Quarta-Feira','14:30', '15:30', 'imagens/bodystep.jpeg'),
+  /*('Pilates Clínicos', 10, 'Quarta-Feira','10:00','11:30', 'imagens/'),*/
+  ('Body Pump', 18,'Quinta-Feira', '17:30', '18:30', 'imagens/bodypump.jpeg'),
+  /*('Body Combat', 15,'Quinta-Feira', '12:00', '13:30'),*/
+  ('Zumba', 18,'Sexta-Feira', '17:30', '18:30','imagens/zumba.jpeg'),
+  /*('Yoga', 20, 'Sexta-Feira', '16:00','17:30'),*/
+  ('Xpress Abs', 15,'Sábado', '17:30', '18:30','imagens/xpressabs.jpeg')
 
 
 
