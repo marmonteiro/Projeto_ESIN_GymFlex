@@ -183,7 +183,7 @@ CREATE TABLE Inscricao_ag (
 INSERT INTO Ginasio (id, morada, nome, email, nr_telefone, mapa_url, imagem_url)
 VALUES 
   (1, 'Rua das Flores nº26', 'GymFlex Porto', 'gymflex.porto@gmail.com', '923524352','imagens/gymflexporto.png','imagens/porto.png'),
-  (2, 'Rua 31 de janeiro nº 12', 'GymFlex Amarante','gymflex.amarante@gmail.com','934566789','imagens/gymflexamarante.png','imagens/gymflexamarante.png'),
+  (2, 'Rua 31 de janeiro nº 12', 'GymFlex Amarante','gymflex.amarante@gmail.com','934566789','imagens/gymflexamarante.png','imagens/amarante.png'),
   (3, 'Rua da Ajuda nº8','GymFlex Madeira','gymflex.madeira@gmail.com','934567890','imagens/gymflexmadeira.png','imagens/madeira.png');
 
 INSERT INTO Pessoa (nome, morada, nif, nr_telemovel, email, data_nascimento) 
