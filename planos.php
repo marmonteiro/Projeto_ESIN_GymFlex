@@ -23,15 +23,6 @@ try {
 
     }
 
-
-    //$nome_plano = $_GET['nome']; //Não está a ir buscar os nomes!! Penso que seja por ser primary key da tabela 
-    //echo "Nome do plano: $nome_plano"; //Fiz isto para verificar que efetivamente o array dos nomes está vazio
-    //$nome_plano = 'Básico'; // Se lhe der aqui o nome do plano aparece direito no site 
-    //$stmt = $dbh->prepare( 'SELECT * FROM Tipo_p WHERE nome = ?');
-   // $stmt->execute(array($nome_plano));
-    //$planos = $stmt->fetchAll();
-    //var_dump($planos); 
-
 } catch (PDOException $e) {
     $error_msg = $e->getMessage();
 }
@@ -54,6 +45,7 @@ try {
         <a href="paginicial.php">
             <img id="logo" src="imagens/gymflex_logo.svg" alt="Logotipo">
         </a>
+        <h1>GymFlex: Diferentes clubes em diferentes cidades</h1>
 
         <div class="barra">
             <a href="clubes.php" class="clubes">Clubes</a>
@@ -74,29 +66,32 @@ try {
         <?php } ?>
     </header>
 
-  <div class="planos">
-      <div class="retangulo_planos">
-         <?php foreach($tipo_p_info as $plano): ?>
-           <div>
-               <h3>
-                 <?php echo $plano['nome']; ?>
-               </h3>
-               <p>Preço mensal:
-                  <?php echo $plano['preco'];  ?> €
-               </p>
-               <p>Tempo de Treino:
-                 <?php echo $plano['tempo_treino']; ?> horas
-               </p>
-               <p>Número de aulas de grupo que pode frequentar:
-                 <?php echo $plano['quantidade_ag']; ?> 
-               </p>
-           </div>
-           <div class="botao_planos">
-             <a href="registo.php" class="planos">Inscreva-se</a>
-           </div>
-         <?php endforeach; ?>   
-      </div> 
-   </div>
+    <div class="planos">
+        <?php foreach($tipo_p_info as $plano): ?>
+            <div class="retangulo_planos">
+                <div>
+                    <h2> Plano 
+                       <?php echo $plano['nome']; ?>
+                    </h2>
+        
+                    <p>Preço mensal:
+                        <?php echo $plano['preco']; ?> €
+                    </p>
+                    <p>Tempo de Treino:
+                        <?php echo $plano['tempo_treino']; ?> horas
+                    </p>
+                    <p>Número de aulas de grupo:
+                        <?php echo $plano['quantidade_ag']; ?>
+                    </p>
+                    <p>Acompanhamento contínuo por nutrição </p>
+                    <p>Cancelamento gratuito a qualquer momento </p>
+                </div>
+                <div class="botao_planos">
+                    <a href="registo.php" class="planos">Inscreva-se</a>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
 
 
     <!-- HTML de antes -->
@@ -140,7 +135,7 @@ try {
                 <a href="registo.php" class="planos">Inscreva-se</a>
             </div>
         </div>
-    </div> --> 
+    </div> -->
 
     <div class="planos_duvidas">
         <p>Queres vir treinar connosco e tens alguma dúvida sobre os planos? Entra em contacto, estamos disponíveis para
@@ -148,9 +143,6 @@ try {
         <p>Email: gymflex.geral@gmail.com</p>
         <p>Telemóvel: 923524352</p>
     </div>
-
-
-
 
     <footer>
         <p>Qualquer dúvida não hesite em contactar, teremos uma equipa ao seu dispor.</p>

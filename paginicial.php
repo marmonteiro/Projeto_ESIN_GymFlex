@@ -77,7 +77,7 @@ unset($_SESSION['msg']);
     </p>
 
   <div class="caracteristicastexto">
-      <p>Características dos nossos clube:</p>
+      <p>Características dos nossos clubes:</p>
   </div>
 
   <div class="caracteristicas">
