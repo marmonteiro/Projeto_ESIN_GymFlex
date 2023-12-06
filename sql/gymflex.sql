@@ -134,7 +134,7 @@ CREATE TABLE Aulagrupo (
 
 CREATE TABLE Tipo_ag(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    nome VARCHAR(255) NOT NULL,
+    nome VARCHAR(255) NOT NULL UNIQUE,
     capacidade INT NOT NULL,
     dia_semana VARCHAR(255) NOT NULL,
     hora_inicio TIME NOT NULL,
@@ -229,7 +229,6 @@ VALUES
   ('Body Pump', 18,'Quinta-Feira', '17:30', '18:30', 'imagens/bodypump.jpeg'),
   ('Zumba', 18,'Sexta-Feira', '17:30', '18:30','imagens/zumba.jpeg'),
   /*('Yoga', 20, 'Sexta-Feira', '16:00','17:30'),*/
-  ('Xpress Abs', 15,'Sábado', '17:30', '18:30','imagens/xpressabs.jpeg'), 
   ('Xpress Abs', 15,'Sábado', '17:30', '18:30','imagens/xpressabs.jpeg');
 
 
