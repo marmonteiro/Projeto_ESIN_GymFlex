@@ -211,20 +211,35 @@ VALUES
 
 INSERT INTO Tipo_ag (nome, capacidade, dia_semana, hora_inicio, hora_fim, imagem_aulagrupo)
 VALUES 
-  ('Pilates', 10, 'Terça-Feira', '10:00:00', '11:30:00', 'imagens/pilates.jpeg'),
-  ('Cycling', 15,'Segunda-Feira', '10:00:00','11:30:00', 'imagens/cycling.jpeg'),
-  ('Body Step', 15,'Quarta-Feira','14:30:00', '15:30:00', 'imagens/bodystep.jpeg'),
-  ('Body Pump', 18,'Quinta-Feira', '17:30:00', '18:30:00', 'imagens/bodypump.jpeg'),
-  ('Zumba', 18,'Sexta-Feira', '17:30:00', '18:30:00','imagens/zumba.jpeg'),
-  ('Xpress Abs', 15,'Sábado', '17:30:00', '18:30:00','imagens/xpressabs.jpeg');
+  ('Pilates', 10, 'Terça-Feira', '10:00', '11:30', 'imagens/pilates.jpeg'),
+  ('Cycling', 15,'Segunda-Feira', '10:00','11:30', 'imagens/cycling.jpeg'),
+  ('Body Step', 15,'Quarta-Feira','14:30', '15:30', 'imagens/bodystep.jpeg'),
+  ('Body Pump', 18,'Quinta-Feira', '17:30', '18:30', 'imagens/bodypump.jpeg'),
+  ('Zumba', 18,'Sexta-Feira', '17:30', '18:30','imagens/zumba.jpeg'),
+  /*('Yoga', 20, 'Sexta-Feira', '16:00','17:30'),*/
+  ('Xpress Abs', 15,'Sábado', '17:30', '18:30','imagens/xpressabs.jpeg'), 
+  ('Xpress Abs', 15,'Sábado', '17:30', '18:30','imagens/xpressabs.jpeg');
 
 
 
+ INSERT INTO Aulagrupo (qntd_membros, ginasio, tipo_ag)
 INSERT INTO Aulagrupo (qntd_membros, ginasio, tipo_ag, imagem_ag)
 VALUES 
-  (0, 1, 'Zumba','imagens/zumba.jpeg'),
-  (0, 1, 'Cycling','imagens/cycling.jpeg'),
-  (0, 1, 'Pilates', 'imagens/pilates.jpeg'),
-  (0, 1,'Xpress Abs','imagens/xpressabs.jpeg'),
-  (0, 1, 'Body Pump', 'imagens/bodypump.jpeg'),
-  (0, 1, 'Body Step','imagens/bodystep.jpeg');
+  (0, 1, 'Zumba'),
+  (20, 2, 'Zumba'),
+  (19, 3, 'Zumba'),
+  (0, 1, 'Cycling'),
+  (0, 2, 'Cycling'),
+  (0, 3, 'Cycling'),
+  (0, 1, 'Pilates'),
+  (0, 2, 'Pilates'),
+  (0, 3, 'Pilates'),
+  (0, 1,'Xpress Abs'),
+  (0, 2,'Xpress Abs'),
+  (0, 3,'Xpress Abs'),
+  (0, 1, 'Body Pump'),
+  (0, 2, 'Body Pump'),
+  (0, 3, 'Body Pump'),
+  (0, 1, 'Body Step'),
+  (0, 2, 'Body Step'),
+  (0, 3, 'Body Step'); 
