@@ -25,7 +25,7 @@ footer {
 
 #logo {
     position: absolute;
-    display: flex;
+    /*display: flex;*/
     top: 10px;
     left: 10px;
     max-width: 200px; 
