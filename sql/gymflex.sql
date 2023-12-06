@@ -222,7 +222,7 @@ VALUES
 
 
 
- INSERT INTO Aulagrupo (qntd_membros, ginasio, tipo_ag)
+INSERT INTO Aulagrupo (qntd_membros, ginasio, tipo_ag)
 INSERT INTO Aulagrupo (qntd_membros, ginasio, tipo_ag, imagem_ag)
 VALUES 
   (0, 1, 'Zumba'),
