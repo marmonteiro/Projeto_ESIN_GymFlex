@@ -6,12 +6,12 @@ unset($_SESSION['msg']);
 
 $aulas = array();
 try {
-    $dbh = new PDO('sqlite:sql/gymflex.db');
+    $dbh = new PDO('sqlite:sql/gym_flex.db');
     $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-    $stmt = $dbh->prepare('SELECT * FROM Tipo_ag');
+    $stmt = $dbh->prepare('SELECT * FROM Aulagrupo');
     $stmt->execute();
     $aulas = $stmt->fetchAll();
 
@@ -64,53 +64,37 @@ foreach ($aulas as $aula){
         <?php } ?>
     </header>
 
-    <div class="container">
-        <h1>Aulas de Grupo</h1>
-        <div class="classes">
-            <?php
-            if (isset($aulas) && !empty($aulas)){
-                foreach ($aulas as $aula) {
-                    echo '<div class="class">';
-                    echo '<img src="' . $aula['imagem_aulagrupo'] . '" alt="' . $aula['nome'] . '">';
-                    echo '<div class="overlay">';
-                    echo '<p>' . $aula['nome'] . '</p>';
-                    echo '<p> Capacidade:' .$aula['capacidade'] . '</p>';
-                    echo 'p Dia da Semana:' .$aula['dia_semana'] . '</p>';
-                    echo '<p>Horário: ' . $aula['hora_inicio'] . ' - ' . $aula['hora_fim'] . '</p>';
-                    echo '</div>';
-                    echo '</div>';
-                }
-                var_dump($aulas);
-        }  else {
-            echo 'No classes found.';
+    <div class="classes">
+    <?php
+    if (isset($aulas) && !empty($aulas)){
+        foreach ($aulas as $aula) {
+            echo '<div class="class">';
+            echo '<div class="image-container">';
+            echo '<img src="' . $aula['imagem_aulagrupo'] . '" alt="' . $aula['nome'] . '">';
+            echo '</div>';
+            echo '<div class="info-container">';
+            echo '<p>' . $aula['nome'] . '</p>';
+            echo '<p> Capacidade:' .$aula['capacidade'] . '</p>';
+            echo '<p>Dia da Semana:' .$aula['dia_semana'] . '</p>';
+            echo '<p>Horário: ' . $aula['hora_inicio'] . ' - ' . $aula['hora_fim'] . '</p>';
+            echo '</div>';
+            echo '</div>';
         }
+    }  else {
+        echo 'No classes found.';
+    }
     ?>
-<!--             // Lista de aulas de grupo
-            /* $aulas = array(
-                array("imagem" => "imagens/bodypump.jpeg", "nome" => "Body Pump"),
-                array("imagem" => "imagens/cycling.jpeg", "nome" => "Cycling"),
-                array("imagem" => "imagens/bodystep.jpeg", "nome" => "Body Step"),
-                array("imagem" => "imagens/pilates.jpeg", "nome" => "Pilates"),
-                array("imagem" => "imagens/xpressabs.jpeg", "nome" => "Xpress abs"),
-                array("imagem" => "imagens/zumba.jpeg", "nome" => "Zumba"),
-            );
+</div>
 
-            // Exibição das aulas
-            foreach ($aulas as $aula) {
-                echo '<div class="class">';
-                echo '<img src="' . $aula["imagem"] . '" alt="' . $aula["nome"] . '">';
-                echo '<div class="overlay">';
-                echo '<p>' . $aula["nome"] . '</p>';
-                echo '</div>';
-                echo '</div>';
-            } */ -->
-        </div>
 
         <div class="mensagem">
         <p>Inscreve-te já como membro para puderes usufruir destas aulas</p>
         <a href="registo.php" class="button"> Inscreve-te aqui! </a>
     </div>
-
+    <div class="mensagem">
+        <p>Inscreve-te já como membro para puderes usufruir destas aulas</p>
+        <a href="horários.php" class="button"> Inscreve-te aqui! </a>
+    </div>
     </div>
 
     <footer>

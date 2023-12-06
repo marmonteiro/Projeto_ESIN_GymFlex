@@ -5,11 +5,11 @@ $msg = $_SESSION['msg'];
 unset($_SESSION['msg']);
 
 try {
-    $dbh = new PDO('sqlite:sql/gymflex.db');
+    $dbh = new PDO('sqlite:sql/gym_flex.db');
     $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $stmt = $dbh->prepare('SELECT * FROM Tipo_ag');
+    $stmt = $dbh->prepare('SELECT * FROM Aulagrupo');
     $stmt->execute();
     $horarios = $stmt->fetchAll();} 
     
@@ -73,7 +73,7 @@ try {
         </thead>
         <?php foreach ($horarios as $horario) { ?>
         <tr>
-            <td><?php echo $horario['name']; ?> </td>
+            <td><?php echo $horario['nome']; ?> </td>
             <td><?php echo $horario['data_inicio'];?></td>
             <td><?php echo $horario['data_fim'];?></td>
         </tr>

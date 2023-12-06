@@ -8,7 +8,7 @@ DROP TABLE IF EXISTS Ginasio;
 DROP TABLE IF EXISTS Plano;
 DROP TABLE IF EXISTS Tipo_p;
 DROP TABLE IF EXISTS Aulagrupo;
-DROP TABLE IF EXISTS Tipo_ag;
+DROP TABLE IF EXISTS Inscricao_ag;
 
 
 -- Tabela Pessoa
@@ -118,49 +118,16 @@ CREATE TABLE Plano (
     
 );
 
--- Tabela Aulagrupo
-/* CREATE TABLE Aulagrupo (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    qntd_membros INTEGER NOT NULL,
-    ginasio INTEGER NOT NULL,
-    tipo_ag INTEGER NOT NULL,
-    FOREIGN KEY (tipo_ag) REFERENCES Tipo_ag(nome),
-    FOREIGN KEY (ginasio) REFERENCES Ginasio(id),
-    CHECK (qntd_membros > 0)
-    --CHECK (qntd_membros <= capacidade FROM Tipo_ag WHERE tipo_ag = Aulagrupo.tipo_ag) 
-    imagem_ag VARCHAR(255)
-);
-
-
-CREATE TABLE Tipo_ag(
-    nome VARCHAR(255) NOT NULL UNIQUE PRIMARY KEY,
-    capacidade INT NOT NULL,
-    dia_semana VARCHAR(255) NOT NULL,
-    hora_inicio TIME NOT NULL,
-    hora_fim TIME,
-    duracao_ag TIME, -- tou a assumir que cada tipo de aula tem data e horas fixas, acho q é mais simples
-    CHECK (hora_fim IS NULL OR hora_fim > hora_inicio),
-    CHECK (duracao_ag = strftime('%s', hora_fim) - strftime('%s', hora_inicio)),
-    CHECK (capacidade > 0),
-    imagem_aulagrupo VARCHAR(255)
-);
- */
 
 CREATE TABLE Aulagrupo (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     nome VARCHAR(255) NOT NULL,
-    data DATE,
+    dia_semana INTEGER NOT NULL,
     hora_inicio TIME NOT NULL,
     hora_fim TIME,
     duracao_ag TIME,
     capacidade INT NOT NULL,
-    pt1 INTEGER NOT NULL,
-    pt2 INTEGER NOT NULL,
-    ginasio INTEGER NOT NULL,
-    FOREIGN KEY (pt1) REFERENCES Personaltrainer(id),
-    FOREIGN KEY (pt2) REFERENCES Personaltrainer(id),
-    FOREIGN KEY (ginasio) REFERENCES Ginasio(id),
-    CHECK (data IS NOT NULL),
+    imagem_aulagrupo VARCHAR(225),
     CHECK (hora_fim IS NULL OR hora_fim > hora_inicio),
     CHECK (duracao_ag = strftime('%s', hora_fim) - strftime('%s', hora_inicio)),
     CHECK (capacidade > 0)
@@ -174,10 +141,8 @@ CREATE TABLE Inscricao_ag (
     aulagrupo INTEGER NOT NULL,
     FOREIGN KEY (membro) REFERENCES Membro(id),
     FOREIGN KEY (aulagrupo) REFERENCES Aulagrupo(id),
-    CHECK (qntd_membros >= 0),
-    CHECK (qntd_membros <= (SELECT capacidade FROM Aulagrupo WHERE Aulagrupo.id = Inscricao_ag.aulagrupo))
+    CHECK (qntd_membros > 0)
 );
--- php: qntd_membros corresponde à soma de clientes que se inscreveram numa certa Aulagrupo
 
 
 INSERT INTO Ginasio (id, morada, nome, email, nr_telefone, mapa_url, imagem_url)
@@ -252,32 +217,12 @@ VALUES
   ('Body Step', 15, 'Quarta-Feira', '14:30', '15:30', strftime('%s', '15:30') - strftime('%s', '14:30'), 'imagens/bodystep.jpeg');
 
 -- Inserir dados na tabela Aulagrupo
-INSERT INTO Inscricao_ag (qntd_membros, ginasio, tipo_ag, imagem_ag)
+INSERT INTO Inscricao_ag (qntd_membros, membro, aulagrupo)
 VALUES 
-  (0, 1, 'Zumba', 'imagens/zumba.jpeg'),
-  (0, 1, 'Cycling', 'imagens/cycling.jpeg'),
-  (0, 1, 'Pilates', 'imagens/pilates.jpeg'),
-  (0, 1, 'Xpress Abs', 'imagens/xpressabs.jpeg'),
-  (0, 1, 'Body Pump', 'imagens/bodypump.jpeg'),
-  (0, 1, 'Body Step', 'imagens/bodystep.jpeg');
+  (1, 1, 'Zumba'),
+  (1, 1, 'Cycling'),
+  (1, 1, 'Pilates'),
+  (1, 1, 'Xpress Abs'),
+  (1, 1, 'Body Pump'),
+  (1, 1, 'Body Step');
 
-/* INSERT INTO Aulagrupo (qntd_membros, ginasio, tipo_ag, imagem_ag)
-VALUES 
-  (0, 1, 'Zumba','imagens/zumba.jpeg'),
-  (0, 1, 'Cycling','imagens/cycling.jpeg'),
-  (0, 1, 'Pilates', 'imagens/pilates.jpeg'),
-  (0, 1,'Xpress Abs','imagens/xpressabs.jpeg'),
-  (0, 1, 'Body Pump', 'imagens/bodypump.jpeg'),
-  (0, 1, 'Body Step','imagens/bodystep.jpeg');
-
-INSERT INTO Tipo_ag (nome, capacidade, dia_semana, hora_inicio, hora_fim, imagem_aulagrupo)
-VALUES 
-  ('Pilates', 10, 'Terça-Feira', '10:00', '11:30', 'imagens/pilates.jpeg'),
-  ('Cycling', 15,'Segunda-Feira', '10:00','11:30', 'imagens/cycling.jpeg'),
-  ('Body Step', 15,'Quarta-Feira','14:30', '15:30', 'imagens/bodystep.jpeg'),
-  ('Body Pump', 18,'Quinta-Feira', '17:30', '18:30', 'imagens/bodypump.jpeg'),
-  ('Zumba', 18,'Sexta-Feira', '17:30', '18:30','imagens/zumba.jpeg'),
-  /*('Yoga', 20, 'Sexta-Feira', '16:00','17:30'),*/
-  ('Xpress Abs', 15,'Sábado', '17:30', '18:30','imagens/xpressabs.jpeg');
-
- */
