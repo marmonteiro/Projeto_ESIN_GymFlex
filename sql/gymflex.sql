@@ -7,8 +7,9 @@ DROP TABLE IF EXISTS Treino;
 DROP TABLE IF EXISTS Ginasio;
 DROP TABLE IF EXISTS Plano;
 DROP TABLE IF EXISTS Tipo_p;
-DROP TABLE IF EXISTS Tipo_ag;
 DROP TABLE IF EXISTS Aulagrupo;
+DROP TABLE IF EXISTS Tipo_ag;
+
 
 -- Tabela Pessoa
 CREATE TABLE Pessoa (
@@ -117,6 +118,19 @@ CREATE TABLE Plano (
     
 );
 
+-- Tabela Aulagrupo
+CREATE TABLE Aulagrupo (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    qntd_membros INTEGER NOT NULL,
+    ginasio INTEGER NOT NULL,
+    tipo_ag INTEGER NOT NULL,
+    FOREIGN KEY (tipo_ag) REFERENCES Tipo_ag(id),
+    FOREIGN KEY (ginasio) REFERENCES Ginasio(id),
+    CHECK (qntd_membros > 0)
+    --CHECK (qntd_membros <= capacidade FROM Tipo_ag WHERE tipo_ag = Aulagrupo.tipo_ag) 
+    imagem_ag VARCHAR(255)
+);
+
 
 CREATE TABLE Tipo_ag(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -132,18 +146,6 @@ CREATE TABLE Tipo_ag(
     imagem_aulagrupo VARCHAR(255)
 );
 
--- Tabela Aulagrupo
-CREATE TABLE Aulagrupo (
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    qntd_membros INTEGER NOT NULL,
-    ginasio INTEGER NOT NULL,
-    tipo_ag INTEGER NOT NULL,
-    FOREIGN KEY (tipo_ag) REFERENCES Tipo_ag(id),
-    FOREIGN KEY (ginasio) REFERENCES Ginasio(id),
-    CHECK (qntd_membros > 0)
-    --CHECK (qntd_membros <= capacidade FROM Tipo_ag WHERE tipo_ag = Aulagrupo.tipo_ag) 
-    imagem_ag VARCHAR(255)
-);
 
 -- php: qntd_membros corresponde à soma de clientes que se inscreveram numa certa Aulagrupo
 
@@ -209,6 +211,16 @@ VALUES
   ('2020-01-02', 2, 'Intermédio'),
   ('2020-01-03', 3, 'Avançado');
 
+
+INSERT INTO Aulagrupo (qntd_membros, ginasio, tipo_ag, imagem_ag)
+VALUES 
+  (0, 1, 'Zumba','imagens/zumba.jpeg'),
+  (0, 1, 'Cycling','imagens/cycling.jpeg'),
+  (0, 1, 'Pilates', 'imagens/pilates.jpeg'),
+  (0, 1,'Xpress Abs','imagens/xpressabs.jpeg'),
+  (0, 1, 'Body Pump', 'imagens/bodypump.jpeg'),
+  (0, 1, 'Body Step','imagens/bodystep.jpeg');
+
 INSERT INTO Tipo_ag (nome, capacidade, dia_semana, hora_inicio, hora_fim, imagem_aulagrupo)
 VALUES 
   ('Pilates', 10, 'Terça-Feira', '10:00:00', '11:30:00', 'imagens/pilates.jpeg'),
@@ -219,12 +231,3 @@ VALUES
   ('Xpress Abs', 15,'Sábado', '17:30:00', '18:30:00','imagens/xpressabs.jpeg');
 
 
-
-INSERT INTO Aulagrupo (qntd_membros, ginasio, tipo_ag, imagem_ag)
-VALUES 
-  (0, 1, 'Zumba','imagens/zumba.jpeg'),
-  (0, 1, 'Cycling','imagens/cycling.jpeg'),
-  (0, 1, 'Pilates', 'imagens/pilates.jpeg'),
-  (0, 1,'Xpress Abs','imagens/xpressabs.jpeg'),
-  (0, 1, 'Body Pump', 'imagens/bodypump.jpeg'),
-  (0, 1, 'Body Step','imagens/bodystep.jpeg');
