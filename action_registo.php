@@ -100,15 +100,32 @@ if (strlen($email) == 0) {
     die();
 }
 
+if ($sexo != 'M' && $sexo != 'F') {
+    $_SESSION['msg'] = 'Obrigatório assinalar um sexo.';
+    header('Location: registo.php');
+    die();
+}
+
+if (strlen($nif) != 9) {
+    $_SESSION['msg'] = 'NIF inválido.';
+    header('Location: registo.php');
+    die();
+}
+
+if (strlen($nr_telemovel) != 9) {
+    $_SESSION['msg'] = 'Número de telemóvel inválido.';
+    header('Location: registo.php');
+    die();
+}
+
 if (strlen($password) < 8) {
     $_SESSION['msg'] = 'Password deve ter mais que 8 caracteres.';
     header('Location: registo.php');
     die();
 }
 
-
 if ($idade < 16) {
-    $_SESSION['msg'] = 'Idade mínima é 16 anos.';
+    $_SESSION['msg'] = 'A idade mínima é 16 anos.';
     header('Location: registo.php');
     die();
 }

@@ -11,13 +11,19 @@ try {
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-    $nome_plano = $_GET['nome']; //Não está a ir buscar os nomes!! Penso que seja por ser primary key da tabela 
-    echo "Nome do plano: $nome_plano"; //Fiz isto para verificar que efetivamente o array dos nomes está vazio
-    // $nome_plano = 'Básico'; // Se lhe der aqui o nome do plano aparece direito no site 
-    $stmt = $dbh->prepare('SELECT * FROM Tipo_p WHERE nome = ?');
-    $stmt->execute(array($nome_plano));
-    $planos = $stmt->fetchAll();
-    var_dump($planos);
+    $stmt = $dbh->prepare('SELECT * FROM Tipo_p');
+    $stmt->execute();
+    $tipo_p_info = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    foreach($tipo_p_info as $plano) {
+        $nome_plano = $plano['nome'];
+        $preco_plano = $plano['preco'];
+        $tempo_treino_plano = $plano['tempo_treino'];
+        $quantidade_ag_plano = $plano['quantidade_ag'];
+
+    }
+
+
 
 } catch (PDOException $e) {
     $error_msg = $e->getMessage();
@@ -49,30 +55,41 @@ try {
             <a href="ajuda.php" class="ajuda">Ajuda</a>
         </div>
 
-        <?php if (isset($_SESSION['email'])) { ?>
+        <?php if(isset($_SESSION['email'])) { ?>
             <a href="action_logout.php" class="button">Logout</a>
             <a href="area_cliente.php" class="button">Área de Cliente</a>
-            <p>Olá, <?php echo $_SESSION['nome'] ?>!</p>
+            <p>Olá,
+                <?php echo $_SESSION['nome'] ?>!
+            </p>
         <?php } else { ?>
             <a href="registo.php" class="inscreva-se">Inscreva-se</a>
             <a href="login.php" id="signup">Login: área de cliente</a>
         <?php } ?>
     </header>
 
-   <!-- Mostrar os planos -->
-   <div class="planos">
-        <?php foreach ($planos as $plano): ?>
-            <div class="plano">
-                <h2><?= $plano['nome'] ?></h2>
-                <p>Preço: <?= $plano['preco'] ?> €/mês</p>
-                <p>Tempo de Treino: <?= $plano['tempo_treino'] ?> horas/mês</p>
-                <p>Quantidade de Aulas de grupo: <?= $plano['quantidade_ag'] ?> /mês</p>
-            </div>
-        <?php endforeach; ?>
-    </div>
 
 
-<!-- HTML de antes --> 
+    <h2>Plan Information</h2>
+
+    <?php foreach($tipo_p_info as $plano): ?>
+        <div>
+            <h3>
+                <?php echo $plano['nome']; ?>
+            </h3>
+            <p>Preço:
+                <?php echo $plano['preco']; ?>
+            </p>
+            <p>Tempo de Treino:
+                <?php echo $plano['tempo_treino']; ?> horas
+            </p>
+            <p>Quantidade de Aulas em Grupo:
+                <?php echo $plano['quantidade_ag']; ?>
+            </p>
+        </div>
+    <?php endforeach; ?>    
+
+
+    <!-- HTML de antes -->
     <div class="planos">
         <div class="retangulo_planos">
             <p>Plano Básico</p>

@@ -34,6 +34,7 @@ try {
     $data_adesao = $user['data_adesao'];
     $nutricionista_id = $user['nutricionista'];
     $personaltrainer_id = $user['personaltrainer'];
+    $idade = date_diff(date_create($data_nascimento), date_create('today'))->y; // calcula a idade
 
     // vai buscar os nomes do nutricionista e do personal trainer
     $stmtNutricionista = $dbh->prepare('SELECT nome FROM Pessoa WHERE id = ?');
@@ -127,6 +128,9 @@ try {
 
         <div id="dados_fisicos">
             <h3>Dados Físicos</h3>
+            <p>Idade:
+                <?php echo $idade ?> anos
+            </p>
             <p>Altura:
                 <?php echo $altura / 100 ?> m
             </p>
@@ -159,7 +163,7 @@ try {
 
         <div>
             <button id='alteração_plano'>Alterar Plano</button>
-            <button id='cancelar_plano'>Cancelar Plano</button>
+            <button id='cancelar_plano'>Cancelar Subscrição</button>
         </div>
 
         <div>
