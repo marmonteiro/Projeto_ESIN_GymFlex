@@ -1,7 +1,7 @@
 <?php
 session_start();
 try {
-    $dbh = new PDO('sqlite:sql/gymflex.db', $email, $password);
+    $dbh = new PDO('sqlite:sql/gym_flex.db', $email, $password);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     if (!isset($_SESSION['email'])) {

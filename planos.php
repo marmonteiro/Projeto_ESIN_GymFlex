@@ -6,7 +6,7 @@ unset($_SESSION['msg']);
 
 // Ir buscar dados à base de dados //
 try {
-    $dbh = new PDO('sqlite:sql/gymflex.db');
+    $dbh = new PDO('sqlite:sql/gym_flex.db');
     $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
