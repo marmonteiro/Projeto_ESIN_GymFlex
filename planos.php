@@ -28,7 +28,7 @@ try {
     //echo "Nome do plano: $nome_plano"; //Fiz isto para verificar que efetivamente o array dos nomes está vazio
     //$nome_plano = 'Básico'; // Se lhe der aqui o nome do plano aparece direito no site 
     //$stmt = $dbh->prepare( 'SELECT * FROM Tipo_p WHERE nome = ?');
-   // $stmt->execute(array($nome_plano));
+    // $stmt->execute(array($nome_plano));
     //$planos = $stmt->fetchAll();
     //var_dump($planos); 
 
@@ -74,29 +74,29 @@ try {
         <?php } ?>
     </header>
 
-  <div class="planos">
-      <div class="retangulo_planos">
-         <?php foreach($tipo_p_info as $plano): ?>
-           <div>
-               <h3>
-                 <?php echo $plano['nome']; ?>
-               </h3>
-               <p>Preço mensal:
-                  <?php echo $plano['preco'];  ?> €
-               </p>
-               <p>Tempo de Treino:
-                 <?php echo $plano['tempo_treino']; ?> horas
-               </p>
-               <p>Número de aulas de grupo que pode frequentar:
-                 <?php echo $plano['quantidade_ag']; ?> 
-               </p>
-           </div>
-           <div class="botao_planos">
-             <a href="registo.php" class="planos">Inscreva-se</a>
-           </div>
-         <?php endforeach; ?>   
-      </div> 
-   </div>
+    <div class="planos">
+        <?php foreach($tipo_p_info as $plano): ?>
+            <div class="retangulo_planos">
+                <div>
+                    <h3>
+                        <?php echo $plano['nome']; ?>
+                    </h3>
+                    <p>Preço mensal:
+                        <?php echo $plano['preco']; ?> €
+                    </p>
+                    <p>Tempo de Treino:
+                        <?php echo $plano['tempo_treino']; ?> horas
+                    </p>
+                    <p>Número de aulas de grupo:
+                        <?php echo $plano['quantidade_ag']; ?>
+                    </p>
+                </div>
+                <div class="botao_planos">
+                    <a href="registo.php" class="planos">Inscreva-se</a>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
 
 
     <!-- HTML de antes -->
@@ -140,7 +140,7 @@ try {
                 <a href="registo.php" class="planos">Inscreva-se</a>
             </div>
         </div>
-    </div> --> 
+    </div> -->
 
     <div class="planos_duvidas">
         <p>Queres vir treinar connosco e tens alguma dúvida sobre os planos? Entra em contacto, estamos disponíveis para
