@@ -11,7 +11,7 @@ try {
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 
-    $stmt = $dbh->prepare('SELECT nome, data_inicio, data_fim FROM Ginasio');
+    $stmt = $dbh->prepare('SELECT nome, data_inicio, data_fim, imagem_aulagrupo FROM Tipo_ag');
     $stmt->execute();
     $clubes = $stmt->fetchAll();
 
@@ -59,8 +59,21 @@ try {
         <h1>Aulas de Grupo</h1>
         <div class="classes">
             <?php
+                        if ($clubes->num_rows > 0) {
+                            while ($row = $clubes->fetch_assoc()) {
+                                echo '<div class="class">';
+                                echo '<img src="' . $row["imagem_aulagrupo"] . '" alt="' . $row["nome"] . '">';
+                                echo '<div class="overlay">';
+                                echo '<p>' . $row["nome"] . '</p>';
+                                echo '<p>Horário: ' . $row["hora_inicio"] . ' - ' . $row["hora_fim"] . '</p>';
+                                echo '</div>';
+                                echo '</div>';
+                            }
+                        } else {
+                            echo "No classes found.";
+                        }
             // Lista de aulas de grupo
-            $aulas = array(
+            /* $aulas = array(
                 array("imagem" => "imagens/bodypump.jpeg", "nome" => "Body Pump"),
                 array("imagem" => "imagens/cycling.jpeg", "nome" => "Cycling"),
                 array("imagem" => "imagens/bodystep.jpeg", "nome" => "Body Step"),
@@ -77,14 +90,15 @@ try {
                 echo '<p>' . $aula["nome"] . '</p>';
                 echo '</div>';
                 echo '</div>';
-            }
-            ?>
+            } */
+            ?> 
         </div>
 
-        <div class="button-container">
-            <a href="horários.php" class="button">Ver Horários</a>
-            <div class="button-rectangle"></div>
-        </div>
+        <div class="mensagem">
+        <p>Inscreve-te já como membro para puderes usufruir destas aulas</p>
+        <a href="registo.php" class="button"> Inscreve-te aqui! </a>
+    </div>
+
     </div>
 
     <footer>
