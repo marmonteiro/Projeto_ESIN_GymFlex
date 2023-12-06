@@ -11,9 +11,7 @@ header {
     color: white;
     padding: 20px;
     text-align: center;
-    display: flex;
 }
-
 
 /*rodapé*/
 footer {
@@ -25,7 +23,6 @@ footer {
 
 #logo {
     position: absolute;
-    /*display: flex;*/
     top: 10px;
     left: 10px;
     max-width: 200px; 
