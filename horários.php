@@ -9,12 +9,13 @@ try {
     $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
     $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    $stmt = $dbh->prepare('SELECT * FROM Tipo_ag WHERE nome = ?');
+    $stmt = $dbh->prepare('SELECT * FROM Tipo_ag');
     $stmt->execute();
     $horarios = $stmt->fetchAll();} 
     
     catch (PDOException $e) {
     $error_msg = $e->getMessage();
+    echo 'Error:'. $error_msg ;
 }
 ?>
 
@@ -53,20 +54,7 @@ try {
         <?php } ?>
     </header>
 
-    <?php
-    
 
-    // Preencher o array com os dados da consulta
-    while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-        $nome_aula = $row["nome"];
-        $dia_semana = $row["dia_semana"];
-        $hora_inicio = $row["hora_inicio"];
-        $hora_fim = $row["hora_fim"];
-
-        // Adicionar os dados ao array organizado por hora e dia
-        $horarios[$hora_inicio][$dia_semana] = $nome_aula;
-    }
-    ?>
 
 <h2>Horários</h2>
     <p>Confira nossos horários de aulas de grupo e escolha o momento que melhor se adequa à sua agenda.</p>
@@ -83,37 +71,14 @@ try {
                 <th>Domingo</th>
             </tr>
         </thead>
-        <tbody>
-            <?php
-            // Define the time slots
-            $timeSlots = array(
-                '08:00 - 09:30',
-                '10:00 - 11:30',
-                '12:00 - 13:30',
-                '13:30 - 14:30',
-                '14:30 - 15:30',
-                '16:00 - 17:30',
-                '17:30 - 18:30',
-                '19:00 - 20:00',
-                '20:00 - 21:00'
-            );
-// A partir daqui isto já não guarda      o nome nas celilas
-            foreach ($timeSlots as $timeSlot) {
-                echo '<tr>';
-                echo '<td>' . $timeSlot . '</td>';
-
-                // Loop through days of the week
-                $dias_semana = array('Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado', 'Domingo');
-                foreach ($dias_semana as $nome_aula) {
-                    echo '<td>' . (isset($schedule[$timeSlot][$nome_aula]) ? $schedule[$timeSlot][$nome_aula] : '-') . '</td>';
-                }
-
-                echo '</tr>';
-            }
-            ?>
-
-            </tbody>
-        </table>
+        <?php foreach ($horarios as $horario) { ?>
+        <tr>
+            <td><?php echo $horario['name']; ?> </td>
+            <td><?php echo $horario['data_inicio'];?></td>
+            <td><?php echo $horario['data_fim'];?></td>
+        </tr>
+        <?php } ?>
+    </table>
     </section>
 
     <div class="mensagem">
@@ -132,8 +97,7 @@ try {
 
 </html>
 
-<!-- 
-<h2>Horários</h2>
+<!-- <h2>Horários</h2>
         <p>Confira nossos horários de aulas de grupo e escolha o momento que melhor se adequa à sua agenda.</p>
         <table>
             <thead>
@@ -236,8 +200,7 @@ try {
                     <td> Pilates </td>
                 </tr>
 
-                Adicione mais linhas conforme necessário -->
-  <!--           </tbody>
+  <    </tbody>
         </table>
     </section>
 
