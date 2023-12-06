@@ -19,6 +19,15 @@ try {
 } catch (PDOException $e) {
     $error_msg = $e->getMessage();
 }
+
+foreach ($aulas as $aula){
+    $nome_aulagrupo = $aula['nome'];
+    $capacidade_aulaggrupo = $aula['capacidade'];
+    $dia_semana = $aula['dia_semana'];
+    $hora_inicio = $aula['hora_inicio'];
+    $hora_fim = $aula['hora_fim'];
+    $imagem_aulagrupo = $aula['imagem_aulagrupo'];
+}
 ?>
 
 <!DOCTYPE html>

@@ -7,8 +7,8 @@ DROP TABLE IF EXISTS Treino;
 DROP TABLE IF EXISTS Ginasio;
 DROP TABLE IF EXISTS Plano;
 DROP TABLE IF EXISTS Tipo_p;
-DROP TABLE IF EXISTS Aulagrupo;
 DROP TABLE IF EXISTS Tipo_ag;
+DROP TABLE IF EXISTS Aulagrupo;
 
 -- Tabela Pessoa
 CREATE TABLE Pessoa (
@@ -118,6 +118,19 @@ CREATE TABLE Plano (
 );
 
 
+CREATE TABLE Tipo_ag(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    nome VARCHAR(255) NOT NULL,
+    capacidade INT NOT NULL,
+    dia_semana VARCHAR(255) NOT NULL,
+    hora_inicio TIME NOT NULL,
+    hora_fim TIME,
+    duracao_ag TIME, -- tou a assumir que cada tipo de aula tem data e horas fixas, acho q é mais simples
+    CHECK (hora_fim IS NULL OR hora_fim > hora_inicio),
+    CHECK (duracao_ag = TIME(strftime('%s', hora_fim) - strftime('%s', hora_inicio))),
+    CHECK (capacidade > 0),
+    imagem_aulagrupo VARCHAR(255)
+);
 
 -- Tabela Aulagrupo
 CREATE TABLE Aulagrupo (
@@ -131,21 +144,6 @@ CREATE TABLE Aulagrupo (
     --CHECK (qntd_membros <= capacidade FROM Tipo_ag WHERE tipo_ag = Aulagrupo.tipo_ag) 
     
 );
-
-CREATE TABLE Tipo_ag(
-    id INTEGER PRIMARY KEY AUTOINCREMENT,
-    nome VARCHAR(255) NOT NULL,
-    capacidade INT NOT NULL,
-    dia_semana VARCHAR(255) NOT NULL,
-    hora_inicio TIME NOT NULL,
-    hora_fim TIME,
-    duracao_ag TIME, -- tou a assumir que cada tipo de aula tem data e horas fixas, acho q é mais simples
-    CHECK (hora_fim IS NULL OR hora_fim > hora_inicio),
-    CHECK (duracao_ag = (strftime('%s', hora_fim) - strftime('%s', hora_inicio))),
-    CHECK (capacidade > 0),
-    imagem_aulagrupo VARCHAR(255)
-);
-
 
 -- php: qntd_membros corresponde à soma de clientes que se inscreveram numa certa Aulagrupo
 
@@ -222,7 +220,7 @@ VALUES
 
 
 
-/* INSERT INTO Aulagrupo (qntd_membros, ginasio, tipo_ag)
+INSERT INTO Aulagrupo (qntd_membros, ginasio, tipo_ag)
 VALUES 
   (0, 1, 'Zumba'),
   (20, 2, 'Zumba'),
@@ -241,4 +239,4 @@ VALUES
   (0, 3, 'Body Pump'),
   (0, 1, 'Body Step'),
   (0, 2, 'Body Step'),
-  (0, 3, 'Body Step'); */
+  (0, 3, 'Body Step'); 
