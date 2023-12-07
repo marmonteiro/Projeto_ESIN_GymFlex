@@ -51,7 +51,7 @@ include("templates/header_tpl.php");
 
     <div class="imagensiniciais">
         <div class="imagens">
-            <img src="imagens/fidelizaccao.png" alt="Imagem 1">
+            <img src="imagens/fidelizacao.png" alt="Imagem 1">
             <div class="textoimagensiniciais">
                 <p> Sem Fidelização</p>
             </div>
