@@ -70,12 +70,16 @@ try {
     <p id="registe_se"><a href="registo.html">Regista-te aqui!</a></p>
   </section>
 
-  <footer>
+
+  <?php 
+      include("templates/footer_tpl.php");
+  ?>
+  <!-- <footer>
     <p>Qualquer dúvida não hesite em contactar, teremos uma equipa ao seu dispor.</p>
     <p>Email: gymflex.geral@gmail.com</p>
     <p>Telemóvel: 923524352</p>
     <p>&copy; GymFlex, 2023</p>
-  </footer>
+  </footer> --> 
 
 </body>
 
