@@ -24,10 +24,10 @@ try {
 } catch (PDOException $e) {
     $error_msg = $e->getMessage();
 }
-
+include("templates/header_tpl.php");
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="pt">
 
 <head>
@@ -52,17 +52,17 @@ try {
             <a href="ajuda.php" class="ajuda">Ajuda</a>
         </div>
 
-        <?php if(isset($_SESSION['email'])) { ?>
+         <?php if(isset($_SESSION['email'])) { ?>
             <a href="action_logout.php" class="button">Logout</a>
             <a href="area_cliente.php" class="button">Área de Cliente</a>
             <p>Olá,
                 <?php echo $_SESSION['nome'] ?>!
-            </p>
+            </p> 
         <?php } else { ?>
             <a href="registo.php" class="inscreva-se">Inscreva-se</a>
             <a href="login.php" id="signup">Login: área de cliente</a>
         <?php } ?>
-    </header>
+    </header> --> 
 
     <div class="planos">
         <?php foreach($tipo_p_info as $plano): ?>
@@ -91,49 +91,6 @@ try {
         <?php endforeach; ?>
     </div>
 
-
-    <!-- HTML de antes -->
-    <!-- <div class="planos">
-        <div class="retangulo_planos">
-            <p>Plano Básico</p>
-            <ul>
-                <li>Consulta inicial de nutrição</li>
-                <li>1 aula de grupo por semana</li>
-                <li>3 entradas livres por semana</li>
-                <li>Cancelamento gratuito</li>
-            </ul>
-            <p>Apenas por 9,99 €/mês</p>
-            <div class="botao_planos">
-                <a href="registo.php" class="planos">Inscreva-se</a>
-            </div>
-        </div>
-        <div class="retangulo_planos">
-            <p>Plano Intermédio</p>
-            <ul>
-                <li>Consulta inicial de nutrição</li>
-                <li>2 aulas de grupo por semana</li>
-                <li>5 entradas livres por semana</li>
-                <li>Cancelamento gratuito</li>
-            </ul>
-            <p>Apenas por 15,99 €/mês</p>
-            <div class="botao_planos">
-                <a href="registo.php" class="planos">Inscreva-se</a>
-            </div>
-        </div>
-        <div class="retangulo_planos">
-            <p>Plano Avançado</p>
-            <ul>
-                <li>Acompanhamento contínuo por nutrição</li>
-                <li>Acesso ilimitado a aulas de grupo</li>
-                <li>Acesso ilimitado ao ginásio</li>
-                <li>Cancelamento gratuito</li>
-            </ul>
-            <p>Apenas por 22,99 €/mês</p>
-            <div class="botao_planos">
-                <a href="registo.php" class="planos">Inscreva-se</a>
-            </div>
-        </div>
-    </div> -->
 
     <div class="planos_duvidas">
         <p>Queres vir treinar connosco e tens alguma dúvida sobre os planos? Entra em contacto, estamos disponíveis para
