@@ -34,7 +34,7 @@ CREATE TABLE Membro (
     inscricoes_ag INTEGER,
     sexo VARCHAR(1),
     iban VARCHAR(255) NOT NULL,
-    FOREIGN KEY (id) REFERENCES Pessoa(id),
+    FOREIGN KEY (id) REFERENCES Pessoa(id) DELETE CASCADE,
     FOREIGN KEY (personaltrainer) REFERENCES Personaltrainer(id),
     FOREIGN KEY (nutricionista) REFERENCES Nutricionista(id),
     CHECK (peso > 0),
