@@ -69,15 +69,15 @@ foreach ($aulas as $aula){
     if (isset($aulas) && !empty($aulas)){
         foreach ($aulas as $aula) {
             echo '<div class="class">';
-            echo '<div class="image-container">';
-            echo '<img src="' . $aula['imagem_aulagrupo'] . '" alt="' . $aula['nome'] . '">';
-            echo '</div>';
-            echo '<div class="info-container">';
-            echo '<p>' . $aula['nome'] . '</p>';
-            echo '<p> Capacidade:' .$aula['capacidade'] . '</p>';
-            echo '<p>Dia da Semana:' .$aula['dia_semana'] . '</p>';
-            echo '<p>Horário: ' . $aula['hora_inicio'] . ' - ' . $aula['hora_fim'] . '</p>';
-            echo '</div>';
+                echo '<div class="image-container">';
+                    echo '<img src="' . $aula['imagem_aulagrupo'] . '" alt="' . $aula['nome'] . '">';
+                echo '</div>';
+             echo '<div class="info-container">';
+                echo '<p>' . $aula['nome'] . '</p>';
+                echo '<p> Capacidade:' .$aula['capacidade'] . '</p>';
+                echo '<p>Dia da Semana:' .$aula['dia_semana'] . '</p>';
+                echo '<p>Horário: ' . $aula['hora_inicio'] . ' - ' . $aula['hora_fim'] . '</p>';
+             echo '</div>';
             echo '</div>';
         }
     }  else {
