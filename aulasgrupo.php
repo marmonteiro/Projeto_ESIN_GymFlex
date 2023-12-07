@@ -97,6 +97,7 @@ foreach ($aulas as $aula){
     </div>
     </div>
 
+    
     <footer>
         <p>Qualquer dúvida não hesite em contactar, teremos uma equipa ao seu dispor.</p>
         <p>Email: gymflex.geral@gmail.com</p>
