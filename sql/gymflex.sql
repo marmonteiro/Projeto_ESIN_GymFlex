@@ -33,6 +33,7 @@ CREATE TABLE Membro (
     nutricionista INTEGER,
     inscricoes_ag INTEGER,
     sexo VARCHAR(1),
+    iban VARCHAR(255) NOT NULL,
     FOREIGN KEY (id) REFERENCES Pessoa(id),
     FOREIGN KEY (personaltrainer) REFERENCES Personaltrainer(id),
     FOREIGN KEY (nutricionista) REFERENCES Nutricionista(id),
@@ -119,7 +120,7 @@ CREATE TABLE Plano (
 );
 
 -- Tabela Aulagrupo
-/* CREATE TABLE Aulagrupo (
+CREATE TABLE Aulagrupo (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     qntd_membros INTEGER NOT NULL,
     ginasio INTEGER NOT NULL,
@@ -144,7 +145,7 @@ CREATE TABLE Tipo_ag(
     CHECK (capacidade > 0),
     imagem_aulagrupo VARCHAR(255)
 );
- */
+
 
 CREATE TABLE Aulagrupo (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -169,13 +170,10 @@ CREATE TABLE Aulagrupo (
 -- Tabela Inscricao_ag
 CREATE TABLE Inscricao_ag (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    qntd_membros INTEGER NOT NULL,
     membro INTEGER NOT NULL,
     aulagrupo INTEGER NOT NULL,
     FOREIGN KEY (membro) REFERENCES Membro(id),
     FOREIGN KEY (aulagrupo) REFERENCES Aulagrupo(id),
-    CHECK (qntd_membros >= 0),
-    CHECK (qntd_membros <= (SELECT capacidade FROM Aulagrupo WHERE Aulagrupo.id = Inscricao_ag.aulagrupo))
 );
 -- php: qntd_membros corresponde à soma de clientes que se inscreveram numa certa Aulagrupo
 
@@ -224,9 +222,9 @@ VALUES
 
 INSERT INTO Membro (pwd, peso, altura, imc, sexo ,personaltrainer, nutricionista)
 VALUES 
-  ('0b14d501a594442a01c6859541bcb3e8164d183d32937b851835442f69d5c94e', 70.5, 175, (70.5 / (1.75 * 1.75)), 'M' , (SELECT id FROM Pessoa WHERE nome = 'Carlos Pereira'), (SELECT id FROM Pessoa WHERE nome = 'Sofia Costa')),
-  ('6cf615d5bcaac778352a8f1f3360d23f02f34ec182e259897fd6ce485d7870d4', 65.0, 165, (65.0 / (1.65 * 1.65)), 'F' , (SELECT id FROM Pessoa WHERE nome = 'Ana Rodrigues'), (SELECT id FROM Pessoa WHERE nome = 'Jorge Fernandes')),
-  ('5906ac361a137e2d286465cd6588ebb5ac3f5ae955001100bc41577c3d751764', 68.0, 160, (68.0 / (1.60 * 1.60)), 'M' , (SELECT id FROM Pessoa WHERE nome = 'Rui Oliveira'), (SELECT id FROM Pessoa WHERE nome = 'Inês Marques'));
+  ('0b14d501a594442a01c6859541bcb3e8164d183d32937b851835442f69d5c94e', 70.5, 175, (70.5 / (1.75 * 1.75)), 'M' , (SELECT id FROM Pessoa WHERE nome = 'Carlos Pereira'), (SELECT id FROM Pessoa WHERE nome = 'Sofia Costa'),'PT38502761940287651290341'),
+  ('6cf615d5bcaac778352a8f1f3360d23f02f34ec182e259897fd6ce485d7870d4', 65.0, 165, (65.0 / (1.65 * 1.65)), 'F' , (SELECT id FROM Pessoa WHERE nome = 'Ana Rodrigues'), (SELECT id FROM Pessoa WHERE nome = 'Jorge Fernandes'),'PT74091283509127350912387'),
+  ('5906ac361a137e2d286465cd6588ebb5ac3f5ae955001100bc41577c3d751764', 68.0, 160, (68.0 / (1.60 * 1.60)), 'M' , (SELECT id FROM Pessoa WHERE nome = 'Rui Oliveira'), (SELECT id FROM Pessoa WHERE nome = 'Inês Marques'),'PT15678902347658901234567');
 
 
 INSERT INTO Tipo_p (nome, preco, tempo_treino, quantidade_ag)

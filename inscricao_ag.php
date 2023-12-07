@@ -119,21 +119,7 @@ try {
             <input type="submit">
         </form>
 
-        <!-- Display Available Classes -->
-        <div>
-            <!-- Loop through the fetched gym classes and display the details -->
-            <?php
-            // Assuming $gymClasses is an array containing fetched classes for the selected gym
-            foreach ($gymAG as $Pilates) {
-                echo '<div class="class">';
-                echo '<img src="' . $Pilates["imagem"] . '" alt="' . $Pilates["nome"] . '">';
-                echo '<div class="overlay">';
-                echo '<p>' . $Pilates["nome"] . '</p>';
-                echo '</div>';
-                echo '</div>';
-            }
-            ?>
-        </div>
+        
 
 
 
