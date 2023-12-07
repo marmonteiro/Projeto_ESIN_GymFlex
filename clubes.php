@@ -63,7 +63,7 @@ try {
                 <?= $clube['nome'] ?>
                 <img src='<?= $clube['imagem_url'] ?>' alt='Clube Logo'>
             </a><br>
-        <?php var_dump($clube['imagem_url']);endforeach;?>
+        <?php endforeach;?>
     </div>
 
     
