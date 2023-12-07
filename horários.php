@@ -1,14 +1,12 @@
 <?php
+require_once("database/init.php");
 session_start();
 
 $msg = $_SESSION['msg'];
 unset($_SESSION['msg']);
 
 try {
-    $dbh = new PDO('sqlite:sql/gym_flex.db');
-    $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+    global $dbh;
     $stmt = $dbh->prepare('SELECT * FROM Aulagrupo');
     $stmt->execute();
     $horarios = $stmt->fetchAll();} 

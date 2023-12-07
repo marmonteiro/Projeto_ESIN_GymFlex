@@ -1,4 +1,5 @@
 <?php
+require_once("database/init.php");
 session_start();
 
 $msg = $_SESSION['msg'];
@@ -6,11 +7,8 @@ unset($_SESSION['msg']);
 
 // Ir buscar dados à base de dados //
 try {
-    $dbh = new PDO('sqlite:sql/gym_flex.db');
-    $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-
+    global $dbh;
     $stmt = $dbh->prepare('SELECT * FROM Tipo_p');
     $stmt->execute();
     $tipo_p_info = $stmt->fetchAll(PDO::FETCH_ASSOC);

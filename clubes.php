@@ -1,4 +1,5 @@
 <?php
+require_once("database/init.php");
 session_start();
 
 $msg = $_SESSION['msg'];
@@ -6,11 +7,7 @@ unset($_SESSION['msg']);
 
 
 try {
-    $dbh = new PDO('sqlite:sql/gym_flex.db');
-    $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-
+    global $dbh;
     $stmt = $dbh->prepare('SELECT nome, imagem_url FROM Ginasio');
     $stmt->execute();
     $clubes = $stmt->fetchAll();
@@ -19,7 +16,10 @@ try {
 } catch (PDOException $e) {
     $error_msg = $e->getMessage();
 }
+
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="pt">
@@ -52,7 +52,8 @@ try {
         <?php } else { ?>
             <a href="registo.php" class="inscreva-se">Inscreva-se</a>
             <a href="login.php" id="signup">Login: área de cliente</a>
-        <?php } ?>
+        <?php } var_dump($clubes['imagem_url']);?>
+
     </header>
 
 
@@ -62,7 +63,7 @@ try {
                 <?= $clube['nome'] ?>
                 <img src='<?= $clube['imagem_url'] ?>' alt='Clube Logo'>
             </a><br>
-        <?php endforeach; ?>
+        <?php var_dump($clube['imagem_url']);endforeach;?>
     </div>
 
     
