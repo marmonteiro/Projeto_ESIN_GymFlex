@@ -52,7 +52,7 @@ try {
         <?php } else { ?>
             <a href="registo.php" class="inscreva-se">Inscreva-se</a>
             <a href="login.php" id="signup">Login: área de cliente</a>
-        <?php } var_dump($clubes['imagem_url']);?>
+        <?php } ?>
 
     </header>
 
