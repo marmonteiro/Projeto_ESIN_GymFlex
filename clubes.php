@@ -52,7 +52,7 @@ try {
         <?php } else { ?>
             <a href="registo.php" class="inscreva-se">Inscreva-se</a>
             <a href="login.php" id="signup">Login: área de cliente</a>
-        <?php } var_dump($clubes['imagem_url']);?>
+        <?php } ?>
 
     </header>
 
@@ -63,15 +63,18 @@ try {
                 <?= $clube['nome'] ?>
                 <img src='<?= $clube['imagem_url'] ?>' alt='Clube Logo'>
             </a><br>
-        <?php var_dump($clube['imagem_url']);endforeach;?>
+        <?php endforeach;?>
     </div>
 
     
     </ul>
-    <footer>
+    <?php 
+      include("templates/footer_tpl.php");
+    ?>
+    <!-- <footer>
         <p>Qualquer dúvida não hesite em contactar, teremos uma equipa ao seu dispor.</p>
         <p>&copy; GymFlex, 2023</p>
-    </footer>
+    </footer> --> 
 </body>
 
 </html>

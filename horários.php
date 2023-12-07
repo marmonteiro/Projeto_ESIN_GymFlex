@@ -83,13 +83,18 @@ try {
         <p>Inscreve-te já como membro para puderes usufruir destas aulas</p>
         <a href="registo.php" class="button"> Inscreve-te aqui! </a>
     </div>
+    
 
-    <footer>
+    <?php 
+      include("templates/footer_tpl.php");
+    ?>
+
+    <!-- <footer>
         <p>Qualquer dúvida não hesite em contactar, teremos uma equipa ao seu dispor.</p>
         <p>Email: gymflex.geral@gmail.com</p>
         <p>Telemóvel: 923524352</p>
         <p>&copy; GymFlex, 2023</p>
-    </footer>
+    </footer> --> 
 
 </body>
 
