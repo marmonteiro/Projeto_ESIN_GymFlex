@@ -51,7 +51,7 @@ include("templates/header_tpl.php");
 
     <div class="imagensiniciais">
         <div class="imagens">
-            <img src="imagens/fidelização.png" alt="Imagem 1">
+            <img src="imagens/fidelizaccao.png" alt="Imagem 1">
             <div class="textoimagensiniciais">
                 <p> Sem Fidelização</p>
             </div>
@@ -69,7 +69,7 @@ include("templates/header_tpl.php");
             </div>
         </div>
         <div class="imagens">
-            <img src="imagens/instalações.png" alt="Imagem 4">
+            <img src="imagens/instalacoes.png" alt="Imagem 4">
             <div class="textoimagensiniciais">
                 <p>Instalações</p>
             </div>
@@ -113,7 +113,7 @@ include("templates/header_tpl.php");
          <p>Wi-fi</p>
        </div>
        <div class="retangulo">
-           <img src="imagens/nutrição.png" alt="Imagem 1">
+           <img src="imagens/nutricao.png" alt="Imagem 1">
            <p>Nutrição</p>
        </div>
        <div class="retangulo">
