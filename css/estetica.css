@@ -138,19 +138,19 @@ align-items: center;
 
 /* PARA TODOS OS  BOTÕES DE "INSCREVA-SE" E "LOGIN"*/
 .inscreva-se{
- text-align: center; 
- align-items: center;
- display: flex;
- justify-content: center;
- text-decoration: none; 
- padding: 5px ; 
- border: 2px solid #000; /* Cor da borda */
- border-radius: 5px; /* Cantos arredondados */
- background-color: #c69791;; /* Cor do fundo */
- color: white; /* Cor do texto */
- font-weight: bold; /* Texto em negrito */
- margin: 5px; /* Espaçamento externo */
- max-width: 160px;
+   text-align: center; 
+   align-items: center;
+   display: flex;
+   justify-content: center;
+   text-decoration: none; 
+   padding: 5px ; 
+   border: 2px solid #000; /* Cor da borda */
+   border-radius: 5px; /* Cantos arredondados */
+   background-color: #c69791;; /* Cor do fundo */
+   color: white; /* Cor do texto */
+   font-weight: bold; /* Texto em negrito */
+   margin: 5px; /* Espaçamento externo */
+   max-width: 160px;
 }
 
 #signup{
@@ -721,16 +721,6 @@ h1 {
     font-family: Montserrat Bold;
     src: url("./fonts/Montserrat-Bold.ttf");
 }
-
-
-/*body {
-    font-family: Montserrat, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    margin: 0;
-}*/
-
-
 
 /* Específico para a pág info */
 
