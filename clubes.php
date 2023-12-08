@@ -16,19 +16,20 @@ try {
 } catch (PDOException $e) {
     $error_msg = $e->getMessage();
 }
-
+include("templates/header_tpl.php");
 ?>
 
 
 
-<!DOCTYPE html>
+<!-- Este header é para apagar
+  <!DOCTYPE html>
 <html lang="pt">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clubes</title>
-    <link rel="stylesheet" href="estetica.css">
+    <link rel="stylesheet" href="css/estetica.css">
 </head>
 
 <body>
@@ -54,7 +55,7 @@ try {
             <a href="login.php" id="signup">Login: área de cliente</a>
         <?php } ?>
 
-    </header>
+    </header>-->
 
 
     <div class="clubes">

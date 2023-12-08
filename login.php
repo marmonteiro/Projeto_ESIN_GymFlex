@@ -10,9 +10,11 @@ try {
 } catch (PDOException $e) {
   $error_msg = $e->getMessage();
 }
+include("templates/header_tpl.php");
 ?>
 
-<!DOCTYPE html>
+<!-- ESTE HEADER É PARA APAGAR
+  <!DOCTYPE html>
 <html lang="pt">
 
 <head>
@@ -20,7 +22,7 @@ try {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GymFlex</title>
   <link rel="icon" href="imagens/gymflex_logo_head.svg">
-  <link rel="stylesheet" href="estetica.css">
+  <link rel="stylesheet" href="css/estetica.css">
 </head>
 
 <body>
@@ -43,7 +45,7 @@ try {
     <?php } else { ?>
       <a href="registo.php" class="inscreva-se">Inscreva-se</a>
     <?php } ?>
-  </header>
+  </header> --> 
 
   <section id="login">
     <h1>Área de Cliente</h1>

@@ -75,11 +75,13 @@ try {
 } catch (PDOException $e) {
     $error_msg = $e->getMessage();
 }
-
+include("templates/header_clubes_tpl.php");
 ?>
 
 
-<!DOCTYPE html>
+
+<!-- ESTE HEADER É O QUE ESTÁ EM HEADER_CLUBES_TPL, AQUI É PARA APAGAR
+  <!DOCTYPE html>
 
 <html lang="pt">
 
@@ -87,7 +89,7 @@ try {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GymFlex</title>
-    <link rel="stylesheet" href="estetica.css">
+    <link rel="stylesheet" href="css/estetica.css">
 </head>
 
 <body>
@@ -112,7 +114,7 @@ try {
     <?php } else { ?>
         <a href="registo.php" class="inscreva-se">Inscreva-se</a>
         <a href="login.php" id="signup">Login: área de cliente</a>
-    <?php } ?>
+    <?php } ?> --> 
 
     <div class="club-info">
         <p>
@@ -177,10 +179,15 @@ try {
         </table>
     </div>
 
+    <?php 
+      include("templates/footer_tpl.php");
+    ?>
+    
+    <!-- ESTE FOOTER É PARA APAGAR
     <footer>
         <p>Qualquer dúvida não hesite em contactar, teremos uma equipa ao seu dispor.</p>
         <p>&copy; GymFlex, 2023</p>
-    </footer>
+    </footer> -->
 
 </body>
 
