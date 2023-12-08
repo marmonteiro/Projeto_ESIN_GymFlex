@@ -901,7 +901,7 @@ h2 {
     margin-block-end: 5px;
 }
 
-#intro_ajuda  {
+#intro  {
     text-align: center;
     font-size: 20px;
     margin-block-start: 5px;
@@ -909,26 +909,26 @@ h2 {
 }
 
 
-#Categoria_ajuda {
+#Categoria {
     background-color: white;
     border-radius: 5px;
 }
 
-#Categoria_ajuda > summary {
+#Categoria > summary {
     text-align: center;
     font-weight: bold;
 }
 
-#Pergunta_ajuda > summary {
+#Pergunta > summary {
     background-color: rgba(107, 97, 97, 0.35);
     border-radius: 5px;
 }
 
-#Pergunta_ajuda > p {
+#Pergunta > p {
     text-indent: 20px;
 }
 
-#Categoria_ajuda {
+#Categoria {
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: 350px;
@@ -937,7 +937,7 @@ h2 {
     border-radius: 5px;
     overflow: hidden;
 }
-#Categoria_ajuda > details {
+#Categoria > details {
     margin: 10px;
     padding: 10px;
 }

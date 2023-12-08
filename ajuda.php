@@ -141,7 +141,7 @@ unset($_SESSION['msg']);
         <section id="Contactos">
             <p>Email de apoio ao cliente: <a href="mailto:support@gymflex.com">gymflex.geral@gmail.com</a>.</p>
             <p>Telefone de apoio ao cliente: <a href=“tel:+351 910 111 222>+351 910 111 222</a>.</p>
-            <p>Ou contacta diretamente o ginásio mais perto de ti. Descobre-o <a href="clubes.html">aqui</a>.</p>
+            <p>Ou contacta diretamente o ginásio mais perto de ti. Descobre-o <a href="clubes.php">aqui</a>.</p>
         </section>
     </section>
 
