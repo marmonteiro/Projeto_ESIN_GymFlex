@@ -3,7 +3,7 @@ require_once("init.php");
 session_start();
 
 try {
-    // Para obter o endereço de e-mail do formulário ou de onde quer que você esteja recebendo
+    // Para obter o  e-mail 
     $email = $_POST['email']; 
 
     // Delete user info from Pessoa and related tables
