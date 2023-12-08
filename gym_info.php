@@ -116,7 +116,7 @@ include("templates/header_clubes_tpl.php");
         <a href="login.php" id="signup">Login: área de cliente</a>
     <?php } ?> --> 
 
-    <div class="clube-info">
+    <div class="club-info">
         <p>
             <?php echo $nome_ginasio ?>
         </p>

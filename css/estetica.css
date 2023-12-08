@@ -63,18 +63,18 @@ footer {
     background-color: #c4938e;
 }
 
-.clube-info {
+.club-info {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     list-style: none;
    
 }
-.clube-info a {
+.club-info a {
     text-decoration: none; /* Remove o sublinhado */
     color: black;
 }
-.clube-info li {
+.club-info li {
     text-align: center;
     max-width: 300px;
     padding: 20px;
@@ -90,25 +90,16 @@ footer {
     display: none;
 } 
 
+#inscreva-se{ 
+align-items: center;
+}
 
 /* RELATIVO às páginas de CADA CLUBE INDIVIDUALMENTE */
-/*.clube-logo{
-    display: block; 
-    margin: 0 auto; /* Define as margens superior e inferior como 0 e centraliza horizontalmente 
-}*/
 
 .mapa {
     display: block; 
     margin: 0 auto; /* Define as margens superior e inferior como 0 e centraliza horizontalmente */
 }
-
-/*.club-info2{
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    list-style: none; /*queria meter os pontos junto dos serviços, mas não consigo
-    margin-bottom: 100px;
-}*/
 
 .titulos_clubes{
     text-align: center;
@@ -146,8 +137,17 @@ footer {
 }
 
 .inscreva-se{
-    text-align: center; 
+ text-align: center; 
+ align-items: center;
+ display: flex;
 }
+
+#signup{
+    text-align: center; 
+    align-items: center;
+    display: flex;
+}
+/*
 
 /*PÁGINA INICIAL*/
       /* Para a barra na pag inicial */
@@ -353,8 +353,6 @@ footer {
     padding: 20px;
     text-align: center;
 }
-
-
 
      /* CSS for the login form */
 
@@ -799,28 +797,27 @@ summary:before {
     transform: rotate(0);
     transform-origin: .2rem 50%;
     transition: .25s transform ease;
-  }
+}
   
-  details[open] > summary:before {
+details[open] > summary:before {
     transform: rotate(90deg);
-  }
+}
 
-  #Categoria > summary:before {
+#Categoria > summary:before {
     display: none;
-  }
+}
 
-
-  #Contactos > p {
+#Contactos > p {
     text-align: center;
     font-size: 16px;
     line-height: 1.4;
-  }
+}
 
 #FAQ {
     margin-top: 20px;
 }
 
-  a {
+a {
     color: rgba(107, 97, 97, 1);
     font-weight: bold;
-  }
+}
