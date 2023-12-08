@@ -164,7 +164,7 @@ try {
 
         <div>
             <button id='alteração_plano'>Alterar Plano</button>
-            <button id='cancelar_plano'>Cancelar Subscrição</button>
+            <a href="cancelamento.php" class="button">Cancelar Subscrição</a>
         </div>
 
         <div>

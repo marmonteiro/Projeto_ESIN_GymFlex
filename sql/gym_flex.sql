@@ -14,25 +14,25 @@ DROP TABLE IF EXISTS Inscricao_ag;
 -- Tabela Pessoa
 CREATE TABLE Pessoa (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    nome VARCHAR(255) NOT NULL,
-    morada VARCHAR(255) NOT NULL,
+    nome TEXT NOT NULL,
+    morada TEXT NOT NULL,
     nif INTEGER UNIQUE,
-    nr_telemovel VARCHAR(20) UNIQUE,
-    email VARCHAR(255) UNIQUE,
+    nr_telemovel INTEGER UNIQUE,
+    email TEXT UNIQUE,
     data_nascimento DATE
 );
 
 -- Tabela Membro
 CREATE TABLE Membro (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    pwd VARCHAR(255) NOT NULL,
+    pwd TEXT NOT NULL,
     peso DECIMAL NOT NULL,
     altura DECIMAL NOT NULL,
     imc DECIMAL,
     personaltrainer INTEGER,
     nutricionista INTEGER,
     inscricoes_ag INTEGER,
-    sexo VARCHAR(1),
+    sexo TEXT,
     FOREIGN KEY (id) REFERENCES Pessoa(id),
     FOREIGN KEY (personaltrainer) REFERENCES Personaltrainer(id),
     FOREIGN KEY (nutricionista) REFERENCES Nutricionista(id),
@@ -84,18 +84,18 @@ CREATE TABLE Treino (
 -- Tabela Ginasio
 CREATE TABLE Ginasio (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    morada VARCHAR(255) NOT NULL UNIQUE,
-    nome VARCHAR(255) NOT NULL UNIQUE,
-    email VARCHAR(255) UNIQUE,
-    nr_telefone VARCHAR(20) UNIQUE,
-    mapa_url VARCHAR(255),
-    imagem_url VARCHAR(255)
+    morada TEXT NOT NULL UNIQUE,
+    nome TEXT NOT NULL UNIQUE,
+    email TEXT UNIQUE,
+    nr_telefone INTEGER UNIQUE,
+    mapa_url TEXT,
+    imagem_url TEXT
 );
 
 
 -- Tabela Tipo
 CREATE TABLE Tipo_p (
-    nome VARCHAR(255) PRIMARY KEY,
+    nome TEXT PRIMARY KEY,
     preco DECIMAL,
     tempo_treino INTEGER NOT NULL,
     quantidade_ag INTEGER NOT NULL,
@@ -121,7 +121,7 @@ CREATE TABLE Plano (
 
 CREATE TABLE Aulagrupo (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    nome VARCHAR(255) NOT NULL,
+    nome TEXT NOT NULL,
     dia_semana INTEGER NOT NULL,
     hora_inicio TIME NOT NULL,
     hora_fim TIME,
