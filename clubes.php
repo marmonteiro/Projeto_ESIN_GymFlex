@@ -21,7 +21,7 @@ include("templates/header_tpl.php");
 
 
 
-<!-- Este header é para apagar
+<!-- ESTE HEADER É PARA APAGAR
   <!DOCTYPE html>
 <html lang="pt">
 
