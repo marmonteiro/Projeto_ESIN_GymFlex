@@ -17,29 +17,9 @@ unset($_SESSION['msg']);
 </head>
 
 <body>
-  <header>
-    <a href="paginicial.php">
-      <img id="logo_registo" src="imagens/gymflex_logo.svg" alt="Logotipo">
-    </a>
-
-    <div class="barra_registo">
-      <a href="clubes.php" class="clubes">Clubes</a>
-      <a href="planos.php" class="planos">Planos</a>
-      <a href="aulasgrupo.php" class="info">Aulas de Grupo</a>
-      <a href="ajuda.php" class="ajuda">Ajuda</a>
-    </div>
-
-    <?php if (isset($_SESSION['email'])) { ?>
-      <a href="action_logout.php" class="button">Logout</a>
-      <a href="area_cliente.php" class="button">Área de Cliente</a>
-      <p>Olá,
-        <?php echo $_SESSION['nome'] ?>!
-      </p>
-    <?php } else { ?>
-      <a href="login.php" id="signup">Login: área de cliente</a>
-    <?php } ?>
-  </header>
-
+  <?php
+  include("templates/header_tpl.php");
+  ?>
 
   <section id="registo">
     <h1>Registo</h1>
@@ -119,16 +99,9 @@ unset($_SESSION['msg']);
 
   </section>
 
-  <?php 
-      include("templates/footer_tpl.php");
+  <?php
+  include("templates/footer_tpl.php");
   ?>
-  
-  <!-- <footer>
-    <p>Qualquer dúvida não hesite em contactar, teremos uma equipa ao seu dispor.</p>
-    <p>Email: gymflex.geral@gmail.com</p>
-    <p>Telemóvel: 923524352</p>
-    <p>&copy; GymFlex, 2023</p>
-  </footer> --> 
 </body>
 
 </html>

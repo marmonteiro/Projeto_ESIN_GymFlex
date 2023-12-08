@@ -76,7 +76,7 @@ CREATE TABLE Treino (
     FOREIGN KEY (ginasio) REFERENCES Ginasio(id),
     FOREIGN KEY (membro) REFERENCES Membro(id),
     UNIQUE (data, hora_entrada),
-    CHECK (hora_saida IS NULL OR hora_saida > hora_entrada),
+    CHECK (hora_saida IS NULL OR hora_saida > hora_entrada)
 );
 
 

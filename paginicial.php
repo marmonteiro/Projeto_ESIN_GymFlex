@@ -9,7 +9,7 @@ include("templates/header_tpl.php");
 
 
 
-<!-- <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="pt">
 
 <head>
@@ -43,7 +43,7 @@ include("templates/header_tpl.php");
             <a href="registo.php" class="inscreva-se">Inscreva-se</a>
             <a href="login.php" id="signup">Login: área de cliente</a>
         <?php } ?>
-    </header> --> 
+    </header> 
 
     <div class="escolherGymFlex">
         <p>Porquê o GymFlex?</p>

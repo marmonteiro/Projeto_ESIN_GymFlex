@@ -13,7 +13,7 @@
 
     <header>
         <a href="paginicial.php">
-            <img id="logo" src="imagens/gymflex_logo.svg" alt="Logotipo">
+            <img id="logo" src="imagens/logo.gif" alt="Logotipo">
         </a>
         <h1>GymFlex: Diferentes clubes em diferentes cidades</h1>
 
