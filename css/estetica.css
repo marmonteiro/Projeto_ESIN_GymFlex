@@ -136,18 +136,39 @@ align-items: center;
     font-size: 25px;
 }
 
+/* PARA TODOS OS  BOTÕES DE "INSCREVA-SE" E "LOGIN"*/
 .inscreva-se{
  text-align: center; 
  align-items: center;
  display: flex;
+ justify-content: center;
+ text-decoration: none; 
+ padding: 5px ; 
+ border: 2px solid #000; /* Cor da borda */
+ border-radius: 5px; /* Cantos arredondados */
+ background-color: #c69791;; /* Cor do fundo */
+ color: white; /* Cor do texto */
+ font-weight: bold; /* Texto em negrito */
+ margin: 5px; /* Espaçamento externo */
+ max-width: 160px;
 }
 
 #signup{
     text-align: center; 
     align-items: center;
     display: flex;
+    justify-content: center;
+    text-decoration: none; 
+    padding: 5px; 
+    border: 2px solid #000; /* Cor da borda */
+    border-radius: 5px; /* Cantos arredondados */
+    background-color: #c69791;; /* Cor do fundo */
+    color: white; /* Cor do texto */
+    font-weight: bold; /* Texto em negrito */
+    margin: 5px; /* Espaçamento externo */
+    max-width: 160px;
 }
-/*
+
 
 /*PÁGINA INICIAL*/
       /* Para a barra na pag inicial */
