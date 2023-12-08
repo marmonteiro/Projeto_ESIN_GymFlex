@@ -18,7 +18,7 @@ unset($_SESSION['msg']);
 
 <body>
   <?php
-  include("templates/header_tpl.php");
+  include("templates/header_ajuda_tpl.php");
   ?>
 
   <section id="registo">
