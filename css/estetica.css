@@ -234,6 +234,7 @@ align-items: center;
     justify-content: center;
     text-decoration: none;
     font-weight: bold; /* Texto em negrito */
+    color: white;
     
 }
 
