@@ -101,10 +101,10 @@ try {
     //  connection errors
     echo "Connection failed: " . $e->getMessage();
 }
-
+include("templates/header_ajuda_tpl.php");
 ?>
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="pt">
 
 <head>
@@ -112,7 +112,7 @@ try {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GymFlex</title>
     <link rel="icon" href="imagens/gymflex_logo_head.svg">
-    <link rel="stylesheet" href="estetica.css">
+    <link rel="stylesheet" href="css/estetica.css">
 </head>
 
 <body>
@@ -135,7 +135,7 @@ try {
             <a href="registo.php" class="inscreva-se">Inscreva-se</a>
             <a href="login.php" id="signup">Login: área de cliente</a>
         <?php } ?>
-    </header>
+    </header> --> 
 
     <section id="Area_Cliente">
         <h1>Área de Cliente</h1>

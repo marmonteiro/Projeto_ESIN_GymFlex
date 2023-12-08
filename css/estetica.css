@@ -53,7 +53,7 @@ footer {
     flex-wrap: wrap; /* Isso permite que os botões quebrem para a próxima linha se não couberem */
 }
 
-.club-logo {
+.clube-logo {
     max-width: 100px; 
     margin-bottom: 10px; /* Espaço entre a imagem e o texto */
     height: auto;
@@ -90,24 +90,15 @@ footer {
     display: none;
 } 
 
+#inscreva-se{ 
+align-items: center;
+}
 
 /* RELATIVO às páginas de CADA CLUBE INDIVIDUALMENTE */
-.club-logo{
-    display: block; 
-    margin: 0 auto; /* Define as margens superior e inferior como 0 e centraliza horizontalmente */
-}
 
 .mapa {
     display: block; 
     margin: 0 auto; /* Define as margens superior e inferior como 0 e centraliza horizontalmente */
-}
-
-.club-info2{
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    list-style: none; /*queria meter os pontos junto dos serviços, mas não consigo*/
-    margin-bottom: 100px;
 }
 
 .titulos_clubes{
@@ -145,9 +136,39 @@ footer {
     font-size: 25px;
 }
 
+/* PARA TODOS OS  BOTÕES DE "INSCREVA-SE" E "LOGIN"*/
 .inscreva-se{
-    text-align: center; 
+   text-align: center; 
+   align-items: center;
+   display: flex;
+   justify-content: center;
+   text-decoration: none; 
+   padding: 5px ; 
+   border: 2px solid #000; /* Cor da borda */
+   border-radius: 5px; /* Cantos arredondados */
+   background-color: #c69791;; /* Cor do fundo */
+   color: white; /* Cor do texto */
+   font-weight: bold; /* Texto em negrito */
+   margin: 5px; /* Espaçamento externo */
+   max-width: 160px;
 }
+
+#signup{
+    text-align: center; 
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-decoration: none; 
+    padding: 5px; 
+    border: 2px solid #000; /* Cor da borda */
+    border-radius: 5px; /* Cantos arredondados */
+    background-color: #c69791;; /* Cor do fundo */
+    color: white; /* Cor do texto */
+    font-weight: bold; /* Texto em negrito */
+    margin: 5px; /* Espaçamento externo */
+    max-width: 160px;
+}
+
 
 /*PÁGINA INICIAL*/
       /* Para a barra na pag inicial */
@@ -161,7 +182,6 @@ footer {
     color: #fff;
     background-color: #c69791;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
 }
 
 .barra {
@@ -211,7 +231,9 @@ footer {
 .planos {
     display: flex;
     /*justify-content: space-between;*/
-    justify-content: center
+    justify-content: center;
+    text-decoration: none;
+    font-weight: bold; /* Texto em negrito */
     
 }
 
@@ -240,12 +262,13 @@ footer {
     justify-content: center;
     align-items: center;
     background-color:#c69791;
-    color: black;
+    color: white;
     text-decoration: none;
     padding: 10px 20px; 
     text-decoration: none; 
     border: none; 
     font-weight: bold;
+    border-radius: 5px;
 }
 
 /* Horários aulas de grupo*/
@@ -353,8 +376,6 @@ footer {
     padding: 20px;
     text-align: center;
 }
-
-
 
      /* CSS for the login form */
 
@@ -703,16 +724,6 @@ h1 {
     src: url("./fonts/Montserrat-Bold.ttf");
 }
 
-
-/*body {
-    font-family: Montserrat, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    margin: 0;
-}*/
-
-
-
 /* Específico para a pág info */
 
 #info {
@@ -799,28 +810,27 @@ summary:before {
     transform: rotate(0);
     transform-origin: .2rem 50%;
     transition: .25s transform ease;
-  }
+}
   
-  details[open] > summary:before {
+details[open] > summary:before {
     transform: rotate(90deg);
-  }
+}
 
-  #Categoria > summary:before {
+#Categoria > summary:before {
     display: none;
-  }
+}
 
-
-  #Contactos > p {
+#Contactos > p {
     text-align: center;
     font-size: 16px;
     line-height: 1.4;
-  }
+}
 
 #FAQ {
     margin-top: 20px;
 }
 
-  a {
+a {
     color: rgba(107, 97, 97, 1);
     font-weight: bold;
-  }
+}

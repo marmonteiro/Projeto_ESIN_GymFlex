@@ -13,9 +13,8 @@
 
     <header>
         <a href="paginicial.php">
-            <img id="logo" src="imagens/logo.gif" alt="Logotipo">
+            <img id="logo" src="imagens/gymflex_logo.svg" alt="Logotipo">
         </a>
-        <h1>GymFlex: Diferentes clubes em diferentes cidades</h1>
 
         <div class="barra">
             <a href="clubes.php" class="clubes">Clubes</a>
@@ -27,15 +26,8 @@
         <?php if (isset($_SESSION['email'])) { ?>
             <a href="action_logout.php" class="button">Logout</a>
             <a href="area_cliente.php" class="button">Área de Cliente</a>
-            <p>Olá, <?php echo $_SESSION['nome'] ?>!</p>
         <?php } else { ?>
             <a href="registo.php" class="inscreva-se">Inscreva-se</a>
             <a href="login.php" id="signup">Login: área de cliente</a>
-        <?php }
-
-        if (isset($_SESSION['msg']) && !empty($_SESSION['msg'])) {
-            echo "<p>{$_SESSION['msg']}</p>";
-            unset($_SESSION['msg']); 
-            }?>
-
+        <?php } ?>
     </header>

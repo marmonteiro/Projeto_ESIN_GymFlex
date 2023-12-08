@@ -83,8 +83,8 @@ include("templates/header_tpl.php");
                     <p>Acompanhamento contínuo por nutrição </p>
                     <p>Cancelamento gratuito a qualquer momento </p>
                 </div>
-                <div class="botao_planos">
-                    <a href="registo.php" class="planos">Inscreva-se</a>
+                <div>
+                    <a href="registo.php" class="botao_planos">Inscreva-se</a>
                 </div>
             </div>
         <?php endforeach; ?>

@@ -7,9 +7,10 @@ if (isset($_SESSION['email'])) {
 }
 $msg = $_SESSION['msg'];
 unset($_SESSION['msg']);
+include("templates/header_ajuda_tpl.php");
 ?>
 
-<!DOCTYPE html>
+ <!-- <!DOCTYPE html>
 <html lang="pt">
 
 <head>
@@ -17,7 +18,7 @@ unset($_SESSION['msg']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GymFlex</title>
     <link rel="icon" href="imagens/gymflex_logo_head.svg">
-    <link rel="stylesheet" href="estetica.css">
+    <link rel="stylesheet" href="css/estetica.css">
 </head>
 
 <body>
@@ -41,7 +42,7 @@ unset($_SESSION['msg']);
             <a href="registo.php" class="inscreva-se">Inscreva-se</a>
             <a href="login.php" id="signup">Login: área de cliente</a>
         <?php } ?>
-    </header>
+    </header>  --> 
 
     <section id="Ajuda">
         <h1>Ajuda</h1>

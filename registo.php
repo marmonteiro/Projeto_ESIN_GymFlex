@@ -16,12 +16,12 @@ if (isset($_SESSION['email'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>GymFlex</title>
   <link rel="icon" href="imagens/gymflex_logo_head.svg">
-  <link rel="stylesheet" href="estetica.css">
+  <link rel="stylesheet" href="css/estetica.css">
 </head>
 
 <body>
   <?php
-  include("templates/header_tpl.php");
+  include("templates/header_ajuda_tpl.php");
   ?>
 
   <section id="registo">
