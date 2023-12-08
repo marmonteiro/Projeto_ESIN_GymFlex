@@ -28,8 +28,10 @@ foreach ($aulas as $aula){
     $hora_fim = $aula['hora_fim'];
     $imagem_aulagrupo = $aula['imagem_aulagrupo'];
 }
+include("templates/header_tpl.php");
 ?>
 
+<!-- ESTE HEADER É PARA APAGAR 
 <!DOCTYPE html>
 <html lang="pt">
 
@@ -62,7 +64,7 @@ foreach ($aulas as $aula){
             <a href="registo.php" class="inscreva-se">Inscreva-se</a>
             <a href="login.php" id="signup">Login: área de cliente</a>
         <?php } ?>
-    </header>
+    </header> -->
 
     <div class="classes">
     <?php

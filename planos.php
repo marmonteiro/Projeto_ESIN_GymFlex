@@ -27,7 +27,8 @@ try {
 include("templates/header_tpl.php");
 ?>
 
-<!-- <!DOCTYPE html>
+<!-- ESTE HEADER VAI SER PARA APAGAR
+    <!DOCTYPE html>
 <html lang="pt">
 
 <head>
@@ -93,10 +94,7 @@ include("templates/header_tpl.php");
 
 
     <div class="planos_duvidas">
-        <p>Queres vir treinar connosco e tens alguma dúvida sobre os planos? Entra em contacto, estamos disponíveis para
-            ti. </p>
-        <p>Email: gymflex.geral@gmail.com</p>
-        <p>Telemóvel: 923524352</p>
+        <p>Queres vir treinar connosco e tens alguma dúvida sobre os planos? Entra em contacto, estamos disponíveis para ti. </p>
     </div>
     
     <?php 

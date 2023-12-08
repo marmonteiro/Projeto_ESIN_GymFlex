@@ -3,13 +3,14 @@ session_start();
 
 $msg = $_SESSION['msg'];
 unset($_SESSION['msg']);
-include("templates/header_tpl.php");
+include("templates/headerpaginicial_tpl.php");
 ?>
 
 
 
 
- <!DOCTYPE html>
+<!--  ESTE HEADER VAI SER PARA APAGAR
+    <!DOCTYPE html>
 <html lang="pt">
 
 <head>
@@ -21,8 +22,7 @@ include("templates/header_tpl.php");
 </head>
 
 <body>
-    <!-- ESTE HEADER VAI SER PARA APAGAR --> 
-    <!-- <header>
+      <header>
         <a href="paginicial.php">
             <img id="logo" src="imagens/gymflex_logo.svg" alt="Logotipo">
         </a>
@@ -136,66 +136,12 @@ include("templates/header_tpl.php");
 
 
 
-
-     <!--<section id="contato">
-        <h2>Entre em Contato</h2>
-        <p>Tem alguma dúvida ou deseja obter mais informações? Preencha o formulário abaixo e entraremos em contato em
-            breve.</p>
-        <form action="formulario.php" method="post" style="max-width: 400px; margin: 0 auto;">
-            <div style="display: flex; flex-direction: column; margin-bottom: 15px;">
-                <label for="nome">Nome:</label>
-                <input type="text" id="nome" name="nome" required>
-            </div>
-
-            <div style="display: flex; flex-direction: column; margin-bottom: 15px;">
-                <label for="clube">Clube de Interesse:</label>
-                <input type="clube de interesse" id="clube de interesse" name="clube de interesse" required>
-            </div>
-
-            <div style="display: flex; flex-direction: column; margin-bottom: 15px;">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-
-            <div style="display: flex; flex-direction: column; margin-bottom: 15px;">
-                <label for="mensagem">Mensagem:</label>
-                <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-            </div>
-
-            <button type="submit">Enviar Mensagem</button>
-        </form>
-    </section> 
-    <p> 
-
-    </p>
-
-
-    <div class="feedback">
-        <p class="feedback-mensagem">A sua opinião é importante para nós, avalie-nos de 1 a 5. </p>
-        <div class="botões">
-            <button value="1">1</button>
-            <button value="2">2</button>
-            <button value="3">3</button>
-            <button value="4">4</button>
-            <button value="5">5</button>
-        </div>
-    </div>
-
-
-    <div class="feedback2">
-        <p class="feedback-mensagem">Envie-nos as suas sugestões de melhoria</p>
-        <form class="feedback-form">
-            <textarea id="mensagem" name="mensagem" rows="4" placeholder="Digite a sua sugestão aqui"
-                required></textarea>
-            <button type="submit">Enviar Sugestão</button>
-        </form>
-    </div> -->
-
    <?php 
       include("templates/footer_tpl.php");
     ?>
 
-    <!-- <footer>
+    <!-- FOOTER PARA APAGAR
+    <footer>
         <p>Qualquer dúvida não hesite em contactar, teremos uma equipa ao seu dispor.</p>
         <p>Email: gymflex.geral@gmail.com</p>
         <p>Telemóvel: 923524352</p>

@@ -205,114 +205,6 @@ footer {
     font-size: 15px;
 }
 
-      /* PARA O FORMS DO ENTRE EM CONTACTO*/ /*ISTO JÁ NÃO É PRECISO, PODE SE APAGAR*/
-/*#contato {
-    background-color: #f2f2f2; /* Cor de fundo cinza 
-    padding: 20px; Espaçamento interno 
-    border-radius: 10px;  Borda arredondada 
-    max-width: 600px;  Largura máxima 
-    margin: 0 auto;  Centralização horizontal 
-}*/ 
-
-/*#contato h2 {
-    text-align: center;  Centralizar texto 
-}*/
-
-/*#contato form {
-    max-width: 400px; /* Largura máxima do formulário 
-    margin: 0 auto;  Centralizar formulário dentro da seção 
-}*/
-
-/*#contato label {
-    margin-bottom: 5px; /* Espaçamento inferior entre rótulo e campo de entrada 
-}*/
-
-/*#contato input,
-#contato textarea {
-    width: 100%; 
-    padding: 10px; 
-    margin-bottom: 10px;  Espaçamento inferior entre campos 
-    border: 1px solid #ccc; /* Borda simples 
-    border-radius: 5px; Borda arredondada 
-}*/
-
-/*#contato button {
-    background-color: #333; /* Cor de fundo do botão 
-    color: #fff; /* Cor do texto do botão 
-    padding: 10px; /* Espaçamento interno 
-    border: none; /* Remover borda 
-    border-radius: 5px; /* Borda arredondada 
-    cursor: pointer; /* Cursor de ponteiro ao passar 
-}*/
-
-/*#contato button:hover {
-    background-color: #555; /* Cor de fundo do botão ao passar 
-} */ 
-
-        /*Página inicial -> AVALIAÇÃO*/
-.feedback{
-    background-color: #f0f0f0;
-    padding: 20px;
-    text-align: center;
-    bottom: 0;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.feedback-mensagem {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.botões button {
-    background-color: #ddd;
-    border: none;
-    color: black;
-    padding: 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-}
-
-.feedback2 {
-    background-color: #f0f0f0;
-    padding: 20px;
-    text-align: center;
-    bottom: 0;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-.feedback-mensagem {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.feedback-form {
-    text-align: center;
-}
-
-.feedback-form textarea {
-    width: 70%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-}
-
-.feedback-form button {
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
 
 /* RELATIVO À PÁGINA PLANOS*/
 .planos {
@@ -422,12 +314,6 @@ body {
     color: #333;
     margin: 0;
 }
-
-/* cabeçalho*/
-/*JÁ TEMOS UM HEADER LÁ EM CIMA */ /*ISTO É SÓ PARA ME ORGANIZAR*/
-/*header {
-    background-color:rgba(221, 192, 192, 1);
-}*/
 
 #logo_login {
     max-width: 100%;
@@ -589,12 +475,6 @@ body {
     margin: 0;
 }
 
-/* cabeçalho*/
-/*JÁ TEMOS UM FOOTER EM CIMA*/ /*RETIRAR DEPOIS*/
-/*header {
-    background-color: rgba(221, 192, 192, 1);
-}*/
-
 #logo_registo {
     max-width: 100%;
     width: 100%;
@@ -625,13 +505,6 @@ body {
     flex-wrap: wrap;
     /* Isso permite que os botões quebrem para a próxima linha se não couberem*/
 } 
-
-/*JÁ TEMOS UM FOOTER EM CIMA*/ /*RETIRAR DEPOIS*/
-/*footer {
-    background-color: rgba(189, 165, 165, 1);
-    padding: 20px;
-    text-align: center;
-}*/
 
     /*Registo*/
 
