@@ -205,49 +205,49 @@ footer {
     font-size: 15px;
 }
 
-      /* PARA O FORMS DO ENTRE EM CONTACTO*/
-#contato {
-    background-color: #f2f2f2; /* Cor de fundo cinza */
-    padding: 20px; /* Espaçamento interno */
-    border-radius: 10px; /* Borda arredondada */
-    max-width: 600px; /* Largura máxima */
-    margin: 0 auto; /* Centralização horizontal */
-}
+      /* PARA O FORMS DO ENTRE EM CONTACTO*/ /*ISTO JÁ NÃO É PRECISO, PODE SE APAGAR*/
+/*#contato {
+    background-color: #f2f2f2; /* Cor de fundo cinza 
+    padding: 20px; Espaçamento interno 
+    border-radius: 10px;  Borda arredondada 
+    max-width: 600px;  Largura máxima 
+    margin: 0 auto;  Centralização horizontal 
+}*/ 
 
-#contato h2 {
-    text-align: center; /* Centralizar texto */
-}
+/*#contato h2 {
+    text-align: center;  Centralizar texto 
+}*/
 
-#contato form {
-    max-width: 400px; /* Largura máxima do formulário */
-    margin: 0 auto; /* Centralizar formulário dentro da seção */
-}
+/*#contato form {
+    max-width: 400px; /* Largura máxima do formulário 
+    margin: 0 auto;  Centralizar formulário dentro da seção 
+}*/
 
-#contato label {
-    margin-bottom: 5px; /* Espaçamento inferior entre rótulo e campo de entrada */
-}
+/*#contato label {
+    margin-bottom: 5px; /* Espaçamento inferior entre rótulo e campo de entrada 
+}*/
 
-#contato input,
+/*#contato input,
 #contato textarea {
     width: 100%; 
     padding: 10px; 
-    margin-bottom: 10px; /* Espaçamento inferior entre campos */
-    border: 1px solid #ccc; /* Borda simples */
-    border-radius: 5px; /* Borda arredondada */
-}
+    margin-bottom: 10px;  Espaçamento inferior entre campos 
+    border: 1px solid #ccc; /* Borda simples 
+    border-radius: 5px; Borda arredondada 
+}*/
 
-#contato button {
-    background-color: #333; /* Cor de fundo do botão */
-    color: #fff; /* Cor do texto do botão */
-    padding: 10px; /* Espaçamento interno */
-    border: none; /* Remover borda */
-    border-radius: 5px; /* Borda arredondada */
-    cursor: pointer; /* Cursor de ponteiro ao passar */
-}
+/*#contato button {
+    background-color: #333; /* Cor de fundo do botão 
+    color: #fff; /* Cor do texto do botão 
+    padding: 10px; /* Espaçamento interno 
+    border: none; /* Remover borda 
+    border-radius: 5px; /* Borda arredondada 
+    cursor: pointer; /* Cursor de ponteiro ao passar 
+}*/
 
-#contato button:hover {
-    background-color: #555; /* Cor de fundo do botão ao passar */
-}
+/*#contato button:hover {
+    background-color: #555; /* Cor de fundo do botão ao passar 
+} */ 
 
         /*Página inicial -> AVALIAÇÃO*/
 .feedback{
@@ -457,7 +457,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    /* Isso permite que os botões quebrem para a próxima linha se não couberem */
+    /* Isso permite que os botões quebrem para a próxima linha se não couberem*/
 }
 
 
@@ -815,3 +815,176 @@ h1 {
     border-radius: 5px;
     transition: background-color 0.3s;
 }
+
+/* PARA A PÁGINA AJUDA */
+
+@font-face {
+    font-family: Montserrat;
+    src: url("./fonts/Montserrat-Medium.ttf");
+}
+    
+@font-face {
+    font-family: Montserrat Bold;
+    src: url("./fonts/Montserrat-Bold.ttf");
+}
+
+
+body {
+    font-family: Montserrat, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+}
+
+/* cabeçalho*/
+header {
+    font-family: Montserrat Bold, sans-serif;
+    background-color: #b9c5cd;
+    color: white;
+    padding: 70px;
+    text-align: center;
+}
+
+/* Para a barra na pag inicial */
+.barra a, #signup a {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #c69791;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.barra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Isso permite que os botões quebrem para a próxima linha se não couberem */
+}
+
+footer {
+    background-color: rgba(189, 165, 165, 1);
+    padding: 20px;
+    text-align: center;
+}
+
+#logo {
+    position: absolute;
+    top: 10px;
+    left: 100px;
+    max-width: 200px; /* Ajuste conforme necessário */
+}
+
+
+
+/* Específico para a pág info */
+
+#info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 45px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 35px;
+    margin-block-start: 5px;
+    margin-block-end: 5px;
+}
+
+#intro_ajuda  {
+    text-align: center;
+    font-size: 20px;
+    margin-block-start: 5px;
+    margin-block-end: 20px;
+}
+
+
+#Categoria_ajuda {
+    background-color: white;
+    border-radius: 5px;
+}
+
+#Categoria_ajuda > summary {
+    text-align: center;
+    font-weight: bold;
+}
+
+#Pergunta_ajuda > summary {
+    background-color: rgba(107, 97, 97, 0.35);
+    border-radius: 5px;
+}
+
+#Pergunta_ajuda > p {
+    text-indent: 20px;
+}
+
+#Categoria_ajuda {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 350px;
+    margin-right: 350px;
+    padding: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+#Categoria_ajuda > details {
+    margin: 10px;
+    padding: 10px;
+}
+
+summary {
+    display: block; /* isto tá a fazer com q a seta dos details original desapareça mas acho q n é suposto*/
+    position: relative; 
+    cursor: pointer;
+    padding-left: 30px !important; /* só funciona com !important ??? */
+    font-size: 18px;
+    padding: 10px;
+}
+
+details > p {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+summary:before {
+    content: '';
+    border-width: .4rem;
+    border-style: solid;
+    border-color: transparent transparent transparent black; /* seta para baixo = quadrado com 3 bordas transparentes */
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    transform: rotate(0);
+    transform-origin: .2rem 50%;
+    transition: .25s transform ease;
+  }
+  
+  details[open] > summary:before {
+    transform: rotate(90deg);
+  }
+
+  #Categoria > summary:before {
+    display: none;
+  }
+
+
+  #Contactos > p {
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  a {
+    color: rgba(107, 97, 97, 1);
+    font-weight: bold;
+  }
