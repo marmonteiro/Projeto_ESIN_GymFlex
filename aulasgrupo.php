@@ -89,15 +89,12 @@ include("templates/header_tpl.php");
 </div>
 
 
-        <div class="mensagem">
+    <div class="mensagem">
         <p>Inscreve-te já como membro para puderes usufruir destas aulas</p>
         <a href="registo.php" class="button"> Inscreve-te aqui! </a>
     </div>
-    <div class="mensagem">
-        <p>Inscreve-te já como membro para puderes usufruir destas aulas</p>
-        <a href="horários.php" class="button"> Inscreve-te aqui! </a>
-    </div>
-    </div>
+
+    
 
     
     <!-- FOOTER PARA APAGAR
