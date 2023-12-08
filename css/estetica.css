@@ -53,7 +53,7 @@ footer {
     flex-wrap: wrap; /* Isso permite que os botões quebrem para a próxima linha se não couberem */
 }
 
-.club-logo {
+.clube-logo {
     max-width: 100px; 
     margin-bottom: 10px; /* Espaço entre a imagem e o texto */
     height: auto;
@@ -63,18 +63,18 @@ footer {
     background-color: #c4938e;
 }
 
-.club-info {
+.clube-info {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     list-style: none;
    
 }
-.club-info a {
+.clube-info a {
     text-decoration: none; /* Remove o sublinhado */
     color: black;
 }
-.club-info li {
+.clube-info li {
     text-align: center;
     max-width: 300px;
     padding: 20px;
@@ -92,23 +92,23 @@ footer {
 
 
 /* RELATIVO às páginas de CADA CLUBE INDIVIDUALMENTE */
-.club-logo{
+/*.clube-logo{
     display: block; 
-    margin: 0 auto; /* Define as margens superior e inferior como 0 e centraliza horizontalmente */
-}
+    margin: 0 auto; /* Define as margens superior e inferior como 0 e centraliza horizontalmente 
+}*/
 
 .mapa {
     display: block; 
     margin: 0 auto; /* Define as margens superior e inferior como 0 e centraliza horizontalmente */
 }
 
-.club-info2{
+/*.club-info2{
     justify-content: center;
     text-align: center;
     align-items: center;
-    list-style: none; /*queria meter os pontos junto dos serviços, mas não consigo*/
+    list-style: none; /*queria meter os pontos junto dos serviços, mas não consigo
     margin-bottom: 100px;
-}
+}*/
 
 .titulos_clubes{
     text-align: center;
