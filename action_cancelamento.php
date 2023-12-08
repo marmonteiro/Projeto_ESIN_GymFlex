@@ -1,22 +1,35 @@
 <?php
-require_once("init.php");
+require_once("database/init.php");
 session_start();
 
     try {
-        // Delete user info from Pessoa and related tables
-        $stmt = $dbh->prepare('DELETE FROM Pessoa WHERE email = ?');
-        $stmt->execute([$email]);
+        // Apaga membro da tabela Pessoa
+        $stmt = $dbh->prepare('DELETE FROM Pessoa WHERE id = ?');
+        $stmt->execute([$_SESSION['id']]);
 
-        
+        // Apaga membro da tabela Membro
+        $stmt = $dbh->prepare('DELETE FROM Membro WHERE id = ?');
+        $stmt->execute([$_SESSION['id']]);
 
-        // After cancellation, destroy the session and redirect to a confirmation page or login page
+        // Apaga membro da tabela Plano
+        $stmt = $dbh->prepare('DELETE FROM Plano WHERE membro = ?');
+        $stmt->execute([$_SESSION['id']]);
+
+        //Caso hajam inscrições em aulas de grupo, qntd_membros -1
+        $stmt = $dbh->prepare('UPDATE Aulagrupo SET qntd_membros = qntd_membros - 1 WHERE id IN (SELECT aulagrupo FROM Inscricao_ag WHERE membro = ?)');
+        $stmt->execute([$_SESSION['id']]);
+
+        // Apaga membro da tabela Inscricao_ag
+        $stmt = $dbh->prepare('DELETE FROM Inscricao_ag WHERE membro = ?');
+        $stmt->execute([$_SESSION['id']]);
+
+
         session_destroy();
-        header('Location: cancelamento.php'); // Redirect to confirmation page
+        header('Location: cancelado.php'); // Redireciona para a página de cancelamento
         exit();
 
     } catch (PDOException $e) {
-        // Handle any errors that might occur during deletion
-        echo "Error: " . $e->getMessage();
+        $_SESSION['msg'] = 'Erro: ' . $e->getMessage();
     }
 
 ?>

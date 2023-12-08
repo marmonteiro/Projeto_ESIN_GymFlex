@@ -2,8 +2,6 @@
 require_once("database/init.php");
 session_start();
 
-$msg = $_SESSION['msg'];
-unset($_SESSION['msg']);
 
 // Ir buscar dados à base de dados //
 try {

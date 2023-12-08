@@ -3,7 +3,43 @@ require_once("database/init.php");
 session_start();
 
 try {
-    
+    function fetchQuantidadeAGByEmail($email)
+    { //quantidade_ag do ultimo plano
+        global $dbh;
+        $stmt = $dbh->prepare('
+        SELECT Tipo_p.quantidade_ag
+        FROM Plano
+        INNER JOIN Membro ON Plano.membro = Membro.id
+        INNER JOIN Tipo_p ON Plano.tipo_p = Tipo_p.nome
+        INNER JOIN Pessoa ON Membro.id = Pessoa.id
+        WHERE Pessoa.email = ?
+        ORDER BY Plano.data_adesao DESC
+        LIMIT 1
+    ');
+        $stmt->execute(array($email));
+        $quantidade_ag = $stmt->fetchColumn();
+        return $quantidade_ag;
+    }
+
+    function fetchInscricoesAGByEmail($email) //inscricoes_ag (do mes atual)
+    {
+        global $dbh;
+        $stmt = $dbh->prepare('
+        SELECT COUNT(Inscricao_ag.id) AS inscricoes_ag
+        FROM Inscricao_ag
+        INNER JOIN Membro ON Inscricao_ag.membro = Membro.id
+        INNER JOIN Pessoa ON Membro.id = Pessoa.id
+        INNER JOIN Aulagrupo ON Inscricao_ag.aulagrupo = Aulagrupo.id
+        WHERE Pessoa.email = ?
+        AND strftime("%Y-%m", Aulagrupo.data) = strftime("%Y-%m", "now")
+    ');
+
+        $stmt->execute(array($_SESSION['email']));
+        $inscricoes_ag = $stmt->fetchColumn();
+        return $inscricoes_ag;
+    }
+
+
     global $dbh;
     if (!isset($_SESSION['email'])) {
         header('Location: login.php'); // Redirect to login if not logged in
@@ -12,7 +48,7 @@ try {
 
     $stmt = $dbh->prepare('
     SELECT Pessoa.nome, Pessoa.data_nascimento, Pessoa.nr_telemovel, Pessoa.email, Pessoa.morada, Pessoa.nif,
-        Membro.altura, Membro.peso, Membro.imc, Membro.nutricionista, Membro.personaltrainer, Membro.inscricoes_ag, Membro.sexo,
+        Membro.altura, Membro.peso, Membro.imc, Membro.nutricionista, Membro.personaltrainer, Membro.sexo,
         Plano.data_adesao, Plano.tipo_p
         FROM Pessoa
         INNER JOIN Membro ON Membro.id = Pessoa.id
@@ -52,7 +88,13 @@ try {
     $prox_pagam_form = strtotime("next month", $data_atual);
     $mes_proxpagam = date('m', $prox_pagam_form); // mês da próxima prestação
     $ano_proxpagam = date('Y', $prox_pagam_form); // ano da próxima prestação
-    $prox_pagam = $ano_proxpagam . '-' . $mes_proxpagam . '-' . $dia_adesao ;
+    $prox_pagam = $ano_proxpagam . '-' . $mes_proxpagam . '-' . $dia_adesao;
+
+    //calculo da quantidade de aulas de grupo disponiveis
+    $quantidade_ag = fetchQuantidadeAGByEmail($_SESSION['email']);
+    $inscricoes_ag = fetchInscricoesAGByEmail($_SESSION['email']);
+    $disponiveis_ag = $quantidade_ag - $inscricoes_ag;
+    $_SESSION['disponiveis_ag'] = $disponiveis_ag;
 
 
 } catch (PDOException $e) {
@@ -98,12 +140,19 @@ try {
     <section id="Area_Cliente">
         <h1>Área de Cliente</h1>
 
+        <?php if (isset($_SESSION['msg']) && !empty($_SESSION['msg'])) {
+            echo "<p>{$_SESSION['msg']}</p>";
+            unset($_SESSION['msg']);
+        } ?>
+
         <h2>
             <?php
             if ($sexo === 'F') {
-                echo "Bem-vinda de volta, " . $nome;
+                echo "Bem-vinda, " . $nome;
             } elseif ($sexo === 'M') {
-                echo "Bem-vindo de volta, " . $nome;
+                echo "Bem-vindo, " . $nome;
+            } else {
+                echo "Bem-vind@, " . $nome;
             }
             ?>
         </h2>
@@ -168,10 +217,17 @@ try {
         </div>
 
         <div>
-            <a href="inscricao_ag.php" class="button">Inscrever em Aulas de Grupo</a>
+            <?php if ($_SESSION['disponiveis_ag'] > 1) { ?>
+                <p> Tens direito a mais
+                    <?php echo $disponiveis_ag ?> aulas de grupo este mês.
+                </p>
+                <a href="inscricao_ag.php" class="button">Inscrever em Aulas de Grupo</a>
+            <?php } elseif ($_SESSION['disponiveis_ag'] == 1) { ?>
+                <p> Tens direito a mais 1 aula de grupo este mês.</p>
+                <a href="inscricao_ag.php" class="button">Inscrever em Aulas de Grupo</a>
+            <?php } elseif ($_SESSION["disponiveis_ag"] < 1) { ?>
+                <p> Não tens direito a mais aulas de grupo este mês.</p>
+            <?php } ?>
         </div>
-
-
-
 
     </section>

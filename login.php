@@ -5,6 +5,11 @@ session_start();
 $msg = $_SESSION['msg'];
 unset($_SESSION['msg']);
 
+if (isset($_SESSION['email'])) {
+  header('Location: area_cliente.php');
+  exit();
+}
+
 try {
 
 } catch (PDOException $e) {
@@ -74,12 +79,6 @@ try {
   <?php 
       include("templates/footer_tpl.php");
   ?>
-  <!-- <footer>
-    <p>Qualquer dúvida não hesite em contactar, teremos uma equipa ao seu dispor.</p>
-    <p>Email: gymflex.geral@gmail.com</p>
-    <p>Telemóvel: 923524352</p>
-    <p>&copy; GymFlex, 2023</p>
-  </footer> --> 
 
 </body>
 

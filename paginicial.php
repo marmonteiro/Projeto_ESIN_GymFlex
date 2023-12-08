@@ -1,8 +1,6 @@
 <?php
 session_start();
 
-$msg = $_SESSION['msg'];
-unset($_SESSION['msg']);
 include("templates/headerpaginicial_tpl.php");
 ?>
 

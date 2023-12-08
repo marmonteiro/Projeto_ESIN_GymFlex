@@ -31,5 +31,11 @@
         <?php } else { ?>
             <a href="registo.php" class="inscreva-se">Inscreva-se</a>
             <a href="login.php" id="signup">Login: área de cliente</a>
-        <?php } ?>
+        <?php }
+
+        if (isset($_SESSION['msg']) && !empty($_SESSION['msg'])) {
+            echo "<p>{$_SESSION['msg']}</p>";
+            unset($_SESSION['msg']); 
+            }?>
+
     </header>

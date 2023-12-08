@@ -1,8 +1,11 @@
 <?php
 session_start();
 
-$msg = $_SESSION['msg'];
-unset($_SESSION['msg']);
+if (isset($_SESSION['email'])) {
+  header('Location: area_cliente.php');
+  exit();
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -58,6 +61,7 @@ unset($_SESSION['msg']);
         <div>
           <input type="radio" name="sexo" value="M"> Masculino
           <input type="radio" name="sexo" value="F"> Feminino
+          <input type="radio" name="sexo" value="O"> Outro
         </div>
       </section>
 
@@ -95,7 +99,6 @@ unset($_SESSION['msg']);
       </section>
 
     </form>
-
 
   </section>
 

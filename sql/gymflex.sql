@@ -18,7 +18,7 @@ CREATE TABLE Pessoa (
     nome TEXT NOT NULL,
     morada TEXT NOT NULL,
     nif INTEGER UNIQUE,
-    nr_telemovel INTEGER UNIQUE,
+    nr_telemovel INTEGER,
     email TEXT UNIQUE,
     data_nascimento DATE
 );
@@ -32,7 +32,6 @@ CREATE TABLE Membro (
     imc DECIMAL,
     personaltrainer INTEGER,
     nutricionista INTEGER,
-    inscricoes_ag INTEGER,
     sexo TEXT NOT NULL,
     iban TEXT NOT NULL,
     FOREIGN KEY (id) REFERENCES Pessoa(id) ON DELETE CASCADE,
@@ -74,11 +73,10 @@ CREATE TABLE Treino (
     ginasio INTEGER NOT NULL,
     membro INTEGER NOT NULL,
     FOREIGN KEY (ginasio) REFERENCES Ginasio(id),
-    FOREIGN KEY (membro) REFERENCES Membro(id),
+    FOREIGN KEY (membro) REFERENCES Membro(id) ON DELETE CASCADE,
     UNIQUE (data, hora_entrada),
     CHECK (hora_saida IS NULL OR hora_saida > hora_entrada)
 );
-
 
 
 -- Tabela Ginasio
@@ -107,10 +105,11 @@ CREATE TABLE Tipo_p (
 --falta: soma mensal da duracao_t de cada Membro terá de ser inferior ou igual ao tempo_treino do Tipo de Plano escolhido pelo Membro
 
 CREATE TABLE Plano (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
     data_adesao DATE NOT NULL,
     membro INTEGER NOT NULL,
     tipo_p INTEGER NOT NULL,
-    FOREIGN KEY (membro) REFERENCES Membro(id),
+    FOREIGN KEY (membro) REFERENCES Membro(id) ON DELETE CASCADE,
     FOREIGN KEY (tipo_p) REFERENCES Tipo_p(nome)
     --se um Membro tiver mais que uma data_adesao, então a diferença entre elas terá de ser superior ou igual a 5 meses:
     --CHECK ((SELECT COUNT(*) FROM Plano AS p WHERE p.membro = membro AND julianday('now') - julianday(data_adesao) < 150) <= 1) -- não funciona	
@@ -139,7 +138,6 @@ CREATE TABLE Tipo_ag(
     imagem_ag TEXT,
     CHECK (hora_fim IS NULL OR hora_fim > hora_inicio),
     CHECK (capacidade > 0)
-    
 );
 
 
@@ -148,10 +146,13 @@ CREATE TABLE Inscricao_ag (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     membro INTEGER NOT NULL,
     aulagrupo INTEGER NOT NULL,
-    FOREIGN KEY (membro) REFERENCES Membro(id),
+    FOREIGN KEY (membro) REFERENCES Membro(id) ON DELETE CASCADE,
     FOREIGN KEY (aulagrupo) REFERENCES Aulagrupo(id)
 );
 -- php: qntd_membros corresponde à soma de clientes que se inscreveram numa certa Aulagrupo
+
+
+
 
 
 INSERT INTO Ginasio (id, morada, nome, email, nr_telefone, mapa_url, imagem_url)
@@ -255,7 +256,7 @@ VALUES
 -- Inserir dados na tabela Aulagrupo
 INSERT INTO Aulagrupo (data, qntd_membros, ginasio, tipo_ag)
 VALUES 
-  ('2023-12-25', 0, 1, 'Cycling'),
+  ('2023-12-25', 15, 1, 'Cycling'),
   ('2023-12-26', 0, 1, 'Pilates'),  
   ('2023-12-27', 0, 1, 'Body Step'),
   ('2023-12-28', 0, 1, 'Body Pump'),
@@ -266,7 +267,7 @@ VALUES
   ('2023-12-27', 0, 2, 'Body Step'),
   ('2023-12-28', 0, 2, 'Body Pump'),
   ('2023-12-29', 0, 2, 'Zumba'),
-  ('2023-12-30', 0, 3, 'Xpress Abs'),
+  ('2023-12-30', 0, 2, 'Xpress Abs'),
   ('2023-12-25', 0, 3, 'Cycling'),
   ('2023-12-26', 0, 3, 'Pilates'),  
   ('2023-12-27', 0, 3, 'Body Step'),
@@ -274,6 +275,10 @@ VALUES
   ('2023-12-29', 0, 3, 'Zumba'),
   ('2023-12-30', 0, 3, 'Xpress Abs');
 
+-- Inserir dados na tabela Inscricao_ag
+INSERT INTO Inscricao_ag (membro, aulagrupo)
+VALUES
+((SELECT id FROM Pessoa WHERE nome = 'João Silva'), 2);
 
 -- Inserir dados na tabela Treino
   INSERT INTO Treino (data, hora_entrada, hora_saida, duracao_t, ginasio, membro)
@@ -299,3 +304,4 @@ VALUES
   ('2023-12-05', '09:30', '10:30', (strftime('%s', '10:30') - strftime('%s', '09:30')) / 3600.0, 1, (SELECT id FROM Pessoa WHERE nome = 'Carlos Pereira')),
   ('2023-12-07', '10:30', '11:30', (strftime('%s', '11:30') - strftime('%s', '10:30')) / 3600.0, 2, (SELECT id FROM Pessoa WHERE nome = 'Carlos Pereira')),
   ('2023-12-18', '10:30', '11:30', (strftime('%s', '11:30') - strftime('%s', '10:30')) / 3600.0, 3, (SELECT id FROM Pessoa WHERE nome = 'Carlos Pereira'));
+

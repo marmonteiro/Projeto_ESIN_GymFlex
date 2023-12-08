@@ -141,9 +141,10 @@ try {
 } catch (PDOException $e) {
     $error_msg = $e->getMessage();
 
-    if (strpos($error_msg, 'UNIQUE')) {
+    if (strpos($error_msg, 'UNIQUE constraint failed: Pessoa.email')) {
         $_SESSION['msg'] = 'E-mail já está registado!';
-    } else {
+    }
+    else {
         $_SESSION['msg'] = "Registo falhou! ($error_msg)";
     }
     header('Location: registo.php');
