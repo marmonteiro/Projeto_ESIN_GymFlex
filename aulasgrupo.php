@@ -100,6 +100,7 @@ include("templates/header_tpl.php");
     </div>
 
     
+    <!-- FOOTER PARA APAGAR
     <footer>
         <p>Qualquer dúvida não hesite em contactar, teremos uma equipa ao seu dispor.</p>
         <p>Email: gymflex.geral@gmail.com</p>
@@ -107,7 +108,10 @@ include("templates/header_tpl.php");
         <p>&copy; GymFlex,
             <?php echo date("Y"); ?>
         </p>
-    </footer>
+    </footer> -->
+    <?php 
+      include("templates/footer_tpl.php");
+    ?>
 
 </body>
 </html>

@@ -7,7 +7,8 @@ body {
 }
 /* cabeçalho*/
 header {
-    background-color: rgba(189, 165, 165, 1);;
+    /*background-color: rgba(189, 165, 165, 1);*/
+    background-color: whitesmoke;
     color: white;
     padding: 20px;
     text-align: center;
