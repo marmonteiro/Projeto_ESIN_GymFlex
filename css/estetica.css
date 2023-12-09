@@ -277,11 +277,12 @@ align-items: center;
     padding: 20px;
 }
 
-table {
+/*ACHO QUE ISTO JÁ NÃO É NECESSÁRIO*/
+/*table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-}
+}*/
 
 th, td {
     border: 1px solid #ccc;
@@ -293,13 +294,14 @@ th {
     background-color: #f5f5f5;
 }
 
+/*ISTO TAMBÉM JÁ NÃO É NECESSÁRIO -> APAGAR*/
 /* Adicione o estilo para mostrar as vagas ao passar o mouse */
-td:hover::after {
-    content: "Lotação Máxima: " attr(data-vagas); /*VER NA BASE DE DADOS */
+/*td:hover::after {
+    content: "Lotação Máxima: " attr(data-vagas); /*VER NA BASE DE DADOS 
     display: block;
     margin-top: 10px;
     font-size: 14px;
-}
+}*/
 
 .mensagem {
     margin-top: 20px;
@@ -630,7 +632,10 @@ select {
     color: #999;
   }
   
-  
+  /* Placeholder styles for the select */
+  select option[disabled]:first-child {
+    color: #999;
+  }
   
 /*boxes de informação*/
 #escolha_plano {
