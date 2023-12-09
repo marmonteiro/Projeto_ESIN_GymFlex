@@ -6,10 +6,9 @@ $oldpassword = $_POST['Antiga'];
 $newpassword = $_POST['Nova'];
 $confirm_password = $_POST['Confirme'];
 
-//if (sha1($oldpassword) != getPassPersonByEmail($_SESSION['email'])) {
+
 if (!loginSuccess($_SESSION['email'], $oldpassword)) {
   $_SESSION['msg'] = 'A senha antiga está incorreta.';
-  // var_dump($oldpassword, getPassPersonByEmail($_SESSION['email']));
   header('Location: edit-password.php'); 
   die();
 }
@@ -28,7 +27,7 @@ if ($newpassword != $confirm_password) {
 
 try {
   updatePassPersonByEmail($newpassword, $_SESSION['email']);
-  header('Location: profile.php');
+  header('Location: area_cliente.php');
 } catch (PDOException $e) {
   $err_msg = $e->getMessage();
 
