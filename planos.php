@@ -2,15 +2,17 @@
 require_once("database/init.php");
 session_start();
 
-
-// Ir buscar dados à base de dados //
-try {
+function fetchInfoTipoPlanos() {
 
     global $dbh;
     $stmt = $dbh->prepare('SELECT * FROM Tipo_p');
     $stmt->execute();
     $tipo_p_info = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $tipo_p_info;
+};
 
+try {
+    $tipo_p_info = fetchInfoTipoPlanos();
     foreach($tipo_p_info as $plano) {
         $nome_plano = $plano['nome'];
         $preco_plano = $plano['preco'];

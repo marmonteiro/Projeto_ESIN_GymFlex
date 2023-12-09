@@ -630,10 +630,7 @@ select {
     color: #999;
   }
   
-  /* Placeholder styles for the select */
-  select option[disabled]:first-child {
-    color: #999;
-  }
+  
   
 /*boxes de informação*/
 #escolha_plano {

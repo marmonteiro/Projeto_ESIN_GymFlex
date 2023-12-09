@@ -6,7 +6,7 @@ include("templates/header_tpl.php");
     <div>
         <h1>Cancelar subscrição</h1>
         <p>Tem certeza de que deseja cancelar a subscrição como membro GymFlex?</p>
-        <p>Parará de ter acesso aos nossos serviços a partir de dia 1 do próximo mês.</p>
+        <p>Parará de ter acesso a todas as vantagens como membro imediatamente.</p>
 
         <a href="action_cancelamento.php" type="button">Cancelar subscrição</button>
 </body>

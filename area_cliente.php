@@ -46,17 +46,29 @@ try {
         exit();
     }
 
-    $stmt = $dbh->prepare('
-    SELECT Pessoa.nome, Pessoa.data_nascimento, Pessoa.nr_telemovel, Pessoa.email, Pessoa.morada, Pessoa.nif,
-        Membro.altura, Membro.peso, Membro.imc, Membro.nutricionista, Membro.personaltrainer, Membro.sexo,
-        Plano.data_adesao, Plano.tipo_p
+    function fetchDetalhesMembroByEmail($email)
+    {
+        global $dbh;
+        $stmt = $dbh->prepare('
+        SELECT Pessoa.nome, Pessoa.data_nascimento, Pessoa.nr_telemovel, Pessoa.email, Pessoa.morada, Pessoa.nif,
+            Membro.altura, Membro.peso, Membro.imc, Membro.nutricionista, Membro.personaltrainer, Membro.sexo,
+            Plano.data_adesao, Plano.tipo_p
         FROM Pessoa
         INNER JOIN Membro ON Membro.id = Pessoa.id
-        INNER JOIN Plano ON Plano.membro = Pessoa.id
+        LEFT JOIN Plano ON Plano.membro = Membro.id
         WHERE Pessoa.email = ?
+        AND Plano.id = (
+            SELECT MAX(id)
+            FROM Plano
+            WHERE Plano.membro = Membro.id
+        )
     ');
-    $stmt->execute(array($_SESSION['email']));
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        $stmt->execute(array($email));
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $user;
+    };
+
+    $user = fetchDetalhesMembroByEmail($_SESSION['email']);
 
     $nome = $user['nome'];
     $data_nascimento = $user['data_nascimento'];
@@ -67,8 +79,8 @@ try {
     $peso = $user['peso'];
     $imc = $user['imc'];
     $sexo = $user['sexo'];
-    $tipo_plano = $user['tipo_p'];
-    $data_adesao = $user['data_adesao'];
+    $tipo_plano = $user['tipo_p']; //tipo de plano atual
+    $data_adesao = $user['data_adesao']; //ultima data de adesao
     $nutricionista_id = $user['nutricionista'];
     $personaltrainer_id = $user['personaltrainer'];
     $idade = date_diff(date_create($data_nascimento), date_create('today'))->y; // calcula a idade
@@ -96,6 +108,10 @@ try {
     $disponiveis_ag = $quantidade_ag - $inscricoes_ag;
     $_SESSION['disponiveis_ag'] = $disponiveis_ag;
 
+    //verifica se o membro pode alterar o plano (se já passaram 5 meses desde a adesão)
+    $ha2Meses = date('Y-m-d', strtotime('-2 months'));
+    $alteracaoPermitida = strtotime($data_adesao) <= strtotime($ha2Meses);
+
 
 } catch (PDOException $e) {
     //  connection errors
@@ -104,130 +120,105 @@ try {
 include("templates/header_ajuda_tpl.php");
 ?>
 
-<!-- <!DOCTYPE html>
-<html lang="pt">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GymFlex</title>
-    <link rel="icon" href="imagens/gymflex_logo_head.svg">
-    <link rel="stylesheet" href="css/estetica.css">
-</head>
+<section id="Area_Cliente">
+    <h1>Área de Cliente</h1>
 
-<body>
+    <?php if (isset($_SESSION['msg']) && !empty($_SESSION['msg'])) {
+        echo "<p>{$_SESSION['msg']}</p>";
+        unset($_SESSION['msg']);
+    } ?>
 
-    <header>
-        <a href="paginicial.php">
-            <img id="logo" src="imagens/gymflex_logo.svg" alt="Logotipo">
-        </a>
+    <h2>
+        <?php
+        if ($sexo === 'F') {
+            echo "Bem-vinda, " . $nome;
+        } elseif ($sexo === 'M') {
+            echo "Bem-vindo, " . $nome;
+        } else {
+            echo "Bem-vind@, " . $nome;
+        }
+        ?>
+    </h2>
 
-        <div class="barra">
-            <a href="clubes.php" class="clubes">Clubes</a>
-            <a href="planos.php" class="planos">Planos</a>
-            <a href="aulasgrupo.php" class="info">Aulas de Grupo</a>
-            <a href="ajuda.php" class="ajuda">Ajuda</a>
-        </div>
+    <div id="dados_pessoais">
+        <h3>Dados Pessoais</h3>
+        <p>Nome:
+            <?php echo $nome ?>
+        </p>
+        <p>Data de Nascimento:
+            <?php echo $data_nascimento ?>
+        </p>
+        <p>Nº Telemóvel:
+            <?php echo $nr_telemovel ?>
+        </p>
+        <p>Morada:
+            <?php echo $morada ?>
+        </p>
+        <p>NIF:
+            <?php echo $nif ?>
+        </p>
+    </div>
 
-        <?php if (isset($_SESSION['email'])) { ?>
-            <a href="action_logout.php" class="button">Logout</a>
+    <div id="dados_fisicos">
+        <h3>Dados Físicos</h3>
+        <p>Idade:
+            <?php echo $idade ?> anos
+        </p>
+        <p>Altura:
+            <?php echo $altura / 100 ?> m
+        </p>
+        <p>Peso:
+            <?php echo $peso ?> kg
+        </p>
+        <p>IMC:
+            <?php printf("%.1f", $imc) ?>
+        </p>
+    </div>
+
+    <div id="dados_plano">
+        <h3>Dados do Plano</h3>
+        <p>Tipo de Plano:
+            <?php echo $tipo_plano ?>
+        </p>
+        <p>Próxima Prestação:
+            <?php echo $prox_pagam ?>
+        </p>
+        <p>Data de Adesão:
+            <?php echo $data_adesao ?>
+        </p>
+        <p>Nutricionista:
+            <?php echo $nutricionista_nome ?>
+        </p>
+        <p>Personal Trainer:
+            <?php echo $personaltrainer_nome ?>
+        </p>
+    </div>
+
+    <div>
+        <?php if ($alteracaoPermitida) { ?>
+            <a href="alteracao_plano.php" class="button">Alterar Plano</a>
         <?php } else { ?>
-            <a href="registo.php" class="inscreva-se">Inscreva-se</a>
-            <a href="login.php" id="signup">Login: área de cliente</a>
+            <p> Só podes alterar o teu plano 2 meses após a última adesão.</p>
         <?php } ?>
-    </header> --> 
+    </div>
 
-    <section id="Area_Cliente">
-        <h1>Área de Cliente</h1>
+    <div>
+        <a href="cancelamento.php" class="button">Cancelar Subscrição</a>
+    </div>
 
-        <?php if (isset($_SESSION['msg']) && !empty($_SESSION['msg'])) {
-            echo "<p>{$_SESSION['msg']}</p>";
-            unset($_SESSION['msg']);
-        } ?>
+    <div>
+        <?php if ($_SESSION['disponiveis_ag'] > 1) { ?>
+            <p> Tens direito a mais
+                <?php echo $disponiveis_ag ?> aulas de grupo este mês.
+            </p>
+            <a href="inscricao_ag.php" class="button">Inscrever em Aulas de Grupo</a>
+        <?php } elseif ($_SESSION['disponiveis_ag'] == 1) { ?>
+            <p> Tens direito a mais 1 aula de grupo este mês.</p>
+            <a href="inscricao_ag.php" class="button">Inscrever em Aulas de Grupo</a>
+        <?php } elseif ($_SESSION["disponiveis_ag"] < 1) { ?>
+            <p> Não tens direito a mais aulas de grupo este mês.</p>
+        <?php } ?>
+    </div>
 
-        <h2>
-            <?php
-            if ($sexo === 'F') {
-                echo "Bem-vinda, " . $nome;
-            } elseif ($sexo === 'M') {
-                echo "Bem-vindo, " . $nome;
-            } else {
-                echo "Bem-vind@, " . $nome;
-            }
-            ?>
-        </h2>
-
-        <div id="dados_pessoais">
-            <h3>Dados Pessoais</h3>
-            <p>Nome:
-                <?php echo $nome ?>
-            </p>
-            <p>Data de Nascimento:
-                <?php echo $data_nascimento ?>
-            </p>
-            <p>Nº Telemóvel:
-                <?php echo $nr_telemovel ?>
-            </p>
-            <p>Morada:
-                <?php echo $morada ?>
-            </p>
-            <p>NIF:
-                <?php echo $nif ?>
-            </p>
-        </div>
-
-        <div id="dados_fisicos">
-            <h3>Dados Físicos</h3>
-            <p>Idade:
-                <?php echo $idade ?> anos
-            </p>
-            <p>Altura:
-                <?php echo $altura / 100 ?> m
-            </p>
-            <p>Peso:
-                <?php echo $peso ?> kg
-            </p>
-            <p>IMC:
-                <?php printf("%.1f", $imc) ?>
-            </p>
-        </div>
-
-        <div id="dados_plano">
-            <h3>Dados do Plano</h3>
-            <p>Tipo de Plano:
-                <?php echo $tipo_plano ?>
-            </p>
-            <p>Próxima Prestação:
-                <?php echo $prox_pagam ?>
-            </p>
-            <p>Data de Adesão:
-                <?php echo $data_adesao ?>
-            </p>
-            <p>Nutricionista:
-                <?php echo $nutricionista_nome ?>
-            </p>
-            <p>Personal Trainer:
-                <?php echo $personaltrainer_nome ?>
-            </p>
-        </div>
-
-        <div>
-            <button id='alteração_plano'>Alterar Plano</button>
-            <a href="cancelamento.php" class="button">Cancelar Subscrição</a>
-        </div>
-
-        <div>
-            <?php if ($_SESSION['disponiveis_ag'] > 1) { ?>
-                <p> Tens direito a mais
-                    <?php echo $disponiveis_ag ?> aulas de grupo este mês.
-                </p>
-                <a href="inscricao_ag.php" class="button">Inscrever em Aulas de Grupo</a>
-            <?php } elseif ($_SESSION['disponiveis_ag'] == 1) { ?>
-                <p> Tens direito a mais 1 aula de grupo este mês.</p>
-                <a href="inscricao_ag.php" class="button">Inscrever em Aulas de Grupo</a>
-            <?php } elseif ($_SESSION["disponiveis_ag"] < 1) { ?>
-                <p> Não tens direito a mais aulas de grupo este mês.</p>
-            <?php } ?>
-        </div>
-
-    </section>
+</section>

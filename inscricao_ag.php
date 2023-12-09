@@ -91,11 +91,8 @@ try {
     }
 
 
-
-
 } catch (PDOException $e) {
-    //  connection errors
-    echo "Connection failed: " . $e->getMessage();
+    $_SESSION['msg'] = 'Erro: ' . $e->getMessage();
 }
 
 ?>
