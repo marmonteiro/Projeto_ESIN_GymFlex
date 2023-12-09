@@ -107,9 +107,10 @@ align-items: center;
     font-size: 25px;
 }
 
-.caracteristicas {
-    display: flex;
-    flex-wrap: wrap;
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
 }
 
 .retangulo {
@@ -130,11 +131,6 @@ align-items: center;
     /*margin-bottom: 0px;*/
 }
 
-.caracteristicastexto{
-    text-align: center;
-    font-weight: bold;
-    font-size: 25px;
-}
 
 /* PARA TODOS OS  BOTÕES DE "INSCREVA-SE" E "LOGIN"*/
 .inscreva-se{
@@ -201,7 +197,7 @@ align-items: center;
 
 .imagens {
     text-align: center;
-    width: 24%; /* Ajuste conforme necessário */
+    width: 24%; 
 }
 
 .imagens img {
@@ -224,6 +220,17 @@ align-items: center;
     text-align: center;
     font-weight: bold;
     font-size: 15px;
+}
+
+.caracteristicas {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.caracteristicastexto{
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
 }
 
 
@@ -271,18 +278,18 @@ align-items: center;
     border-radius: 5px;
 }
 
-/* Horários aulas de grupo*/
+/* HORÁRIOS AULAS DE GRUPO*/
 #horarios {
     text-align: center;
     padding: 20px;
 }
 
 /*ACHO QUE ISTO JÁ NÃO É NECESSÁRIO*/
-/*table {
+table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
-}*/
+}
 
 th, td {
     border: 1px solid #ccc;
@@ -293,15 +300,6 @@ th, td {
 th {
     background-color: #f5f5f5;
 }
-
-/*ISTO TAMBÉM JÁ NÃO É NECESSÁRIO -> APAGAR*/
-/* Adicione o estilo para mostrar as vagas ao passar o mouse */
-/*td:hover::after {
-    content: "Lotação Máxima: " attr(data-vagas); /*VER NA BASE DE DADOS 
-    display: block;
-    margin-top: 10px;
-    font-size: 14px;
-}*/
 
 .mensagem {
     margin-top: 20px;
@@ -334,12 +332,13 @@ th {
     src: url("./fonts/Montserrat-Bold.ttf");
 }
 
-body {
+/*PODEMOS OPTAR POR USAR SEMPRE O MESMO TIPO DE LETRA E SÓ NECESSITAMOS DE UM BODY, HÁ UM NO INÍCIO*/
+/*body {
     font-family: Montserrat, sans-serif;
     background-color: #f5f5f5;
     color: #333;
     margin: 0;
-}
+}*/
 
 #logo_login {
     max-width: 100%;
@@ -493,12 +492,13 @@ input[type="submit"]:hover {
     src: url("./fonts/Montserrat-Bold.ttf");
 }
 
-body {
+/*PODEMOS OPTAR POR USAR SEMPRE O MESMO TIPO DE LETRA E SÓ NECESSITAMOS DE UM BODY*/
+/*body {
     font-family: Montserrat, sans-serif;
     background-color: #f5f5f5;
     color: #333;
     margin: 0;
-}
+}*/
 
 #logo_registo {
     max-width: 100%;
@@ -657,12 +657,13 @@ select {
     src: url("./fonts/Montserrat-Bold.ttf");
 }
 
-body {
+/*PODEMOS OPTAR POR USAR SEMPRE O MESMO TIPO DE LETRA E SÓ NECESSITAMOS DE UM BODY, HÁ UM NO INÍCIO*/
+/*body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f2f2f2;
-}
+}*/
 
 .container {
     max-width: 800px;
@@ -726,7 +727,7 @@ h1 {
     src: url("./fonts/Montserrat-Bold.ttf");
 }
 
-/* Específico para a pág info */
+   /* Específico para a pág info */
 
 #info {
     display: flex;
