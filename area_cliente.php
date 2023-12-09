@@ -19,7 +19,7 @@ try {
         $stmt->execute(array($email));
         $quantidade_ag = $stmt->fetchColumn();
         return $quantidade_ag;
-    }
+    };
 
     function fetchInscricoesAGByEmail($email) //inscricoes_ag (do mes atual)
     {
@@ -37,8 +37,42 @@ try {
         $stmt->execute(array($_SESSION['email']));
         $inscricoes_ag = $stmt->fetchColumn();
         return $inscricoes_ag;
-    }
+    };
 
+    function fetchTreinos($id)
+    {
+        global $dbh;
+        $stmt = $dbh->prepare('
+        SELECT Treino.*, Ginasio.nome AS nome_ginasio
+        FROM Treino
+        INNER JOIN Ginasio ON Treino.ginasio = Ginasio.id
+        WHERE Treino.membro = ?
+    ');
+        $stmt->execute(array($id));
+        $treinos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $treinos;
+    };
+
+    function fetchTempoTreinosPlanoFromID($id)
+    {
+        global $dbh;
+        $stmt = $dbh->prepare('
+        SELECT Tipo_p.tempo_treino
+        FROM Plano
+        INNER JOIN Membro ON Plano.membro = Membro.id
+        INNER JOIN Tipo_p ON Plano.tipo_p = Tipo_p.nome
+        INNER JOIN Pessoa ON Membro.id = Pessoa.id
+        WHERE Pessoa.id = ?
+        ORDER BY Plano.data_adesao DESC
+        LIMIT 1
+    ');
+        $stmt->execute(array($id));
+        $tempo_treino_plano = $stmt->fetchColumn();
+        return $tempo_treino_plano;
+    };
+
+    
+    
 
     global $dbh;
     if (!isset($_SESSION['email'])) {
@@ -66,7 +100,8 @@ try {
         $stmt->execute(array($email));
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
         return $user;
-    };
+    }
+    ;
 
     $user = fetchDetalhesMembroByEmail($_SESSION['email']);
 
@@ -111,6 +146,22 @@ try {
     //verifica se o membro pode alterar o plano (se já passaram 5 meses desde a adesão)
     $ha2Meses = date('Y-m-d', strtotime('-2 months'));
     $alteracaoPermitida = strtotime($data_adesao) <= strtotime($ha2Meses);
+
+    //vai buscar info dos treinos
+    $treinos = fetchTreinos($_SESSION['id']);
+    //calcula a duração total dos treinos
+    $duracao_total = 0;
+    foreach ($treinos as $treino) {
+        $duracao_total += $treino['duracao_t'];
+    }
+
+    //vai buscar o tempo de treino do plano
+    $tempo_treino_plano = fetchTempoTreinosPlanoFromID($_SESSION['id']);
+    $tempo_treino_plano = intval($tempo_treino_plano);
+
+    //calcula o tempo de treino restante
+    $tempo_treino_restante = $tempo_treino_plano - $duracao_total;
+
 
 
 } catch (PDOException $e) {
@@ -207,18 +258,44 @@ include("templates/header_ajuda_tpl.php");
         <a href="cancelamento.php" class="button">Cancelar Subscrição</a>
     </div>
 
+
     <div>
-        <?php if ($_SESSION['disponiveis_ag'] > 1) { ?>
-            <p> Tens direito a mais
-                <?php echo $disponiveis_ag ?> aulas de grupo este mês.
-            </p>
-            <a href="inscricao_ag.php" class="button">Inscrever em Aulas de Grupo</a>
-        <?php } elseif ($_SESSION['disponiveis_ag'] == 1) { ?>
-            <p> Tens direito a mais 1 aula de grupo este mês.</p>
-            <a href="inscricao_ag.php" class="button">Inscrever em Aulas de Grupo</a>
-        <?php } elseif ($_SESSION["disponiveis_ag"] < 1) { ?>
-            <p> Não tens direito a mais aulas de grupo este mês.</p>
-        <?php } ?>
+        <h3> Inscrições em Aulas de Grupo</h3>
+        <div>
+            <?php if ($_SESSION['disponiveis_ag'] > 1) { ?>
+                <p> Tens direito a mais
+                    <?php echo $disponiveis_ag ?> aulas de grupo este mês.
+                </p>
+                <a href="inscricao_ag.php" class="button">Inscrever em Aulas de Grupo</a>
+            <?php } elseif ($_SESSION['disponiveis_ag'] == 1) { ?>
+                <p> Tens direito a mais 1 aula de grupo este mês.</p>
+                <a href="inscricao_ag.php" class="button">Inscrever em Aulas de Grupo</a>
+            <?php } elseif ($_SESSION["disponiveis_ag"] < 1) { ?>
+                <p> Não tens direito a mais aulas de grupo este mês.</p>
+            <?php } ?>
+        </div>
+        <p> enumerar inscricoes em aulas de grupo</p>
     </div>
+
+    <div>
+        <details>
+        <summary>Registo de Treinos</summary>
+        <p>Ainda podes treinar mais
+            <?php echo $tempo_treino_restante ?> hr este mês nos ginásios GymFlex.
+        </p>
+        <?php
+        foreach ($treinos as $treino) {
+            echo "<p>Entrada: " . $treino['hora_entrada'] . "</p>";
+            echo "<p>Saída: " . $treino['hora_saida'] . "</p>";
+            echo "<p>Duração: " . $treino['duracao_t'] . " hr</p>";
+            echo "<p>No ginásio: " . $treino['nome_ginasio'] . "</p>";
+            echo "<hr>";
+        }
+        ?>
+        </details>
+    </div>
+
+    
+
 
 </section>
