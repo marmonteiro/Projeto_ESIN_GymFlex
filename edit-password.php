@@ -1,8 +1,8 @@
 <?php 
 $title = 'Editar Senha';
-require_once 'src/components/init.php';
+require_once 'database/init.php';
 if(!isset($_SESSION["email"])){
-    header('Location: index.php'); 
+    header(''); 
 }
 require_once 'src/components/layout_top.php'; 
 

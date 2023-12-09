@@ -1,6 +1,11 @@
 <?php
-require_once('src/components/init.php');
-require_once('src/person.php');
+  $dbh = new PDO('sqlite:sql/gymflex.db'); 
+            
+  $dbh->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_ASSOC);
+  $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+  session_start();
+
+require_once('database/person.php');
 
 $to = $_POST["email"];
 $subject = getNamePersonByEmail($to);
