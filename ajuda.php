@@ -146,10 +146,10 @@ include("templates/header_ajuda_tpl.php");
         </section>
     </section>
 
+    <?php 
+      include("templates/footer_tpl.php");
+    ?>
 
-    <footer>
-        <p>&copy; GymFlex, 2023</p>
-    </footer>
 </body>
 
 </html>
