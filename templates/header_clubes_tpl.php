@@ -11,7 +11,7 @@
 
 <body>
     <header>
-        <a href="paginicial.html">
+        <a href="paginicial.php">
             <img id="logo" src="imagens/gymflex_logo.svg" alt="Logotipo">
         </a>
         <h1>
