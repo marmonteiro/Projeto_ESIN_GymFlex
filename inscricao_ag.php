@@ -93,11 +93,12 @@ try {
 
 } catch (PDOException $e) {
     $_SESSION['msg'] = 'Erro: ' . $e->getMessage();
+    include("templates/header_clubes_tpl.php");
 }
 
 ?>
 
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
 
 <head>
@@ -134,7 +135,7 @@ try {
         <?php } ?>
 
 
-    </header>
+    </header> --> 
 
     <!-- Mostra os ginásios disponíveis -->
 
