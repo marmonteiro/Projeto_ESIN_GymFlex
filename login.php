@@ -72,9 +72,11 @@ include("templates/header_ajuda_tpl.php");
     </p>
   <?php } ?>
 
+
   <section id="registo">
     <p>Ainda não és membro? De que estás à espera?</p>
     <p id="registe_se"><a href="registo.html">Regista-te aqui!</a></p>
+    <br> Esqueceu-se da senha? <a href='pass-esquecida.php'> Clique aqui </a>
   </section>
 
 

@@ -1,6 +1,6 @@
 
 <?php
-# TENHO DE VER ISTO MELHOR a basedados Guardar dados de uma pessoa 
+#Guardar dados de uma pessoa 
   function insertPerson($email,$name, $birthdate,$phone_number, $password, $enrollment_date) {
     global $dbh;
     $stmt = $dbh->prepare('INSERT INTO Person (email, name, birthdate, phone_number, password, enrollment_date) VALUES(?,?,?,?,?,?)');
