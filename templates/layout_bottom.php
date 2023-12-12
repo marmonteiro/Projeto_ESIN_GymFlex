@@ -1,5 +1,5 @@
 </main>
-<?php include 'footer_tpl.php.php'
+<?php include 'footer_tpl.php'
 ?>
 </body>
 </html>

@@ -20,6 +20,7 @@ CREATE TABLE Pessoa (
     nif INTEGER UNIQUE,
     nr_telemovel INTEGER,
     email TEXT UNIQUE,
+    password TEXT NOT NULL,
     data_nascimento DATE
 );
 

@@ -1,6 +1,6 @@
 <?php
-require_once('src/components/init.php');
-require_once('src/person.php');
+require_once('database/init.php');
+require_once('database/person.php');
 
 $to = $_POST["email"];
 $subject = getNamePersonByEmail($to);

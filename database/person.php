@@ -1,10 +1,9 @@
-
 <?php
 #Guardar dados de uma pessoa 
-  function insertPerson($email,$name, $birthdate,$phone_number, $password, $enrollment_date) {
+  function insertPessoa($nome,$morada, $nif,$nr_telemovel, $email,$password, $data_nascimento) {
     global $dbh;
-    $stmt = $dbh->prepare('INSERT INTO Person (email, name, birthdate, phone_number, password, enrollment_date) VALUES(?,?,?,?,?,?)');
-    $stmt->execute(array($email, $name, $birthdate, $phone_number, sha1($password),$enrollment_date));
+    $stmt = $dbh->prepare('INSERT INTO Pessoa (nome,morada,nif,nr_telemovel, email, password, data_nascimento) VALUES(?,?,?,?,?,?)');
+    $stmt->execute(array($nome,$morada, $nif,$nr_telemovel, $email, sha1($password), $data_nascimento));
   }
 
 #Entrar
@@ -66,20 +65,6 @@ function getIdPersonByEmail($email){
   return $stmt->fetch()['id'];
 }
 
-function getPhotoPersonByEmail($email){
-  global $dbh;
-  $stmt = $dbh->prepare('SELECT photo from person where email = ?');
-  $stmt->execute(array($email));
-  return $stmt->fetch()['photo'];
-}
-
-function getPhotoPersonById($id){
-  global $dbh;
-  $stmt = $dbh->prepare('SELECT photo from person where id = ?');
-  $stmt->execute(array($id));
-  return $stmt->fetch()['photo'];
-}
-
 function updatePassPersonbyEmail($password,$email){       #nao esta a conseguir atualizar na base de dados
   global $dbh;
   $stmt = $dbh->prepare('UPDATE Person set password = ? where email = ?');
@@ -91,11 +76,3 @@ function updatePersonbyEmail($name,$birthdate,$phone_number,$email){
   $stmt = $dbh->prepare('UPDATE Person set name = ?, birthdate =?, phone_number = ? where email = ?');
   $stmt->execute(array($name,$birthdate,$phone_number,$email));
 }
-
-function updateProfilePic($photo, $email){
-  global $dbh;
-  $stmt = $dbh->prepare('UPDATE Person set photo = ? where email = ?');
-  $stmt->execute(array($photo,$email));
-}
-
-?>
