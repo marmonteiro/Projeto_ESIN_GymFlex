@@ -136,7 +136,7 @@ try {
 
     insertUser($nome, $data_nascimento, $nr_telemovel, $email, $password, $nif, $tipo_plano, $altura, $peso, $morada, $sexo);
     $_SESSION['msg'] = 'Registration successful!';
-    header('Location: paginicial.html');
+    header('Location: paginicial.php');
 
 } catch (PDOException $e) {
     $error_msg = $e->getMessage();
