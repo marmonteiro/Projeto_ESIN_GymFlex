@@ -1,6 +1,6 @@
 
 <?php
-# TENHO DE VER ISTO MELHORGuardar dados de uma pessoa 
+# TENHO DE VER ISTO MELHOR a basedados Guardar dados de uma pessoa 
   function insertPerson($email,$name, $birthdate,$phone_number, $password, $enrollment_date) {
     global $dbh;
     $stmt = $dbh->prepare('INSERT INTO Person (email, name, birthdate, phone_number, password, enrollment_date) VALUES(?,?,?,?,?,?)');
@@ -13,11 +13,6 @@
     $stmt = $dbh->prepare('SELECT * FROM Person WHERE email = ? AND password = ?');
     $stmt->execute(array($email, sha1($password)));
     return $stmt->fetch();
-  }
-
-#Guardar foto de perfil  
-  function saveProfilePic($photo, $id) { 
-    move_uploaded_file($photo["tmp_name"], "img/profiles/$id.jpg"); 
   }
 
 #Buscar o nome da pessoa pelo email
