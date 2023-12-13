@@ -28,3 +28,109 @@ header {
 }
 
 
+/*PÁGINA INICIAL*/
+
+/*PÁGINA DOS CLUBES*/
+
+.clubes a {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #c69791;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.clubes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* Isso permite que os botões quebrem para a próxima linha se não couberem */
+}
+
+.clube-logo {
+    max-width: 100px;
+    margin-bottom: 10px;
+    /* Espaço entre a imagem e o texto */
+    height: auto;
+}
+
+.clubes a:hover {
+    background-color: #c4938e;
+}
+
+.club-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style: none;
+
+}
+
+.club-info a {
+    text-decoration: none;
+    /* Remove o sublinhado */
+    color: black;
+}
+
+.club-info li {
+    text-align: center;
+    max-width: 300px;
+    padding: 20px;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    /* Faz cada item ocupar a mesma largura */
+    flex-basis: calc(50% - 20px);
+    /* Calcula a largura com margens para 2 itens por linha */
+}
+
+#inscreva-se {
+    align-items: center;
+}
+
+/* RELATIVO às páginas de CADA CLUBE INDIVIDUALMENTE */
+
+.mapa {
+    display: block;
+    margin: 0 auto;
+    /* Define as margens superior e inferior como 0 e centraliza horizontalmente */
+}
+
+.titulos_clubes {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.retangulo {
+    width: calc(33% - 20px);
+    margin: 10px;
+    /*padding: 0px;*/
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    text-align: center;
+    background-color: whitesmoke;
+    /*cor de fundo de cada retângulo com as características*/
+    font-weight: bold;
+}
+
+.retangulo img {
+    max-width: 25%;
+    height: auto;
+    float: left;
+    /*margin-bottom: 0px;*/
+}
