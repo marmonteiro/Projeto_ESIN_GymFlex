@@ -23,6 +23,9 @@ try {
 } catch (PDOException $e) {
     $error_msg = $e->getMessage();
 }
+
+include("templates/header_tpl.php");
+
 ?>
 <div class="classes">
     <?php
@@ -49,7 +52,6 @@ try {
 
 <?php
 
-include("templates/header_tpl.php");
 include("templates/aulasgrupo_tpl.php");
 include("templates/footer_tpl.php");
 ?>
