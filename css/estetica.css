@@ -1,4 +1,4 @@
-/* css para todas as páginas */
+/* CSS COMUM PARA TODAS ÀS PÁGINAS */
 
 body {
     font-family: 'Montserrat', sans-serif;
@@ -10,75 +10,227 @@ body {
 
 footer {
     background-color: #f4f4f4;
-    color:#333 ;
+    color: #333;
     padding: 20px;
     text-align: center;
 }
 
+a {
+    text-decoration: none;
+    color: #A60000;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
 
 /*HEADERS - todas as pags exceto página inicial*/
-/* cabeçalho*/
 header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     font-family: 'Contrail One', sans-serif;
     background-color: #FFFFFF;
     letter-spacing: 0.05rem;
     color: #333;
     padding: 20px;
     text-align: center;
+    border-bottom: 10px solid #A60000;
 }
 
-.navegacao {
+#logo {
+    max-width: 200px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/*barra principal de navegação*/
+.barra {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    padding: 20px;
-    letter-spacing: 0.05rem;
-    text-transform: uppercase;
+    flex-wrap: wrap;
+    /* Isso permite que os botões quebrem para a próxima linha se não couberem*/
 }
 
-.navegacao a {
+.barra a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 10px;
     text-decoration: none;
-    font-size: 20px;
-    background-color: black;
-    color: white;
-    padding: 5px 10px;
+    color: #fff;
+    background-color: #000000;
     border-radius: 5px;
-
 }
 
-.navegacao a:hover {
+.barra a:hover {
     color: #A60000;
+    text-decoration: none;
 }
 
+/*barra de navegação secundária - login, logout, area de cliente, registo*/
 .cliente {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    letter-spacing: 0.05rem;
+    flex-direction: column;
+    align-items: flex-end;
     text-transform: uppercase;
 }
 
 .cliente a {
-    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-size: 20px;
-    background-color: black;
     color: white;
     padding: 5px 10px;
     border-radius: 5px;
-
+    margin: 5px 0px;
 }
 
+#logout>img,
+#areacliente>img,
+#login>img,
+#torne_semembro>img {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+#torne_semembro {
+    background-color: #A60000;
+}
+
+#torne_semembro:hover {
+    background-color: #b51212;
+    border: 2px solid #333;
+    text-decoration: none;
+}
+
+#torne_semembro:hover img {
+    transform: scale(1.2);
+}
+
+#areacliente,
+#login {
+    background-color: #470000;
+}
+
+#areacliente:hover,
+#login:hover {
+    background-color: #7B2828;
+    text-decoration: none;
+}
+
+#logout {
+    background-color: #7B2828;
+}
+
+#logout:hover {
+    background-color: #470000;
+    text-decoration: none;
+}
+
+#ola {
+    font-size: 20px;
+}
 
 
 
 
 /*PÁGINA INICIAL*/
-    /*HEADER*/
+/*HEADER*/
+
+#header_paginicial {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+}
+
+#main_header {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    width: 100%; 
+    max-width: 800px; 
+    gap: 5px; 
+
+}
+
+#logo_paginicial {
+    max-width: 400px;
+    height: auto;
+    margin-right: 10px; 
+    
+}
 
 
+#header_paginicial #torne_semembro {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+    font-size: 20px;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 5px 0px;
+}
 
-    /* retângulos das características dos ginásios*/
+
+/*Imagens na página inicial*/
+.imagensiniciais {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.imagens {
+    text-align: center;
+    width: 24%;
+}
+
+.imagens img {
+    width: 70%;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+}
+
+.imagens p {
+    margin-top: 5px;
+}
+
+.escolherGymFlex {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.textoimagensiniciais {
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.caracteristicas {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.caracteristicastexto {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+
+/* retângulos das características dos ginásios*/
 .retangulo {
     width: calc(33% - 20px);
     margin: 10px;
@@ -106,7 +258,9 @@ header {
     font-size: 25px;
 }
 
-
+.Torne-seMembro {
+    text-align: center;
+}
 
 
 /*PÁGINA DOS CLUBES*/
@@ -119,8 +273,10 @@ header {
     margin: 10px;
     text-decoration: none;
     color: #A60000;
-    background-color: #e5dede;;
+    background-color: white;
+    ;
     border-radius: 5px;
+    border: 5px solid #000000;
 }
 
 .clubes {
@@ -138,7 +294,7 @@ header {
     height: auto;
 }
 
-.clubes a:hover{
+.clubes a:hover {
     background-color: #c2b6b6;
 }
 
@@ -173,7 +329,7 @@ header {
     align-items: center;
 }
 
-/* RELATIVO às páginas de CADA CLUBE INDIVIDUALMENTE */
+/* RELATIVO ÀS PÁGINAS de CADA CLUBE INDIVIDUALMENTE */
 
 .mapa {
     display: block;

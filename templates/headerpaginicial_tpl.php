@@ -14,15 +14,19 @@
 
 <body>
 
-    <header class="header_paginicial">
-        <section class="grid">
-            <div class="logo">
-                <img id="logo" src="imagens/gymflex_logo.svg" alt="Logotipo">
+    <header id="header_paginicial"> <!-- se sessão não iniciada -->
+        <section id="main_header">
+            <div>
+                <a href="paginicial.php">
+                    <img id="logo_paginicial" src="imagens/logo.gif" alt="Logotipo">
+                </a>
             </div>
-            <div class="Torne-seMembro">
-                <p><a href="registo.php" class="inscreva-se">Torne-se membro!</a></p>
-                <p id=jámembro>Já é membro? Inicie sessão <a href="login.php">aqui.</a></p>
+
+            <div id="Membro_paginicial">
+                <p><a id="torne_semembro" href="registo.php">Torne-se membro!<img src = imagens/peso_icon.png></a></p>
+                <p id=jámembro>Já é membro? Inicie sessão <a href="login.php">aqui</a>.</p>
             </div>
+
         </section>
 
         <div class="barra">
@@ -32,23 +36,12 @@
             <a href="ajuda.php" class="ajuda">Ajuda</a>
         </div>
 
-        <div>
-            <?php
-            if (isset($_SESSION['email'])) { ?> <!-- se sessão iniciada -->
-                <a href="action_logout.php" class="button">Logout</a>
-                <a href="area_cliente.php" class="button">Área de Cliente</a>
-                <p>Olá,
-                    <?php echo $_SESSION['nome'] ?>!
-                </p>
-            <?php } else { ?> <!-- se sessão não iniciada -->
-                <a href="registo.php" class="inscreva-se">Inscreva-se</a>
-                <a href="login.php" id="signup">Login: área de cliente</a>
-            <?php }
-
-            if (isset($_SESSION['msg']) && !empty($_SESSION['msg'])) { ?> <!-- se houver mensagem de erro -->
-                <p>{$_SESSION['msg']}</p>"
-                <?php unset($_SESSION['msg']);
-            } ?>
-
-        </div>
+        <?php if (isset($_SESSION['msg']) && !empty($_SESSION['msg'])) { ?> <!-- se houver mensagem de erro -->
+            <p>{$_SESSION['msg']}</p>"
+            <?php unset($_SESSION['msg']);
+        } ?>
+        <?php if (isset($_SESSION['msg']) && !empty($_SESSION['msg'])) { ?> <!-- se houver mensagem de erro -->
+            <p>{$_SESSION['msg']}</p>"
+            <?php unset($_SESSION['msg']);
+        } ?>
     </header>
