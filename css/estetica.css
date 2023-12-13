@@ -297,6 +297,6 @@ table {
     border-radius: 5px;
 }
 
-.botao_planos a:hover{
-    background-color: #c2b6b6;
+.botao_planos:hover{
+    background-color: rgb(148, 66, 66);
 }
