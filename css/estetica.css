@@ -256,7 +256,7 @@ table {
 }
 
 /* RELATIVO À PÁGINAS DOS PLANOS  */
-planos {
+.planos {
     display: flex;
     /*justify-content: space-between;*/
     justify-content: center;
@@ -290,7 +290,7 @@ planos {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #c69791;
+    background-color: #A60000;;
     color: white;
     text-decoration: none;
     padding: 10px 20px;
