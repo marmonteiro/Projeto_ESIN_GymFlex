@@ -254,3 +254,81 @@ table {
     border-spacing: 2px;
     border-color: gray;
 }
+
+/* PÁGINA PLANOS */
+.planos {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.retangulo_planos {
+    width: 70%;
+    margin: 20px;
+    padding: 25px;
+    box-sizing: border-box;
+    border: 2px solid #A60000;
+    background-color: whitesmoke;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.planos_duvidas {
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+}
+
+.botao_planos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #c69791;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* HORÁRIOS AULAS DE GRUPO*/
+#horarios {
+    text-align: center;
+    padding: 20px;
+}
+
+th,
+td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f5f5f5;
+}
+
+.mensagem {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #333;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
