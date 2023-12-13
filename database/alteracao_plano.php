@@ -1,4 +1,5 @@
-<?php function fetchPlanoMembroByMembroID($id) //vai buscar o plano atual do membro (data_adesao, tipo_p, preco)
+<?php 
+function fetchPlanoMembroByMembroID($id) //vai buscar o plano atual do membro (data_adesao, tipo_p, preco)
 {
     global $dbh;
     $stmt = $dbh->prepare('
@@ -12,8 +13,7 @@
     $stmt->execute(array($id));
     $user = $stmt->fetch(PDO::FETCH_ASSOC);
     return $user;
-}
-;
+};
 
 
 function fetchInfoTipoPlanosdif($planoAtual) //vai buscar os tipos de planos disponiveis (nome, preco) exceto o plano atual
@@ -23,6 +23,5 @@ function fetchInfoTipoPlanosdif($planoAtual) //vai buscar os tipos de planos dis
     $stmt->execute(array($planoAtual));
     $tipo_p_info = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $tipo_p_info;
-}
-;
+};
 ?>

@@ -1,18 +1,11 @@
+/* css para todas as páginas */
+
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     background-color: #f4f4f4;
     color: #333;
     margin: 0;
     padding: 0;
-}
-
-/* cabeçalho*/
-header {
-    background-color: rgba(189, 165, 165, 1);
-    /*background-color: whitesmoke;*/
-    color: white;
-    padding: 20px;
-    text-align: center;
 }
 
 /*rodapé*/
@@ -23,153 +16,114 @@ footer {
     text-align: center;
 }
 
-#logo {
-    /*position: absolute;*/
-    /*top: 10px;*/
-    /*left: 10px;*/
-    max-width: 200px; 
-}
 
-
-/* PÁGINA DOS CLUBES*/
-
-.clubes a, #signup a {
-    display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 20px;
-    margin: 10px;
-    text-decoration: none;
-    color: #fff;
-    background-color: #c69791;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-     /*Para centrar, colocando todos na mesma página, os botões dos diferentes ginásios*/
-.clubes {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap; /* Isso permite que os botões quebrem para a próxima linha se não couberem */
-}
-
-.clube-logo {
-    max-width: 100px; 
-    margin-bottom: 10px; /* Espaço entre a imagem e o texto */
-    height: auto;
-}
-
-.clubes a:hover, #signup a:hover {
-    background-color: #c4938e;
-}
-
-.club-info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    list-style: none;
-   
-}
-.club-info a {
-    text-decoration: none; /* Remove o sublinhado */
-    color: black;
-}
-.club-info li {
-    text-align: center;
-    max-width: 300px;
+/*headers exceto página inicial*/
+/* cabeçalho*/
+header {
+    font-family: 'Contrail One', sans-serif;
+    background-color: #FFFFFF;
+    /*background-color: whitesmoke;*/
+    color: white;
     padding: 20px;
-    margin: 10px;
-    background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    flex: 1; /* Faz cada item ocupar a mesma largura */
-    flex-basis: calc(50% - 20px); /* Calcula a largura com margens para 2 itens por linha */
-}
-
-#hamburger, .hamburger {   /*tirar a check box */
-    display: none;
-} 
-
-#inscreva-se{ 
-align-items: center;
-}
-
-/* RELATIVO às páginas de CADA CLUBE INDIVIDUALMENTE */
-
-.mapa {
-    display: block; 
-    margin: 0 auto; /* Define as margens superior e inferior como 0 e centraliza horizontalmente */
-}
-
-.titulos_clubes{
     text-align: center;
-    font-weight: bold;
-    font-size: 25px;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
 
-.retangulo {
-    width: calc(33% - 20px);
-    margin: 10px;
-    /*padding: 0px;*/
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    text-align: center;
-    background-color:  whitesmoke; /*cor de fundo de cada retângulo com as características*/
-    font-weight: bold;
-}
-
-.retangulo img {
-    max-width: 25%;
-    height: auto;
-    float: left;
-    /*margin-bottom: 0px;*/
-}
 
 
 /* PARA TODOS OS  BOTÕES DE "INSCREVA-SE" E "LOGIN"*/
-.inscreva-se{
+/* .inscreva-se{
    text-align: center; 
    align-items: center;
    display: flex;
    justify-content: center;
    text-decoration: none; 
    padding: 5px ; 
-   border: 2px solid #000; /* Cor da borda */
-   border-radius: 5px; /* Cantos arredondados */
-   background-color: #c69791;; /* Cor do fundo */
-   color: white; /* Cor do texto */
-   font-weight: bold; /* Texto em negrito */
-   margin: 5px; /* Espaçamento externo */
+   border: 2px solid #000; /* Cor da borda 
+   border-radius: 5px; /* Cantos arredondados 
+   background-color: #c69791;; /* Cor do fundo 
+   color: white; /* Cor do texto 
+   font-weight: bold; /* Texto em negrito 
+   margin: 5px; /* Espaçamento externo 
    max-width: 160px;
-}
+} */
 
-#signup{
-    text-align: center; 
+#signup {
+    text-align: center;
     align-items: center;
     display: flex;
     justify-content: center;
-    text-decoration: none; 
-    padding: 5px; 
-    border: 2px solid #000; /* Cor da borda */
-    border-radius: 5px; /* Cantos arredondados */
-    background-color: #c69791;; /* Cor do fundo */
-    color: white; /* Cor do texto */
-    font-weight: bold; /* Texto em negrito */
-    margin: 5px; /* Espaçamento externo */
+    text-decoration: none;
+    padding: 5px;
+    border: 2px solid #000;
+    /* Cor da borda */
+    border-radius: 5px;
+    /* Cantos arredondados */
+    background-color: #c69791;
+    ;
+    /* Cor do fundo */
+    color: white;
+    /* Cor do texto */
+    font-weight: bold;
+    /* Texto em negrito */
+    margin: 5px;
+    /* Espaçamento externo */
     max-width: 160px;
 }
 
 
 /*PÁGINA INICIAL*/
-      /* Para a barra na pag inicial */
-.barra a, #signup a {
+/* Para a barra na pag inicial */
+
+.header_paginicial {
+    padding: 20px;
+    background-color: #ffffff;
+    /* Change the background color as needed */
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.logo img {
+    max-width: 200px;
+}
+
+.Torne-seMembro {
+    text-align: center;
+}
+
+.inscreva-se {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #A60000;
+    /* Change the button color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.inscreva-se:hover {
+    background-color: #670000;
+    /* Change the button color on hover */
+}
+
+#jámembro {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #000000;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+a {
+    color: #A60000;
+    font-weight: bold;
+}
+
+.barra a {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -185,11 +139,11 @@ table {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap; /* Isso permite que os botões quebrem para a próxima linha se não couberem */
-}
+    flex-wrap: wrap; /* Isso permite que os botões quebrem para a próxima linha se não couberem*/
+} 
 
 
-      /*Imagens na página inicial*/
+/*Imagens na página inicial*/
 .imagensiniciais {
     display: flex;
     justify-content: space-between;
@@ -198,7 +152,7 @@ table {
 
 .imagens {
     text-align: center;
-    width: 24%; 
+    width: 24%;
 }
 
 .imagens img {
@@ -217,7 +171,7 @@ table {
     font-size: 25px;
 }
 
-.textoimagensiniciais{
+.textoimagensiniciais {
     text-align: center;
     font-weight: bold;
     font-size: 15px;
@@ -228,12 +182,119 @@ table {
     flex-wrap: wrap;
 }
 
-.caracteristicastexto{
+.caracteristicastexto {
     text-align: center;
     font-weight: bold;
     font-size: 25px;
 }
 
+/* PÁGINA DOS CLUBES*/
+
+.clubes a,
+#signup a {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #c69791;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/*Para centrar, colocando todos na mesma página, os botões dos diferentes ginásios*/
+.clubes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* Isso permite que os botões quebrem para a próxima linha se não couberem */
+}
+
+.clube-logo {
+    max-width: 100px;
+    margin-bottom: 10px;
+    /* Espaço entre a imagem e o texto */
+    height: auto;
+}
+
+.clubes a:hover,
+#signup a:hover {
+    background-color: #c4938e;
+}
+
+.club-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style: none;
+
+}
+
+.club-info a {
+    text-decoration: none;
+    /* Remove o sublinhado */
+    color: black;
+}
+
+.club-info li {
+    text-align: center;
+    max-width: 300px;
+    padding: 20px;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    /* Faz cada item ocupar a mesma largura */
+    flex-basis: calc(50% - 20px);
+    /* Calcula a largura com margens para 2 itens por linha */
+}
+
+#inscreva-se {
+    align-items: center;
+}
+
+/* RELATIVO às páginas de CADA CLUBE INDIVIDUALMENTE */
+
+.mapa {
+    display: block;
+    margin: 0 auto;
+    /* Define as margens superior e inferior como 0 e centraliza horizontalmente */
+}
+
+.titulos_clubes {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.retangulo {
+    width: calc(33% - 20px);
+    margin: 10px;
+    /*padding: 0px;*/
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    text-align: center;
+    background-color: whitesmoke;
+    /*cor de fundo de cada retângulo com as características*/
+    font-weight: bold;
+}
+
+.retangulo img {
+    max-width: 25%;
+    height: auto;
+    float: left;
+    /*margin-bottom: 0px;*/
+}
 
 /* RELATIVO À PÁGINA PLANOS*/
 .planos {
@@ -241,13 +302,14 @@ table {
     /*justify-content: space-between;*/
     justify-content: center;
     text-decoration: none;
-    font-weight: bold; /* Texto em negrito */
-    
+    font-weight: bold;
+    /* Texto em negrito */
+
 }
 
 .retangulo_planos {
     /*width: calc(33% - 20px);*/
-    width:80%;
+    width: 80%;
     margin: 10px auto;
     padding: 20px;
     box-sizing: border-box;
@@ -259,7 +321,7 @@ table {
     text-align: center;
 }
 
-.planos_duvidas{
+.planos_duvidas {
     font-weight: bold;
     font-size: 15px;
     text-align: center;
@@ -269,12 +331,12 @@ table {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color:#c69791;
+    background-color: #c69791;
     color: white;
     text-decoration: none;
-    padding: 10px 20px; 
-    text-decoration: none; 
-    border: none; 
+    padding: 10px 20px;
+    text-decoration: none;
+    border: none;
     font-weight: bold;
     border-radius: 5px;
 }
@@ -285,7 +347,8 @@ table {
     padding: 20px;
 }
 
-th, td {
+th,
+td {
     border: 1px solid #ccc;
     padding: 10px;
     text-align: center;
@@ -372,7 +435,7 @@ footer {
     text-align: center;
 }
 
-     /* CSS for the login form */
+/* CSS for the login form */
 
 #login {
     text-align: center;
@@ -448,8 +511,9 @@ input[type="submit"]:hover {
     margin: 1rem 0;
 }
 
-#registe_se > a  {
-    padding: 1rem;;
+#registe_se>a {
+    padding: 1rem;
+    ;
     transition: background-color 0.3s ease;
     font-weight: bold;
     cursor: pointer;
@@ -461,7 +525,7 @@ input[type="submit"]:hover {
     text-decoration: none;
 }
 
-#registe_se > a:hover {
+#registe_se>a:hover {
     background-color: rgb(155, 134, 134);
 }
 
@@ -475,16 +539,6 @@ input[type="submit"]:hover {
 
 
 /* PARA O REGISTO */
-
-@font-face {
-    font-family: Montserrat;
-    src: url("./fonts/Montserrat-Medium.ttf");
-}
-
-@font-face {
-    font-family: Montserrat Bold;
-    src: url("./fonts/Montserrat-Bold.ttf");
-}
 
 /*PODEMOS OPTAR POR USAR SEMPRE O MESMO TIPO DE LETRA E SÓ NECESSITAMOS DE UM BODY*/
 /*body {
@@ -515,7 +569,7 @@ input[type="submit"]:hover {
     background-color: #c69791;
     border-radius: 5px;
     transition: background-color 0.3s ease;
-} 
+}
 
 .barra_registo {
     display: flex;
@@ -523,9 +577,9 @@ input[type="submit"]:hover {
     align-items: center;
     flex-wrap: wrap;
     /* Isso permite que os botões quebrem para a próxima linha se não couberem*/
-} 
+}
 
-    /*Registo*/
+/*Registo*/
 
 #registo {
     text-align: center;
@@ -563,7 +617,7 @@ input[type="tel"]::placeholder,
 input[type="email"]::placeholder,
 input[type="text"]::placeholder,
 input[type="number"]::placeholder,
-input[type="password"]::placeholder{
+input[type="password"]::placeholder {
     font-size: 16px;
     color: #999;
     position: absolute;
@@ -574,10 +628,20 @@ input[type="password"]::placeholder{
 }
 
 /* When input is focused */
-input[type="tel"]:focus::placeholder,input[type="email"]:focus::placeholder,input[type="text"]:focus::placeholder,input[type="password"]:focus::placeholder,input[type="number"]:focus::placeholder
-input[type="tel"]:focus-visible::placeholder,input[type="email"]:focus-visible::placeholder,input[type="text"]:focus-visible::placeholder,input[type="password"]:focus-visible::placeholder,input[type="number"]:focus-visible::placeholder,
-input[type="tel"]:valid::placeholder,input[type="email"]:valid::placeholder,input[type="text"]:valid::placeholder,input[type="password"]:valid::placeholder,input[type="number"]:valid::placeholder
-{
+input[type="tel"]:focus::placeholder,
+input[type="email"]:focus::placeholder,
+input[type="text"]:focus::placeholder,
+input[type="password"]:focus::placeholder,
+input[type="number"]:focus::placeholder input[type="tel"]:focus-visible::placeholder,
+input[type="email"]:focus-visible::placeholder,
+input[type="text"]:focus-visible::placeholder,
+input[type="password"]:focus-visible::placeholder,
+input[type="number"]:focus-visible::placeholder,
+input[type="tel"]:valid::placeholder,
+input[type="email"]:valid::placeholder,
+input[type="text"]:valid::placeholder,
+input[type="password"]:valid::placeholder,
+input[type="number"]:valid::placeholder {
     top: 25%;
     font-size: 12px;
     color: #c69791;
@@ -598,7 +662,8 @@ input[type="submit"]:hover {
     background-color: #b37e77;
 }
 
-input[type="date"], input[type="number"] {
+input[type="date"],
+input[type="number"] {
     color: #999;
     font-size: 20px;
     position: relative;
@@ -624,13 +689,13 @@ select {
     box-sizing: border-box;
     margin-top: 5px;
     color: #999;
-  }
-  
-  /* Placeholder styles for the select */
-  select option[disabled]:first-child {
+}
+
+/* Placeholder styles for the select */
+select option[disabled]:first-child {
     color: #999;
-  }
-  
+}
+
 /*boxes de informação*/
 #escolha_plano {
     background-color: rgba(107, 97, 97, 0.20);
@@ -641,23 +706,9 @@ select {
 
 
 /*PARA AULAS DE GRUPO */
-@font-face {
-    font-family: Montserrat;
-    src: url("./fonts/Montserrat-Medium.ttf");
-}
-    
-@font-face {
-    font-family: Montserrat Bold;
-    src: url("./fonts/Montserrat-Bold.ttf");
-}
 
-/*PODEMOS OPTAR POR USAR SEMPRE O MESMO TIPO DE LETRA E SÓ NECESSITAMOS DE UM BODY, HÁ UM NO INÍCIO*/
-/*body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f2f2f2;
-}*/
+
+
 
 .container {
     max-width: 800px;
@@ -678,7 +729,8 @@ h1 {
 
 .class {
     margin: 10px;
-    width: calc(50% - 20px); /* 50% menos a margem nas laterais */
+    width: calc(50% - 20px);
+    /* 50% menos a margem nas laterais */
     display: flex;
     align-items: center;
 }
@@ -698,6 +750,7 @@ h1 {
     padding: 10px;
     box-sizing: border-box;
 }
+
 .button {
     display: inline-block;
     padding: 10px 20px;
@@ -711,17 +764,8 @@ h1 {
 
 /* PARA A PÁGINA AJUDA */
 
-@font-face {
-    font-family: Montserrat;
-    src: url("./fonts/Montserrat-Medium.ttf");
-}
-    
-@font-face {
-    font-family: Montserrat Bold;
-    src: url("./fonts/Montserrat-Bold.ttf");
-}
 
-   /* Específico para a pág info */
+/* Específico para a pág info */
 
 #info {
     display: flex;
@@ -741,7 +785,7 @@ h2 {
     margin-block-end: 5px;
 }
 
-#intro  {
+#intro {
     text-align: center;
     font-size: 20px;
     margin-block-start: 5px;
@@ -754,17 +798,17 @@ h2 {
     border-radius: 5px;
 }
 
-#Categoria > summary {
+#Categoria>summary {
     text-align: center;
     font-weight: bold;
 }
 
-#Pergunta > summary {
+#Pergunta>summary {
     background-color: rgba(107, 97, 97, 0.35);
     border-radius: 5px;
 }
 
-#Pergunta > p {
+#Pergunta>p {
     text-indent: 20px;
 }
 
@@ -777,21 +821,24 @@ h2 {
     border-radius: 5px;
     overflow: hidden;
 }
-#Categoria > details {
+
+#Categoria>details {
     margin: 10px;
     padding: 10px;
 }
 
 summary {
-    display: block; /* isto tá a fazer com q a seta dos details original desapareça mas acho q n é suposto*/
-    position: relative; 
+    display: block;
+    /* isto tá a fazer com q a seta dos details original desapareça mas acho q n é suposto*/
+    position: relative;
     cursor: pointer;
-    padding-left: 30px !important; /* só funciona com !important ??? */
+    padding-left: 30px !important;
+    /* só funciona com !important ??? */
     font-size: 18px;
     padding: 10px;
 }
 
-details > p {
+details>p {
     font-size: 16px;
     line-height: 1.4;
 }
@@ -800,7 +847,8 @@ summary:before {
     content: '';
     border-width: .4rem;
     border-style: solid;
-    border-color: transparent transparent transparent black; /* seta para baixo = quadrado com 3 bordas transparentes */
+    border-color: transparent transparent transparent black;
+    /* seta para baixo = quadrado com 3 bordas transparentes */
     position: absolute;
     top: 1rem;
     left: 1rem;
@@ -808,16 +856,16 @@ summary:before {
     transform-origin: .2rem 50%;
     transition: .25s transform ease;
 }
-  
-details[open] > summary:before {
+
+details[open]>summary:before {
     transform: rotate(90deg);
 }
 
-#Categoria > summary:before {
+#Categoria>summary:before {
     display: none;
 }
 
-#Contactos > p {
+#Contactos>p {
     text-align: center;
     font-size: 16px;
     line-height: 1.4;
@@ -825,9 +873,4 @@ details[open] > summary:before {
 
 #FAQ {
     margin-top: 20px;
-}
-
-a {
-    color: rgba(107, 97, 97, 1);
-    font-weight: bold;
 }
