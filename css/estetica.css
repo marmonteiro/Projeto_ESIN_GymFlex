@@ -22,6 +22,7 @@ header {
     color: white;
     padding: 20px;
     text-align: center;
+    border-bottom: 10px solid #A60000;
 }
 
 .barra a {
@@ -42,6 +43,32 @@ header {
     align-items: center;
     flex-wrap: wrap; /* Isso permite que os botões quebrem para a próxima linha se não couberem*/
 } 
+
+ 
+ #signup {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #A60000;
+    /* Change the button color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+ }
+ 
+ .inscreva-se {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #A60000;
+    /* Change the button color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.inscreva-se:hover {
+    background-color: #670000;
+    /* Change the button color on hover */
+}
 
 
 /*PÁGINA INICIAL*/
@@ -132,6 +159,9 @@ header {
     font-size: 25px;
 }
 
+.Torne-seMembro {
+    text-align: center;
+}
 
 
 /*PÁGINA DOS CLUBES*/
@@ -144,8 +174,9 @@ header {
     margin: 10px;
     text-decoration: none;
     color: #A60000;
-    background-color: #e5dede;;
+    background-color: white;;
     border-radius: 5px;
+    border: 5px solid #000000;
 }
 
 .clubes {
@@ -198,7 +229,7 @@ header {
     align-items: center;
 }
 
-/* RELATIVO às páginas de CADA CLUBE INDIVIDUALMENTE */
+/* RELATIVO ÀS PÁGINAS de CADA CLUBE INDIVIDUALMENTE */
 
 .mapa {
     display: block;
