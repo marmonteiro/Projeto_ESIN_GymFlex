@@ -8,7 +8,6 @@ body {
     padding: 0;
 }
 
-/*rodapé*/
 footer {
     background-color: #f4f4f4;
     color:#333 ;
@@ -16,19 +15,68 @@ footer {
     text-align: center;
 }
 
-/*headers exceto página inicial*/
+
+/*HEADERS - todas as pags exceto página inicial*/
 /* cabeçalho*/
 header {
     font-family: 'Contrail One', sans-serif;
     background-color: #FFFFFF;
-    /*background-color: whitesmoke;*/
-    color: white;
+    letter-spacing: 0.05rem;
+    color: #333;
     padding: 20px;
     text-align: center;
 }
 
+.navegacao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+}
+
+.navegacao a {
+    text-decoration: none;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+}
+
+.navegacao a:hover {
+    color: #A60000;
+}
+
+.cliente {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+}
+
+.cliente a {
+    text-decoration: none;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+
+}
+
+
+
+
 
 /*PÁGINA INICIAL*/
+    /*HEADER*/
+
+
 
     /* retângulos das características dos ginásios*/
 .retangulo {

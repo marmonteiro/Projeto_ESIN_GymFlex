@@ -8,9 +8,8 @@ body {
     padding: 0;
 }
 
-/*rodapé*/
 footer {
-    background-color: #b9c5cd;
+    background-color: #000000;
     color: white;
     padding: 20px;
     text-align: center;
@@ -27,7 +26,6 @@ header {
     padding: 20px;
     text-align: center;
 }
-
 
 
 
