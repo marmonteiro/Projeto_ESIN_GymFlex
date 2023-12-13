@@ -23,7 +23,28 @@ try {
 } catch (PDOException $e) {
     $error_msg = $e->getMessage();
 }
+<div class="classes">
+    <?php
+    if (isset($aulas) && !empty($aulas)) {
+        foreach ($aulas as $aula) {
+            echo '<div class="class">';
+            echo '<div class="image-container">';
+            echo '<img src="' . $aula['imagem_ag'] . '" alt="' . $aula['nome'] . '">';
+            echo '</div>';
+            echo '<div class="info-container">';
+            echo '<p>' . $aula['nome'] . '</p>';
+            echo '<p> Capacidade: ' . $aula['capacidade'] . '</p>';
+            echo '<p>Dia da semana: ' . $aula['dia_semana'] . '</p>';
+            echo '<p>Horário: ' . $aula['hora_inicio'] . ' - ' . $aula['hora_fim'] . '</p>';
+            echo '</div>';
+            echo '</div>';
+        }
+    } else {
+        echo '<p>Não existem aulas de grupo disponíveis de momento.</p>';
+    }
+    ?>
 
+</div>
 
 include("templates/header_tpl.php");
 include("templates/aulasgrupo_tpl.php");
