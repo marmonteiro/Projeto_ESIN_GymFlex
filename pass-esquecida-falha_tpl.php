@@ -6,4 +6,4 @@
     <a href="pass-esquecida.php">Tente outra vez!</a>
     <br> <a href="paginicial.php">Voltar à página inicial.</a> 
 </div>
-<?php require_once 'templates/layout_bottom.php' ?>
+<?php require_once 'templates/footer_tpl.php' ?>
