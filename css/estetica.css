@@ -259,16 +259,12 @@ table {
 
 .planos {
     display: flex;
-    /*justify-content: space-between;*/
     justify-content: center;
     text-decoration: none;
     font-weight: bold;
-    /* Texto em negrito */
-
 }
 
 .retangulo_planos {
-    /*width: calc(33% - 20px);*/
     width: 80%;
     margin: 10px auto;
     padding: 20px;
@@ -291,7 +287,7 @@ table {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #c69791;
+    background-color: #A60000;
     color: white;
     text-decoration: none;
     padding: 10px 20px;
@@ -299,4 +295,8 @@ table {
     border: none;
     font-weight: bold;
     border-radius: 5px;
+}
+
+.botao_planos a:hover{
+    background-color: #c2b6b6;
 }
