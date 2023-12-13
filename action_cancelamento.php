@@ -1,6 +1,7 @@
 <?php
-require_once("database/init.php");
 session_start();
+require_once("database/init.php");
+
 
     try {
         // Apaga membro da tabela Pessoa

@@ -1,23 +1,8 @@
 <?php
-require_once("database/init.php");
 session_start();
+require_once("database/init.php");
 
-function fetchPlanoMembroByMembroID($id) //vai buscar o plano atual do membro (data_adesao, tipo_p, preco)
-{
-    global $dbh;
-    $stmt = $dbh->prepare('
-    SELECT Plano.data_adesao, Plano.tipo_p, Tipo_p.preco
-    FROM Plano
-    INNER JOIN Tipo_p ON Plano.tipo_p = Tipo_p.nome
-    WHERE Plano.membro = ?
-    ORDER BY Plano.data_adesao DESC
-    LIMIT 1
-');
-    $stmt->execute(array($id));
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-    return $user;
-}
-;
+include ("database/action_alteracao_plano.php");
 
 try {
 $dbh->beginTransaction();

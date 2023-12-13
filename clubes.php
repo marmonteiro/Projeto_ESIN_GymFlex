@@ -1,6 +1,6 @@
 <?php
-require_once("database/init.php");
 session_start();
+require_once("database/init.php");
 
 $msg = $_SESSION['msg'];
 unset($_SESSION['msg']);
@@ -17,24 +17,6 @@ try {
     $error_msg = $e->getMessage();
 }
 include("templates/header_tpl.php");
+include("templates/clubes_tpl.php");
+include("templates/footer_tpl.php");
 ?>
-
-
-    <div class="clubes">
-        <?php foreach ($clubes as $clube): ?>
-            <a href='gym_info.php?nome_ginasio=<?= $clube['nome'] ?>'>
-                <?= $clube['nome'] ?>
-                <img src='<?= $clube['imagem_url'] ?>' alt='Clube Logo'>
-            </a><br>
-        <?php endforeach;?>
-    </div>
-
-    
-    </ul>
-    <?php 
-      include("templates/footer_tpl.php");
-    ?>
- 
-</body>
-
-</html>

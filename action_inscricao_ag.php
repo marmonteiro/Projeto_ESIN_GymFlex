@@ -1,6 +1,7 @@
 <?php
-require_once("database/init.php");
 session_start();
+require_once("database/init.php");
+
 
 try {
     
@@ -9,11 +10,13 @@ try {
     $aula_id = $_POST['aula_id'];
     $membro_id = $_SESSION['id'];
 
+    //separar aqui:
 
     // Verifica se o membro já está inscrito na aula de grupo
     $stmt = $dbh->prepare('SELECT COUNT(*) AS num_rows FROM Inscricao_ag WHERE membro = ? AND aulagrupo = ?');
     $stmt->execute(array($membro_id, $aula_id));
     $registo = $stmt->fetch(PDO::FETCH_ASSOC);
+    
     $registosExistentes = $registo['num_rows'];
 
     if ($registosExistentes > 0) {
@@ -31,6 +34,8 @@ try {
     // Entrada na tabela Inscricao_ag
     $stmt = $dbh->prepare('INSERT INTO Inscricao_ag (membro, aulagrupo) VALUES (?, ?)');
     $stmt->execute(array($membro_id, $aula_id));
+
+    //separar aqui
 
     $dbh->commit();
 
