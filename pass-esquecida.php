@@ -6,5 +6,5 @@ if(isset($_SESSION["email"])){
     header('Location: paginicial.php');
 }
 require_once 'templates/headerpaginicial_tpl.php';
-include('pass-esquecida_tpl.php');
+include('templates/pass-esquecida_tpl.php');
 require_once 'templates/footer_tpl.php';?>
