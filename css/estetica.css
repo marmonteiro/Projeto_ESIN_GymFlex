@@ -47,6 +47,17 @@ header {
     float: left;
 }
 
+.caracteristicas {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.caracteristicastexto {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
 
 
 
@@ -60,7 +71,7 @@ header {
     margin: 10px;
     text-decoration: none;
     color: #A60000;
-    background-color: #fff;;
+    background-color: #e5dede;;
     border-radius: 5px;
 }
 
@@ -80,7 +91,7 @@ header {
 }
 
 .clubes a:hover{
-    background-color: #000000;
+    background-color: #c2b6b6;
 }
 
 .club-info {
