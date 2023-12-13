@@ -23,6 +23,7 @@ try {
 } catch (PDOException $e) {
     $error_msg = $e->getMessage();
 }
+?>
 <div class="classes">
     <?php
     if (isset($aulas) && !empty($aulas)) {
@@ -45,6 +46,8 @@ try {
     ?>
 
 </div>
+
+<?php
 
 include("templates/header_tpl.php");
 include("templates/aulasgrupo_tpl.php");
