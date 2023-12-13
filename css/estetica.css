@@ -45,7 +45,6 @@ header {
     max-width: 25%;
     height: auto;
     float: left;
-    /*margin-bottom: 0px;*/
 }
 
 
@@ -60,8 +59,8 @@ header {
     padding: 10px 20px;
     margin: 10px;
     text-decoration: none;
-    color: #fff;
-    background-color: #000000;
+    color: #A60000;
+    background-color: #fff;;
     border-radius: 5px;
 }
 
