@@ -1,4 +1,4 @@
-/* css para todas as páginas */
+/* CSS COMUM PARA TODAS ÀS PÁGINAS */
 
 body {
     font-family: 'Montserrat', sans-serif;
@@ -8,7 +8,6 @@ body {
     padding: 0;
 }
 
-/*rodapé*/
 footer {
     background-color: #f4f4f4;
     color:#333 ;
@@ -16,19 +15,94 @@ footer {
     text-align: center;
 }
 
-/*headers exceto página inicial*/
-/* cabeçalho*/
+   /*headers exceto página inicial*/
 header {
     font-family: 'Contrail One', sans-serif;
     background-color: #FFFFFF;
-    /*background-color: whitesmoke;*/
     color: white;
     padding: 20px;
     text-align: center;
 }
 
+.barra a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #000000;
+    border-radius: 5px;
+}
+
+.barra {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Isso permite que os botões quebrem para a próxima linha se não couberem*/
+} 
+
 
 /*PÁGINA INICIAL*/
+
+.header_paginicial {  /*este header não está bem, ainda*/
+    padding: 20px;
+    background-color: #ffffff;
+    /* Change the background color as needed */
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+    /*Imagens na página inicial*/
+.imagensiniciais {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.imagens {
+    text-align: center;
+    width: 24%;
+}
+
+.imagens img {
+    width: 70%;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+}
+
+.imagens p {
+    margin-top: 5px;
+}
+
+.escolherGymFlex {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.textoimagensiniciais {
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.caracteristicas {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.caracteristicastexto {
+    text-align: center;
+    font-weight: bold;
+    font-size: 25px;
+}
+
 
     /* retângulos das características dos ginásios*/
 .retangulo {
@@ -57,7 +131,6 @@ header {
     font-weight: bold;
     font-size: 25px;
 }
-
 
 
 
