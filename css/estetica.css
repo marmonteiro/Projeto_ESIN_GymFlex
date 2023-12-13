@@ -139,9 +139,14 @@ header {
     font-size: 25px;
 }
 
+
 table {
     width: 100%;
-    border-collapse: collapse;
     margin-top: 20px;
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: gray;
 }
-
