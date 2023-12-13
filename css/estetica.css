@@ -299,3 +299,7 @@ planos {
     font-weight: bold;
     border-radius: 5px;
 }
+
+.botao_planos:hover {
+    background-color: #670000;
+}
