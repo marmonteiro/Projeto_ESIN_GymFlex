@@ -40,9 +40,8 @@ header {
     margin: 10px;
     text-decoration: none;
     color: #fff;
-    background-color: #c69791;
+    background-color: #000000;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
 }
 
 .clubes {
@@ -60,8 +59,8 @@ header {
     height: auto;
 }
 
-.clubes a:hover {
-    background-color: #c4938e;
+.clubes a:hover{
+    background-color: #000000;
 }
 
 .club-info {
