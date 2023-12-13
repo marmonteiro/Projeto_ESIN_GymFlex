@@ -30,6 +30,27 @@ header {
 
 /*PÁGINA INICIAL*/
 
+    /* retângulos das características dos ginásios*/
+.retangulo {
+    width: calc(33% - 20px);
+    margin: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    text-align: center;
+    background-color: whitesmoke;
+    font-weight: bold;
+}
+
+.retangulo img {
+    max-width: 25%;
+    height: auto;
+    float: left;
+    /*margin-bottom: 0px;*/
+}
+
+
+
+
 /*PÁGINA DOS CLUBES*/
 
 .clubes a {
@@ -115,21 +136,3 @@ table {
     margin-top: 20px;
 }
 
-.retangulo {
-    width: calc(33% - 20px);
-    margin: 10px;
-    /*padding: 0px;*/
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    text-align: center;
-    background-color: whitesmoke;
-    /*cor de fundo de cada retângulo com as características*/
-    font-weight: bold;
-}
-
-.retangulo img {
-    max-width: 25%;
-    height: auto;
-    float: left;
-    /*margin-bottom: 0px;*/
-}
