@@ -18,7 +18,7 @@
                     </p>
                 </div>
                 <div>
-                    <a href="registo.php" class="botao_planos">Inscreva-se</a>
+                    <a href="registo.php?plano_sel=<?php echo urlencode($plano['nome']); ?>" class="botao_planos">Inscreva-se</a>
                 </div>
             </div>
         <?php endforeach; ?>
