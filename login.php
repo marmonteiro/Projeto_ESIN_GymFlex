@@ -16,7 +16,7 @@ try {
 } catch (PDOException $e) {
   $error_msg = $e->getMessage();
 }
-include("templates/header_ajuda_tpl.php");
+include("templates/header_tpl.php");
 include("templates/login_tpl.php");
 include("templates/footer_tpl.php");
 ?>
