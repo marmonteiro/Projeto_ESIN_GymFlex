@@ -36,7 +36,7 @@
                     <?php echo $_SESSION['nome'] ?>!
                 </p>
             <?php } else { ?> <!-- se sessão não iniciada -->
-                <a id="login" href="login.php"><img src = imagens/area_cliente.png>Login</a>
+                <a id="login_btn" href="login.php"><img src = imagens/area_cliente.png>Login</a>
                 <a id="torne_semembro" href="registo.php"><img src = imagens/peso_icon.png>Torne-se Membro!</a>
             <?php } ?>
 
