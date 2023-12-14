@@ -18,8 +18,10 @@
         ?>
     </h2>
 
+    
     <div id="dados_pessoais">
         <h3>Dados Pessoais</h3>
+        <img src="imagens/membros/<?php echo $_SESSION['id'] ?>.png">
         <p>Nome:
             <?php echo $nome ?>
         </p>
@@ -105,23 +107,23 @@
 
     <div>
         <details>
-        <summary>Registo de Treinos</summary>
-        <p>Ainda podes treinar mais
-            <?php echo $tempo_treino_restante ?> hr este mês nos ginásios GymFlex.
-        </p>
-        <?php
-        foreach ($treinos as $treino) {
-            echo "<p>Entrada: " . $treino['hora_entrada'] . "</p>";
-            echo "<p>Saída: " . $treino['hora_saida'] . "</p>";
-            echo "<p>Duração: " . $treino['duracao_t'] . " hr</p>";
-            echo "<p>No ginásio: " . $treino['nome_ginasio'] . "</p>";
-            echo "<hr>";
-        }
-        ?>
+            <summary>Registo de Treinos</summary>
+            <p>Ainda podes treinar mais
+                <?php echo $tempo_treino_restante ?> hr este mês nos ginásios GymFlex.
+            </p>
+            <?php
+            foreach ($treinos as $treino) {
+                echo "<p>Entrada: " . $treino['hora_entrada'] . "</p>";
+                echo "<p>Saída: " . $treino['hora_saida'] . "</p>";
+                echo "<p>Duração: " . $treino['duracao_t'] . " hr</p>";
+                echo "<p>No ginásio: " . $treino['nome_ginasio'] . "</p>";
+                echo "<hr>";
+            }
+            ?>
         </details>
     </div>
 
-    
+
 
 
 </section>

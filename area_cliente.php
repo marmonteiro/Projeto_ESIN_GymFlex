@@ -76,7 +76,7 @@ try {
     //  connection errors
     echo "Connection failed: " . $e->getMessage();
 }
-include("templates/header_ajuda_tpl.php");
+include("templates/header_tpl.php");
 include("templates/area_cliente_tpl.php");
 include("templates/footer_tpl.php");
 ?>

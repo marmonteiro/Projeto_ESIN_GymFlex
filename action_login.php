@@ -7,7 +7,7 @@ require_once("database/init.php");
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-require_once("database/action_login.php");
+require_once("database/login.php");
 
 
 // if email and password are correct, create session
