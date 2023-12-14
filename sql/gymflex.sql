@@ -149,7 +149,6 @@ CREATE TABLE Inscricao_ag (
     FOREIGN KEY (membro) REFERENCES Membro(id) ON DELETE CASCADE,
     FOREIGN KEY (aulagrupo) REFERENCES Aulagrupo(id)
 );
--- php: qntd_membros corresponde à soma de clientes que se inscreveram numa certa Aulagrupo
 
 
 
@@ -161,6 +160,7 @@ VALUES
   (2, 'Rua 31 de janeiro nº 12', 'GymFlex Amarante','gymflex.amarante@gmail.com','934566789','imagens/clubes/gymflexamarante.png','imagens/clubes/amarante.png'),
   (3, 'Rua da Ajuda nº8','GymFlex Madeira','gymflex.madeira@gmail.com','934567890','imagens/clubes/gymflexmadeira.png','imagens/clubes/madeira.png');
 
+INSERT INTO Pessoa (nome, morada, nif, nr_telemovel, email, data_nascimento) 
 INSERT INTO Pessoa (nome, morada, nif, nr_telemovel, email, data_nascimento) 
 VALUES 
   ('João Silva', 'Rua Principal 123', 123456789, '912345678', 'joao@gmail.com', '1990-05-20'),
@@ -178,11 +178,11 @@ VALUES
   ('André Santos', 'Travessa das Amendoeiras 753', 987654123, '944556677', 'andre@gmail.com', '1993-03-30'),
   ('Teresa Oliveira', 'Rua das Flores 357', 147258369, '955667788', 'teresa@hotmail.com', '1983-11-18'),
   ('Ricardo Fernandes', 'Avenida Central 951', 258369147, '966778899', 'ricardo@gmail.com', '1970-01-25'),
-  ('Lara Marques', 'Praça da Liberdade 456', 369147258, '977889900', 'lara@hotmail.com', '1998-12-03'),
-  ('Hugo Silva', 'Largo da Sé 753', 951753852, '988990011', 'hugo@gmail.com', '1982-06-09'),
-  ('Catarina Rodrigues', 'Rua dos Cedros 852', 753951852, '999011122', 'catarina@hotmail.com', '1997-04-15'),
-  ('Daniel Almeida', 'Avenida das Rosas 357', 159753852, '910112233', 'daniel@gmail.com', '2002-08-20'),
-  ('Mariana Sousa', 'Travessa das Acácias 753', 753159753, '921122334', 'mariana@hotmail.com', '1991-12-28');
+  ('Lara Marques', 'Praça da Liberdade 456', 369147258, 977889900, 'lara@hotmail.com', '1998-12-03'),
+  ('Hugo Silva', 'Largo da Sé 753', 951753852, 988990011, 'hugo@gmail.com', '1982-06-09'),
+  ('Catarina Rodrigues', 'Rua dos Cedros 852', 753951852, 999011122, 'catarina@hotmail.com', '1997-04-15'),
+  ('Daniel Almeida', 'Avenida das Rosas 357', 159753852, 910112233, 'daniel@gmail.com', '2002-08-20'),
+  ('Mariana Sousa', 'Travessa das Acácias 753', 753159753, 921122334, 'mariana@hotmail.com', '1991-12-28');
 
 
 INSERT INTO Funcionario (id, ginasio)

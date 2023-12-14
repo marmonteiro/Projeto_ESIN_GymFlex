@@ -4,7 +4,7 @@ session_start();
 require_once('database/init.php');
 
 
-require_once('database/person.php');
+require_once('database/pass.php');
 
 $to = $_POST["email"];
 $subject = getNamePersonByEmail($to);

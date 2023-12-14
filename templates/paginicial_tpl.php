@@ -3,25 +3,25 @@
 
 <div class="imagensiniciais">
     <div class="imagens">
-        <img src="imagens/fidelizacao.png" alt="Imagem 1">
+        <img src="imagens/gymflex/fidelizacao.png" alt="Imagem 1">
         <div class="textoimagensiniciais">
             <p>Sem Fidelização</p>
         </div>
     </div>
     <div class="imagens">
-        <img src="imagens/horario.png" alt="Imagem 2">
+        <img src="imagens/gymflex/horario.png" alt="Imagem 2">
         <div class="textoimagensiniciais">
             <p>Horário Alargado</p>
         </div>
     </div>
     <div class="imagens">
-        <img src="imagens/TreinoPT.png" alt="Imagem 3">
+        <img src="imagens/gymflex/TreinoPT.png" alt="Imagem 3">
         <div class="textoimagensiniciais">
             <p>Treino Acompanhado ou Autónomo</p>
         </div>
     </div>
     <div class="imagens">
-        <img src="imagens/nutricao_.png" alt="Imagem 4">
+        <img src="imagens/gymflex/nutricao_.png" alt="Imagem 4">
         <div class="textoimagensiniciais">
             <p>Nutrição</p>
         </div>

@@ -12,6 +12,7 @@ require_once("database/action_login.php");
 
 // if email and password are correct, create session
 try {
+  
   if ($user = loginSuccess($email, $password)) {
     $_SESSION['email'] = $email;
     $membro = fetchNomeandIDByEmail($email);

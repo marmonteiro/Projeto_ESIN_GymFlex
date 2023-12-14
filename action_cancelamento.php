@@ -4,6 +4,8 @@ require_once("database/init.php");
 
 
     try {
+
+        
         // Apaga membro da tabela Pessoa
         $stmt = $dbh->prepare('DELETE FROM Pessoa WHERE id = ?');
         $stmt->execute([$_SESSION['id']]);

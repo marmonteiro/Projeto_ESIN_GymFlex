@@ -5,6 +5,7 @@ require_once("database/init.php");
 include ("database/alteracao_plano.php");
 
 try {
+    
 $dbh->beginTransaction();
 $tipo_p = $_POST['tipo_p'];
 $membro_id = $_SESSION['id'];
