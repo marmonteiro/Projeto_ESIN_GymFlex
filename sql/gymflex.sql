@@ -20,7 +20,6 @@ CREATE TABLE Pessoa (
     nif INTEGER UNIQUE,
     nr_telemovel INTEGER,
     email TEXT UNIQUE,
-    password TEXT NOT NULL,
     data_nascimento DATE
 );
 
@@ -150,7 +149,6 @@ CREATE TABLE Inscricao_ag (
     FOREIGN KEY (membro) REFERENCES Membro(id) ON DELETE CASCADE,
     FOREIGN KEY (aulagrupo) REFERENCES Aulagrupo(id)
 );
--- php: qntd_membros corresponde à soma de clientes que se inscreveram numa certa Aulagrupo
 
 
 
@@ -162,28 +160,28 @@ VALUES
   (2, 'Rua 31 de janeiro nº 12', 'GymFlex Amarante','gymflex.amarante@gmail.com','934566789','imagens/clubes/gymflexamarante.png','imagens/clubes/amarante.png'),
   (3, 'Rua da Ajuda nº8','GymFlex Madeira','gymflex.madeira@gmail.com','934567890','imagens/clubes/gymflexmadeira.png','imagens/clubes/madeira.png');
 
-INSERT INTO Pessoa (nome, morada, nif, nr_telemovel, email, password, data_nascimento) 
+INSERT INTO Pessoa (nome, morada, nif, nr_telemovel, email, data_nascimento) 
 VALUES 
-  ('João Silva', 'Rua Principal 123', 123456789, '912345678', 'joao@gmail.com','12345678', '1990-05-20'),
-  ('Maria Sousa', 'Avenida Central 456', 987654321, '923456789', 'maria@hotmail.com','23456789','1985-12-15'),
-  ('Pedro Almeida', 'Rua das Flores 789', 246813579, '933456789', 'pedro@gmail.com', '34567890', '1998-03-10'),
-  ('Marta Santos', 'Travessa da Praia 357', 135792468, '944567890', 'marta@gmail.com', '2001-08-25'),
-  ('Carlos Pereira', 'Avenida da Liberdade 789', 567891234, '955678901', 'carlos@hotmail.com', '1980-09-30'),
-  ('Ana Rodrigues', 'Rua do Carmo 159', 987123456, '966789012', 'ana@gmail.com', '1995-06-18'),
-  ('Rui Oliveira', 'Praça da República 753', 345678912, '977890123', 'rui@hotmail.com', '1978-11-05'),
-  ('Sofia Costa', 'Largo do Rossio 951', 891234567, '988901234', 'sofia@gmail.com', '1992-04-30'),
-  ('Jorge Fernandes', 'Rua do Comércio 246', 678912345, '999012345', 'jorge@gmail.com', '1987-02-12'),
-  ('Inês Marques', 'Avenida dos Aliados 753', 456789123, '910123456', 'ines@gmail.com', '2000-10-08'),
-  ('Manuel Pereira', 'Rua das Oliveiras 852', 852369741, '922334455', 'manuel@gmail.com', '1975-07-14'),
-  ('Luisa Costa', 'Avenida dos Plátanos 159', 369852147, '933445566', 'luisa@hotmail.com', '1989-09-22'),
-  ('André Santos', 'Travessa das Amendoeiras 753', 987654123, '944556677', 'andre@gmail.com', '1993-03-30'),
-  ('Teresa Oliveira', 'Rua das Flores 357', 147258369, '955667788', 'teresa@hotmail.com', '1983-11-18'),
+  ('João Silva', 'Rua Principal 123', 123456789, 912345678, 'joao@gmail.com', '1990-05-20'),
+  ('Maria Sousa', 'Avenida Central 456', 987654321, 923456789, 'maria@hotmail.com','1985-12-15'),
+  ('Pedro Almeida', 'Rua das Flores 789', 246813579, 933456789, 'pedro@gmail.com', '1998-03-10'),
+  ('Marta Santos', 'Travessa da Praia 357', 135792468, 944567890, 'marta@gmail.com', '2001-08-25'),
+  ('Carlos Pereira', 'Avenida da Liberdade 789', 567891234, 955678901, 'carlos@hotmail.com', '1980-09-30'),
+  ('Ana Rodrigues', 'Rua do Carmo 159', 987123456, 966789012, 'ana@gmail.com', '1995-06-18'),
+  ('Rui Oliveira', 'Praça da República 753', 345678912, 977890123, 'rui@hotmail.com', '1978-11-05'),
+  ('Sofia Costa', 'Largo do Rossio 951', 891234567, 988901234, 'sofia@gmail.com', '1992-04-30'),
+  ('Jorge Fernandes', 'Rua do Comércio 246', 678912345, 999012345, 'jorge@gmail.com', '1987-02-12'),
+  ('Inês Marques', 'Avenida dos Aliados 753', 456789123, 910123456, 'ines@gmail.com', '2000-10-08'),
+  ('Manuel Pereira', 'Rua das Oliveiras 852', 852369741, 922334455, 'manuel@gmail.com', '1975-07-14'),
+  ('Luisa Costa', 'Avenida dos Plátanos 159', 369852147, 933445566, 'luisa@hotmail.com', '1989-09-22'),
+  ('André Santos', 'Travessa das Amendoeiras 753', 987654123, 944556677, 'andre@gmail.com', '1993-03-30'),
+  ('Teresa Oliveira', 'Rua das Flores 357', 147258369, 955667788, 'teresa@hotmail.com', '1983-11-18'),
   ('Ricardo Fernandes', 'Avenida Central 951', 258369147, '966778899', 'ricardo@gmail.com', '1970-01-25'),
-  ('Lara Marques', 'Praça da Liberdade 456', 369147258, '977889900', 'lara@hotmail.com', '1998-12-03'),
-  ('Hugo Silva', 'Largo da Sé 753', 951753852, '988990011', 'hugo@gmail.com', '1982-06-09'),
-  ('Catarina Rodrigues', 'Rua dos Cedros 852', 753951852, '999011122', 'catarina@hotmail.com', '1997-04-15'),
-  ('Daniel Almeida', 'Avenida das Rosas 357', 159753852, '910112233', 'daniel@gmail.com', '2002-08-20'),
-  ('Mariana Sousa', 'Travessa das Acácias 753', 753159753, '921122334', 'mariana@hotmail.com', '1991-12-28');
+  ('Lara Marques', 'Praça da Liberdade 456', 369147258, 977889900, 'lara@hotmail.com', '1998-12-03'),
+  ('Hugo Silva', 'Largo da Sé 753', 951753852, 988990011, 'hugo@gmail.com', '1982-06-09'),
+  ('Catarina Rodrigues', 'Rua dos Cedros 852', 753951852, 999011122, 'catarina@hotmail.com', '1997-04-15'),
+  ('Daniel Almeida', 'Avenida das Rosas 357', 159753852, 910112233, 'daniel@gmail.com', '2002-08-20'),
+  ('Mariana Sousa', 'Travessa das Acácias 753', 753159753, 921122334, 'mariana@hotmail.com', '1991-12-28');
 
 
 INSERT INTO Funcionario (id, ginasio)
