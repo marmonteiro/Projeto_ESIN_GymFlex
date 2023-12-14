@@ -161,7 +161,6 @@ VALUES
   (3, 'Rua da Ajuda nº8','GymFlex Madeira','gymflex.madeira@gmail.com','934567890','imagens/clubes/gymflexmadeira.png','imagens/clubes/madeira.png');
 
 INSERT INTO Pessoa (nome, morada, nif, nr_telemovel, email, data_nascimento) 
-INSERT INTO Pessoa (nome, morada, nif, nr_telemovel, email, data_nascimento) 
 VALUES 
   ('João Silva', 'Rua Principal 123', 123456789, '912345678', 'joao@gmail.com', '1990-05-20'),
   ('Maria Sousa', 'Avenida Central 456', 987654321, '923456789', 'maria@hotmail.com','1985-12-15'),
