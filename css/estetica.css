@@ -463,3 +463,350 @@ table {
             flex: 0 0 calc(33.33% - 20px); /* 33.33% da largura da linha para telas maiores */
         }
     }
+
+/* PÁGINA AJUDA */
+
+#info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 45px;
+}
+
+h2 {
+    text-align: center;
+    font-size: 35px;
+    margin-block-start: 5px;
+    margin-block-end: 5px;
+}
+
+#intro {
+    text-align: center;
+    font-size: 20px;
+    margin-block-start: 5px;
+    margin-block-end: 20px;
+}
+
+
+#Categoria {
+    background-color: white;
+    border-radius: 5px;
+}
+
+#Categoria>summary {
+    text-align: center;
+    font-weight: bold;
+}
+
+#Pergunta>summary {
+    background-color: rgba(107, 97, 97, 0.35);
+    border-radius: 5px;
+}
+
+#Pergunta>p {
+    text-indent: 20px;
+}
+
+#Categoria {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 350px;
+    margin-right: 350px;
+    padding: 20px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#Categoria>details {
+    margin: 10px;
+    padding: 10px;
+}
+
+summary {
+    display: block;
+    /* isto tá a fazer com q a seta dos details original desapareça mas acho q n é suposto*/
+    position: relative;
+    cursor: pointer;
+    padding-left: 30px !important;
+    /* só funciona com !important ??? */
+    font-size: 18px;
+    padding: 10px;
+}
+
+details>p {
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+summary:before {
+    content: '';
+    border-width: .4rem;
+    border-style: solid;
+    border-color: transparent transparent transparent black;
+    /* seta para baixo = quadrado com 3 bordas transparentes */
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    transform: rotate(0);
+    transform-origin: .2rem 50%;
+    transition: .25s transform ease;
+}
+
+details[open]>summary:before {
+    transform: rotate(90deg);
+}
+
+#Categoria>summary:before {
+    display: none;
+}
+
+#Contactos>p {
+    text-align: center;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+#FAQ {
+    margin-top: 20px;
+}
+
+/*PÁGINA REGISTO*/
+
+#registo {
+    text-align: center;
+    margin: 5rem 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div {
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="number"],
+input[type="submit"] {
+    font-size: 20px;
+    position: relative;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 25rem;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+/* Placeholder styles for the input */
+input[type="tel"]::placeholder,
+input[type="email"]::placeholder,
+input[type="text"]::placeholder,
+input[type="number"]::placeholder,
+input[type="password"]::placeholder {
+    font-size: 16px;
+    color: #999;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    transition: top 0.3s, font-size 0.3s, color 0.3s;
+}
+
+/*ISTO NÃO ESTÁ A FUNCIONAR, QUALQUER COISA TIRAMOS*/
+/* When input is focused 
+input[type="tel"]:focus::placeholder,
+input[type="email"]:focus::placeholder,
+input[type="text"]:focus::placeholder,
+input[type="password"]:focus::placeholder,
+input[type="number"]:focus::placeholder input[type="tel"]:focus-visible::placeholder,
+input[type="email"]:focus-visible::placeholder,
+input[type="text"]:focus-visible::placeholder,
+input[type="password"]:focus-visible::placeholder,
+input[type="number"]:focus-visible::placeholder,
+input[type="tel"]:valid::placeholder,
+input[type="email"]:valid::placeholder,
+input[type="text"]:valid::placeholder,
+input[type="password"]:valid::placeholder,
+input[type="number"]:valid::placeholder {
+    top: 25%;
+    font-size: 12px;
+    color: #A60000;
+}*/
+
+
+input[type="submit"] {
+    background-color: #A60000;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    margin-top: 20px;
+}
+
+input[type="submit"]:hover {
+    background-color: #a600006f;
+}
+
+input[type="date"],
+input[type="number"] {
+    color: #999;
+    font-size: 20px;
+    position: relative;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 14rem;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+label {
+    font-size: 16px;
+    color: #999;
+}
+
+select {
+    font-size: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 25rem;
+    box-sizing: border-box;
+    margin-top: 5px;
+    color: #999;
+}
+
+/* Placeholder styles for the select */
+select option[disabled]:first-child {
+    color: #999;
+}
+
+/*boxes de informação*/
+#escolha_plano {
+    background-color: rgba(107, 97, 97, 0.20);
+    border-radius: 10px;
+    padding: 0.8rem;
+    margin-bottom: 2rem;
+}
+
+
+/* PÁGINA LOGIN */
+
+#logo_login {
+    max-width: 100%;
+    width: 100%;
+    height: 10rem;
+    display: block;
+    margin: 0;
+}
+
+#login {
+    text-align: center;
+    margin: 2.5rem 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div {
+    margin-bottom: 10px;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="submit"] {
+    font-size: 20px;
+    position: relative;
+    padding: 18px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 20rem;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+/* Placeholder styles for the input */
+input[type="email"]::placeholder,
+input[type="password"]::placeholder {
+    font-size: 16px;
+    color: #999;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    transition: top 0.3s, font-size 0.3s, color 0.3s;
+}
+
+/* When input is focused */
+input[type="email"]:focus::placeholder,
+input[type="password"]:focus::placeholder,
+input[type="email"]:focus-visible::placeholder,
+input[type="password"]:focus-visible::placeholder,
+input[type="email"]:valid::placeholder,
+input[type="password"]:valid::placeholder {
+    top: 25%;
+    font-size: 12px;
+    color: #A60000;
+}
+
+
+input[type="submit"] {
+    background-color:#A60000;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    max-width: 160px;
+}
+
+input[type="submit"]:hover {
+    background-color: #a600006f;
+}
+
+#registo {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+#registe_se>a {
+    padding: 1rem;
+    ;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: #A60000;
+    color: white;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+#registe_se>a:hover {
+    background-color:  #a600006f;
+}
+
+#msg_erro {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
