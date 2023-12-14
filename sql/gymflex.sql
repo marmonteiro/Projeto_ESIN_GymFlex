@@ -34,6 +34,7 @@ CREATE TABLE Membro (
     nutricionista INTEGER,
     sexo TEXT NOT NULL,
     iban TEXT NOT NULL,
+    imagem_perfil TEXT,
     FOREIGN KEY (id) REFERENCES Pessoa(id) ON DELETE CASCADE,
     FOREIGN KEY (personaltrainer) REFERENCES Personaltrainer(id),
     FOREIGN KEY (nutricionista) REFERENCES Nutricionista(id),
@@ -212,12 +213,12 @@ INSERT INTO Nutricionista (id)
 VALUES 
   ((SELECT id FROM Pessoa WHERE nome = 'Sofia Costa')),
   ((SELECT id FROM Pessoa WHERE nome = 'Jorge Fernandes')),
-  ((SELECT id FROM Pessoa WHERE nome = 'Inês Marques')),
+  ((SELECT id FROM Pessoa WHERE nome = 'Inês Marques')), 
   ((SELECT id FROM Pessoa WHERE nome = 'Teresa Oliveira')),
   ((SELECT id FROM Pessoa WHERE nome = 'Ricardo Fernandes')),
   ((SELECT id FROM Pessoa WHERE nome = 'Lara Marques'));
 
-INSERT INTO Membro (pwd, peso, altura, imc, sexo ,personaltrainer, nutricionista, iban)
+INSERT INTO Membro (pwd, peso, altura, imc, sexo ,personaltrainer, nutricionista, iban, imagem_perfil)
 VALUES 
   ('0b14d501a594442a01c6859541bcb3e8164d183d32937b851835442f69d5c94e', 70.5, 175, (70.5 / (1.75 * 1.75)), 'M' , (SELECT id FROM Pessoa WHERE nome = 'Carlos Pereira'), (SELECT id FROM Pessoa WHERE nome = 'Sofia Costa'),'PT38502761940287651290341'),
   ('6cf615d5bcaac778352a8f1f3360d23f02f34ec182e259897fd6ce485d7870d4', 65.0, 165, (65.0 / (1.65 * 1.65)), 'F' , (SELECT id FROM Pessoa WHERE nome = 'Ana Rodrigues'), (SELECT id FROM Pessoa WHERE nome = 'Jorge Fernandes'),'PT74091283509127350912387'),
