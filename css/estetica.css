@@ -32,17 +32,17 @@ header {
     align-items: center;
     justify-content: space-between;
     font-family: 'Contrail One', sans-serif;
-    background-color: #FFFFFF;
+    background-color: #161616;
     letter-spacing: 0.05rem;
-    color: #333;
-    padding: 20px;
+    color: #ffffff;
+    padding: 20px 40px;
     text-align: center;
     border-bottom: 10px solid #A60000;
     margin-bottom: 20px
 }
 
 #logo {
-    max-width: 200px;
+    max-width: 130px;
     height: auto;
     margin-bottom: 10px;
 }
@@ -98,7 +98,7 @@ header {
 #torne_semembro>img {
     width: 30px;
     height: 30px;
-    margin-right: 5px;
+    margin-right: 8px;
     vertical-align: middle;
     display: inline-block;
 }
@@ -109,12 +109,13 @@ header {
 
 #torne_semembro:hover {
     background-color: #b51212;
-    border: 2px solid #333;
+    border: 2px solid #ffffff;
     text-decoration: none;
 }
 
 #torne_semembro:hover img {
-    transform: scale(1.2);
+    transform: scale(1.5);
+    transition: transform 0.5s;
 }
 
 #areacliente,
@@ -165,7 +166,7 @@ header {
 }
 
 #logo_paginicial {
-    max-width: 400px;
+    max-width: 300px;
     height: auto;
     margin-right: 10px; 
     
@@ -179,7 +180,7 @@ header {
     align-items: center;
     font-size: 20px;
     color: white;
-    padding: 5px 10px;
+    padding: 10px 5px;
     border-radius: 5px;
     margin: 5px 0px;
 }

@@ -18,7 +18,7 @@
         <section id="main_header">
             <div>
                 <a href="paginicial.php">
-                    <img id="logo_paginicial" src="imagens/logo.gif" alt="Logotipo">
+                    <img id="logo_paginicial" src="imagens/gymflex_logo.gif" alt="Logotipo">
                 </a>
             </div>
 
