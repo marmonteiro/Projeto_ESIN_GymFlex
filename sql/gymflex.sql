@@ -20,7 +20,6 @@ CREATE TABLE Pessoa (
     nif INTEGER UNIQUE,
     nr_telemovel INTEGER,
     email TEXT UNIQUE,
-    password TEXT NOT NULL,
     data_nascimento DATE
 );
 
@@ -162,11 +161,11 @@ VALUES
   (2, 'Rua 31 de janeiro nº 12', 'GymFlex Amarante','gymflex.amarante@gmail.com','934566789','imagens/clubes/gymflexamarante.png','imagens/clubes/amarante.png'),
   (3, 'Rua da Ajuda nº8','GymFlex Madeira','gymflex.madeira@gmail.com','934567890','imagens/clubes/gymflexmadeira.png','imagens/clubes/madeira.png');
 
-INSERT INTO Pessoa (nome, morada, nif, nr_telemovel, email, password, data_nascimento) 
+INSERT INTO Pessoa (nome, morada, nif, nr_telemovel, email, data_nascimento) 
 VALUES 
-  ('João Silva', 'Rua Principal 123', 123456789, '912345678', 'joao@gmail.com','12345678', '1990-05-20'),
-  ('Maria Sousa', 'Avenida Central 456', 987654321, '923456789', 'maria@hotmail.com','23456789','1985-12-15'),
-  ('Pedro Almeida', 'Rua das Flores 789', 246813579, '933456789', 'pedro@gmail.com', '34567890', '1998-03-10'),
+  ('João Silva', 'Rua Principal 123', 123456789, '912345678', 'joao@gmail.com', '1990-05-20'),
+  ('Maria Sousa', 'Avenida Central 456', 987654321, '923456789', 'maria@hotmail.com','1985-12-15'),
+  ('Pedro Almeida', 'Rua das Flores 789', 246813579, '933456789', 'pedro@gmail.com', '1998-03-10'),
   ('Marta Santos', 'Travessa da Praia 357', 135792468, '944567890', 'marta@gmail.com', '2001-08-25'),
   ('Carlos Pereira', 'Avenida da Liberdade 789', 567891234, '955678901', 'carlos@hotmail.com', '1980-09-30'),
   ('Ana Rodrigues', 'Rua do Carmo 159', 987123456, '966789012', 'ana@gmail.com', '1995-06-18'),
