@@ -359,21 +359,6 @@ td {
     vertical-align: top;
 }
 
-
-
-
-
-/*table {
-    width: 100%;
-    margin-top: 20px;
-    display: table;
-    border-collapse: separate;
-    box-sizing: border-box;
-    text-indent: initial;
-    border-spacing: 2px;
-    border-color: gray;
-}*/
-
 /* RELATIVO À PÁGINAS DOS PLANOS  */
 .planos {
     display: flex;
