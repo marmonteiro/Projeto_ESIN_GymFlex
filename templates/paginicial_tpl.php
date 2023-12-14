@@ -76,7 +76,7 @@
   </div> 
 
 
-  <div class="horarios">
+  <div class="horarios_clubes">
       <p> Horário dos clubes: </p>
       <ul>
         <li>Sábados das 9h às 21h.</li>
