@@ -32,7 +32,7 @@ header {
     align-items: center;
     justify-content: space-between;
     font-family: 'Contrail One', sans-serif;
-    background-color: #161616;
+    background-color: black;
     letter-spacing: 0.05rem;
     color: #ffffff;
     padding: 20px 40px;
@@ -74,8 +74,8 @@ header {
     padding: 10px 20px;
     margin: 10px;
     text-decoration: none;
-    color: #fff;
-    background-color: #000000;
+    color: black;
+    background-color: rgb(255, 255, 255);
     border-radius: 5px;
 }
 
@@ -172,12 +172,12 @@ header {
     align-items: center; 
     width: 100%; 
     max-width: 800px; 
-    gap: 5px; 
+    gap: 40px; 
 
 }
 
 #logo_paginicial {
-    max-width: 300px;
+    max-width: 200px;
     height: auto;
     margin-right: 10px; 
     
