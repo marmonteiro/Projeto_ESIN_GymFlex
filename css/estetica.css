@@ -279,9 +279,12 @@ header {
     border: 5px solid #7B2828; 
     margin-left: 10%;
     margin-right: 10%;
-    list-style-type: none;
 }
 
+.horarios_clubes ul {
+    list-style-type: none;
+    padding: 0;
+}
 .Torne-seMembro {
     text-align: center;
 }
