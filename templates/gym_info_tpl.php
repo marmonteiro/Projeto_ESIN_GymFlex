@@ -1,14 +1,14 @@
 <div class="club-info">
-        <p>
+        <h2>
             <?php echo $nome_ginasio ?>
-        </p>
-        <p>Morada:
+</h2>
+        <p> <strong>Morada:</strong>
             <?php echo $morada_ginasio ?>
         </p>
-        <p>Contacto telefónico:
+        <p> <strong>Contacto telefónico:</strong>
             <?php echo $telefone_ginasio ?>
         </p>
-        <p>Email:
+        <p><strong>Email:</strong>
             <?php echo $email_ginasio ?>
         </p>
         <!-- <img class="imagem clube" src="<?php echo $imagem_ginasio ?>" alt="GymFlex Porto"> -->

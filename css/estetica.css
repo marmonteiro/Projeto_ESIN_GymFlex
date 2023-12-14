@@ -319,6 +319,7 @@ header {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    font-weight: bold;
     /* permite que os botões quebrem para a próxima linha se não couberem */
 }
 
@@ -333,12 +334,21 @@ header {
     background-color: #c2b6b6;
 }
 
-.club-info {
+/* .club-info {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     list-style: none;
+} */
+
+.club-info {
+    display: flex;
+    flex-direction: column; /* Alterado para coluna para que os itens estejam empilhados verticalmente */
+    align-items: center; /* Centraliza os itens no eixo transversal (vertical) */
+    text-align: center; /* Centraliza o texto dentro de cada parágrafo */
+    padding: 20px; /* Adiciona algum espaçamento interno */
 }
+
 
 .club-info a {
     text-decoration: none;
