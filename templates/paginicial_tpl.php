@@ -37,45 +37,45 @@
 
 <div class="caracteristicas">
     <div class="retangulo">
-        <p><img src="imagens/chuveiro.png" alt="Imagem 1">Balneários com chuveiros</p>
+        <p><img src="imagens/caracteristiscas/chuveiro.png" alt="Imagem 1">Balneários com chuveiros</p>
 
     </div>
     <div class="retangulo">
-        <img src="imagens/cacifos.png" alt="Imagem 1">
+        <img src="imagens/caracteristiscas/cacifos.png" alt="Imagem 1">
         <p>Cacifos gratuitos</p>
     </div>
     <div class="retangulo">
-        <img src="imagens/aulasgrupo.png" alt="Imagem 1">
+        <img src="imagens/caracteristiscas/aulasgrupo.png" alt="Imagem 1">
         <p>Diferentes estúdios para aulas de grupo</p>
     </div>
     <div class="retangulo">
-        <img src="imagens/cardio.png" alt="Imagem 1">
+        <img src="imagens/caracteristiscas/cardio.png" alt="Imagem 1">
         <p>Zona de cardio</p>
     </div>
     <div class="retangulo">
-        <img src="imagens/funcional.png" alt="Imagem 1">
+        <img src="imagens/caracteristiscas/funcional.png" alt="Imagem 1">
         <p>Zona funcional</p>
     </div>
     <div class="retangulo">
-        <img src="imagens/forca.png" alt="Imagem 1">
+        <img src="imagens/caracteristiscas/forca.png" alt="Imagem 1">
         <p>Zona de força</p>
     </div>
     <div class="retangulo">
-        <img src="imagens/wifi.png" alt="Imagem 1">
+        <img src="imagens/caracteristiscas/wifi.png" alt="Imagem 1">
         <p>Wi-fi</p>
     </div>
     <div class="retangulo">
-        <img src="imagens/estacionamento.png" alt="Imagem 1">
+        <img src="imagens/caracteristiscas/estacionamento.png" alt="Imagem 1">
         <p>Estacionamento gratuito</p>
     </div>
     <div class="retangulo">
-        <img src="imagens/social.png" alt="Imagem 1">
+        <img src="imagens/caracteristiscas/social.png" alt="Imagem 1">
         <p>Zona social</p>
     </div>
 </div>
 
 <div class="batimento">
-    <img src="imagens/batimento.png" alt="batimento">
+    <img src="imagens/caracteristicas/batimento.png" alt="batimento">
 </div>
 
 
