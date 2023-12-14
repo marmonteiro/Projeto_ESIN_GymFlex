@@ -17,7 +17,7 @@ try {
         $dia_semana = $aula['dia_semana'];
         $hora_inicio = $aula['hora_inicio'];
         $hora_fim = $aula['hora_fim'];
-        $imagem_aulagrupo = $aula['imagem_aulagrupo'];
+        $imagem_aulagrupo = $aula['imagem_ag'];
     }
 
 } catch (PDOException $e) {
