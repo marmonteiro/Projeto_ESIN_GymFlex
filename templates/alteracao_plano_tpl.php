@@ -10,8 +10,9 @@
         <select name="tipo_p" id="tipo_p" required>
             <option value="" selected>Selecione um plano</option>
             <?php foreach ($tipo_p_info as $plano) { ?>
-                <option value="<?php echo $plano['nome']; ?>">
-                    <?php echo $plano['nome'] . " - " . $plano['preco'] . "€"; ?>
+                <?php $selected = (isset($_GET['plano_sel']) && $_GET['plano_sel'] === $plano['nome']) ? 'selected' : ''; ?>
+                <option value="<?php echo $plano['nome']; ?>" <?php echo $selected; ?>>
+                    <?php echo $plano['nome'] . ' - ' . $plano['preco'] . '€'; ?>
                 </option>
             <?php } ?>
         </select>

@@ -18,8 +18,12 @@
                     </p>
                 </div>
                 <div>
+                <?php if (!isset($_SESSION['email'])) {?>
                     <a href="registo.php?plano_sel=<?php echo urlencode($plano['nome']); ?>" class="botao_planos">Inscreva-se</a>
-                </div>
+                <?php } else { ?>
+                    <a href="alteracao_plano.php?plano_sel=<?php echo urlencode($plano['nome']); ?>" class="botao_planos">Altere o seu plano</a>
+                <?php } ?>
+            </div>
             </div>
         <?php endforeach; ?>
     </div>

@@ -40,8 +40,5 @@
             <p>{$_SESSION['msg']}</p>"
             <?php unset($_SESSION['msg']);
         } ?>
-        <?php if (isset($_SESSION['msg']) && !empty($_SESSION['msg'])) { ?> <!-- se houver mensagem de erro -->
-            <p>{$_SESSION['msg']}</p>"
-            <?php unset($_SESSION['msg']);
-        } ?>
+        
     </header>

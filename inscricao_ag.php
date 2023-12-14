@@ -44,7 +44,7 @@ try {
 } catch (PDOException $e) {
     $_SESSION['msg'] = 'Erro: ' . $e->getMessage();
 }
-include ("templates/header_clubes_tpl.php");
+include ("templates/header_tpl.php");
 include ("templates/inscricao_ag_tpl.php");
 include ("templates/footer_tpl.php");
 ?>
