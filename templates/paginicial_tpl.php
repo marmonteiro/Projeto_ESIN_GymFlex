@@ -75,7 +75,7 @@
     </div>
 </div>
 
-
+<img src="imagens/batimento.png" alt="batimento">
   <div class="horarios_clubes">
       <p> Horário dos clubes: </p>
       <ul>
