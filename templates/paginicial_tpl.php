@@ -76,9 +76,9 @@
 </div>
 
 
-<div class="horarios">
-    <p> Horário dos clubes: </p>
-    <ul>
+  <div class="horarios_clubes">
+      <p> Horário dos clubes: </p>
+      <ul>
         <li>Sábados das 9h às 21h.</li>
         <li>2ª Feira a 6ª Feira das 7h às 22h.</li>
         <li>Domingos e Feriados das 9h às 18h.</li>
