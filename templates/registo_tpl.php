@@ -76,7 +76,7 @@
     <section id="termos_condicoes">
       <div>
         <input type="checkbox" id="termos" name="termos" required>
-        <label for="termos">Li e aceito os <a href="termos_condicoes.html">Termos e Condições</a>.</label>
+        <label for="termos">Li e aceito os <a href="termos_condicoes.php">Termos e Condições</a>.</label>
       </div>
 
       <div>

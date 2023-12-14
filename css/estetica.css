@@ -726,6 +726,13 @@ select option[disabled]:first-child {
     margin-bottom: 2rem;
 }
 
+.termos_condicoes{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 
 /* PÁGINA LOGIN */
 
