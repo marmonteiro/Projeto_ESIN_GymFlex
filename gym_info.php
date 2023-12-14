@@ -25,7 +25,7 @@ try {
 } catch (PDOException $e) {
     $error_msg = $e->getMessage();
 }
-include("templates/header_clubes_tpl.php");
+include("templates/header_tpl.php");
 include("templates/gym_info_tpl.php");
 include("templates/footer_tpl.php");
 ?>

@@ -13,6 +13,8 @@ footer {
     color: #333;
     padding: 20px;
     text-align: center;
+    border-top: 10px solid #A60000;
+    margin-top: 20px
 }
 
 a {
@@ -344,8 +346,12 @@ header {
     font-size: 25px;
 }
 
-
 table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+/*table {
     width: 100%;
     margin-top: 20px;
     display: table;
@@ -354,7 +360,7 @@ table {
     text-indent: initial;
     border-spacing: 2px;
     border-color: gray;
-}
+}*/
 
 /* RELATIVO À PÁGINAS DOS PLANOS  */
 .planos {
