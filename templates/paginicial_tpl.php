@@ -1,12 +1,11 @@
-<div class="escolherGymFlex">
-    <p>Porquê o GymFlex?</p>
-</div>
+<h2>Porquê o GymFlex?</h2>
+
 
 <div class="imagensiniciais">
     <div class="imagens">
         <img src="imagens/fidelizacao.png" alt="Imagem 1">
         <div class="textoimagensiniciais">
-            <p> Sem Fidelização</p>
+            <p>Sem Fidelização</p>
         </div>
     </div>
     <div class="imagens">
@@ -32,14 +31,14 @@
 
 </p>
 
-<div class="caracteristicastexto">
-    <p>Características dos nossos clubes:</p>
-</div>
+
+<h2>Características dos nossos clubes:</h2>
+
 
 <div class="caracteristicas">
     <div class="retangulo">
         <p><img src="imagens/chuveiro.png" alt="Imagem 1">Balneários com chuveiros</p>
-        
+
     </div>
     <div class="retangulo">
         <img src="imagens/cacifos.png" alt="Imagem 1">
@@ -76,12 +75,14 @@
 </div>
 
 <div class="batimento">
-   <img src="imagens/batimento.png" alt="batimento">
+    <img src="imagens/batimento.png" alt="batimento">
 </div>
 
+
+<h2> Horário dos clubes: </h2>
 <div class="horarios_clubes">
-      <p> Horário dos clubes: </p>
-      <ul>
+
+    <ul>
         <li>Sábados das 9h às 21h.</li>
         <li>2ª Feira a 6ª Feira das 7h às 22h.</li>
         <li>Domingos e Feriados das 9h às 18h.</li>

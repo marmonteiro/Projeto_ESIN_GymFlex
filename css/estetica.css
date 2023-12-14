@@ -26,6 +26,16 @@ a:hover {
     text-decoration: underline;
 }
 
+h2 {
+    text-align: center;
+    font-style: bold;
+    font-size: 25x;
+    margin-bottom: 10px;
+}
+
+
+
+
 /*HEADERS - todas as pags exceto página inicial*/
 header {
     display: flex;
@@ -219,11 +229,6 @@ header {
     margin-top: 5px;
 }
 
-.escolherGymFlex {
-    text-align: center;
-    font-weight: bold;
-    font-size: 25px;
-}
 
 .textoimagensiniciais {
     text-align: center;
@@ -236,11 +241,6 @@ header {
     flex-wrap: wrap;
 }
 
-.caracteristicastexto {
-    text-align: center;
-    font-weight: bold;
-    font-size: 25px;
-}
 
 
 /* retângulos das características dos ginásios*/
@@ -278,6 +278,12 @@ header {
     justify-content: center;
 }
 
+.batimento img {
+    width: 10%;
+    height: auto;
+}
+
+
 .horarios_clubes {
     text-align: center;
     color: black;
@@ -293,6 +299,7 @@ header {
     list-style-type: none;
     padding: 0;
 }
+
 
 
 /*PÁGINA DOS CLUBES*/
@@ -504,13 +511,6 @@ td {
 h1 {
     text-align: center;
     font-size: 45px;
-}
-
-h2 {
-    text-align: center;
-    font-size: 35px;
-    margin-block-start: 5px;
-    margin-block-end: 5px;
 }
 
 #intro {
