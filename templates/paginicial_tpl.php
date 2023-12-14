@@ -66,8 +66,8 @@
         <p>Wi-fi</p>
     </div>
     <div class="retangulo">
-        <img src="imagens/nutricao.png" alt="Imagem 1">
-        <p>Nutrição</p>
+        <img src="imagens/estacionamento.png" alt="Imagem 1">
+        <p>Estacionamento gratuito</p>
     </div>
     <div class="retangulo">
         <img src="imagens/social.png" alt="Imagem 1">
