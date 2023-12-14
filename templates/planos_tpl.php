@@ -5,18 +5,17 @@
                     <h2> Plano 
                        <?php echo $plano['nome']; ?>
                     </h2>
-        
-                    <p>Preço mensal:
-                        <?php echo $plano['preco']; ?> €
+                    <p>
+                        <?php echo $plano['tempo_treino']; ?> Horas de Treino por mês
                     </p>
-                    <p>Tempo de Treino:
-                        <?php echo $plano['tempo_treino']; ?> horas
+                    <p>
+                        <?php echo $plano['quantidade_ag']; ?> Aulas de Grupo por mês
                     </p>
-                    <p>Número de aulas de grupo:
-                        <?php echo $plano['quantidade_ag']; ?>
-                    </p>
-                    <p>Acompanhamento contínuo por nutrição </p>
+                    <p>Acompanhamento contínuo por nutricionista </p>
                     <p>Cancelamento gratuito a qualquer momento </p>
+                    <p id=preco>
+                        <?php echo $plano['preco']; ?> € / mês
+                    </p>
                 </div>
                 <div>
                     <a href="registo.php" class="botao_planos">Inscreva-se</a>

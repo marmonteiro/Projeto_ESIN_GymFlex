@@ -286,9 +286,6 @@ header {
     list-style-type: none;
     padding: 0;
 }
-.Torne-seMembro {
-    text-align: center;
-}
 
 
 /*PÁGINA DOS CLUBES*/
@@ -311,13 +308,13 @@ header {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    /* Isso permite que os botões quebrem para a próxima linha se não couberem */
+    /* permite que os botões quebrem para a próxima linha se não couberem */
 }
 
 .clube-logo {
     max-width: 100px;
     margin-bottom: 10px;
-    /* Espaço entre a imagem e o texto */
+    /* espaço entre a imagem e o texto */
     height: auto;
 }
 
@@ -334,7 +331,6 @@ header {
 
 .club-info a {
     text-decoration: none;
-    /* Remove o sublinhado */
     color: black;
 }
 
@@ -361,7 +357,6 @@ header {
 .mapa {
     display: block;
     margin: 0 auto;
-    /* Define as margens superior e inferior como 0 e centraliza horizontalmente */
 }
 
 .titulos_clubes {
@@ -390,7 +385,6 @@ td {
     justify-content: center;
     text-decoration: none;
     font-weight: bold;
-    /* Texto em negrito */
 
 }
 
@@ -430,6 +424,14 @@ td {
 
 .botao_planos:hover {
     background-color: #670000;
+}
+
+#preco {
+    font-family: Contrail One;
+    letter-spacing: 0.05rem;
+    font-size: 30px;
+    font-weight: bold;
+    color: #A60000;
 }
 
 /*PARA AULAS DE GRUPO */
@@ -643,7 +645,7 @@ input[type="password"]::placeholder {
 }
 
 /*ISTO NÃO ESTÁ A FUNCIONAR, QUALQUER COISA TIRAMOS*/
-/* When input is focused 
+/* When input is focused */
 input[type="tel"]:focus::placeholder,
 input[type="email"]:focus::placeholder,
 input[type="text"]:focus::placeholder,
@@ -661,7 +663,7 @@ input[type="number"]:valid::placeholder {
     top: 25%;
     font-size: 12px;
     color: #A60000;
-}*/
+}
 
 
 input[type="submit"] {
@@ -707,7 +709,7 @@ select {
     color: #999;
 }
 
-/* Placeholder styles for the select */
+
 select option[disabled]:first-child {
     color: #999;
 }
