@@ -360,16 +360,13 @@ table {
     border-collapse: collapse;
     margin-top: 20px;
 }
-/*table {
-    width: 100%;
-    margin-top: 20px;
-    display: table;
-    border-collapse: separate;
-    box-sizing: border-box;
-    text-indent: initial;
-    border-spacing: 2px;
-    border-color: gray;
-}*/
+
+td {
+    border: 1px solid #ddd; 
+    padding: 8px;
+    text-align: center;
+    vertical-align: top;
+}
 
 /* RELATIVO À PÁGINAS DOS PLANOS  */
 .planos {
