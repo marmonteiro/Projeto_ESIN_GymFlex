@@ -270,6 +270,18 @@ header {
     font-size: 25px;
 }
 
+.horarios_clubes {
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 5px;
+    border: 5px solid #7B2828; 
+    margin-left: 10%;
+    margin-right: 10%;
+    list-style-type: none;
+}
+
 .Torne-seMembro {
     text-align: center;
 }
@@ -286,7 +298,6 @@ header {
     text-decoration: none;
     color: #A60000;
     background-color: white;
-    ;
     border-radius: 5px;
     border: 5px solid #000000;
 }
