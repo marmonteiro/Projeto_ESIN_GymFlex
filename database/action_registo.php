@@ -72,4 +72,9 @@ function insertUser($nome, $data_nascimento, $nr_telemovel, $email, $password, $
         $stmtPT->execute(array($randomPT, $pessoaID));
     }
 
-} ?>
+} 
+function saveProfilePic($username) {
+    move_uploaded_file($_FILES['profile_pic']['tmp_name'], "images/users/$username.jpg");
+  }
+
+?>

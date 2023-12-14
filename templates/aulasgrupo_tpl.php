@@ -4,7 +4,7 @@
         foreach ($aulas as $aula) {
             echo '<div class="class">';
             echo '<div class="image-container">';
-            echo '<img src="' . $aula['imagem_ag'] . '" alt="' . $aula['nome'] . '">';
+            echo '<img src="' . $aula['imagem_ag'] .'" alt="' . $aula['nome'] . '">';
             echo '</div>';
             echo '<div class="info-container">';
             echo '<p>' . $aula['nome'] . '</p>';
