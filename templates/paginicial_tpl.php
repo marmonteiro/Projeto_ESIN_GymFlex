@@ -80,7 +80,7 @@
 </div>
 
 <div class="horarios_clubes">
-      <p> Horário dos clubes: </p>
+      <h2> Horário dos clubes: </h2>
       <ul>
         <li>Sábados das 9h às 21h.</li>
         <li>2ª Feira a 6ª Feira das 7h às 22h.</li>

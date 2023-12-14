@@ -278,6 +278,12 @@ header {
     justify-content: center;
 }
 
+.batimento img {
+    width: 10%;
+    height: auto;
+}
+
+
 .horarios_clubes {
     text-align: center;
     color: black;
@@ -292,6 +298,12 @@ header {
 .horarios_clubes ul {
     list-style-type: none;
     padding: 0;
+}
+
+.horarios_clubes > h2 {
+    font-style: bold;
+    font-size: 25x;
+    margin-bottom: 10px;
 }
 
 
