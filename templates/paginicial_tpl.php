@@ -75,8 +75,11 @@
     </div>
 </div>
 
-<img src="imagens/batimento.png" alt="batimento">
-  <div class="horarios_clubes">
+<div class="batimento">
+   <img src="imagens/batimento.png" alt="batimento">
+</div>
+
+<div class="horarios_clubes">
       <p> Horário dos clubes: </p>
       <ul>
         <li>Sábados das 9h às 21h.</li>

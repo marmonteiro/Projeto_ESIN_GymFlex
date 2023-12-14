@@ -272,13 +272,19 @@ header {
     font-size: 25px;
 }
 
+.batimento{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .horarios_clubes {
     text-align: center;
     color: black;
     font-weight: bold;
     padding: 15px;
     border-radius: 5px;
-    border: 5px solid #7B2828; 
+    /*border: 5px solid #7B2828; */
     margin-left: 6%;
     margin-right: 6%;
 }
