@@ -22,9 +22,9 @@
         </div>
     </div>
     <div class="imagens">
-        <img src="imagens/instalacoes.png" alt="Imagem 4">
+        <img src="imagens/nutricao_.png" alt="Imagem 4">
         <div class="textoimagensiniciais">
-            <p>Instalações</p>
+            <p>Nutrição</p>
         </div>
     </div>
 </div>
