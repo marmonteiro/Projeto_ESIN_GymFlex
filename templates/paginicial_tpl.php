@@ -22,9 +22,9 @@
         </div>
     </div>
     <div class="imagens">
-        <img src="imagens/instalacoes.png" alt="Imagem 4">
+        <img src="imagens/nutricao_.png" alt="Imagem 4">
         <div class="textoimagensiniciais">
-            <p>Instalações</p>
+            <p>Nutrição</p>
         </div>
     </div>
 </div>
@@ -66,8 +66,8 @@
         <p>Wi-fi</p>
     </div>
     <div class="retangulo">
-        <img src="imagens/nutricao.png" alt="Imagem 1">
-        <p>Nutrição</p>
+        <img src="imagens/estacionamento.png" alt="Imagem 1">
+        <p>Estacionamento gratuito</p>
     </div>
     <div class="retangulo">
         <img src="imagens/social.png" alt="Imagem 1">
@@ -75,8 +75,11 @@
     </div>
 </div>
 
+<div class="batimento">
+   <img src="imagens/batimento.png" alt="batimento">
+</div>
 
-  <div class="horarios_clubes">
+<div class="horarios_clubes">
       <p> Horário dos clubes: </p>
       <ul>
         <li>Sábados das 9h às 21h.</li>

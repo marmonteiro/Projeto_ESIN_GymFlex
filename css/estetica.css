@@ -9,8 +9,8 @@ body {
 }
 
 footer {
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: black;
+    color: white;
     padding: 20px;
     text-align: center;
     border-top: 10px solid #A60000;
@@ -32,7 +32,7 @@ header {
     align-items: center;
     justify-content: space-between;
     font-family: 'Contrail One', sans-serif;
-    background-color: #161616;
+    background-color: black;
     letter-spacing: 0.05rem;
     color: #ffffff;
     padding: 20px 40px;
@@ -74,8 +74,8 @@ header {
     padding: 10px 20px;
     margin: 10px;
     text-decoration: none;
-    color: #fff;
-    background-color: #000000;
+    color: black;
+    background-color: rgb(255, 255, 255);
     border-radius: 5px;
 }
 
@@ -172,12 +172,12 @@ header {
     align-items: center; 
     width: 100%; 
     max-width: 800px; 
-    gap: 5px; 
+    gap: 40px; 
 
 }
 
 #logo_paginicial {
-    max-width: 300px;
+    max-width: 200px;
     height: auto;
     margin-right: 10px; 
     
@@ -252,6 +252,7 @@ header {
     text-align: center;
     background-color: whitesmoke;
     font-weight: bold;
+    
 }
 
 .retangulo img {
@@ -271,15 +272,21 @@ header {
     font-size: 25px;
 }
 
+.batimento{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .horarios_clubes {
     text-align: center;
     color: black;
     font-weight: bold;
     padding: 15px;
     border-radius: 5px;
-    border: 5px solid #7B2828; 
-    margin-left: 10%;
-    margin-right: 10%;
+    /*border: 5px solid #7B2828; */
+    margin-left: 6%;
+    margin-right: 6%;
 }
 
 .horarios_clubes ul {
