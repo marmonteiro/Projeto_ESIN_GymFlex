@@ -40,6 +40,9 @@ function insertUser($nome, $data_nascimento, $nr_telemovel, $email, $password, $
     // vai guardar o id da pessoa que acabou de ser inserida
     $pessoaID = $dbh->lastInsertId();
 
+    // guardar a foto de perfil
+    move_uploaded_file($_FILES['profile_pic']['tmp_name'], "imagens/membros/$pessoaID.png");
+
     // inserir dados na tabela Membro
     $stmtMembro = $dbh->prepare('INSERT INTO Membro (pwd, altura, peso, sexo, id, inscricoes_ag) VALUES (?, ?, ?, ?, ?, ?)');
     $stmtMembro->execute(array($hashedPassword, $altura, $peso, $sexo, $pessoaID, 0));
@@ -72,9 +75,6 @@ function insertUser($nome, $data_nascimento, $nr_telemovel, $email, $password, $
         $stmtPT->execute(array($randomPT, $pessoaID));
     }
 
-} 
-function saveProfilePic($username) {
-    move_uploaded_file($_FILES['profile_pic']['tmp_name'], "images/users/$username.jpg");
-  }
+}
 
 ?>

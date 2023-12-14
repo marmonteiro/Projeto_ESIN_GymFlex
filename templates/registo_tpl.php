@@ -9,6 +9,10 @@
 
     <section id="info_pessoal">
       <div>
+        <label for="profile_pic">Foto de Perfil</label>
+        <input type="file" id="profile_pic" name="profile_pic">
+      </div>
+      <div>
         <input type="text" id="nome" name="nome" placeholder="Nome Completo" required>
       </div>
       <div>
@@ -53,7 +57,7 @@
       <div>
         <p>Escolha o seu Plano:</p>
         <select id="tipo_plano" name="tipo_plano" required>
-        <option value="" disabled selected>Selecione um plano</option>
+          <option value="" disabled selected>Selecione um plano</option>
           <?php foreach ($tipo_p_info as $plano): ?>
             <?php $selected = (isset($_GET['plano_sel']) && $_GET['plano_sel'] === $plano['nome']) ? 'selected' : ''; ?>
             <option value="<?php echo $plano['nome']; ?>" <?php echo $selected; ?>>
@@ -67,7 +71,7 @@
       </div>
     </section>
 
-    
+
 
     <section id="termos_condicoes">
       <div>
