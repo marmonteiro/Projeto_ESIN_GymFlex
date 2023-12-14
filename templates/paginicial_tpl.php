@@ -75,7 +75,7 @@
 </div>
 
 <div class="batimento">
-    <img src="imagens/caracteristicas/batimento.png" alt="batimento">
+    <img src="imagens/batimento.png" alt="batimento">
 </div>
 
 

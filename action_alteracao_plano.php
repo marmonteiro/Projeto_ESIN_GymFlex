@@ -2,7 +2,7 @@
 session_start();
 require_once("database/init.php");
 
-include ("database/action_alteracao_plano.php");
+include ("database/alteracao_plano.php");
 
 try {
 $dbh->beginTransaction();
