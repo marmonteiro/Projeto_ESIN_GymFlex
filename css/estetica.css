@@ -758,7 +758,7 @@ input[type="password"]::placeholder {
     transition: top 0.3s, font-size 0.3s, color 0.3s;
 }
 
-/* When input is focused */
+ /* When input is focused */
 input[type="email"]:focus::placeholder,
 input[type="password"]:focus::placeholder,
 input[type="email"]:focus-visible::placeholder,
@@ -768,7 +768,7 @@ input[type="password"]:valid::placeholder {
     top: 25%;
     font-size: 12px;
     color: #A60000;
-}
+} 
 
 
 input[type="submit"] {
@@ -783,7 +783,7 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #a600006f;
-}
+} 
 
 #registo {
     display: flex;
@@ -794,7 +794,6 @@ input[type="submit"]:hover {
 
 #registe_se>a {
     padding: 1rem;
-    ;
     transition: background-color 0.3s ease;
     font-weight: bold;
     cursor: pointer;
