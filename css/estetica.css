@@ -378,15 +378,19 @@ header {
 
 table {
     width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
     border-collapse: collapse;
     margin-top: 20px;
 }
 
 td {
     border: 1px solid #1d1b1b; 
-    padding: 8px;
+    padding: 15px;
     text-align: center;
     vertical-align: top;
+    border-radius: 5px;
+    background-color: #e9e2e29a;
 }
 
 /* RELATIVO À PÁGINAS DOS PLANOS  */
