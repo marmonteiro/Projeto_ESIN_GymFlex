@@ -241,8 +241,6 @@ header {
     flex-wrap: wrap;
 }
 
-
-
 /* retângulos das características dos ginásios*/
 .retangulo {
     width: calc(33% - 20px);
@@ -251,8 +249,7 @@ header {
     border: 1px solid #ccc;
     text-align: center;
     background-color: whitesmoke;
-    font-weight: bold;
-    
+    font-weight: bold; 
 }
 
 .retangulo img {
@@ -261,9 +258,8 @@ header {
     float: left;
 }
 
-.caracteristicas {
-    display: flex;
-    flex-wrap: wrap;
+.retangulo p {
+    margin: 0; /* Remove a margem padrão do parágrafo para evitar espaço extra */
 }
 
 .caracteristicastexto {
@@ -271,6 +267,7 @@ header {
     font-weight: bold;
     font-size: 25px;
 }
+
 
 .batimento{
     display: flex;
