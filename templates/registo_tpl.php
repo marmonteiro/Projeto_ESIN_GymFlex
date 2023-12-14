@@ -27,10 +27,10 @@
 
     <section id="imc_calculation">
       <div>
-        <input type="number" id="altura" name="altura" placeholder="Altura (cm)" required>
+        <input type="number" id="altura" name="altura" placeholder="Altura (cm)" min="1" required>
       </div>
       <div>
-        <input type="number" id="peso" name="peso" placeholder="Peso (kg)" required>
+        <input type="number" id="peso" name="peso" placeholder="Peso (kg)" min="1" required>
       </div>
       <div>
         <input type="radio" name="sexo" value="M"> Masculino

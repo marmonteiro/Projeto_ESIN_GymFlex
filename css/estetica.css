@@ -105,7 +105,7 @@ header {
 
 #logout>img,
 #areacliente>img,
-#login>img,
+#login_btn>img,
 #torne_semembro>img {
     width: 30px;
     height: 30px;
@@ -130,12 +130,12 @@ header {
 }
 
 #areacliente,
-#login {
+#login_btn {
     background-color: #470000;
 }
 
 #areacliente:hover,
-#login:hover {
+#login_btn:hover {
     background-color: #7B2828;
     text-decoration: none;
 }
