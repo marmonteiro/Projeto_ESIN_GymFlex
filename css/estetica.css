@@ -26,8 +26,6 @@ a:hover {
     text-decoration: underline;
 }
 
-
-
 /*HEADERS - todas as pags exceto página inicial*/
 header {
     display: flex;
@@ -48,6 +46,17 @@ header {
     height: auto;
     margin-bottom: 10px;
 }
+
+.inscreva-se {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #A60000;
+    /* Change the button color */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
 
 /*barra principal de navegação*/
 .barra {
