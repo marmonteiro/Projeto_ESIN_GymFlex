@@ -246,12 +246,12 @@ VALUES
 -- Inserir dados na tabela Tipo_ag
 INSERT INTO Tipo_ag (nome, capacidade, dia_semana, hora_inicio, hora_fim, duracao_ag, imagem_ag)
 VALUES 
-  ('Cycling', 15, 'Segunda-Feira', '10:00', '11:30', (strftime('%s', '11:30') - strftime('%s', '10:00')) / 3600.0, 'imagens/cycling.jpeg'),
-  ('Pilates', 10, 'Terça-Feira', '10:00', '11:30', (strftime('%s', '11:30') - strftime('%s', '10:00')) / 3600.0, 'imagens/pilates.jpeg'),
-  ('Body Step', 15, 'Quarta-Feira', '14:30', '15:30', (strftime('%s', '15:30') - strftime('%s', '14:30')) / 3600.0, 'imagens/bodystep.jpeg'),
-  ('Body Pump', 20, 'Quinta-Feira', '17:30', '18:30', (strftime('%s', '18:30') - strftime('%s', '17:30')) / 3600.0, 'imagens/bodypump.jpeg'),
-  ('Zumba', 20, 'Sexta-Feira', '17:30', '18:30', (strftime('%s', '18:30') - strftime('%s', '17:30')) / 3600.0, 'imagens/zumba.jpeg'),
-  ('Xpress Abs', 15, 'Sábado', '17:30', '18:30', (strftime('%s', '18:30') - strftime('%s', '17:30')) / 3600.0, 'imagens/xpressabs.jpeg');
+  ('Cycling', 15, 'Segunda-Feira', '10:00', '11:30', (strftime('%s', '11:30') - strftime('%s', '10:00')) / 3600.0, 'imagens/cycling.png'),
+  ('Pilates', 10, 'Terça-Feira', '10:00', '11:30', (strftime('%s', '11:30') - strftime('%s', '10:00')) / 3600.0, 'imagens/pilates.png'),
+  ('Body Step', 15, 'Quarta-Feira', '14:30', '15:30', (strftime('%s', '15:30') - strftime('%s', '14:30')) / 3600.0, 'imagens/bodystep.png'),
+  ('Body Pump', 20, 'Quinta-Feira', '17:30', '18:30', (strftime('%s', '18:30') - strftime('%s', '17:30')) / 3600.0, 'imagens/bodypump.png'),
+  ('Zumba', 20, 'Sexta-Feira', '17:30', '18:30', (strftime('%s', '18:30') - strftime('%s', '17:30')) / 3600.0, 'imagens/zumba.png'),
+  ('Xpress Abs', 15, 'Sábado', '17:30', '18:30', (strftime('%s', '18:30') - strftime('%s', '17:30')) / 3600.0, 'imagens/xpressabs.png');
 
 
 -- Inserir dados na tabela Aulagrupo
