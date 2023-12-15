@@ -20,7 +20,7 @@
 
       <h2>3. Cancelamento e Reembolso</h2>
       <p>3.1 Os membros podem cancelar a sua subscrição de acordo com as condições especificadas no contrato.</p>
-      <p>3.2 O GymFlex possui o direito de revisar as políticas de cancelamento e reembolso a qualquer momento.</p>
+      <p>3.2 O GymFlex possui o direito de rever as políticas de cancelamento e reembolso a qualquer momento.</p>
 
       <h2>4. Responsabilidades do Membro</h2>
       <p>4.1 Os membros devem seguir todas as regras e regulamentos do ginásio.</p>
