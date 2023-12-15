@@ -8,7 +8,7 @@
 <body>
     <div class= "termos_condicoes">
       <h1>Os nossos termos e condições:</h1>
-      <p>Bem-vindo ao GymFlex, ficamos contentes por eleger o nosso ginásio. Ao utilizar os nossos serviços, está a  concorda com os seguintes termos e condições:</p>
+      <p>Bem-vindo ao GymFlex, ficamos contentes por eleger o nosso ginásio. Ao utilizar os nossos serviços, está a  concordar com os seguintes termos e condições:</p>
 
       <h2>1. Adesão e Pagamento</h2>
       <p>1.1 Ao inscrever-se no GymFlex, concorda em fornecer informações pessoais precisas e completas durante o processo de inscrição.</p>
