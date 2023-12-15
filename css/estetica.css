@@ -67,6 +67,10 @@ header {
     border-radius: 5px;
 }
 
+.inscreva-se:hover {
+    background-color: #670000;
+}
+
 
 /*barra principal de navegação*/
 .barra {
@@ -524,6 +528,11 @@ td {
 
 .info-container {
     flex: 1;
+}
+
+.mensagem {
+    margin-top: 20px;
+    text-align: center;
 }
 
 
