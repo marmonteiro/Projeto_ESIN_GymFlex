@@ -4,7 +4,7 @@ body {
     font-family: 'Montserrat', sans-serif;
     background-color: #f4f4f4;
     color: #333;
-    margin: 0;
+    margin: 1px;
     padding: 0;
 }
 
@@ -26,13 +26,26 @@ a:hover {
     text-decoration: underline;
 }
 
-h2 {
+h1 {
     text-align: center;
     font-style: bold;
-    font-size: 25x;
+    font-size: 45px;
     margin-bottom: 10px;
 }
 
+h2 {
+    text-align: center;
+    font-style: bold;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+h3 {
+    text-align: center;
+    font-style: bold;
+    font-size: 25px;
+    margin-bottom: 10px;
+}
 
 
 
@@ -538,15 +551,8 @@ td {
 
 /* PÁGINA AJUDA */
 
-#info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-h1 {
-    text-align: center;
-    font-size: 45px;
+#FAQ {
+    margin-top: 20px;
 }
 
 #intro {
@@ -557,43 +563,49 @@ h1 {
 }
 
 
-#Categoria {
-    background-color: white;
+.Categoria {
+    background-color: #FFFFFF;
     border-radius: 5px;
 }
 
-#Categoria>summary {
+.Categoria>summary {
     text-align: center;
     font-weight: bold;
+    font-size: 20px;
 }
 
-#Pergunta>summary {
-    background-color: rgba(107, 97, 97, 0.35);
+.Pergunta>summary {
+    background-color: #000000;
+    color:#FFFFFF;
+    font-weight: bold;
     border-radius: 5px;
 }
 
-#Pergunta>p {
+.Pergunta>summary:hover {
+    background-color: #a60000;
+}
+
+.Pergunta>p {
     text-indent: 20px;
 }
 
-#Categoria {
+.Categoria {
     margin-top: 20px;
     margin-bottom: 20px;
-    margin-left: 350px;
-    margin-right: 350px;
+    width: 50%;
+    max-width: 800px;
+    margin: 10px auto; 
     padding: 20px;
-    border-radius: 5px;
     overflow: hidden;
 }
 
-#Categoria>details {
+.Categoria>details {
     margin: 10px;
     padding: 10px;
 }
 
 summary {
     display: block;
-    /* isto tá a fazer com q a seta dos details original desapareça mas acho q n é suposto*/
     position: relative;
     cursor: pointer;
     padding-left: 30px !important;
@@ -611,8 +623,7 @@ summary:before {
     content: '';
     border-width: .4rem;
     border-style: solid;
-    border-color: transparent transparent transparent black;
-    /* seta para baixo = quadrado com 3 bordas transparentes */
+    border-color: transparent transparent transparent #FFFFFF; /* seta para baixo = quadrado com 3 bordas transparentes */
     position: absolute;
     top: 1rem;
     left: 1rem;
@@ -625,7 +636,7 @@ details[open]>summary:before {
     transform: rotate(90deg);
 }
 
-#Categoria>summary:before {
+.Categoria>summary:before {
     display: none;
 }
 
@@ -635,9 +646,7 @@ details[open]>summary:before {
     line-height: 1.4;
 }
 
-#FAQ {
-    margin-top: 20px;
-}
+
 
 /*PÁGINA REGISTO*/
 

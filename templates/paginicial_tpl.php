@@ -1,4 +1,4 @@
-<h2>Porquê o GymFlex?</h2>
+<h3>Porquê o GymFlex?</h3>
 
 
 <div class="imagensiniciais">
@@ -32,7 +32,7 @@
 </p>
 
 
-<h2>Características dos nossos clubes:</h2>
+<h3>Características dos nossos clubes:</h3>
 
 
 <div class="caracteristicas">
@@ -79,7 +79,7 @@
 </div>
 
 
-<h2> Horário dos clubes: </h2>
+<h3> Horário dos clubes: </h3>
 <div class="horarios_clubes">
 
     <ul>
