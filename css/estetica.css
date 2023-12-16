@@ -261,38 +261,26 @@ header {
 
 /* retângulos das características dos ginásios*/
 .retangulo {
-   /*width: calc(33% - 20px);
-    margin: 10px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    text-align: center;
-    background-color: whitesmoke;
-    font-weight: bold;  */
     display: flex;
     justify-content: space-between;
- /*justify-content: flex-end;*/
-  align-items: center;
-  position: relative;
-  width: calc(33.333% - 20px); /* Subtract 20px to account for the spacing */
-  height: 150px;
-  border: 1px solid #ccc;
-  padding: 0 20px; /* Add padding to the left and right */
-  box-sizing: border-box; 
-  margin: 10px ;
-
+    align-items: center;
+    position: relative;
+    width: calc(33.333% - 20px); 
+    height: 150px;
+    border: 1px solid #ccc;
+    padding: 0 20px; 
+    box-sizing: border-box; 
+    margin: 10px ;
 }
 
 .retangulo img {
-     /* max-width: 25%;
-    height: auto;
-    float: left; */ 
     max-width: 26%;
     height: auto;
     margin: 20px;
 }
 
 .retangulo p {
-    margin: 0; /* Remove a margem padrão do parágrafo para evitar espaço extra */
+    margin: 0; 
     font-weight: bold;
     font-size: 15px; 
     text-align: center;
@@ -303,7 +291,6 @@ header {
     font-weight: bold;
     font-size: 25px; 
     margin: 5px;
-
 }
 
 
@@ -325,7 +312,6 @@ header {
     font-weight: bold;
     padding: 15px;
     border-radius: 5px;
-    /*border: 5px solid #7B2828; */
     margin-left: 6%;
     margin-right: 6%;
 }
