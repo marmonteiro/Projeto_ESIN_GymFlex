@@ -23,7 +23,7 @@
             </div>
 
             <div id="Membro_paginicial">
-                <p><a id="torne_semembro" href="registo.php">Torne-se membro!<img src = imagens/peso_icon.png></a></p>
+                <p><a id="torne_semembro" href="registo.php">Torne-se membro!<img src=imagens/peso_icon.png></a></p>
                 <p id=jámembro>Já é membro? Inicie sessão <a href="login.php">aqui</a>.</p>
             </div>
 
@@ -36,9 +36,11 @@
             <a href="ajuda.php" class="ajuda">Ajuda</a>
         </div>
 
-        <?php if (isset($_SESSION['msg']) && !empty($_SESSION['msg'])) { ?> <!-- se houver mensagem de erro -->
-            <p>{$_SESSION['msg']}</p>"
+        <?php if (isset($_SESSION['msg']) && !empty($_SESSION['msg'])) { ?>
+            <p id="msg_erro">
+                <?php echo $_SESSION['msg'] ?>
+            </p>
             <?php unset($_SESSION['msg']);
         } ?>
-        
+
     </header>

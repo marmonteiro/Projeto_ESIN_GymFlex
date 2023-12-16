@@ -16,7 +16,7 @@ try {
     }
 
 } catch (PDOException $e) {
-    $error_msg = $e->getMessage();
+    $_SESSION['msg'] = $e->getMessage();
 }
 include("templates/header_tpl.php");
 include("templates/planos_tpl.php");

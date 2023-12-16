@@ -1,9 +1,11 @@
 <section id="Area_Cliente">
     <h1>Área de Cliente</h1>
 
-    <?php if (isset($_SESSION['msg']) && !empty($_SESSION['msg'])) {
-        echo "<p>{$_SESSION['msg']}</p>";
-        unset($_SESSION['msg']);
+    <?php if (isset($_SESSION['msg']) && !empty($_SESSION['msg'])) { ?>
+        <p id="msg_erro">
+            <?php echo $_SESSION['msg'] ?>
+        </p>
+        <?php unset($_SESSION['msg']);
     } ?>
 
     <h2>
@@ -18,7 +20,7 @@
         ?>
     </h2>
 
-    
+
     <div id="dados_pessoais">
         <h3>Dados Pessoais</h3>
         <img src="imagens/membros/<?php echo $_SESSION['id'] ?>.png">

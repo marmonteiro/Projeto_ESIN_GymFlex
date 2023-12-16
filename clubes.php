@@ -2,9 +2,6 @@
 session_start();
 require_once("database/init.php");
 
-$msg = $_SESSION['msg'];
-unset($_SESSION['msg']);
-
 
 try {
     global $dbh;
@@ -14,7 +11,7 @@ try {
 
 
 } catch (PDOException $e) {
-    $error_msg = $e->getMessage();
+    $_SESSION['msg'] = $e->getMessage();
 }
 include("templates/header_tpl.php");
 include("templates/clubes_tpl.php");

@@ -1,8 +1,6 @@
 <?php
 session_start();
 require_once("database/init.php");
-
-
 include ("database/fetchInfoTipoPlanos.php");
 
 
@@ -14,8 +12,10 @@ try {
   }
 
 } catch (PDOException $e) {
-  $error_msg = $e->getMessage();
+  $_SESSION['msg'] = $e->getMessage();
 }
+
+
 include("templates/header_tpl.php");
 include("templates/registo_tpl.php");
 include("templates/footer_tpl.php");

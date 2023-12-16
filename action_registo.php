@@ -16,7 +16,7 @@ $password = $_POST['password'];
 $idade = date_diff(date_create($data_nascimento), date_create('today'))->y; // calcula a idade
 
 require_once 'database/init.php';
-require_once 'database/action_registo.php';
+require_once 'database/registo.php';
 
 //Error Handling
 
@@ -26,11 +26,6 @@ if (strlen($email) == 0) {
     die();
 }
 
-if ($sexo != 'M' && $sexo != 'F') {
-    $_SESSION['msg'] = 'Obrigatório assinalar um sexo.';
-    header('Location: registo.php');
-    die();
-}
 
 if (strlen($nif) != 9) {
     $_SESSION['msg'] = 'NIF inválido.';
@@ -51,7 +46,7 @@ if (strlen($password) < 8) {
 }
 
 if ($idade < 16) {
-    $_SESSION['msg'] = 'A idade mínima é 16 anos.';
+    $_SESSION['msg'] = 'A idade mínima de inscrição como membro é 16 anos.';
     header('Location: registo.php');
     die();
 }
@@ -63,7 +58,7 @@ try {
     header('Location: paginicial.php');
 
 } catch (PDOException $e) {
-    $error_msg = $e->getMessage();
+    $_SESSION['msg'] = $e->getMessage();
 
     if (strpos($error_msg, 'UNIQUE constraint failed: Pessoa.email')) {
         $_SESSION['msg'] = 'E-mail já está registado!';

@@ -2,8 +2,6 @@
 session_start();
 require_once("database/init.php");
 
-$msg = $_SESSION['msg'];
-unset($_SESSION['msg']);
 
 $aulas = array();
 try {
@@ -21,7 +19,7 @@ try {
     }
 
 } catch (PDOException $e) {
-    $error_msg = $e->getMessage();
+    $_SESSION['msg'] = $e->getMessage();
 }
 
 include("templates/header_tpl.php");

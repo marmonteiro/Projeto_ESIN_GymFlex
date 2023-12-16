@@ -11,9 +11,11 @@
         <p>Tens direito a mais 1 aula de grupo este mês.</p>
     <?php } ?>
 
-    <?php if (isset($_SESSION['msg']) && !empty($_SESSION['msg'])) {
-        echo "<p>{$_SESSION['msg']}</p>";
-        unset($_SESSION['msg']);
+    <?php if (isset($_SESSION['msg']) && !empty($_SESSION['msg'])) { ?>
+        <p id="msg_erro">
+            <?php echo $_SESSION['msg'] ?>
+        </p>
+        <?php unset($_SESSION['msg']);
     } ?>
 
 
