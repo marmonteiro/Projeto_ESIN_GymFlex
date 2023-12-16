@@ -37,7 +37,8 @@
 
 <div class="caracteristicas">
     <div class="retangulo">
-        <p><img src="imagens/caracteristiscas/chuveiro.png" alt="Imagem 1">Balneários com chuveiros</p>
+        <img src="imagens/caracteristiscas/chuveiro.png" alt="Imagem 1">
+        <p>Balneários com chuveiros</p>
 
     </div>
     <div class="retangulo">
@@ -62,7 +63,7 @@
     </div>
     <div class="retangulo">
         <img src="imagens/caracteristiscas/wifi.png" alt="Imagem 1">
-        <p>Wi-fi</p>
+        <p>Wi-fi gratuito</p>
     </div>
     <div class="retangulo">
         <img src="imagens/caracteristiscas/estacionamento.png" alt="Imagem 1">
