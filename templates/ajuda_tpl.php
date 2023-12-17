@@ -10,18 +10,18 @@
                 <details class="Pergunta">
                     <summary>Quais são as localizações dos ginásios GymFlex?</summary>
                     <p>Temos vários clubes espalhados por todo o país. Conhece todos os nossos clubes em <a
-                            href="clubes.html">Clubes</a>.</p>
+                            href="clubes.php">Clubes</a>.</p>
                 </details>
                 <details class="Pergunta">
                     <summary>Qual o horário de funcionamento dos ginásios GymFlex?</summary>
-                    <p>Os nossos Clubes estão abertos todos os dias do ano, de segunda a sexta-feira das 6h às 22h e
-                        aos fins de semana e feriados das 8h às 20h. Qualquer interrupção em algum dos nossos
+                    <p>Os nossos Clubes estão abertos todos os dias do ano, exceto a 25 de dezembro e 1 de janeiro, de segunda a sexta-feira das 7h às 22h, sábado das 9h às 21h e
+                        aos domingos e feriados das 9h às 18h. Qualquer interrupção em algum dos nossos
                         serviços será devidamente notificada a todos os membros por mensagem ou e-mail.</p>
                 </details>
                 <details class="Pergunta">
                     <summary>Quais os planos oferecidos?</summary>
                     <p>Oferecemos 3 tipos de planos mensais: Plano Básico, Plano Intermédio e Plano Avançado. Sabe
-                        os detalhes de cada plano em <a href="servicos.html">Serviços</a>.</p>
+                        os detalhes de cada plano em <a href="planos.php"> Planos </a>.</p>
                 </details>
                 <details class="Pergunta">
                     <summary>Existe estacionamento disponível nos ginásios GymFlex?</summary>
@@ -29,8 +29,8 @@
                 </details>
                 <details class="Pergunta">
                     <summary>Existem aulas de grupo? Quais?</summary>
-                    <p>Sim! Oferecemos várias aulas de grupo desde Zumba a CrossFit. Sabe mais em <a
-                            href="servicos.html">Serviços</a>.</p>
+                    <p>Sim! Oferecemos várias aulas de grupo desde Zumba a Pilates. Sabe mais em <a
+                            href="aulasgrupo.php"> Aulas de Grupo </a>.</p>
                 </details>
 
                 </p>
@@ -41,7 +41,7 @@
                 <p>
                 <details class="Pergunta">
                     <summary>Como me posso inscrever como membro?</summary>
-                    <p>Podes te inscrever como membro ao te registares no nosso site ou presencialmente, visitando
+                    <p>Podes te inscrever como membro através do nosso site <a href="registo.php"> Torna-te Membro </a> ou presencialmente, visitando
                         qualquer um dos nossos clubes.</p>
                 </details>
                 <details class="Pergunta">
@@ -69,7 +69,7 @@
                 <p>
                 <details class="Pergunta">
                     <summary>Como posso cancelar a minha subscrição?</summary>
-                    <p>Para cancelares a tua subscrição deves aceder à tua Área de Cliente e . Alternativamente
+                    <p>Para cancelares a tua subscrição deves aceder à tua Área de Cliente e ou
                         podes fazê-lo presencialmente, em qualquer um dos nossos clubes.</p>
                 </details>
                 <details class="Pergunta">
