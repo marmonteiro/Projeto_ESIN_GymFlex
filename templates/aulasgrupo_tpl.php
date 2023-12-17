@@ -7,7 +7,7 @@
                 <img src="<?php echo $aula['imagem_ag'] ?>" alt="<?php echo $aula['nome'] ?>">
             </div>
             <div class="info-container">
-                <p> <?php echo $aula['nome'] ?></p>
+                <h3> <?php echo $aula['nome'] ?></h3>
                 <p> Capacidade: <?php echo $aula['capacidade'] ?></p>
                 <p> Dia da semana: <?php echo $aula['dia_semana'] ?></p>
                 <p>Horário: <?php echo $aula['hora_inicio'] ?> - <?php echo $aula['hora_fim'] ?></p>
