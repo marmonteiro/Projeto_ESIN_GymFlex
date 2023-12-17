@@ -33,7 +33,9 @@ CREATE TABLE Membro (
     personaltrainer INTEGER,
     nutricionista INTEGER,
     sexo TEXT NOT NULL,
-    iban TEXT NOT NULL,
+    nr_cartao TEXT NOT NULL,
+    validade_cartao TEXT NOT NULL,
+    
     FOREIGN KEY (id) REFERENCES Pessoa(id) ON DELETE CASCADE,
     FOREIGN KEY (personaltrainer) REFERENCES Personaltrainer(id),
     FOREIGN KEY (nutricionista) REFERENCES Nutricionista(id),

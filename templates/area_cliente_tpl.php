@@ -14,8 +14,6 @@
             echo "Bem-vinda, " . $nome;
         } elseif ($sexo === 'M') {
             echo "Bem-vindo, " . $nome;
-        } else {
-            echo "Bem-vind@, " . $nome;
         }
         ?>
     </h2>

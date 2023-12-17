@@ -1,5 +1,5 @@
-<section id="login">
-  <h1>Área de Cliente</h1>
+<section id="area_login">
+  <h1>Login</h1>
   <p>Por favor, introduza os seus dados de login para aceder à sua Área de Cliente.</p>
   <form action="action_login.php" method="post">
     <div>

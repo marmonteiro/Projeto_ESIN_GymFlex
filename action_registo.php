@@ -58,10 +58,12 @@ try {
     header('Location: paginicial.php');
 
 } catch (PDOException $e) {
-    $_SESSION['msg'] = $e->getMessage();
-
+    $error_msg = $e->getMessage();
     if (strpos($error_msg, 'UNIQUE constraint failed: Pessoa.email')) {
         $_SESSION['msg'] = 'E-mail já está registado!';
+    }
+    elseif (strpos($error_msg, 'UNIQUE constraint failed: Pessoa.nif')) {
+        $_SESSION['msg'] = 'NIF já está registado!';
     }
     else {
         $_SESSION['msg'] = "Registo falhou! ($error_msg)";
