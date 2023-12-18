@@ -25,8 +25,8 @@ try {
 
     //calculo da quantidade de aulas de grupo disponiveis
     $quantidade_ag = fetchQuantidadeAGByEmail($_SESSION['email']);
-    $inscricoes_ag = fetchInscricoesAGByEmail($_SESSION['email']);
-    $disponiveis_ag = $quantidade_ag - $inscricoes_ag;
+    $NRinscricoes_ag = fetchNRInscricoesAGByEmail($_SESSION['email']);
+    $disponiveis_ag = $quantidade_ag - $NRinscricoes_ag;
     $_SESSION['disponiveis_ag'] = $disponiveis_ag;
 
     

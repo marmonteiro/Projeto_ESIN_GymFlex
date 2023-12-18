@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Os nossos termos e condições</title>
-</head>
-<body>
-    <div class= "termos_condicoes">
+
+    <div id= "termos_condicoes_pag">
       <h1>Os nossos termos e condições:</h1>
       <p>Bem-vindo ao GymFlex, ficamos contentes por eleger o nosso ginásio. Ao utilizar os nossos serviços, está a  concordar com os seguintes termos e condições:</p>
 

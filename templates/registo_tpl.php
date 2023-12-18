@@ -1,23 +1,21 @@
 <h1>Registo</h1>
+<?php if (isset($_SESSION['msg']) && !empty($_SESSION['msg'])) { ?>
+  <p id="msg_erro">
+    <?php echo $_SESSION['msg'] ?>
+  </p>
+  <?php unset($_SESSION['msg']);
+} ?>
 <section id="area_registo">
-  <?php if (isset($_SESSION['msg']) && !empty($_SESSION['msg'])) { ?>
-    <p id="msg_erro">
-      <?php echo $_SESSION['msg'] ?>
-    </p>
-    <?php unset($_SESSION['msg']);
-  } ?>
+<p>Por favor, preencha os seguintes campos para se registar como membro GymFlex.</p>
   <form action="action_registo.php" method="post">
 
     <section id="info_pessoal">
-      <div>
-        <label for="profile_pic">Foto de Perfil</label>
-        <input type="file" id="profile_pic" name="profile_pic">
-      </div>
+      <p>Informação Pessoal</p>
       <div>
         <input type="text" id="nome" name="nome" placeholder="Nome Completo" required>
       </div>
       <div>
-        <input type="tel" id="nr_telemovel" name="nr_telemovel" placeholder="Nº Telemóvel (+351)" required>
+        <input type="tel" id="nr_telemovel" name="nr_telemovel" placeholder="Nº Telemóvel" required>
       </div>
       <div>
         <input type="text" id="morada" name="morada" placeholder="Morada" required>
@@ -30,22 +28,32 @@
       </div>
     </section>
 
+    <section id="foto_perfil">
+      <p>Foto de Perfil</p>
+      <div>
+        <input type="file" id="profile_pic" name="profile_pic">
+      </div>
+    </section>
+
     <section id="imc_calculation">
+      <p>Dados Físicos</p>
       <div>
         <input type="number" id="altura" name="altura" placeholder="Altura (cm)" min="1" required>
       </div>
       <div>
         <input type="number" id="peso" name="peso" placeholder="Peso (kg)" min="1" required>
       </div>
-      <div>
-        <input type="radio" name="sexo" value="M"> Masculino
-        <input type="radio" name="sexo" value="F"> Feminino
-        <input type="radio" name="sexo" value="O"> Outro
+      <div id="sexo">
+        <input type="radio" name="sexo" id="masculino" value="M">
+        <label for="masculino">Masculino</label>
+        <input type="radio" name="sexo" id="feminino" value="F">
+        <label for="feminino">Feminino</label>
       </div>
     </section>
 
 
     <section id="info_login">
+      <p>Dados de Login</p>
       <div>
         <input type="email" id="email" name="email" placeholder="Email" required>
       </div>
@@ -54,9 +62,10 @@
       </div>
     </section>
 
+
     <section id="escolha_plano">
+      <p>Escolha o seu Plano:</p>
       <div>
-        <p>Escolha o seu Plano:</p>
         <select id="tipo_plano" name="tipo_plano" required>
           <option value="" disabled selected>Selecione um plano</option>
           <?php foreach ($tipo_p_info as $plano): ?>
@@ -67,24 +76,22 @@
           <?php endforeach; ?>
         </select>
       </div>
+      <p>Insira o número do seu cartão de débito/crédito para pagamento mensal:</p>
       <div>
-        <input type="text" id="iban" name="iban" placeholder="IBAN" required>
+        <input type="text" id="nr_cartao" name="nr_cartao" placeholder="Nº Cartão de Crédito/Débito" required>
       </div>
     </section>
 
 
 
-    <section id="termos_condicoes">
-      <div>
-        <input type="checkbox" id="termos" name="termos" required>
-        <label for="termos">Li e aceito os <a href="termos_condicoes.php">Termos e Condições</a>.</label>
-      </div>
+    <div id="termos_condicoes">
+      <input type="checkbox" id="termos" name="termos" required>
+      <label for="termos"> Li e aceito os <a href="termos_condicoes.php">Termos e Condições</a>.</label>
+    </div>
 
-      <div>
-        <input type="submit" value="Registar">
-      </div>
-    </section>
-
+    <div>
+      <input type="submit" value="Registar">
+    </div>
   </form>
 
 </section>
