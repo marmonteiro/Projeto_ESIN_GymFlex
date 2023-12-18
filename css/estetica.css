@@ -1017,7 +1017,7 @@ input::file-selector-button:hover {
     background-color: #750000;
 }
 
-/*PÁGINA DE REGISTO DE TREINOS*/
+/*PÁGINAS DE REGISTO DE TREINOS + AULAS DE GRUPO*/
 #treino_ag p::before {
     content: attr(data-label);
     font-weight: bold;
@@ -1093,6 +1093,15 @@ input::file-selector-button:hover {
 
 #treino_ag summary:before {
     border-color: transparent transparent transparent #333;   
+}
+
+/*ALTERAÇÃO DE DADOS*/
+#alteracao_dados {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    padding: 10px;
 }
 
 /**/

@@ -100,7 +100,7 @@ function fetchDetalhesMembroByEmail($email)
 {
     global $dbh;
     $stmt = $dbh->prepare('
-        SELECT Pessoa.nome, Pessoa.data_nascimento, Pessoa.nr_telemovel, Pessoa.email, Pessoa.morada, Pessoa.nif,
+        SELECT Pessoa.nome, Pessoa.data_nascimento, Pessoa.nr_telemovel, Pessoa.email, Pessoa.morada, Pessoa.nif, Membro.nr_cartao,  
             Membro.altura, Membro.peso, Membro.imc, Membro.nutricionista, Membro.personaltrainer, Membro.sexo,
             Plano.data_adesao, Plano.tipo_p
         FROM Pessoa
@@ -131,6 +131,8 @@ $altura = $user['altura'];
 $peso = $user['peso'];
 $imc = $user['imc'];
 $sexo = $user['sexo'];
+$nr_cartao = $user['nr_cartao'];
+$pwd = $user['pwd'];
 $tipo_plano = $user['tipo_p']; //tipo de plano atual
 $data_adesao = $user['data_adesao']; //ultima data de adesao
 $nutricionista_id = $user['nutricionista'];
