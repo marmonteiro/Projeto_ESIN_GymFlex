@@ -55,6 +55,19 @@ h3 {
     margin: 0.5rem 0;
 }
 
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #a60000;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.button:hover {
+    background-color: #750000;
+}
 
 /*HEADERS - todas as pags exceto página inicial*/
 header {
@@ -76,21 +89,6 @@ header {
     height: auto;
     margin-bottom: 10px;
 }
-
-.inscreva-se {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #A60000;
-    /* Change the button color */
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.inscreva-se:hover {
-    background-color: #670000;
-}
-
 
 /*barra principal de navegação*/
 .barra {
@@ -187,9 +185,6 @@ header {
     font-size: 20px;
 }
 
-
-
-
 /*PÁGINA INICIAL*/
 /*HEADER*/
 
@@ -217,7 +212,6 @@ header {
 
 }
 
-
 #header_paginicial #torne_semembro {
     display: flex;
     flex-direction: column;
@@ -229,7 +223,6 @@ header {
     border-radius: 5px;
     margin: 5px 0px;
 }
-
 
 /*Imagens na página inicial*/
 .imagensiniciais {
@@ -252,7 +245,6 @@ header {
 .imagens p {
     margin-top: 5px;
 }
-
 
 .textoimagensiniciais {
     text-align: center;
@@ -300,7 +292,6 @@ header {
     margin: 5px;
 }
 
-
 .batimento {
     display: flex;
     align-items: center;
@@ -311,7 +302,6 @@ header {
     width: 10%;
     height: auto;
 }
-
 
 .horarios_clubes {
     text-align: center;
@@ -327,8 +317,6 @@ header {
     list-style-type: none;
     padding: 0;
 }
-
-
 
 /*PÁGINA DOS CLUBES*/
 
@@ -365,25 +353,13 @@ header {
     background-color: #c2b6b6;
 }
 
-/* .club-info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    list-style: none;
-} */
-
 .club-info {
     display: flex;
-    flex-direction: column;
-    /* Alterado para coluna para que os itens estejam empilhados verticalmente */
-    align-items: center;
-    /* Centraliza os itens no eixo transversal (vertical) */
-    text-align: center;
-    /* Centraliza o texto dentro de cada parágrafo */
-    padding: 20px;
-    /* Adiciona algum espaçamento interno */
+    flex-direction: column; /* Alterado para coluna para que os itens estejam empilhados verticalmente */
+    align-items: center; /* Centraliza os itens no eixo transversal (vertical) */
+    text-align: center; /* Centraliza o texto dentro de cada parágrafo */
+    padding: 20px; /* Adiciona algum espaçamento interno */
 }
-
 
 .club-info a {
     text-decoration: none;
@@ -398,10 +374,8 @@ header {
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    flex: 1;
-    /* Faz cada item ocupar a mesma largura */
-    flex-basis: calc(50% - 20px);
-    /* Calcula a largura com margens para 2 itens por linha */
+    flex: 1; /* Faz cada item ocupar a mesma largura */
+    flex-basis: calc(50% - 20px); /* Calcula a largura com margens para 2 itens por linha */
 }
 
 #inscreva-se {
@@ -445,7 +419,6 @@ td {
     justify-content: center;
     text-decoration: none;
     font-weight: bold;
-
 }
 
 .retangulo_planos {
@@ -466,24 +439,6 @@ td {
     font-weight: bold;
     font-size: 15px;
     text-align: center;
-}
-
-.botao_planos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #A60000;
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    text-decoration: none;
-    border: none;
-    font-weight: bold;
-    border-radius: 5px;
-}
-
-.botao_planos:hover {
-    background-color: #670000;
 }
 
 #preco {
@@ -510,15 +465,13 @@ td {
 
 .class {
     display: flex;
-    flex: 0 0 calc(33.33% - 20px);
-    /* 50% da largura da linha, descontando a margem */
+    flex: 0 0 calc(33.33% - 20px); /* 50% da largura da linha, descontando a margem */
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
-    margin-bottom: 30px;
-    /* Adiciona uma margem na parte inferior de cada retângulo */
+    margin-bottom: 30px; /* Adiciona uma margem na parte inferior de cada retângulo */
 }
 
 .class:hover {
@@ -526,10 +479,8 @@ td {
 }
 
 .image-container {
-    flex: 0 0 30%;
-    /* Ajuste a largura da imagem conforme necessário */
-    margin-right: 20px;
-    /* Adicione uma margem à direita para separar a imagem das informações */
+    flex: 0 0 30%; 
+    margin-right: 20px; /* Adicione uma margem à direita para separar a imagem das informações */
 
 }
 
@@ -543,7 +494,6 @@ td {
 .info-container {
     flex: 1;
     text-align: center;
-
 }
 
 .mensagem {
@@ -551,9 +501,7 @@ td {
     text-align: center;
 }
 
-
 /* PÁGINA AJUDA */
-
 #FAQ {
     margin-top: 20px;
 }
@@ -564,7 +512,6 @@ td {
     margin-block-start: 5px;
     margin-block-end: 20px;
 }
-
 
 .Categoria {
     background-color: #FFFFFF;
@@ -625,8 +572,7 @@ summary:before {
     content: '';
     border-width: .4rem;
     border-style: solid;
-    border-color: transparent transparent transparent #FFFFFF;
-    /* seta para baixo = quadrado com 3 bordas transparentes */
+    border-color: transparent transparent transparent #FFFFFF; /* seta para baixo = quadrado com 3 bordas transparentes */
     position: absolute;
     top: 1rem;
     left: 1rem;
@@ -649,15 +595,12 @@ details[open]>summary:before {
     line-height: 1.4;
 }
 
-
 /*FORMS DE REGISTO + LOGIN*/
-
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 
 #area_registo input[type="submit"], #area_login input[type="submit"] {
     padding: 13px;
@@ -676,7 +619,6 @@ form {
 #area_registo input[type="submit"] {
     width: 30rem;
 }
-
 
 #area_registo input[type="submit"]:hover {
     background-color: #d30000;
@@ -700,13 +642,11 @@ input:active::placeholder {
     color: #A60000;
 }
 
-
 /* PÁGINA LOGIN */
 #area_login {
     text-align: center;
     margin: 2.5rem 0;
 }
-
 
 #nao_membro {
     display: flex;
@@ -733,7 +673,6 @@ input:active::placeholder {
     background-color: #5a0000;
 }
 
-
 input[type="email"],
 input[type="password"] {
     font-size: 18px;
@@ -744,8 +683,6 @@ input[type="password"] {
     box-sizing: border-box;
     margin-top: 5px;
 }
-
-
 
 /*PÁGINA REGISTO*/
 
@@ -790,7 +727,6 @@ input[type="password"] {
     font-weight: bold;
 }
 
-
 /*boxes dos inputs*/
 #nome,
 #nr_telemovel,
@@ -823,7 +759,6 @@ input[type="password"] {
     background-color: #000000ee;
     color: white;
 }
-
 
 #data_nascimento {
     font-family: Montserrat, sans-serif;
@@ -905,7 +840,6 @@ input::file-selector-button:hover {
     transition-duration: 0.3s;
 }
 
-
 #termos[type="checkbox"]:checked {
     background-color: #a60000;
 }
@@ -921,7 +855,6 @@ input::file-selector-button:hover {
     margin: 0 auto;
     padding: 20px;
 }
-
 
 /* ÁREA DE CLIENTE*/
 #Area_Cliente {
@@ -1002,20 +935,6 @@ input::file-selector-button:hover {
     margin-bottom: 50px;
 }
 
-
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    text-decoration: none;
-    background-color: #a60000;
-    color: white;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.button:hover {
-    background-color: #750000;
-}
 
 /*PÁGINAS DE REGISTO DE TREINOS + AULAS DE GRUPO*/
 #treino_ag p::before {
