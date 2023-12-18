@@ -668,9 +668,13 @@ form {
     margin-top: 20px;
     transition: background-color 0.3s ease;
     font-size: 18px;
-    width: 30rem;
+    width: 20rem;
     border-radius: 5px;
     border: transparent;
+}
+
+#area_registo input[type="submit"] {
+    width: 30rem;
 }
 
 
@@ -741,9 +745,7 @@ input[type="password"] {
     margin-top: 5px;
 }
 
-#area_login input[type="submit"] {
-    width: 20rem;
-}
+
 
 /*PÁGINA REGISTO*/
 
@@ -1016,12 +1018,12 @@ input::file-selector-button:hover {
 }
 
 /*PÁGINA DE REGISTO DE TREINOS*/
-#treino p::before {
+#treino_ag p::before {
     content: attr(data-label);
     font-weight: bold;
 }
 
-#registo_treinos {
+#resgisto_t_ag {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1078,7 +1080,7 @@ input::file-selector-button:hover {
     color: #fff;
 }
 
-#treino {
+#treino_ag {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1089,21 +1091,36 @@ input::file-selector-button:hover {
     padding: 10px;
 }
 
-#treino summary:before {
+#treino_ag summary:before {
     border-color: transparent transparent transparent #333;   
 }
 
-
-
-/* CANCELAMENTO */
-#cancelamento {
+/**/
+#cancelamento, #cancelado, #alteracao_plano{
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 20px;
+    padding: 10px;
 }
 
-#cancelamento h1 {}
+#alteracao_plano #tipo_plano {
+    background-color: #a60000cb;
+}
 
-#cancelamento p {}
+#alteracao_plano input[type="submit"] {
+    background-color: #a60000;
+    border: transparent;
+    padding: 10px 20px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+    border-radius: 5px;
 
-#cancelamento a {}
+}
+
+#alteracao_plano input[type="submit"]:hover {
+    background-color: #000000;
+}

@@ -17,7 +17,7 @@
 }
 ;
 
-function fetchInscricoesAGByEmail($email) //inscricoes_ag (do mes atual)
+function fetchNRInscricoesAGByEmail($email) //nr de inscricoes_ag (do mes atual)
 {
     global $dbh;
     $stmt = $dbh->prepare('
@@ -31,7 +31,33 @@ function fetchInscricoesAGByEmail($email) //inscricoes_ag (do mes atual)
     ');
 
     $stmt->execute(array($_SESSION['email']));
-    $inscricoes_ag = $stmt->fetchColumn();
+    $NRinscricoes_ag = $stmt->fetchColumn();
+    return $NRinscricoes_ag;
+}
+;
+
+function fetchInscricoesAGByEmail($id) //inscricoes_ag 
+{
+    global $dbh;
+    $stmt = $dbh->prepare('
+    SELECT Ginasio.nome AS nome_ginasio,
+       Aulagrupo.data,
+       Tipo_ag.hora_inicio,
+       Tipo_ag.hora_fim,
+       Tipo_ag.duracao_ag,
+       Tipo_ag.nome AS tipo_ag
+FROM Inscricao_ag
+INNER JOIN Membro ON Inscricao_ag.membro = Membro.id
+INNER JOIN Pessoa ON Membro.id = Pessoa.id
+INNER JOIN Aulagrupo ON Inscricao_ag.aulagrupo = Aulagrupo.id
+INNER JOIN Tipo_ag ON Aulagrupo.tipo_ag = Tipo_ag.nome
+INNER JOIN Ginasio ON Aulagrupo.ginasio = Ginasio.id
+WHERE Pessoa.id = ?
+
+    ');
+
+    $stmt->execute(array($id));
+    $inscricoes_ag = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $inscricoes_ag;
 }
 ;
@@ -129,16 +155,18 @@ $prox_pagam = $ano_proxpagam . '-' . $mes_proxpagam . '-' . $dia_adesao;
 
 //calculo da quantidade de aulas de grupo disponiveis
 $quantidade_ag = fetchQuantidadeAGByEmail($_SESSION['email']);
-$inscricoes_ag = fetchInscricoesAGByEmail($_SESSION['email']);
-$disponiveis_ag = $quantidade_ag - $inscricoes_ag;
+$NRinscricoes_ag = fetchNRInscricoesAGByEmail($_SESSION['email']);
+$disponiveis_ag = $quantidade_ag - $NRinscricoes_ag;
 $_SESSION['disponiveis_ag'] = $disponiveis_ag;
 
 //verifica se o membro pode alterar o plano (se já passaram 5 meses desde a adesão)
 $ha2Meses = date('Y-m-d', strtotime('-2 months'));
 $alteracaoPermitida = strtotime($data_adesao) <= strtotime($ha2Meses);
 
+
 //vai buscar info dos treinos
 $treinos = fetchTreinos($_SESSION['id']);
+
 
 //vai buscar o mes e ano selecionados, ou usa o mes e ano atuais
 $ano_sel = isset($_GET['ano']) ? $_GET['ano'] : date('Y');
@@ -163,12 +191,12 @@ $mes_atual = date('m');
 $ano_atual = date('Y');
 if (isset($treinos_por_mes[$mes_atual])) {
     foreach ($treinos_por_mes[$mes_atual] as $treino) {
-       $mes_treino = date('m', strtotime($treino['data']));
-       $ano_treino = date('Y', strtotime($treino['data']));
-      
-         if ($mes_treino == $mes_atual && $ano_treino == $ano_atual) {
-              $duracao_total += $treino['duracao_t'];
-         }
+        $mes_treino = date('m', strtotime($treino['data']));
+        $ano_treino = date('Y', strtotime($treino['data']));
+
+        if ($mes_treino == $mes_atual && $ano_treino == $ano_atual) {
+            $duracao_total += $treino['duracao_t'];
+        }
     }
 }
 $meses = array(
@@ -187,13 +215,11 @@ $meses = array(
 );
 
 //vai buscar os anos com treinos
-$anos = array();
+$anos_treinos = array();
 foreach ($treinos as $treino) {
     $ano = date('Y', strtotime($treino['data'])); // Obtém o ano do treino
-    $anos[$ano] = $ano; // Adiciona o ano ao array
+    $anos_treinos[$ano] = $ano; // Adiciona o ano ao array
 }
-
-
 
 //vai buscar o tempo de treino do plano
 $tempo_treino_plano = fetchTempoTreinosPlanoFromID($_SESSION['id']);
@@ -205,4 +231,26 @@ $tempo_treino_restante = $tempo_treino_plano - $duracao_total;
 
 
 
+// vai buscar as inscricoes_ag do membro
+$inscricoes_ag = fetchInscricoesAGByEmail($_SESSION['id']);
+
+$inscricoes_por_mes = array();
+foreach ($inscricoes_ag as $inscricao) {
+    $ano_inscricao = date('Y', strtotime($inscricao['data']));
+    $mes_inscricao = date('m', strtotime($inscricao['data']));
+
+    if ($ano_inscricao == $ano_sel && $mes_inscricao == $mes_sel) {
+        if (!isset($inscricoes_por_mes[$mes_inscricao])) {
+            $inscricoes_por_mes[$mes_inscricao] = array();
+        }
+        $inscricoes_por_mes[$mes_inscricao][] = $inscricao;
+    }
+}
+
+$anos_inscricoes = array();
+foreach ($inscricoes_ag as $inscricao) {
+    $ano = date('Y', strtotime($inscricao['data']));
+    $anos_inscricoes[$ano] = $ano;
+}
 ?>
+

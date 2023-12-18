@@ -1,7 +1,9 @@
-<form id="select_ano" action="treinos.php" method="GET">
-    <h2>Registo de Treinos de
+<?php ?>
+
+<form id="select_ano" action="minhas_ag.php" method="GET">
+    <h2>Inscrição em Aulas de Grupo de
         <select id="ano" name="ano">
-            <?php foreach ($anos_treinos as $ano) { ?>
+            <?php foreach ($anos_inscricoes as $ano) { ?>
                 <option value="<?php echo $ano; ?>" <?php if ($ano == $ano_sel)
                        echo 'selected'; ?>>
                     <?php echo $ano; ?>
@@ -14,7 +16,7 @@
 <div id="resgisto_t_ag">
     <div id="meses">
         <?php foreach ($meses as $mes_num => $mes_nome) { ?>
-            <p><a href='treinos.php?ano=<?php echo $_GET["ano"] ?>&mes=<?php echo $mes_num ?>'>
+            <p><a href='minhas_ag.php?ano=<?php echo $_GET["ano"] ?>&mes=<?php echo $mes_num ?>'>
                     <?php echo $mes_nome ?>
                 </a></p>
         <?php } ?>
@@ -29,20 +31,23 @@
         </h3>
 
         <div id="treinos_ag_mes">
-            <?php if (isset($treinos_por_mes[$mes_sel])) {
-                foreach ($treinos_por_mes[$mes_sel] as $treino) { ?>
+            <?php if (isset($inscricoes_por_mes[$mes_sel])) {
+                foreach ($inscricoes_por_mes[$mes_sel] as $inscricao) { ?>
                     <details id="treino_ag">
                         <summary>
-                            <?php echo $treino['data'] ?>
+                            <?php echo $inscricao['tipo_ag'] ?>
                         </summary>
-                        <p data-label="Entrada: ">
-                            <?php echo $treino['hora_entrada'] ?>
+                        <p>
+                            <?php echo $inscricao['data'] ?>
                         </p>
-                        <p data-label="Saída: ">
-                            <?php echo $treino['hora_saida'] ?>
+                        <p data-label="Início: ">
+                            <?php echo $inscricao['hora_inicio'] ?>
+                        </p>
+                        <p data-label="Fim: ">
+                            <?php echo $inscricao['hora_fim'] ?>
                         </p>
                         <p data-label="Duração: ">
-                            <?php echo $treino['duracao_t'] ?> hr
+                            <?php echo $inscricao['duracao_ag'] ?> hr
                         </p>
                         <p>
                             <?php echo $treino['nome_ginasio'] ?>
@@ -50,7 +55,7 @@
                     </details>
                 <?php }
             } else { ?>
-                <p>Não há treinos registrados para este mês.</p>
+                <p>Não se inscreveu em Aulas de Grupo este mês.</p>
             <?php } ?>
         </div>
 

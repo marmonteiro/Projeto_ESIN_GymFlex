@@ -1,4 +1,4 @@
-<div>
+<div id="alteracao_plano">
     <h1>Alteração de Plano</h1>
     <p>O teu plano atual é o Plano
         <?php echo $user['tipo_p']; ?>.
@@ -6,8 +6,8 @@
     <p>Para qual plano desejas mudar?</p>
 
     <form action="action_alteracao_plano.php" method="post">
-        <label for="tipo_p">Tipo de Plano</label>
-        <select name="tipo_p" id="tipo_p" required>
+        
+        <select name="tipo_p" id="tipo_plano" required>
             <option value="" selected>Selecione um plano</option>
             <?php foreach ($tipo_p_info as $plano) { ?>
                 <?php $selected = (isset($_GET['plano_sel']) && $_GET['plano_sel'] === $plano['nome']) ? 'selected' : ''; ?>

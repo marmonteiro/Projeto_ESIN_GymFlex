@@ -15,7 +15,7 @@
     return $quantidade_ag;
 }
 
-function fetchInscricoesAGByEmail($email) //inscricoes_ag (do mês atual)
+function fetchNRInscricoesAGByEmail($email) //inscricoes_ag (do mês atual)
 {
     global $dbh;
     $stmt = $dbh->prepare('
@@ -29,8 +29,8 @@ function fetchInscricoesAGByEmail($email) //inscricoes_ag (do mês atual)
 ');
 
     $stmt->execute(array($_SESSION['email']));
-    $inscricoes_ag = $stmt->fetchColumn();
-    return $inscricoes_ag;
+    $NRinscricoes_ag = $stmt->fetchColumn();
+    return $NRinscricoes_ag;
 }
 
 
