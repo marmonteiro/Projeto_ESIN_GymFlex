@@ -659,7 +659,7 @@ form {
 }
 
 
-input[type="submit"] {
+#area_registo input[type="submit"], #area_login input[type="submit"] {
     padding: 13px;
     background-color: #A60000;
     color: white;
@@ -668,17 +668,17 @@ input[type="submit"] {
     margin-top: 20px;
     transition: background-color 0.3s ease;
     font-size: 18px;
-    width: 20rem;
+    width: 30rem;
     border-radius: 5px;
     border: transparent;
-
 }
 
-input[type="submit"]:hover {
+
+#area_registo input[type="submit"]:hover {
     background-color: #d30000;
 }
 
-input::placeholder{
+input::placeholder {
     font-size: 16px;
     color: #999;
     position: absolute;
@@ -688,8 +688,9 @@ input::placeholder{
     transition: top 0.3s, font-size 0.3s, color 0.3s;
 }
 
-input:focus::placeholder, input:focus-visible::placeholder, input:active::placeholder
-{
+input:focus::placeholder,
+input:focus-visible::placeholder,
+input:active::placeholder {
     top: 25%;
     font-size: 12px;
     color: #A60000;
@@ -740,13 +741,17 @@ input[type="password"] {
     margin-top: 5px;
 }
 
+#area_login input[type="submit"] {
+    width: 20rem;
+}
+
 /*PÁGINA REGISTO*/
 
 #area_registo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 20px;
 }
 
 #area_registo>form {
@@ -887,23 +892,218 @@ input::file-selector-button:hover {
 
 /* termos e condições checkbox*/
 #termos[type="checkbox"] {
-    -webkit-appearance: none; 
-    -moz-appearance: none; 
-    appearance: none; 
-    width: 12px; 
-    height: 12px; 
-    border: 2px solid #a60000; 
-    border-radius: 3px; 
-    outline: none; 
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #000000;
+    border-radius: 3px;
+    outline: none;
     transition-duration: 0.3s;
-  }
-  
-  
-  #termos[type="checkbox"]:checked {
-    background-color: #a60000;
-  }
+}
 
-  #termos_condicoes {
+
+#termos[type="checkbox"]:checked {
+    background-color: #a60000;
+}
+
+#termos_condicoes {
     display: flex;
     align-items: center;
-  }
+}
+
+/*PAG TERMOS E CONDICOES*/
+#termos_condicoes_pag {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+
+/* ÁREA DE CLIENTE*/
+#Area_Cliente {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+#dados_pessoais,
+#dados_plano,
+#insc_aulas_grupo,
+#reg_treinos {
+    background-color: #ffffff;
+    color: #333;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+#dados_plano,
+#insc_aulas_grupo,
+#reg_treinos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+#info_dados_pessoais {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+
+}
+
+#dados_pessoais img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 3px solid #000000;
+}
+
+/*bold antes dos : */
+#Area_Cliente p::before {
+    content: attr(data-label);
+    font-weight: bold;
+}
+
+#esquerda {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 20px;
+    width: 40%;
+}
+
+#direita {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0px 20px;
+    width: 40%;
+}
+
+#dados_fisicos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 20px;
+    background-color: #a600000b;
+    color: #333;
+    border-radius: 20px;
+    padding: 10px;
+    width: 70%;
+    margin-bottom: 50px;
+}
+
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #a60000;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.button:hover {
+    background-color: #750000;
+}
+
+/*PÁGINA DE REGISTO DE TREINOS*/
+#treino p::before {
+    content: attr(data-label);
+    font-weight: bold;
+}
+
+#registo_treinos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#ano {
+    font-family: Montserrat, sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    border: transparent;
+}
+
+#select_ano input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #A60000;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 18px;
+    border-radius: 5px;
+    border: transparent;
+}
+
+#select_ano input[type="submit"]:hover {
+    background-color: #d30000;
+}
+
+#meses {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#meses a {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 12px;
+    text-decoration: none;
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#meses a:hover {
+    background-color: #a60000;
+    color: #fff;
+}
+
+#treino {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    background-color: #ffffff;
+    color: #333;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#treino summary:before {
+    border-color: transparent transparent transparent #333;   
+}
+
+
+
+/* CANCELAMENTO */
+#cancelamento {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#cancelamento h1 {}
+
+#cancelamento p {}
+
+#cancelamento a {}

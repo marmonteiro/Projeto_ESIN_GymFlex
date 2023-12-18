@@ -33,9 +33,7 @@ CREATE TABLE Membro (
     personaltrainer INTEGER,
     nutricionista INTEGER,
     sexo TEXT NOT NULL,
-    nr_cartao TEXT NOT NULL,
-    validade_cartao TEXT NOT NULL,
-    
+    iban TEXT NOT NULL,
     FOREIGN KEY (id) REFERENCES Pessoa(id) ON DELETE CASCADE,
     FOREIGN KEY (personaltrainer) REFERENCES Personaltrainer(id),
     FOREIGN KEY (nutricionista) REFERENCES Nutricionista(id),
@@ -224,7 +222,7 @@ VALUES
   ('0b14d501a594442a01c6859541bcb3e8164d183d32937b851835442f69d5c94e', 70.5, 175, (70.5 / (1.75 * 1.75)), 'M' , (SELECT id FROM Pessoa WHERE nome = 'Carlos Pereira'), (SELECT id FROM Pessoa WHERE nome = 'Sofia Costa'),'PT38502761940287651290341'),
   ('6cf615d5bcaac778352a8f1f3360d23f02f34ec182e259897fd6ce485d7870d4', 65.0, 165, (65.0 / (1.65 * 1.65)), 'F' , (SELECT id FROM Pessoa WHERE nome = 'Ana Rodrigues'), (SELECT id FROM Pessoa WHERE nome = 'Jorge Fernandes'),'PT74091283509127350912387'),
   ('5906ac361a137e2d286465cd6588ebb5ac3f5ae955001100bc41577c3d751764', 68.0, 160, (68.0 / (1.60 * 1.60)), 'M' , (SELECT id FROM Pessoa WHERE nome = 'Rui Oliveira'), (SELECT id FROM Pessoa WHERE nome = 'Inês Marques'),'PT15678902347658901234567'),
-  ('42f99c0763c83212b6bc55fc40de5a2c6eefc3ebdfc0912c75b52402a72b2a1a', 75.0, 180, (75.0 / (1.80 * 1.80)), 'M' , (SELECT iqd FROM Pessoa WHERE nome = 'Manuel Pereira'), (SELECT id FROM Pessoa WHERE nome = 'Teresa Oliveira'),'PT23589654785091234567890'),
+  ('42f99c0763c83212b6bc55fc40de5a2c6eefc3ebdfc0912c75b52402a72b2a1a', 75.0, 180, (75.0 / (1.80 * 1.80)), 'M' , (SELECT id FROM Pessoa WHERE nome = 'Manuel Pereira'), (SELECT id FROM Pessoa WHERE nome = 'Teresa Oliveira'),'PT23589654785091234567890'),
   ('c0b68fe8e9a7e88aae155fe4f10dc312af18f2542758f1b8f882f544a11e20cc', 60.0, 170, (60.0 / (1.70 * 1.70)), 'F' , (SELECT id FROM Pessoa WHERE nome = 'Luisa Costa'), (SELECT id FROM Pessoa WHERE nome = 'Ricardo Fernandes'),'PT98765432109876543210987'),
   ('9a78a68f68c4586a8959685241fe28a8f94a3e867d6b8591458dfc941d5421d4', 70.0, 175, (70.0 / (1.75 * 1.75)), 'M' , (SELECT id FROM Pessoa WHERE nome = 'André Santos'), (SELECT id FROM Pessoa WHERE nome = 'Lara Marques'),'PT56789012345678901234567');
 
@@ -288,6 +286,13 @@ VALUES
   ('2023-12-07', '09:30', '10:30', (strftime('%s', '10:30') - strftime('%s', '09:30')) / 3600.0, 2, (SELECT id FROM Pessoa WHERE nome = 'João Silva')),
   ('2023-12-14', '11:00', '12:00', (strftime('%s', '12:00') - strftime('%s', '11:00')) / 3600.0, 3, (SELECT id FROM Pessoa WHERE nome = 'João Silva')),
   ('2023-12-20', '10:00', '11:00', (strftime('%s', '11:00') - strftime('%s', '10:00')) / 3600.0, 1, (SELECT id FROM Pessoa WHERE nome = 'João Silva')),
+  ('2023-11-20', '11:00', '12:00', (strftime('%s', '12:00') - strftime('%s', '11:00')) / 3600.0, 1, (SELECT id FROM Pessoa WHERE nome = 'João Silva')),
+  ('2023-10-27', '09:00', '10:00', (strftime('%s', '10:00') - strftime('%s', '09:00')) / 3600.0, 1, (SELECT id FROM Pessoa WHERE nome = 'João Silva')),
+  ('2023-10-23', '15:00', '16:00', (strftime('%s', '16:00') - strftime('%s', '15:00')) / 3600.0, 1, (SELECT id FROM Pessoa WHERE nome = 'João Silva')),
+  ('2023-09-15', '17:00', '18:00', (strftime('%s', '18:00') - strftime('%s', '17:00')) / 3600.0, 1, (SELECT id FROM Pessoa WHERE nome = 'João Silva')),
+  ('2022-01-15', '12:00', '14:00', (strftime('%s', '14:00') - strftime('%s', '12:00')) / 3600.0, 1, (SELECT id FROM Pessoa WHERE nome = 'João Silva')),
+  ('2021-03-15', '13:00', '14:00', (strftime('%s', '14:00') - strftime('%s', '13:00')) / 3600.0, 1, (SELECT id FROM Pessoa WHERE nome = 'João Silva')),
+  ('2020-05-15', '17:00', '18:00', (strftime('%s', '18:00') - strftime('%s', '17:00')) / 3600.0, 1, (SELECT id FROM Pessoa WHERE nome = 'João Silva')),
 
   ('2023-12-05', '10:30', '11:30', (strftime('%s', '11:30') - strftime('%s', '10:30')) / 3600.0, 1, (SELECT id FROM Pessoa WHERE nome = 'Maria Sousa')),
   ('2023-12-06', '10:00', '11:00', (strftime('%s', '11:00') - strftime('%s', '10:00')) / 3600.0, 2, (SELECT id FROM Pessoa WHERE nome = 'Maria Sousa')),

@@ -6,8 +6,7 @@
   <?php unset($_SESSION['msg']);
 } ?>
 <section id="area_registo">
-
-
+<p>Por favor, preencha os seguintes campos para se registar como membro GymFlex.</p>
   <form action="action_registo.php" method="post">
 
     <section id="info_pessoal">
