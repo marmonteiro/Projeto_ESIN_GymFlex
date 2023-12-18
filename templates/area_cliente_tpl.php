@@ -126,7 +126,9 @@
             <p>Ainda podes treinar mais
                 <?php echo $tempo_treino_restante ?> hr este mês nos ginásios GymFlex.
             </p>
-            <a href="treinos.php" class="button">Os meus Treinos</a>
+            <div>
+                <a href="treinos.php" class="button">Os meus Treinos</a>
+            </div>
         </div>
     </div>
 
