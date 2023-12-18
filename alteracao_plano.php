@@ -29,7 +29,7 @@ try {
 } catch (PDOException $e) {
     $_SESSION['msg'] = 'Erro: ' . $e->getMessage();
 }
-include("templates/headerpaginicial_tpl.php");
+include("templates/header_tpl.php");
 include("templates/alteracao_plano_tpl.php");
 include("templates/footer_tpl.php");
 ?>

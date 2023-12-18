@@ -95,9 +95,8 @@
         </div>
     </div>
 
-
-    <details id="insc_aulas_grupo">
-        <summary> Inscrições em Aulas de Grupo</summary>
+    <div id="insc_aulas_grupo">
+        <h3> Inscrições em Aulas de Grupo </h3> 
         <div>
             <?php if ($_SESSION['disponiveis_ag'] > 1) { ?>
                 <p>
@@ -116,7 +115,45 @@
                 </p>
             <?php } ?>
         </div>
+        <div>
         <a href="minhas_ag.php" class="button">As minhas Aulas de Grupo</a>
+        </div>
+    </div>
+
+    <div id="reg_treinos">
+        <h3> Registo de Treinos </h3>
+        <div>
+            <p>Ainda podes treinar mais
+                <?php echo $tempo_treino_restante ?> hr este mês nos ginásios GymFlex.
+            </p>
+            <a href="treinos.php" class="button">Os meus Treinos</a>
+        </div>
+    </div>
+</section>
+
+<!--     <details id="insc_aulas_grupo">
+        <summary> <h3> Inscrições em Aulas de Grupo </h3> </summary>
+        <div>
+            <?php if ($_SESSION['disponiveis_ag'] > 1) { ?>
+                <p>
+                    Tens direito a mais
+                    <?php echo $disponiveis_ag ?> aulas de grupo este mês.
+                </p>
+                <a href="inscricao_ag.php" class="button">Inscrever em Aulas de Grupo</a>
+            <?php } elseif ($_SESSION['disponiveis_ag'] == 1) { ?>
+                <p>
+                    Tens direito a mais 1 aula de grupo este mês.
+                </p>
+                <a href="inscricao_ag.php" class="button">Inscrever em Aulas de Grupo</a>
+            <?php } elseif ($_SESSION["disponiveis_ag"] < 1) { ?>
+                <p data-label="Aulas de Grupo Disponíveis">
+                    Não tens direito a mais aulas de grupo este mês.
+                </p>
+            <?php } ?>
+        </div>
+        <div>
+        <a href="minhas_ag.php" class="button">As minhas Aulas de Grupo</a>
+        </div>
     </details>
 
     <details id="reg_treinos">
@@ -130,4 +167,4 @@
 
     </details>
 
-</section>
+</section> -->

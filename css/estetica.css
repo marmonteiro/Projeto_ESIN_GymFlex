@@ -77,21 +77,6 @@ header {
     margin-bottom: 10px;
 }
 
-.inscreva-se {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #A60000;
-    /* Change the button color */
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-.inscreva-se:hover {
-    background-color: #670000;
-}
-
-
 /*barra principal de navegação*/
 .barra {
     display: flex;
@@ -451,24 +436,6 @@ td {
     font-weight: bold;
     font-size: 15px;
     text-align: center;
-}
-
-.botao_planos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #A60000;
-    color: white;
-    text-decoration: none;
-    padding: 10px 20px;
-    text-decoration: none;
-    border: none;
-    font-weight: bold;
-    border-radius: 5px;
-}
-
-.botao_planos:hover {
-    background-color: #670000;
 }
 
 #preco {
