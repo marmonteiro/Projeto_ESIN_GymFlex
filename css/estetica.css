@@ -55,6 +55,19 @@ h3 {
     margin: 0.5rem 0;
 }
 
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #a60000;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.button:hover {
+    background-color: #750000;
+}
 
 /*HEADERS - todas as pags exceto página inicial*/
 header {
@@ -172,9 +185,6 @@ header {
     font-size: 20px;
 }
 
-
-
-
 /*PÁGINA INICIAL*/
 /*HEADER*/
 
@@ -202,7 +212,6 @@ header {
 
 }
 
-
 #header_paginicial #torne_semembro {
     display: flex;
     flex-direction: column;
@@ -214,7 +223,6 @@ header {
     border-radius: 5px;
     margin: 5px 0px;
 }
-
 
 /*Imagens na página inicial*/
 .imagensiniciais {
@@ -237,7 +245,6 @@ header {
 .imagens p {
     margin-top: 5px;
 }
-
 
 .textoimagensiniciais {
     text-align: center;
@@ -285,7 +292,6 @@ header {
     margin: 5px;
 }
 
-
 .batimento {
     display: flex;
     align-items: center;
@@ -296,7 +302,6 @@ header {
     width: 10%;
     height: auto;
 }
-
 
 .horarios_clubes {
     text-align: center;
@@ -312,8 +317,6 @@ header {
     list-style-type: none;
     padding: 0;
 }
-
-
 
 /*PÁGINA DOS CLUBES*/
 
@@ -932,19 +935,6 @@ input::file-selector-button:hover {
     margin-bottom: 50px;
 }
 
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    text-decoration: none;
-    background-color: #a60000;
-    color: white;
-    border-radius: 5px;
-    margin-bottom: 10px;
-}
-
-.button:hover {
-    background-color: #750000;
-}
 
 /*PÁGINAS DE REGISTO DE TREINOS + AULAS DE GRUPO*/
 #treino_ag p::before {
