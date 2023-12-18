@@ -4,7 +4,7 @@
     <h1>Inscrição em Aulas de Grupo</h1>
 
     <?php if ($_SESSION["disponiveis_ag"] > 1) { ?>
-        <p>Tens direito a mais
+        <p id="intro">Tens direito a mais
             <?php echo $_SESSION["disponiveis_ag"] ?> aulas de grupo este mês.
         </p>
     <?php } elseif ($_SESSION["disponiveis_ag"] == 1) { ?>
@@ -21,7 +21,7 @@
 
     <form method="post" action="inscricao_ag.php">
         <label for="ginasio">Escolhe o clube mais perto de ti:</label>
-        <select name='ginasio' id='ginasio'>
+        <select id='ginasio' name='ginasio'>
 
             <?php
             if (isset($ginasios) && !empty($ginasios)) {
@@ -34,7 +34,7 @@
             }
             ?>
         </select>
-        <input type="submit" value="Selecionar">
+        <input type="submit" value="Selecionar" class="button">
     </form>
 
 
