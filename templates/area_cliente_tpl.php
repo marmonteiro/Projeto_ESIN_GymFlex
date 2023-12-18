@@ -44,8 +44,8 @@
                 </p>
             </div>
             <div id="direita">
-                <div id="">
-                    <a href="" class="button">Alterar Dados</a>
+                <div id="alterar_dados">
+                    <a href="alteracao_dados.php" class="button">Alterar Dados</a>
                 </div>
                 <div id="dados_fisicos">
                     <p data-label="Idade: ">

@@ -800,7 +800,7 @@ input[type="password"] {
 #peso,
 #email,
 #password,
-#iban {
+#nr_cartao {
     font-size: 15px;
     padding: 15px;
     border: transparent;
@@ -1102,6 +1102,12 @@ input::file-selector-button:hover {
     align-items: center;
     margin: 20px;
     padding: 10px;
+}
+
+#cancelado{
+    font-size: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px
 }
 
 #alteracao_plano #tipo_plano {

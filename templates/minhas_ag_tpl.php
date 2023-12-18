@@ -26,7 +26,7 @@
         <?php
         $nome_mes_sel = $meses[$mes_sel]; ?>
 
-        <h3> Registo de Treinos de
+        <h3> Inscrições em Aulas de Grupo de
             <?php echo $nome_mes_sel ?>
         </h3>
 

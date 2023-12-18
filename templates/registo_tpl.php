@@ -76,9 +76,9 @@
           <?php endforeach; ?>
         </select>
       </div>
-      <p>Insira o IBAN para pagamento mensal:</p>
+      <p>Insira o número do seu cartão de débito/crédito para pagamento mensal:</p>
       <div>
-        <input type="text" id="iban" name="iban" placeholder="IBAN" required>
+        <input type="text" id="nr_cartao" name="nr_cartao" placeholder="Nº Cartão de Crédito/Débito" required>
       </div>
     </section>
 

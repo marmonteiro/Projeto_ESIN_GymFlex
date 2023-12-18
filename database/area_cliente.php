@@ -124,6 +124,7 @@ $user = fetchDetalhesMembroByEmail($_SESSION['email']);
 $nome = $user['nome'];
 $data_nascimento = $user['data_nascimento'];
 $nr_telemovel = $user['nr_telemovel'];
+$email = $user['email'];
 $morada = $user['morada'];
 $nif = $user['nif'];
 $altura = $user['altura'];
