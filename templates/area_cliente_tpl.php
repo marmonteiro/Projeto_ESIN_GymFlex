@@ -129,6 +129,7 @@
             <a href="treinos.php" class="button">Os meus Treinos</a>
         </div>
     </div>
+
 </section>
 
 <!--     <details id="insc_aulas_grupo">
