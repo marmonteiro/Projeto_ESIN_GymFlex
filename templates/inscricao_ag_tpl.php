@@ -51,9 +51,9 @@
                 <li>
                     <form method="post" action="action_inscricao_ag.php">
                         <input type="hidden" name="aula_id" value="<?php echo $aula['id']; ?>">
-                        <p>Tipo de Aula:
+                        <h3>Tipo de Aula:
                             <?php echo $aula['nome_tipo']; ?>
-                        </p>
+            </h3>
                         <p>Dia:
                             <?php echo $aula['data'] . ' (' . $aula['dia_semana'] . ')'; ?>
                         </p>
