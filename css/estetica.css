@@ -307,22 +307,21 @@ header {
     margin-right: 6%;
 }
 
-.horarios_clubes ul {
-    list-style-type: disc;
+ .horarios_clubes ul {
     padding: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .horarios_clubes li {
-    margin-bottom: 10px;
-    border: none;
-    background-color: transparent;
-    border-radius: 0;
-    padding: 0;
-}
-
+    list-style: none;
+    margin: 0;
+    border: none; 
+    border-radius: 0; 
+    padding: 0; 
+}  
 
 /*PÁGINA DOS CLUBES*/
-
 .clubes a {
     display: inline-flex;
     flex-direction: column;
@@ -408,10 +407,11 @@ td {
 
 .listaEquipa li {
     margin-bottom: 10px;
-    border: none;
-    background-color: transparent;
-    border-radius: 0;
-    padding: 0;
+    border: none; 
+    background-color: transparent; 
+    border-radius: 0; 
+    padding: 0; 
+    flex-direction: column;
 }
 
 /* RELATIVO À PÁGINAS DOS PLANOS  */
@@ -1103,8 +1103,8 @@ select {
 }
 
 /* Estilo para a lista (ul) */
-ul {
-    list-style: none;
+#inscricao_ag ul {
+   list-style: none; 
     padding: 0;
     display: flex;
     flex-wrap: wrap;
@@ -1113,7 +1113,7 @@ ul {
 }
 
 /* Estilo para cada item da lista (li) */
-li {
+#inscricao_ag li {
     width: calc(33.33% - 10px);
     /* Calcula a largura de cada item (3 itens por linha) */
     margin-bottom: 20px;
@@ -1124,7 +1124,7 @@ li {
 }
 
 /* Estilo para o formulário dentro de cada item */
-li form {
+#inscricao_ag li form {
     display: flex;
     flex-direction: column;
 }
