@@ -47,6 +47,13 @@ h3 {
     margin-bottom: 10px;
 }
 
+h4 {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
 #msg_erro {
     text-align: center;
     color: red;
