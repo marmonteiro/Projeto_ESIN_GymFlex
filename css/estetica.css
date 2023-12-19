@@ -314,19 +314,31 @@ header {
     margin-right: 6%;
 }
 
-.horarios_clubes ul {
+ .horarios_clubes ul {
     list-style-type: disc;
     padding: 0;
 }
 
 .horarios_clubes li {
+    margin: 0;
+    border: none; 
+    background-color: transparent; 
+    border-radius: 0; 
+    padding: 0; 
+}  
+
+/* #horarios_clubes_lista{
+    list-style: disc;
+    padding: 0;
+}    
+
+#horarios_clubes_lista li {
     margin-bottom: 10px;
     border: none; 
     background-color: transparent; 
     border-radius: 0; 
     padding: 0; 
-} 
-
+} */
 
 /*PÁGINA DOS CLUBES*/
 

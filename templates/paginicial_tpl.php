@@ -117,11 +117,16 @@
 
 <h3> Horário dos clubes: </h3>
 <div class="horarios_clubes">
-  <ul id= horarios_clubes>
+  <ul>
         <li> Sábados das 9h às 21h.</li>
         <li> 2ª Feira a 6ª Feira das 7h às 22h.</li>
         <li> Domingos e Feriados das 9h às 18h.</li>
-    </ul id=horarios_clubes> 
+    </ul> 
+   <!--  <ul id= horarios_clubes_lista>
+        <li id= horarios_clubes_lista> Sábados das 9h às 21h.</li id= horarios_clubes_lista >
+        <li id= horarios_clubes_lista> 2ª Feira a 6ª Feira das 7h às 22h.</li id= horarios_clubes_lista>
+        <li id= horarios_clubes_lista> Domingos e Feriados das 9h às 18h.</li id= horarios_clubes_lista>
+    </ul id=horarios_clubes_lista> --> 
     <p> Clube aberto todo o ano, exceto a 25 de dezembro e 1 de janeiro. </p>
     <p> Todas as atividades encerram 30 minutos antes do encerramento do Clube. </p>
 </div>
