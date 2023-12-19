@@ -292,6 +292,17 @@ header {
     font-weight: bold;
 }
 
+@media screen and (max-width: 768px) {
+    .retangulo {
+        width: calc(50% - 20px); 
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .retangulo {
+        width: 100%; 
+    }
+}
 
 .batimento {
     display: flex;
