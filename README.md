@@ -16,6 +16,8 @@ De seguida, corre-se o seguinte comando no terminal do VisualStudioCode:
 
 O caminho_pasta_projeto deverá ser substituido de acordo com a localização do ficheiro.
 
+Para abrir a página inicial utilizamos o link abaixo no browser: 
+ http://localhost:8080/paginicial.php 
 
 Para explorar todas as funcionalidades do nosso site como membro do gymflex recomendamos o login com as seguintes informações:
 - mail: joao@gmail.com;
