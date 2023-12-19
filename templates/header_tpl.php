@@ -14,11 +14,11 @@
 <body>
     <header>
         <div>
-        <a href="paginicial.php">
-            <img id="logo" src="imagens/gymflex_logo.gif" alt="Logotipo">
-        </a>
+            <a href="paginicial.php">
+                <img id="logo" src="imagens/gymflex_logo.gif" alt="Logotipo">
+            </a>
         </div>
-        
+
 
         <div class="barra">
             <a href="clubes.php" class="clubes">Clubes</a>
@@ -28,16 +28,20 @@
         </div>
 
         <div class="cliente">
-        <?php 
-            if (isset($_SESSION['email'])) { ?>  <!-- se sessão iniciada -->
-                <a id="logout" href="action_logout.php"><img src = imagens/logout.png>Logout</a>
-                <a id="areacliente" href="area_cliente.php"><img src = imagens/area_cliente.png>Área de Cliente</a>
-                <p id="ola">Olá,
-                    <?php echo $_SESSION['nome'] ?>!
-                </p>
+            <?php
+            if (isset($_SESSION['email'])) { ?> <!-- se sessão iniciada -->
+                <a id="logout" href="action_logout.php"><img src=imagens/logout.png>Logout</a>
+                <a id="areacliente" href="area_cliente.php"><img src=imagens/area_cliente.png>Área de
+                    Cliente</a>
+                <div id=ola>
+                    <img src="imagens/membros/<?= $_SESSION['id'] ?>.png">
+                    <p>Olá,
+                        <?php echo $_SESSION['nome'] ?>!
+                    </p>
+                </div>
             <?php } else { ?> <!-- se sessão não iniciada -->
-                <a id="login_btn" href="login.php"><img src = imagens/area_cliente.png>Login</a>
-                <a id="torne_semembro" href="registo.php"><img src = imagens/peso_icon.png>Torne-se Membro!</a>
+                <a id="login_btn" href="login.php"><img src=imagens/area_cliente.png>Login</a>
+                <a id="torne_semembro" href="registo.php"><img src=imagens/peso_icon.png>Torne-se Membro!</a>
             <?php } ?>
 
         </div>

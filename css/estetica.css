@@ -70,9 +70,7 @@ h3 {
     background-color: #750000;
 }
 
-#inscreva-se {
-    align-items: center;
-}
+
 
 /*HEADERS - todas as pags exceto página inicial*/
 header {
@@ -187,7 +185,16 @@ header {
     text-decoration: none;
 }
 
+#ola>img {
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
 #ola {
+    display: flex;
+    align-items: center;
     font-size: 20px;
 }
 
@@ -264,7 +271,6 @@ header {
     flex-wrap: wrap;
 }
 
-/* retângulos das características dos ginásios*/
 .retangulo {
     display: flex;
     justify-content: space-between;
@@ -276,22 +282,9 @@ header {
     padding: 0 20px;
     box-sizing: border-box;
     margin: 10px;
-}
-
-
-.retangulo p {
-    margin: 0;
     font-weight: bold;
-    font-size: 15px;
-    text-align: center;
 }
 
-.caracteristicastexto {
-    text-align: center;
-    font-weight: bold;
-    font-size: 25px;
-    margin: 5px;
-}
 
 .batimento {
     display: flex;
@@ -321,11 +314,11 @@ header {
 
 .horarios_clubes li {
     margin-bottom: 10px;
-    border: none; 
-    background-color: transparent; 
-    border-radius: 0; 
-    padding: 0; 
-} 
+    border: none;
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
+}
 
 
 /*PÁGINA DOS CLUBES*/
@@ -339,11 +332,12 @@ header {
     text-decoration: none;
     color: #A60000;
     border-radius: 5px;
-    border: 5px solid #000000;
+    border: 3px solid #000000;
     font-size: 24px;
     font-weight: bold;
-    width: 250px; 
-    height: 260px  
+    width: 250px;
+    height: 260px;
+    transition: 0.3s all;
 }
 
 .clubes {
@@ -361,7 +355,7 @@ header {
 }
 
 .clubes a:hover {
-    background-color: #c2b6b6;
+    box-shadow:  0 0 15px #a60000;
 }
 
 .club-info {
@@ -381,7 +375,7 @@ header {
 }
 
 .mapa:hover {
-    transform: scale(1.2); 
+    transform: scale(1.2);
 }
 
 .titulos_clubes {
@@ -414,10 +408,10 @@ td {
 
 .listaEquipa li {
     margin-bottom: 10px;
-    border: none; 
-    background-color: transparent; 
-    border-radius: 0; 
-    padding: 0; 
+    border: none;
+    background-color: transparent;
+    border-radius: 0;
+    padding: 0;
 }
 
 /* RELATIVO À PÁGINAS DOS PLANOS  */
@@ -431,7 +425,7 @@ td {
 .bold {
     font-family: Contrail One, sans-serif;
     letter-spacing: 0.05rem;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .retangulo_planos {
@@ -440,7 +434,6 @@ td {
     padding: 20px;
     box-sizing: border-box;
     border: 3px solid #ccc;
-    background-color: whitesmoke;
     font-weight: bold;
     font-size: 15px;
     border-radius: 20px;
@@ -511,13 +504,13 @@ td {
 }
 
 .image-container {
+    /* também está a ser usado para características na pag inicial*/
     flex: 0 0 30%;
     margin-right: 20px;
-    /* Adiciona uma margem à direita para separar a imagem das informações */
-
 }
 
 .image-container img {
+    /* também está a ser usado para características na pag inicial*/
     max-width: 100%;
     height: auto;
     border-radius: 3px;
@@ -525,6 +518,7 @@ td {
 }
 
 .info-container {
+    /* também está a ser usado para características na pag inicial*/
     flex: 1;
     text-align: center;
 }
@@ -901,7 +895,8 @@ input::file-selector-button:hover {
 
 #dados_pessoais,
 #dados_plano,
-#insc_aulas_grupo,#reg_treinos{
+#insc_aulas_grupo,
+#reg_treinos {
     background-color: #ffffff;
     color: #333;
     border-radius: 10px;
@@ -911,7 +906,7 @@ input::file-selector-button:hover {
 }
 
 #dados_plano,
-#insc_aulas_grupo{
+#insc_aulas_grupo {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1109,7 +1104,7 @@ select {
 
 /* Estilo para a lista (ul) */
 ul {
-   list-style: none; 
+    list-style: none;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
@@ -1133,4 +1128,3 @@ li form {
     display: flex;
     flex-direction: column;
 }
-
