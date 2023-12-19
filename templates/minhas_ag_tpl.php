@@ -52,8 +52,14 @@
                         <p>
                             <?php echo $treino['nome_ginasio'] ?>
                         </p>
+
+                        <?php if ($inscricao['data']>date('Y-m-d')) { ?>
+                            <form action="action_cancelar_ag.php" method="POST">
+                                <input type="hidden" name="inscricao_id" value="<?php echo $inscricao['id'] ?>">
+                                <input type="submit" value="Cancelar Inscrição">
+                            </form>
                     </details>
-                <?php }
+                <?php } } 
             } else { ?>
                 <p>Não se inscreveu em Aulas de Grupo este mês.</p>
             <?php } ?>

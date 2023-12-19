@@ -45,7 +45,8 @@ function fetchInscricoesAGByEmail($id) //inscricoes_ag
             Tipo_ag.hora_inicio,
             Tipo_ag.hora_fim,
             Tipo_ag.duracao_ag,
-            Tipo_ag.nome AS tipo_ag
+            Tipo_ag.nome AS tipo_ag,
+            Inscricao_ag.id AS id
         FROM Inscricao_ag
         INNER JOIN Membro ON Inscricao_ag.membro = Membro.id
         INNER JOIN Pessoa ON Membro.id = Pessoa.id
