@@ -26,7 +26,7 @@ function assignPT($dbh)
 }
 
 
-function insertUser($nome, $data_nascimento, $nr_telemovel, $email, $password, $nif, $tipo_plano, $altura, $peso, $morada, $sexo)
+function insertUser($nome, $data_nascimento, $nr_telemovel, $email, $password, $nif, $tipo_plano, $altura, $peso, $morada, $sexo, $nr_cartao)
 {
     global $dbh;;
     
@@ -39,12 +39,11 @@ function insertUser($nome, $data_nascimento, $nr_telemovel, $email, $password, $
     // vai guardar o id da pessoa que acabou de ser inserida
     $pessoaID = $dbh->lastInsertId();
 
-    // guardar a foto de perfil
-    move_uploaded_file($_FILES['profile_pic']['tmp_name'], "imagens/membros/$pessoaID.png");
+    
 
     // inserir dados na tabela Membro
-    $stmtMembro = $dbh->prepare('INSERT INTO Membro (pwd, altura, peso, sexo, id, inscricoes_ag) VALUES (?, ?, ?, ?, ?, ?)');
-    $stmtMembro->execute(array( hash('sha256', $password) , $altura, $peso, $sexo, $pessoaID, 0));
+    $stmtMembro = $dbh->prepare('INSERT INTO Membro (pwd, altura, peso, sexo, id, nr_cartao) VALUES (?, ?, ?, ?, ?, ?)');
+    $stmtMembro->execute(array( hash('sha256', $password) , $altura, $peso, $sexo, $pessoaID, $nr_cartao));
     
     $imc = $peso / (($altura/100) * ($altura/100)); // calcula o imc
     $stmtMembroIMC = $dbh->prepare('UPDATE Membro SET imc = ? WHERE id = ?');
@@ -74,6 +73,11 @@ function insertUser($nome, $data_nascimento, $nr_telemovel, $email, $password, $
         $stmtPT->execute(array($randomPT, $pessoaID));
     }
 
+    //guarda a foto de perfil
+    move_uploaded_file($_FILES['profile_pic']['tmp_name'], "imagens/membros/$pessoaID.png");
+
+
 }
+
 
 ?>

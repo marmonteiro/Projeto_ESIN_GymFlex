@@ -23,6 +23,7 @@ try {
             exit();
         }
     }
+    
 } catch (PDOException $e) {
     $error_msg = $e->getMessage();
     if (strpos($error_msg, 'UNIQUE constraint failed: Pessoa.email')) {
