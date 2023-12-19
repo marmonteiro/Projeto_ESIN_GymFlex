@@ -47,11 +47,12 @@
     if (isset($aulasDisponiveis) && !empty($aulasDisponiveis)) { ?>
         <h2>Aulas Disponíveis</h2>
         <ul>
-            <?php foreach ($aulasDisponiveis as $aula) { ?>
+            <?php foreach ($aulasDisponiveis as $aula) {
+            if (strtotime($aula['data']) > time()) {?> <!-- apenas mostra as aulas que ainda não aconteceram -->
                 <li>
                     <form method="post" action="action_inscricao_ag.php">
                         <input type="hidden" name="aula_id" value="<?php echo $aula['id']; ?>">
-                        <h3>Tipo de Aula:
+                        <h3>
                             <?php echo $aula['nome_tipo']; ?>
             </h3>
                         <p>Dia:
@@ -70,7 +71,7 @@
                         <?php } ?>
                     </form>
                 </li>
-            <?php } ?>
+            <?php } }?>
         </ul>
     <?php } ?>
 

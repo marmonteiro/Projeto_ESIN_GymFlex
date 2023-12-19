@@ -18,11 +18,6 @@ require_once("database/inscricao_ag.php");
 try {
     global $dbh;
 
-    if (!isset($_SESSION['email'])) {
-        header('Location: login.php'); // Redirect to login if not logged in
-        exit();
-    }
-
     //calculo da quantidade de aulas de grupo disponiveis
     $quantidade_ag = fetchQuantidadeAGByEmail($_SESSION['email']);
     $NRinscricoes_ag = fetchNRInscricoesAGByEmail($_SESSION['email']);
