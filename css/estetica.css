@@ -509,7 +509,7 @@ td {
 #intro {
     text-align: center;
     font-size: 20px;
-    margin-block-start: 5px;
+    margin-block-start: 20px;
     margin-block-end: 20px;
 }
 
@@ -936,7 +936,7 @@ input::file-selector-button:hover {
 }
 
 
-/*PÁGINAS DE REGISTO DE TREINOS + AULAS DE GRUPO*/
+/*PÁGINAS DE REGISTO DE TREINOS + REGISTO AULAS DE GRUPO */
 #treino_ag p::before {
     content: attr(data-label);
     font-weight: bold;
@@ -948,7 +948,7 @@ input::file-selector-button:hover {
     align-items: center;
 }
 
-#ano {
+#ano, #ginasio{
     font-family: Montserrat, sans-serif;
     font-weight: bold;
     font-size: 30px;
@@ -960,7 +960,7 @@ input::file-selector-button:hover {
     border: transparent;
 }
 
-#select_ano input[type="submit"] {
+#select_ano input[type="submit"], #select_ginasio input[type="submit"] {
     padding: 10px 20px;
     background-color: #A60000;
     color: white;
@@ -972,7 +972,7 @@ input::file-selector-button:hover {
     border: transparent;
 }
 
-#select_ano input[type="submit"]:hover {
+#select_ano input[type="submit"]:hover, #select_ginasio input[type="submit"]:hover {
     background-color: #d30000;
 }
 
@@ -1057,4 +1057,34 @@ input::file-selector-button:hover {
 
 #alteracao_plano input[type="submit"]:hover {
     background-color: #000000;
+}
+
+/* inscriçao ag*/
+
+select {
+    margin-bottom: 30px; /* Adiciona espaço entre o seletor e o botão de envio */
+}
+
+/* Estilo para a lista (ul) */
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Adiciona espaço entre as colunas */
+}
+
+/* Estilo para cada item da lista (li) */
+li {
+    width: calc(33.33% - 10px); /* Calcula a largura de cada item (3 itens por linha) */
+    margin-bottom: 20px; /* Adiciona espaço entre as linhas */
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+/* Estilo para o formulário dentro de cada item */
+li form {
+    display: flex;
+    flex-direction: column;
 }
