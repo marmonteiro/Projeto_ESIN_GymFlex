@@ -393,8 +393,17 @@ td {
     background-color: #e9e2e29a;
 }
 
-.listaEquipa{
+.listaEquipa {
     list-style: circle;
+    padding: 0;
+}
+
+.listaEquipa li {
+    margin-bottom: 10px;
+    border: none; 
+    background-color: transparent; 
+    border-radius: 0; 
+    padding: 0; 
 }
 
 /* RELATIVO À PÁGINAS DOS PLANOS  */
