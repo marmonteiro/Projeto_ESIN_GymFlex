@@ -377,6 +377,11 @@ header {
 .mapa {
     display: block;
     margin: 0 auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+.mapa:hover {
+    transform: scale(1.2); 
 }
 
 .titulos_clubes {
