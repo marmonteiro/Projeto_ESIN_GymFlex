@@ -1,3 +1,4 @@
+<h2> Escolha o clube mais perto de si e venha treinar connosco <h2>
 <div class="clubes">
     <?php foreach ($clubes as $clube): ?>
         <a href='gym_info.php?nome_ginasio=<?= $clube['nome'] ?>'>
