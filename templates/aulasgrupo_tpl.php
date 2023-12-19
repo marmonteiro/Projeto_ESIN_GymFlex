@@ -19,6 +19,6 @@
 </div>
 
 <div class="mensagem">
-    <p>Inscreve-te já como membro para puderes usufruir destas aulas</p>
-    <a href="registo.php" class="button"> Inscreve-te aqui! </a>
+    <p>Inscreva-se já como membro para poder usufruir destas aulas</p>
+    <a href="registo.php" class="button"> Inscreva-se aqui! </a>
 </div>
