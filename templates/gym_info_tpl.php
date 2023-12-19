@@ -27,35 +27,35 @@
             <tr>
                 <td>
                     <p>Nutricionistas:</p>
-                    <ul>
+                    <ul class="listaEquipa">
                         <?php if (!empty($nomeNut)): ?>
                             <?php foreach ($nomeNut as $nutricionista): ?>
                                 <?php if (!empty($nutricionista['nome_nutricionista'])): ?>
-                                    <li>
+                                    <li class="listaEquipa">
                                         <?php echo $nutricionista['nome_nutricionista']; ?>
-                                    </li>
+                                    </li class="listaEquipa">
                                 <?php endif; ?>
                             <?php endforeach; ?>
                         <?php else: ?>
-                            <li>Nenhum nutricionista encontrado</li>
+                            <li class="listaEquipa" >Nenhum nutricionista encontrado</li class="listaEquipa">
                         <?php endif; ?>
-                    </ul>
+                    </ul class="listaEquipa">
                 </td>
                 <td>
                     <p>Personal Trainers:</p>
-                    <ul>
+                    <ul class="listaEquipa">
                         <?php if (!empty($nomePT)): ?>
                             <?php foreach ($nomePT as $personaltrainer): ?>
                                 <?php if (!empty($personaltrainer['nome_personaltrainer'])): ?>
-                                    <li>
+                                    <li class="listaEquipa">
                                         <?php echo $personaltrainer['nome_personaltrainer']; ?>
-                                    </li>
+                                    </li class="listaEquipa">
                                 <?php endif; ?>
                             <?php endforeach; ?>
                         <?php else: ?>
-                            <li>Nenhum personal trainer encontrado</li>
+                            <li class="listaEquipa"> Nenhum personal trainer encontrado </li class="listaEquipa">
                         <?php endif; ?>
-                    </ul>
+                    </ul class="listaEquipa">
                 </td>
             </tr>
         </table>

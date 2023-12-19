@@ -70,6 +70,10 @@ h3 {
     background-color: #750000;
 }
 
+#inscreva-se {
+    align-items: center;
+}
+
 /*HEADERS - todas as pags exceto página inicial*/
 header {
     display: flex;
@@ -359,29 +363,6 @@ header {
     padding: 20px;
 }
 
-.club-info a {
-    text-decoration: none;
-    color: black;
-}
-
-.club-info li {
-    text-align: center;
-    max-width: 300px;
-    padding: 20px;
-    margin: 10px;
-    background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    flex: 1;
-    /* Faz cada item ocupar a mesma largura */
-    flex-basis: calc(50% - 20px);
-    /* Calcula a largura com margens para 2 itens por linha */
-}
-
-#inscreva-se {
-    align-items: center;
-}
-
 /* RELATIVO ÀS PÁGINAS de CADA CLUBE INDIVIDUALMENTE */
 
 .mapa {
@@ -410,6 +391,10 @@ td {
     vertical-align: top;
     border-radius: 5px;
     background-color: #e9e2e29a;
+}
+
+.listaEquipa{
+    list-style: circle;
 }
 
 /* RELATIVO À PÁGINAS DOS PLANOS  */
@@ -1101,7 +1086,7 @@ select {
 
 /* Estilo para a lista (ul) */
 ul {
-    list-style: none;
+   list-style: none; 
     padding: 0;
     display: flex;
     flex-wrap: wrap;
