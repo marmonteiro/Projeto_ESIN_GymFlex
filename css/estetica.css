@@ -506,13 +506,13 @@ td {
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
     margin-bottom: 30px;
     /* Adiciona uma margem na parte inferior de cada retângulo */
 }
 
 .aula:hover {
-    background-color: #a600006f;
+    box-shadow: 0 0 5px #a60000;
 }
 
 .image-container {
