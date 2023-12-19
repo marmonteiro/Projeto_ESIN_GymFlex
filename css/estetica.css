@@ -327,6 +327,10 @@ header {
     color: #A60000;
     border-radius: 5px;
     border: 5px solid #000000;
+    font-size: 24px;
+    font-weight: bold;
+    width: 250px; 
+    height: 260px  
 }
 
 .clubes {
@@ -334,8 +338,7 @@ header {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    font-weight: bold;
-    /* permite que os botões quebrem para a próxima linha se não couberem */
+
 }
 
 .clubes img {
@@ -351,13 +354,9 @@ header {
 .club-info {
     display: flex;
     flex-direction: column;
-    /* Alterado para coluna para que os itens estejam empilhados verticalmente */
     align-items: center;
-    /* Centraliza os itens no eixo transversal (vertical) */
     text-align: center;
-    /* Centraliza o texto dentro de cada parágrafo */
     padding: 20px;
-    /* Adiciona algum espaçamento interno */
 }
 
 .club-info a {
