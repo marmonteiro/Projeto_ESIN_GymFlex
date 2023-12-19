@@ -22,9 +22,9 @@
             </div>
             <div>
                 <?php if (!isset($_SESSION['email'])) { ?>
-                    <a href="registo.php?plano_sel=<?php echo urlencode($plano['nome']); ?>" class="button">Inscreva-se</a>
+                    <a href="registo.php?plano_sel=<?php echo urlencode($plano['nome']); ?>" class="button"> Registe-se </a>
                 <?php } else { ?>
-                    <a href="alteracao_plano.php?plano_sel=<?php echo urlencode($plano['nome']); ?>" class="button">Altere o seu
+                    <a href="alteracao_plano.php?plano_sel=<?php echo urlencode($plano['nome']); ?>" class="button"> Escolha o seu
                         plano</a>
                 <?php } ?>
             </div>
