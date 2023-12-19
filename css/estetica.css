@@ -1076,6 +1076,12 @@ input::file-selector-button:hover {
     padding: 10px;
 }
 
+#alteracao_dados label,
+#alteracao_dados input {
+    display: block;
+    margin-bottom: 15px; 
+}
+
 /**/
 #cancelamento,
 #cancelado,
