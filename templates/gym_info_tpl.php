@@ -2,13 +2,13 @@
         <h2>
             <?php echo $nome_ginasio ?>
 </h2>
-        <p> <strong>Morada:</strong>
+        <p> <span class=bold> Morada:</span>
             <?php echo $morada_ginasio ?>
         </p>
-        <p> <strong>Contacto telefónico:</strong>
+        <p> <span class=bold> Contacto telefónico:</span>
             <?php echo $telefone_ginasio ?>
         </p>
-        <p><strong>Email:</strong>
+        <p><span class=bold>Email:</span>
             <?php echo $email_ginasio ?>
         </p>
         <!-- <img class="imagem clube" src="<?php echo $imagem_ginasio ?>" alt="GymFlex Porto"> -->
@@ -26,7 +26,7 @@
         <table>
             <tr>
                 <td>
-                    <p>Nutricionistas:</p>
+                    <p><span class=bold> Nutricionistas: </span> </p>
                     <ul class="listaEquipa">
                         <?php if (!empty($nomeNut)): ?>
                             <?php foreach ($nomeNut as $nutricionista): ?>
@@ -42,7 +42,7 @@
                     </ul class="listaEquipa">
                 </td>
                 <td>
-                    <p>Personal Trainers:</p>
+                    <p><span class=bold> Personal Trainers: </span> </p>
                     <ul class="listaEquipa">
                         <?php if (!empty($nomePT)): ?>
                             <?php foreach ($nomePT as $personaltrainer): ?>
