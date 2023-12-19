@@ -1120,7 +1120,7 @@ select {
 }
 
 /* Estilo para a lista (ul) */
-ul {
+ ul {
    list-style: none; 
     padding: 0;
     display: flex;
@@ -1130,7 +1130,7 @@ ul {
 }
 
 /* Estilo para cada item da lista (li) */
-li {
+ li {
     width: calc(33.33% - 10px);
     /* Calcula a largura de cada item (3 itens por linha) */
     margin-bottom: 20px;
