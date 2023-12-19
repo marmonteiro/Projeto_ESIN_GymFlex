@@ -102,7 +102,6 @@ CREATE TABLE Tipo_p (
     CHECK (quantidade_ag >= 0)
 
 );
---falta: soma mensal da duracao_t de cada Membro terá de ser inferior ou igual ao tempo_treino do Tipo de Plano escolhido pelo Membro
 
 CREATE TABLE Plano (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -111,8 +110,6 @@ CREATE TABLE Plano (
     tipo_p INTEGER NOT NULL,
     FOREIGN KEY (membro) REFERENCES Membro(id) ON DELETE CASCADE,
     FOREIGN KEY (tipo_p) REFERENCES Tipo_p(nome)
-    --se um Membro tiver mais que uma data_adesao, então a diferença entre elas terá de ser superior ou igual a 5 meses:
-    --CHECK ((SELECT COUNT(*) FROM Plano AS p WHERE p.membro = membro AND julianday('now') - julianday(data_adesao) < 150) <= 1) -- não funciona	
     
 );
 

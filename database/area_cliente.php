@@ -40,20 +40,19 @@ function fetchInscricoesAGByEmail($id) //inscricoes_ag
 {
     global $dbh;
     $stmt = $dbh->prepare('
-    SELECT Ginasio.nome AS nome_ginasio,
-       Aulagrupo.data,
-       Tipo_ag.hora_inicio,
-       Tipo_ag.hora_fim,
-       Tipo_ag.duracao_ag,
-       Tipo_ag.nome AS tipo_ag
-FROM Inscricao_ag
-INNER JOIN Membro ON Inscricao_ag.membro = Membro.id
-INNER JOIN Pessoa ON Membro.id = Pessoa.id
-INNER JOIN Aulagrupo ON Inscricao_ag.aulagrupo = Aulagrupo.id
-INNER JOIN Tipo_ag ON Aulagrupo.tipo_ag = Tipo_ag.nome
-INNER JOIN Ginasio ON Aulagrupo.ginasio = Ginasio.id
-WHERE Pessoa.id = ?
-
+            SELECT Ginasio.nome AS nome_ginasio,
+            Aulagrupo.data,
+            Tipo_ag.hora_inicio,
+            Tipo_ag.hora_fim,
+            Tipo_ag.duracao_ag,
+            Tipo_ag.nome AS tipo_ag
+        FROM Inscricao_ag
+        INNER JOIN Membro ON Inscricao_ag.membro = Membro.id
+        INNER JOIN Pessoa ON Membro.id = Pessoa.id
+        INNER JOIN Aulagrupo ON Inscricao_ag.aulagrupo = Aulagrupo.id
+        INNER JOIN Tipo_ag ON Aulagrupo.tipo_ag = Tipo_ag.nome
+        INNER JOIN Ginasio ON Aulagrupo.ginasio = Ginasio.id
+        WHERE Pessoa.id = ?
     ');
 
     $stmt->execute(array($id));
@@ -101,7 +100,7 @@ function fetchDetalhesMembroByEmail($email)
     global $dbh;
     $stmt = $dbh->prepare('
         SELECT Pessoa.nome, Pessoa.data_nascimento, Pessoa.nr_telemovel, Pessoa.email, Pessoa.morada, Pessoa.nif, Membro.nr_cartao,  
-            Membro.altura, Membro.peso, Membro.imc, Membro.nutricionista, Membro.personaltrainer, Membro.sexo,
+            Membro.altura, Membro.peso, Membro.imc, Membro.nutricionista, Membro.personaltrainer, Membro.sexo, Membro.pwd,
             Plano.data_adesao, Plano.tipo_p
         FROM Pessoa
         INNER JOIN Membro ON Membro.id = Pessoa.id
@@ -202,6 +201,7 @@ if (isset($treinos_por_mes[$mes_atual])) {
         }
     }
 }
+
 $meses = array(
     '01' => 'Janeiro',
     '02' => 'Fevereiro',
@@ -232,8 +232,6 @@ $tempo_treino_plano = intval($tempo_treino_plano);
 $tempo_treino_restante = $tempo_treino_plano - $duracao_total;
 
 
-
-
 // vai buscar as inscricoes_ag do membro
 $inscricoes_ag = fetchInscricoesAGByEmail($_SESSION['id']);
 
@@ -256,4 +254,3 @@ foreach ($inscricoes_ag as $inscricao) {
     $anos_inscricoes[$ano] = $ano;
 }
 ?>
-

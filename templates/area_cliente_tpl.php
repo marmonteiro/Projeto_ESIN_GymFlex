@@ -45,6 +45,7 @@
             </div>
             <div id="direita">
                 <div id="alterar_dados">
+                    <a href="alteracao_foto.php" class="button">Alterar Foto</a>
                     <a href="alteracao_dados.php" class="button">Alterar Dados</a>
                 </div>
                 <div id="dados_fisicos">
@@ -58,7 +59,7 @@
                         <?php echo $peso ?> kg
                     </p>
                     <p data-label="IMC: ">
-                        <?php printf("%.1f", $imc) ?>
+                        <?php printf("%.1f", $imc) ?> %
                     </p>
                 </div>
             </div>

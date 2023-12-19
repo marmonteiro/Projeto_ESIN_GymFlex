@@ -12,6 +12,7 @@ $sexo = $_POST['sexo'];
 $morada = $_POST['morada'];
 $email = $_POST['email'];
 $password = $_POST['password'];
+$nr_cartao = $_POST['nr_cartao'];
 
 $idade = date_diff(date_create($data_nascimento), date_create('today'))->y; // calcula a idade
 
@@ -53,8 +54,9 @@ if ($idade < 16) {
 
 try {
     
-    insertUser($nome, $data_nascimento, $nr_telemovel, $email, $password, $nif, $tipo_plano, $altura, $peso, $morada, $sexo);
-    header('Location: paginicial.php');
+    insertUser($nome, $data_nascimento, $nr_telemovel, $email, $password, $nif, $tipo_plano, $altura, $peso, $morada, $sexo, $nr_cartao);
+    include("action_login.php");
+
 
 } catch (PDOException $e) {
     $error_msg = $e->getMessage();
