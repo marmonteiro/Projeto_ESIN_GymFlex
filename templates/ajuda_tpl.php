@@ -2,7 +2,7 @@
     <h1>Ajuda</h1>
     <section id="FAQ">
         <h2>FAQ</h2>
-        <p id="intro">Algumas das perguntas mais frequentes.</p>
+        <p id="intro">Algumas das nossas perguntas mais frequentes.</p>
         <section>
             <details class="Categoria">
                 <summary>Informações Gerais</summary>
@@ -20,7 +20,7 @@
                 </details>
                 <details class="Pergunta">
                     <summary>Quais os planos oferecidos?</summary>
-                    <p>Oferecemos 3 tipos de planos mensais: Plano Básico, Plano Intermédio e Plano Avançado. Sabe
+                    <p>Oferecemos 3 tipos de planos mensais: Plano Básico, Plano Intermédio e Plano Avançado. Saiba mais sobre
                         os detalhes de cada plano em <a href="planos.php"> Planos </a>.</p>
                 </details>
                 <details class="Pergunta">
@@ -29,7 +29,7 @@
                 </details>
                 <details class="Pergunta">
                     <summary>Existem aulas de grupo? Quais?</summary>
-                    <p>Sim! Oferecemos várias aulas de grupo desde Zumba a Pilates. Sabe mais em <a
+                    <p>Sim! Oferecemos várias aulas de grupo desde Zumba a Pilates. Saiba mais em <a
                             href="aulasgrupo.php"> Aulas de Grupo </a>.</p>
                 </details>
 
@@ -37,11 +37,11 @@
             </details>
 
             <details class="Categoria">
-                <summary>Se ainda não és Membro</summary>
+                <summary>Se ainda não é Membro</summary>
                 <p>
                 <details class="Pergunta">
                     <summary>Como me posso inscrever como membro?</summary>
-                    <p>Podes te inscrever como membro através do nosso site <a href="registo.php"> Torna-te Membro </a> ou presencialmente, visitando
+                    <p>Pode se inscrever como membro em <a href="registo.php"> Registo </a> ou presencialmente, visitando
                         qualquer um dos nossos clubes.</p>
                 </details>
                 <details class="Pergunta">
@@ -50,7 +50,7 @@
                 </details>
                 <details class="Pergunta">
                     <summary>Quais são as opções de pagamento disponíveis?</summary>
-                    <p>Aceitamos pagamentos em dinheiro, cartão de crédito/débito ou transferência bancária.</p>
+                    <p>Os pagamentos das mensalidades são realizados por meio de cartão de crédito/débito, que é cadastrado durante o processo de registo.</p>
                 </details>
                 <details class="Pergunta">
                     <summary>Posso frequentar outros clubes GymFlex após me inscrever num específico?</summary>
@@ -58,30 +58,30 @@
                 </details>
                 <details class="Pergunta">
                     <summary>Posso visitar um ginásio GymFlex antes de me inscrever?</summary>
-                    <p>Sim! Podes te dirigir a qualquer um dos nossos clubes e comprar uma utilização diária de
-                        forma a experimentares um treino nos nossos estabelecimentos.</p>
+                    <p>Sim! Pode-se dirigir a qualquer um dos nossos clubes e comprar uma utilização diária de
+                        forma a experimentar um treino nos nossos estabelecimentos.</p>
                 </details>
                 </p>
             </details>
 
             <details class="Categoria">
-                <summary>Se já és Membro</summary>
+                <summary>Se já é Membro</summary>
                 <p>
                 <details class="Pergunta">
                     <summary>Como posso cancelar a minha subscrição?</summary>
-                    <p>Para cancelares a tua subscrição deves aceder à tua Área de Cliente e ou
+                    <p>Para cancelar a sua subscrição deve aceder à sua Área de Cliente > Dados do Plano > Cancelar Subscrição e ou
                         podes fazê-lo presencialmente, em qualquer um dos nossos clubes.</p>
                 </details>
                 <details class="Pergunta">
                     <summary>Como posso trocar o meu plano mensal?</summary>
-                    <p>Para trocares o teu plano mensal deves aceder à tua Área de Cliente > Mudar o Meu Plano e
-                        selecionar o plano para que pretendes trocar. Alternativamente podes fazê-lo
+                    <p>Para trocar o seu plano mensal deve aceder à sua Área de Cliente > Dados do Plano > Alteração de Plano e
+                        selecionar o plano para que pretendes trocar. Alternativamente pode fazê-lo
                         presencialmente, em qualquer um dos nossos clubes.</p>
                 </details>
                 <details class="Pergunta">
                     <summary>Como me posso inscrever numa aula de grupo?</summary>
-                    <p>Para te inscreveres numa aula de grupo deves aceder à tua Área de Cliente > Inscrição em Aula
-                        de Grupo e selecionar o clube e a aula que pretendes te inscrever.</p>
+                    <p>Para se inscrever numa aula de grupo deve aceder à sua Área de Cliente > Inscrição em Aula
+                        de Grupo e selecionar o clube e a aula que se pretende inscrever.</p>
                 </details>
                 </p>
             </details>
@@ -91,11 +91,11 @@
 
 
 <section id="Contactos">
-    <p id="intro">Queres esclarecer alguma dúvida que não está aqui?</p>
+    <p id="intro">Quer esclarecer alguma dúvida que não está aqui?</p>
     <h2>Contactos</h2>
     <section id="Contactos">
         <p>Email de apoio ao cliente: <a href="mailto:support@gymflex.com">gymflex.geral@gmail.com</a>.</p>
         <p>Telefone de apoio ao cliente: <a href=“tel:+351 923524352>+351 923524352</a>.</p>
-        <p>Ou contacta diretamente o ginásio mais perto de ti. Descobre-o <a href="clubes.php">aqui</a>.</p>
+        <p>Ou contacte diretamente o ginásio mais perto de ti. Descubra-o <a href="clubes.php">aqui</a>.</p>
     </section>
 </section>

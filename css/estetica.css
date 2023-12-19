@@ -860,7 +860,7 @@ label[for="profile_pic"] {
     font-weight: bold;
 }
 
-input::file-selector-button {
+input::file-selector-button { /* botão de escolher ficheiro */
     font-family: Montserrat, sans-serif;
     font-weight: bold;
     background-color: #ffffff;

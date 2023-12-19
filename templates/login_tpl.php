@@ -21,6 +21,6 @@
 
 
 <section id="nao_membro">
-  <p>Ainda não és membro? De que estás à espera?</p>
-  <p id="registe_se"><a href="registo.php">Regista-te aqui!</a></p>
+  <p>Ainda não é membro? De que está à espera?</p>
+  <p id="registe_se"><a href="registo.php">Registe-se aqui!</a></p>
 </section>
