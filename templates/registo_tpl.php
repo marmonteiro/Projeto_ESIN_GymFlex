@@ -7,7 +7,7 @@
 } ?>
 <section id="area_registo">
 <p>Por favor, preencha os seguintes campos para se registar como membro GymFlex.</p>
-  <form action="action_registo.php" method="post">
+  <form action="action_registo.php" method="post" enctype="multipart/form-data">
 
     <section id="info_pessoal">
       <p>Informação Pessoal</p>

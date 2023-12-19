@@ -58,24 +58,23 @@ function insertUser($nome, $data_nascimento, $nr_telemovel, $email, $password, $
 
 
     // Dá o nutricionista com menos clientes ao novo membro
-    $randomNutricionista = assignNutricionista($dbh);
+    $atrNutricionista = assignNutricionista($dbh);
 
-    // Update da tabela Membro com o nutricionista random
+    // Update da tabela Membro com o nutricionista atribuido
     $stmtNutricionista = $dbh->prepare('UPDATE Membro SET nutricionista = ? WHERE id = ?');
-    $stmtNutricionista->execute(array($randomNutricionista, $pessoaID));
+    $stmtNutricionista->execute(array($atrNutricionista, $pessoaID));
 
     if ($tipo_plano === 'Intermédio' || $tipo_plano === 'Avançado') {
         // Dá o PT com menos clientes ao novo membro se o plano for Intermédio ou Avançado
-        $randomPT = assignPT($dbh);
+        $atrPT = assignPT($dbh);
 
         // Update da tabela Membro com o PT
         $stmtPT = $dbh->prepare('UPDATE Membro SET personaltrainer = ? WHERE id = ?');
-        $stmtPT->execute(array($randomPT, $pessoaID));
+        $stmtPT->execute(array($atrPT, $pessoaID));
     }
 
     //guarda a foto de perfil
     move_uploaded_file($_FILES['profile_pic']['tmp_name'], "imagens/membros/$pessoaID.png");
-
 
 }
 
