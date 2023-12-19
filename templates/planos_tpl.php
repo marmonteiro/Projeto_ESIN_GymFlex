@@ -6,10 +6,10 @@
                        <?php echo $plano['nome']; ?>
                     </h2>
                     <p>
-                        <?php echo $plano['tempo_treino']; ?> Horas de Treino por mês
+                        <span class=bold><?php echo $plano['tempo_treino']; ?> </span>Horas de Treino por mês
                     </p>
                     <p>
-                        <?php echo $plano['quantidade_ag']; ?> Aulas de Grupo por mês
+                    <span class=bold><?php echo $plano['quantidade_ag']; ?> </span>Aulas de Grupo por mês
                     </p>
                     <p>Acompanhamento contínuo por nutricionista </p>
                     <p>Cancelamento gratuito a qualquer momento </p>

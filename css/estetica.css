@@ -100,6 +100,7 @@ header {
 }
 
 .barra a {
+    font-weight: bold;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -272,11 +273,6 @@ header {
     margin: 10px;
 }
 
-.retangulo img {
-    max-width: 26%;
-    height: auto;
-    margin: 20px;
-}
 
 .retangulo p {
     margin: 0;
@@ -328,7 +324,6 @@ header {
     margin: 10px;
     text-decoration: none;
     color: #A60000;
-    background-color: white;
     border-radius: 5px;
     border: 5px solid #000000;
 }
@@ -342,10 +337,9 @@ header {
     /* permite que os botões quebrem para a próxima linha se não couberem */
 }
 
-.clube-logo {
-    max-width: 100px;
+.clubes img {
+    max-width: 200px;
     margin-bottom: 10px;
-    /* espaço entre a imagem e o texto */
     height: auto;
 }
 
@@ -355,10 +349,14 @@ header {
 
 .club-info {
     display: flex;
-    flex-direction: column; /* Alterado para coluna para que os itens estejam empilhados verticalmente */
-    align-items: center; /* Centraliza os itens no eixo transversal (vertical) */
-    text-align: center; /* Centraliza o texto dentro de cada parágrafo */
-    padding: 20px; /* Adiciona algum espaçamento interno */
+    flex-direction: column;
+    /* Alterado para coluna para que os itens estejam empilhados verticalmente */
+    align-items: center;
+    /* Centraliza os itens no eixo transversal (vertical) */
+    text-align: center;
+    /* Centraliza o texto dentro de cada parágrafo */
+    padding: 20px;
+    /* Adiciona algum espaçamento interno */
 }
 
 .club-info a {
@@ -374,8 +372,10 @@ header {
     background-color: #fff;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    flex: 1; /* Faz cada item ocupar a mesma largura */
-    flex-basis: calc(50% - 20px); /* Calcula a largura com margens para 2 itens por linha */
+    flex: 1;
+    /* Faz cada item ocupar a mesma largura */
+    flex-basis: calc(50% - 20px);
+    /* Calcula a largura com margens para 2 itens por linha */
 }
 
 #inscreva-se {
@@ -415,14 +415,18 @@ td {
 /* RELATIVO À PÁGINAS DOS PLANOS  */
 .planos {
     display: flex;
-    /*justify-content: space-between;*/
     justify-content: center;
     text-decoration: none;
     font-weight: bold;
 }
 
+.bold {
+    font-family: Contrail One, sans-serif;
+    letter-spacing: 0.05rem;
+    font-size: 20px;
+}
+
 .retangulo_planos {
-    /*width: calc(33% - 20px);*/
     width: 80%;
     margin: 20px;
     padding: 20px;
@@ -431,8 +435,25 @@ td {
     background-color: whitesmoke;
     font-weight: bold;
     font-size: 15px;
-    border-radius: 10px;
+    border-radius: 20px;
     text-align: center;
+    transition: 0.5s all;
+
+}
+
+.retangulo_planos:hover {
+    transform: translateY(15px);
+    box-shadow: 0 0 15px #828282;
+}
+
+.retangulo_planos:nth-child(2):hover {
+    transform: translateY(15px);
+    box-shadow: 0 0 20px #904a4a;
+}
+
+.retangulo_planos:nth-child(3):hover {
+    transform: translateY(15px);
+    box-shadow: 0 0 25px #8d0000;
 }
 
 .planos_duvidas {
@@ -456,31 +477,35 @@ td {
     text-align: center;
 }
 
-.classes {
+.aulas {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
 
-.class {
+.aula {
+    font-size: 18px;
     display: flex;
-    flex: 0 0 calc(33.33% - 20px); /* 50% da largura da linha, descontando a margem */
+    flex: 0 0 calc(33.33% - 20px);
+    /* 50% da largura da linha, descontando a margem */
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
-    margin-bottom: 30px; /* Adiciona uma margem na parte inferior de cada retângulo */
+    margin-bottom: 30px;
+    /* Adiciona uma margem na parte inferior de cada retângulo */
 }
 
-.class:hover {
+.aula:hover {
     background-color: #a600006f;
 }
 
 .image-container {
-    flex: 0 0 30%; 
-    margin-right: 20px; /* Adicione uma margem à direita para separar a imagem das informações */
+    flex: 0 0 30%;
+    margin-right: 20px;
+    /* Adiciona uma margem à direita para separar a imagem das informações */
 
 }
 
@@ -529,6 +554,7 @@ td {
     color: #FFFFFF;
     font-weight: bold;
     border-radius: 5px;
+    transition: background-color 0.2s ease;
 }
 
 .Pergunta>summary:hover {
@@ -572,7 +598,8 @@ summary:before {
     content: '';
     border-width: .4rem;
     border-style: solid;
-    border-color: transparent transparent transparent #FFFFFF; /* seta para baixo = quadrado com 3 bordas transparentes */
+    border-color: transparent transparent transparent #FFFFFF;
+    /* seta para baixo = quadrado com 3 bordas transparentes */
     position: absolute;
     top: 1rem;
     left: 1rem;
@@ -602,7 +629,8 @@ form {
     align-items: center;
 }
 
-#area_registo input[type="submit"], #area_login input[type="submit"] {
+#area_registo input[type="submit"],
+#area_login input[type="submit"] {
     padding: 13px;
     background-color: #A60000;
     color: white;
@@ -948,7 +976,8 @@ input::file-selector-button:hover {
     align-items: center;
 }
 
-#ano, #ginasio{
+#ano,
+#ginasio {
     font-family: Montserrat, sans-serif;
     font-weight: bold;
     font-size: 30px;
@@ -960,7 +989,8 @@ input::file-selector-button:hover {
     border: transparent;
 }
 
-#select_ano input[type="submit"], #select_ginasio input[type="submit"] {
+#select_ano input[type="submit"],
+#select_ginasio input[type="submit"] {
     padding: 10px 20px;
     background-color: #A60000;
     color: white;
@@ -972,7 +1002,8 @@ input::file-selector-button:hover {
     border: transparent;
 }
 
-#select_ano input[type="submit"]:hover, #select_ginasio input[type="submit"]:hover {
+#select_ano input[type="submit"]:hover,
+#select_ginasio input[type="submit"]:hover {
     background-color: #d30000;
 }
 
@@ -1011,7 +1042,7 @@ input::file-selector-button:hover {
 }
 
 #treino_ag summary:before {
-    border-color: transparent transparent transparent #333;   
+    border-color: transparent transparent transparent #333;
 }
 
 /*ALTERAÇÃO DE DADOS*/
@@ -1024,7 +1055,9 @@ input::file-selector-button:hover {
 }
 
 /**/
-#cancelamento, #cancelado, #alteracao_plano{
+#cancelamento,
+#cancelado,
+#alteracao_plano {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1032,7 +1065,7 @@ input::file-selector-button:hover {
     padding: 10px;
 }
 
-#cancelado{
+#cancelado {
     font-size: 20px;
     padding-top: 50px;
     padding-bottom: 50px
@@ -1062,7 +1095,8 @@ input::file-selector-button:hover {
 /* inscriçao ag*/
 
 select {
-    margin-bottom: 30px; /* Adiciona espaço entre o seletor e o botão de envio */
+    margin-bottom: 30px;
+    /* Adiciona espaço entre o seletor e o botão de envio */
 }
 
 /* Estilo para a lista (ul) */
@@ -1071,13 +1105,16 @@ ul {
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* Adiciona espaço entre as colunas */
+    justify-content: space-between;
+    /* Adiciona espaço entre as colunas */
 }
 
 /* Estilo para cada item da lista (li) */
 li {
-    width: calc(33.33% - 10px); /* Calcula a largura de cada item (3 itens por linha) */
-    margin-bottom: 20px; /* Adiciona espaço entre as linhas */
+    width: calc(33.33% - 10px);
+    /* Calcula a largura de cada item (3 itens por linha) */
+    margin-bottom: 20px;
+    /* Adiciona espaço entre as linhas */
     box-sizing: border-box;
     border: 1px solid #ccc;
     padding: 10px;

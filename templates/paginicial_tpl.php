@@ -37,41 +37,76 @@
 
 <div class="caracteristicas">
     <div class="retangulo">
-        <img src="imagens/caracteristiscas/chuveiro.png" alt="Imagem 1">
-        <p>Balneários com chuveiros</p>
-
+        <div class="image-container">
+            <img src="imagens/caracteristiscas/chuveiro.png" alt="Imagem 1">
+        </div>
+        <div class="info-container">
+            <p>Balneários com chuveiros</p>
+        </div>
     </div>
     <div class="retangulo">
-        <img src="imagens/caracteristiscas/cacifos.png" alt="Imagem 1">
-        <p>Cacifos gratuitos</p>
+        <div class="image-container">
+            <img src="imagens/caracteristiscas/cacifos.png" alt="Imagem 1">
+        </div>
+        <div class="info-container">
+            <p>Cacifos gratuitos</p>
+        </div>
     </div>
     <div class="retangulo">
-        <img src="imagens/caracteristiscas/aulasgrupo.png" alt="Imagem 1">
-        <p>Diferentes estúdios para aulas de grupo</p>
+        <div class="image-container">
+            <img src="imagens/caracteristiscas/aulasgrupo.png" alt="Imagem 1">
+        </div>
+        <div class="info-container">
+            <p>Diferentes estúdios para aulas de grupo</p>
+        </div>
     </div>
     <div class="retangulo">
-        <img src="imagens/caracteristiscas/cardio.png" alt="Imagem 1">
-        <p>Zona de cardio</p>
+        <div class="image-container">
+            <img src="imagens/caracteristiscas/cardio.png" alt="Imagem 1">
+        </div>
+        <div class="info-container">
+            <p>Zona de cardio</p>
+        </div>
     </div>
     <div class="retangulo">
-        <img src="imagens/caracteristiscas/funcional.png" alt="Imagem 1">
-        <p>Zona funcional</p>
+        <div class="image-container">
+            <img src="imagens/caracteristiscas/funcional.png" alt="Imagem 1">
+        </div>
+        <div class="info-container">
+            <p>Zona funcional</p>
+        </div>
     </div>
     <div class="retangulo">
-        <img src="imagens/caracteristiscas/forca.png" alt="Imagem 1">
-        <p>Zona de força</p>
+        <div class="image-container">
+            <img src="imagens/caracteristiscas/forca.png" alt="Imagem 1">
+        </div>
+        <div class="info-container">
+            <p>Zona de força</p>
+        </div>
     </div>
     <div class="retangulo">
-        <img src="imagens/caracteristiscas/wifi.png" alt="Imagem 1">
-        <p>Wi-fi gratuito</p>
+        <div class="image-container">
+            <img src="imagens/caracteristiscas/wifi.png" alt="Imagem 1">
+        </div>
+        <div class="info-container">
+            <p>Wi-fi gratuito</p>
+        </div>
     </div>
     <div class="retangulo">
-        <img src="imagens/caracteristiscas/estacionamento.png" alt="Imagem 1">
-        <p>Estacionamento gratuito</p>
+        <div class="image-container">
+            <img src="imagens/caracteristiscas/estacionamento.png" alt="Imagem 1">
+        </div>
+        <div class="info-container">
+            <p>Estacionamento gratuito</p>
+        </div>
     </div>
     <div class="retangulo">
-        <img src="imagens/caracteristiscas/social.png" alt="Imagem 1">
-        <p>Zona social</p>
+        <div class="image-container">
+            <img src="imagens/caracteristiscas/social.png" alt="Imagem 1">
+        </div>
+        <div class="info-container">
+            <p>Zona social</p>
+        </div>
     </div>
 </div>
 
