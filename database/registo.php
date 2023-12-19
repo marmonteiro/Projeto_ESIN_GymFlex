@@ -28,8 +28,7 @@ function assignPT($dbh)
 
 function insertUser($nome, $data_nascimento, $nr_telemovel, $email, $password, $nif, $tipo_plano, $altura, $peso, $morada, $sexo)
 {
-    global $dbh;
-    $hashedPassword = hash('sha256', $password);
+    global $dbh;;
     
 
     // inserir dados na tabela Pessoa
@@ -45,7 +44,7 @@ function insertUser($nome, $data_nascimento, $nr_telemovel, $email, $password, $
 
     // inserir dados na tabela Membro
     $stmtMembro = $dbh->prepare('INSERT INTO Membro (pwd, altura, peso, sexo, id, inscricoes_ag) VALUES (?, ?, ?, ?, ?, ?)');
-    $stmtMembro->execute(array($hashedPassword, $altura, $peso, $sexo, $pessoaID, 0));
+    $stmtMembro->execute(array( hash('sha256', $password) , $altura, $peso, $sexo, $pessoaID, 0));
     
     $imc = $peso / (($altura/100) * ($altura/100)); // calcula o imc
     $stmtMembroIMC = $dbh->prepare('UPDATE Membro SET imc = ? WHERE id = ?');
