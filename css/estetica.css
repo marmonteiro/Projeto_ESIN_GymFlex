@@ -65,6 +65,7 @@ h3 {
     margin-bottom: 10px;
 }
 
+
 .button:hover {
     background-color: #750000;
 }
@@ -893,23 +894,23 @@ input::file-selector-button:hover {
 
 #dados_pessoais,
 #dados_plano,
-#insc_aulas_grupo,
-#reg_treinos {
+#insc_aulas_grupo,#reg_treinos{
     background-color: #ffffff;
     color: #333;
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 #dados_plano,
-#insc_aulas_grupo,
-#reg_treinos {
+#insc_aulas_grupo{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
 }
+
 
 #info_dados_pessoais {
     display: flex;
@@ -1125,3 +1126,4 @@ li form {
     display: flex;
     flex-direction: column;
 }
+
