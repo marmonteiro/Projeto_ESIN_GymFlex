@@ -394,7 +394,7 @@ td {
 }
 
 .listaEquipa {
-    list-style: circle;
+    list-style: disc;
     padding: 0;
 }
 
