@@ -397,15 +397,14 @@ td {
     text-align: center;
     vertical-align: top;
     border-radius: 5px;
-    background-color: #e9e2e29a;
 }
 
 .listaEquipa {
-    list-style: disc;
     padding: 0;
 }
 
 .listaEquipa li {
+    list-style: none;
     margin-bottom: 10px;
     border: none; 
     background-color: transparent; 
