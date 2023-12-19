@@ -292,6 +292,17 @@ header {
     font-weight: bold;
 }
 
+@media screen and (max-width: 768px) {
+    .retangulo {
+        width: calc(50% - 20px); 
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .retangulo {
+        width: 100%; 
+    }
+}
 
 .batimento {
     display: flex;
@@ -386,15 +397,14 @@ header {
 }
 
 /* RELATIVO ÀS PÁGINAS de CADA CLUBE INDIVIDUALMENTE */
-
 .mapa {
     display: block;
     margin: 0 auto;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease;
 }
 
 .mapa:hover {
-    transform: scale(1.2);
+    transform: scale(1.2); 
 }
 
 .titulos_clubes {
@@ -1076,10 +1086,16 @@ input::file-selector-button:hover {
     padding: 10px;
 }
 
+#alteracao_dados label,
+#alteracao_dados input {
+    display: block;
+    margin-bottom: 15px; 
+}
+
 /**/
 #cancelamento,
 #cancelado,
-#alteracao_plano {
+#alteracao_plano, #alteracao_foto {
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -1,5 +1,5 @@
 <h3>Alteração de Dados</h3>
-<p>Altere os dados que deseja e clique em "Alterar".</p>
+<h4>Altere os dados que deseja e clique em "Alterar".</h4>
 <p id="msg_erro"><?php echo $_SESSION['msg'] ; unset ($_SESSION['msg'])?></p>
 <form action="action_alteracao_dados.php" method="post">
 
@@ -25,5 +25,5 @@
 
 
     </div>
-    <input type="submit" value="Alterar">
+    <input type="submit" class="button" value="Alterar">
 </form>
