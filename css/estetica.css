@@ -518,14 +518,12 @@ td {
     font-size: 18px;
     display: flex;
     flex: 0 0 calc(33.33% - 20px);
-    /* 50% da largura da linha, descontando a margem */
     border: 1px solid #ccc;
     padding: 10px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     margin-bottom: 30px;
-    /* Adiciona uma margem na parte inferior de cada retângulo */
 }
 
 .aula:hover {
@@ -552,6 +550,17 @@ td {
     text-align: center;
 }
 
+@media screen and (min-width: 600px) {
+    .aula {
+        flex: 0 0 calc(50% - 20px); /* 2 colunas em telas maiores que 600px */
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .aula {
+        flex: 0 0 calc(33.33% - 20px); /* 3 colunas em telas maiores que 900px */
+    }
+}
 /* PÁGINA AJUDA */
 #FAQ {
     margin-top: 20px;
