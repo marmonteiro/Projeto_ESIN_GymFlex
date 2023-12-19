@@ -397,15 +397,14 @@ header {
 }
 
 /* RELATIVO ÀS PÁGINAS de CADA CLUBE INDIVIDUALMENTE */
-
 .mapa {
     display: block;
     margin: 0 auto;
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease;
 }
 
 .mapa:hover {
-    transform: scale(1.2);
+    transform: scale(1.2); 
 }
 
 .titulos_clubes {
