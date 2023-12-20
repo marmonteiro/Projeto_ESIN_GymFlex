@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once('database/init.php');
-require_once('database/pass.php');
+require_once('database/editar-pass.php');
 require_once('database/login.php');
 
 

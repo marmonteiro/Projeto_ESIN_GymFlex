@@ -1127,16 +1127,16 @@ input::file-selector-button:hover {
     border-color: transparent transparent transparent #333; 
 }
 
-/*ALTERAÇÃO DE DADOS*/
-#alteracao_dados {
+/*EDITAR DADOS*/
+#editar_dados {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 70px;
 }
 
-#alteracao_dados label,
-#alteracao_dados input {
+#editar_dados label,
+#editar_dados input {
     display: block;
     margin-bottom: 15px; 
 }

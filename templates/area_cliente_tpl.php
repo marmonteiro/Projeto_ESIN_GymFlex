@@ -44,14 +44,14 @@
                 </p>
             </div>
             <div id="direita">
-                <div id="alteracao_dados">
+                <div id="editar_dados">
 
                     <a href="alteracao_foto.php" class="button">
                         <div id=botao_icon>
                             <img src="imagens/icons/foto_icon.png">Alterar Foto
                         </div>
                     </a>
-                    <a href="alteracao_dados.php" class="button">
+                    <a href="editar-dados.php" class="button">
                         <div id=botao_icon>
                             <img src="imagens/icons/edit_icon.png">Alterar Dados
                         </div>
