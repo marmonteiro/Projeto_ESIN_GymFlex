@@ -10,7 +10,7 @@ Gymflex Website - Grupo G
 - A cadeia de ginásios GymFlex oferece uma variedade de serviços através do seu site. Todos os visitantes têm acesso a informações detalhadas sobre os clubes disponíveis, planos de adesão e aulas de grupo oferecidas no ginásio, para além de uma seção de ajuda abrangente. Para os membros registados, o site oferece uma área de cliente onde é possível gerenciar dados pessoais (alterar dados, foto de perfil e password), detalhes do plano de adesão (verificar dados do plano, alterar o tipo do plano caso tenham passado pelo menos 2 meses da última adesão e cancelar subscrição), além de possibilitar a verificação do histórico de treinos e aulas de grupo. Adicionalmente, os membros podem-se inscrever em novas aulas de grupo para expandir suas experiências de treino.
 
 - É possível aceder ao conteúdo do nosso projeto através do repositório do GitHub: 
-    https://github.com/marmonteiro/ESIN;
+    https://github.com/marmonteiro/Projeto_ESIN_GymFlex;
 
  De seguida, corre-se o seguinte comando no terminal do VisualStudioCode:
     -> linux/mac: 
