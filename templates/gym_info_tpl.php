@@ -1,5 +1,5 @@
 <div id="gym_info">
-    <div class="club-info">
+    <div>
         <h2>
             <?php echo $nome_ginasio ?>
         </h2>
