@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GymFlex</title>
-    <link rel="shortcut icon" href="imagens/gymflex_head.png" type="image/png">
+    <link rel="shortcut icon" href="imagens/icons/gymflex_head.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Contrail+One&family=Montserrat&display=swap" rel="stylesheet">
@@ -18,12 +18,12 @@
         <section id="main_header">
             <div>
                 <a href="paginicial.php">
-                    <img id="logo_paginicial" src="imagens/gymflex_logo.gif" alt="Logotipo">
+                    <img id="logo_paginicial" src="imagens/icons/gymflex_logo.gif" alt="Logotipo">
                 </a>
             </div>
 
             <div id="Membro_paginicial">
-                <p><a id="torne_semembro" href="registo.php">Torne-se membro!<img src=imagens/peso_icon.png></a></p>
+                <p><a id="torne_semembro" href="registo.php">Torne-se membro!<img src=imagens/icons/peso_icon.png></a></p>
                 <p id=jámembro>Já é membro? Inicie sessão <a href="login.php">aqui</a>.</p>
             </div>
 

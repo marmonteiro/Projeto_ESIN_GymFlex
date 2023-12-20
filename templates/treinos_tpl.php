@@ -11,7 +11,7 @@
             </select>
             <button type="submit" class="button_submit" name="submit">
                 Filtrar
-                <img src="imagens/filter_icon.png" alt="Filtrar">
+                <img src="imagens/icons/filter_icon.png" alt="Filtrar">
             </button>
         </h2>
     </div>

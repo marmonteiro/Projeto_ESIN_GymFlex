@@ -111,7 +111,7 @@
 </div>
 
 <div class="batimento">
-    <img src="imagens/batimento.png" alt="batimento">
+    <img src="imagens/icons/batimento.png" alt="batimento">
 </div>
 
 

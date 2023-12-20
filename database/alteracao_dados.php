@@ -2,7 +2,7 @@
 
 function UpdatePessoa($email, $nome, $morada, $nr_telemovel, $id) {
     global $dbh;
-    $stmt = $dbh->prepare('UPDATE Pessoa SET email, nome = ?, morada = ?, nr_telemovel = ? WHERE id = ?');
+    $stmt = $dbh->prepare('UPDATE Pessoa SET email = ?, nome = ?, morada = ?, nr_telemovel = ? WHERE id = ?');
     $stmt->execute([$email, $nome, $morada, $nr_telemovel, $id]);
 }
 
