@@ -16,6 +16,6 @@ try {
     echo "Connection failed: " . $e->getMessage();
 }
 include("templates/header_tpl.php");
-include("templates/alteracao_foto_tpl.php");
+include("templates/editar-foto_tpl.php");
 include("templates/footer_tpl.php");
 ?>

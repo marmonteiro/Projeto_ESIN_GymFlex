@@ -46,7 +46,7 @@
             <div id="direita">
                 <div id="editar_dados">
 
-                    <a href="alteracao_foto.php" class="button">
+                    <a href="editar-foto.php" class="button">
                         <div id=botao_icon>
                             <img src="imagens/icons/foto_icon.png">Alterar Foto
                         </div>

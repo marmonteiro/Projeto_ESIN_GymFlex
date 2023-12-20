@@ -11,7 +11,7 @@ include("database/area_cliente.php");
 
 try {
     
-    require_once("database/alteracao_foto.php");
+    require_once("database/editar-foto.php");
     guardarFotoPerfil ($_SESSION['id']);
 
     header('Location: area_cliente.php');
