@@ -6,7 +6,6 @@
             <img src=imagens/icons/local.png class="normal">
             <img src=imagens/icons/local_red.png class="red">
             <?= $clube['nome'] ?>
-            <!-- <img src='<?= $clube['imagem_url'] ?>' alt='Clube Logo'> -->
         </a><br>
     <?php endforeach; ?>
 </div>

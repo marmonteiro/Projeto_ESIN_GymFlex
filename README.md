@@ -12,7 +12,8 @@ De seguida, corre-se o seguinte comando no terminal do VisualStudioCode:
 
 - linux/mac: sudo docker run -d -p 8080:8080 -it --name=nome_container -v ~/caminho_pasta_projeto/ESIN:/var/www/html quay.io/vesica/php73:dev;
 
-- windows: docker run -d -p 8080:8080 -it --name=nome_container -v C:\caminho_pasta_projeto/ESIN:/var/www/html quay.io/vesica/php73:dev;
+
+- windows: docker run -d -p 8080:8080 -it --name=nome_container -v C:\caminho_pasta_projeto\ESIN:/var/www/html quay.io/vesica/php73:dev;
 
 O caminho_pasta_projeto deverá ser substituido de acordo com a localização do ficheiro.
 
@@ -27,7 +28,7 @@ Adicionalmente, é possível registar um novo membro e aceder as diferentes func
 
 - O site que nós desenvolvemos é um site de um ginásio, GymFlex, cujo nome e logotipo são da nossa autoria. 
 
-- A GymFlex é uma cadeia de ginásios que oferece treino acompanhado, autónomo, aulas de grupo e aconselhamento nutricional. Os membros podem efetuar o login no site e aceder à sua àrea de cliente onde podem gerir as suas aulas de grupo e verificar o registo dos treinos tendo em conta as retrições de acordo com o seu plano. Para além disso, podem alterar os seus dados pessoais.
+- A GymFlex oferece uma variedade de serviços através do seu site. Todos os visitantes têm acesso a informações detalhadas sobre os clubes disponíveis, planos de adesão e aulas de grupo oferecidas no ginásio, para além de uma seção de ajuda abrangente. Para os membros registados, o site oferece uma área de cliente onde é possível gerenciar dados pessoais (alterar dados, foto de perfil e password), detalhes do plano de adesão (verificar dados do plano, alterar o tipo do plano caso tenham passado pelo menos 2 meses da última adesão e cancelar subscrição), além de possibilitar a verificação do histórico de treinos e aulas de grupo. Adicionalmente, os membros podem se inscrever em novas aulas de grupo para expandir suas experiências de treino.
 
 Notas:
 - Caso o membro tenha efetuado o login os botões das páginas de aulas de grupo e planos altera;
