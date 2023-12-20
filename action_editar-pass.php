@@ -27,6 +27,12 @@ if ($newpassword != $confirm_password) {
   die();
 }
 
+if ($newpassword = $oldpassword) {
+  $_SESSION['msg'] = 'A senha nova é igual à antiga.';
+  header('Location: editar-pass.php');
+  die();
+}
+
 try {
   updatePassMembroByEmail($newpassword, $_SESSION['email']);
   $_SESSION['msg']='Password alterada com sucesso!';
