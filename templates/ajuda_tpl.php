@@ -84,7 +84,16 @@
                     <p>Para se inscrever numa aula de grupo deve aceder à sua Área de Cliente > Inscrição em Aula
                         de Grupo e selecionar o clube e a aula que se pretende inscrever.</p>
                 </details>
-                </p>
+                <details class="Pergunta">
+                    <summary>Como posso cancelar a minha inscrição em aulas de grupo?</summary>
+                    <p>Para cancelar uma inscrição numa aula de grupo deve aceder à sua Área de Cliente > As minhas Aulas de Grupo e selecionar a aula 
+                       que pretende cancelar > Cancelar Inscrição. Alternativamente pode fazê-lo
+                        presencialmente, em qualquer um dos nossos clubes. </p>
+                </details>
+                <details class="Pergunta">
+                    <summary>Como posso aceder ao meu registo de treinos?</summary>
+                    <p>Para aceder ao registo de treinos deve aceder à sua Área de Cliente > Registo de Treinos >  Os meus Treinos. </p>
+                </details>
             </details>
         </section>
     </section>
