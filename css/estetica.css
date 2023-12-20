@@ -979,12 +979,10 @@ input::file-selector-button:hover {
     justify-content: space-evenly;
 }
 
-
 #info_dados_pessoais {
     display: flex;
     justify-content: space-evenly;
     margin-top: 20px;
-
 }
 
 #profile_photo {
