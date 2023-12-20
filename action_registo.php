@@ -55,7 +55,7 @@ if ($idade < 16) {
 try {
     
     insertUser($nome, $data_nascimento, $nr_telemovel, $email, $password, $nif, $tipo_plano, $altura, $peso, $morada, $sexo, $nr_cartao);
-    include("action_login.php");
+    include("login.php");
 
 
 } catch (PDOException $e) {
