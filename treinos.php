@@ -9,7 +9,8 @@ if (!isset($_SESSION['email'])) {
 }
 
 try {
-    global $dbh;
+
+
     if (!isset($_SESSION['email'])) {
         header('Location: login.php'); // Redirect to login if not logged in
         exit();

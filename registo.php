@@ -3,6 +3,10 @@ session_start();
 require_once("database/init.php");
 include ("database/fetchInfoTipoPlanos.php");
 
+if (!isset($_SESSION["email"])) {
+  header("Location: login.php");
+  exit();
+}
 
 try {
   $tipo_p_info = fetchInfoTipoPlanos();

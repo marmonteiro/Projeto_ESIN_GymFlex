@@ -5,6 +5,11 @@ include("database/area_cliente.php");
 
 
 try {
+
+    //vai buscar os detalhes do membro
+    $user = fetchDetalhesMembroByEmail($_SESSION['email']);
+
+    
     $ano_sel = isset($_GET['ano']) ? $_GET['ano'] : date('Y');
     $mes_sel = isset($_GET['mes']) ? $_GET['mes'] : date('m');
 

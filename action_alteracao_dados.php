@@ -1,15 +1,33 @@
 <?php
 session_start();
 require_once("database/init.php");
+require_once("database/area_cliente.php");
+require_once("database/alteracao_dados.php");
 
 if (!isset($_SESSION['email'])) {
-    header('Location: login.php'); 
+    header('Location: login.php');
     exit();
 }
 
-include("database/area_cliente.php");
+
 
 try {
+
+
+    UpdatePessoa($_POST['nome'], $_POST['morada'], $_POST['nr_telemovel'], $_SESSION['id']);
+
+
+    UpdateMembro($_POST['altura'], $_POST['peso'], $_POST['nr_cartao'], $_SESSION['id']);
+
+
+    $imc = $_POST['peso'] / ($_POST['altura'] / 100 * $_POST['altura'] / 100);
+    UpdateIMC($imc, $_SESSION['id']);
+
+
+
+    header('Location: area_cliente.php');
+    exit();
+
 
     if (strlen($nome) < 3) {
         $_SESSION['msg'] = 'Nome inválido.';
@@ -37,17 +55,15 @@ try {
             exit();
         }
     }
-    
-    
+
+
 } catch (PDOException $e) {
     $error_msg = $e->getMessage();
     if (strpos($error_msg, 'UNIQUE constraint failed: Pessoa.email')) {
         $_SESSION['msg'] = 'E-mail já está registado!';
-    }
-    elseif (strpos($error_msg, 'UNIQUE constraint failed: Pessoa.nif')) {
+    } elseif (strpos($error_msg, 'UNIQUE constraint failed: Pessoa.nif')) {
         $_SESSION['msg'] = 'NIF já está registado!';
-    }
-    else {
+    } else {
         $_SESSION['msg'] = "Alteração falhou! ($error_msg)";
     }
     header('Location: alteracao_dados.php');

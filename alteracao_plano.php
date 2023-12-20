@@ -11,6 +11,8 @@ include("database/alteracao_plano.php");
 
 
 try {
+    
+    
 
     $user = fetchPlanoMembroByMembroID($_SESSION['id']);
 

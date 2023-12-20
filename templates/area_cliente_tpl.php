@@ -51,7 +51,7 @@
                 </div>
                 <div id="dados_fisicos">
                     <p data-label="Idade: ">
-                        <?php echo $user['idade'] ?> anos
+                        <?php echo $idade ?> anos
                     </p>
                     <p data-label="Altura: ">
                         <?php echo $user['altura'] / 100 ?> m

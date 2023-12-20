@@ -5,7 +5,8 @@ require_once("database/init.php");
 
 try {
     global $dbh;
-    $stmt = $dbh->prepare('SELECT nome, imagem_url FROM Ginasio');
+    /*funcao parecida na inscricao_ag*/
+    $stmt = $dbh->prepare('SELECT nome FROM Ginasio');
     $stmt->execute();
     $clubes = $stmt->fetchAll();
 

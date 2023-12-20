@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once("database/init.php");
+require_once("database/inscricao_ag.php");
 
 
 if (!isset($_SESSION["email"])) {
@@ -13,12 +14,17 @@ if ($_SESSION['disponiveis_ag'] == 0) {
     exit();
 }
 
-require_once("database/inscricao_ag.php");
+
 
 try {
-    global $dbh;
-
     
+    //calculo da quantidade de aulas de grupo disponiveis
+    $quantidade_ag = fetchQuantidadeAGByEmail($_SESSION['email']);
+    $NRinscricoes_ag = fetchNRInscricoesAGByEmail($_SESSION['email']);
+    $disponiveis_ag = $quantidade_ag - $NRinscricoes_ag;
+    $_SESSION['disponiveis_ag'] = $disponiveis_ag;
+
+
     //vai buscar todos os ginasios a base de dados
     $stmt = $dbh->prepare('SELECT id, nome FROM Ginasio');
     $stmt->execute();
