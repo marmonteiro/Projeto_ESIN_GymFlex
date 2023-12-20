@@ -1,3 +1,4 @@
+<h1>Clubes GymFlex</h1>
 <h4> Escolha o clube mais perto de si e venha treinar connosco: </h4>
 <div class="clubes">
     <?php foreach ($clubes as $clube): ?>
