@@ -88,14 +88,3 @@
         </section>
     </section>
 </section>
-
-
-<section id="Contactos">
-    <p id="intro">Quer esclarecer alguma dúvida que não está aqui?</p>
-    <h2>Contactos</h2>
-    <section id="Contactos">
-        <p>Email de apoio ao cliente: <a href="mailto:support@gymflex.com">gymflex.geral@gmail.com</a>.</p>
-        <p>Telefone de apoio ao cliente: <a href=“tel:+351 923524352>+351 923524352</a>.</p>
-        <p>Ou contacte diretamente o ginásio mais perto de ti. Descubra-o <a href="clubes.php">aqui</a>.</p>
-    </section>
-</section>
