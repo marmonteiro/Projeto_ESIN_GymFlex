@@ -48,19 +48,19 @@
 
                     <a href="editar-foto.php" class="button">
                         <div id=botao_icon>
-                            <img src="imagens/icons/foto_icon.png">Alterar Foto
+                            <img src="imagens/icons/foto_icon.png"> Editar Foto
                         </div>
                     </a>
                     <a href="editar-dados.php" class="button">
                         <div id=botao_icon>
-                            <img src="imagens/icons/edit_icon.png">Alterar Dados
+                            <img src="imagens/icons/edit_icon.png"> Editar Dados
                         </div>
                     </a>
                     <div id=botao_icon>
 
                         <a href="editar-pass.php" class="button filled-button button-submit" type="button">
                             <div id=botao_icon>
-                                <img src="imagens/icons/lock_icon.png">Alterar Senha
+                                <img src="imagens/icons/lock_icon.png"> Editar Senha
                             </div>
                         </a>
 
