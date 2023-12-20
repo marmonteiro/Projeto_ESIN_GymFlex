@@ -37,7 +37,7 @@ Para explorar todas as funcionalidades do nosso site como membro do gymflex reco
   -> mail: joao@gmail.com;
   -> password: password1;
 
-Adicionalmente, é possível registar um novo membro e aceder as diferentes funcionalidades mencionadas anteriormente.
+É também possível registar um novo membro e aceder as diferentes funcionalidades mencionadas anteriormente. Adicionalmente na base de dados existem mais 6 membros, com os quais é possível fazer o login. 
 
 - Notas:
   -> Caso o membro tenha efetuado o login os botões das páginas de aulas de grupo e planos altera;
