@@ -2,6 +2,7 @@
 session_start();
 require_once("database/init.php");
 require_once("database/area_cliente.php");
+require_once("database/organizacao_datas.php");
 
 if (!isset($_SESSION['email'])) {
     header('Location: login.php'); // Redirect to login if not logged in
@@ -43,11 +44,7 @@ try {
     } 
     
     
-    // compara datas para organizar cronologicamente
-    function compareDates($a, $b) //está a ser usada!!
-    {
-        return strtotime($a['data']) - strtotime($b['data']);
-    }
+    
 
 
 

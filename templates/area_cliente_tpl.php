@@ -60,7 +60,7 @@
 
                         <a href="editar-pass.php" class="button filled-button button-submit" type="button">
                             <div id=botao_icon>
-                                <img src="imagens/lock_icon.png">Editar Senha
+                                <img src="imagens/lock_icon.png">Alterar Senha
                             </div>
                         </a>
 
