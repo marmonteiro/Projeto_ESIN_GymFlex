@@ -87,7 +87,7 @@
     <div id="dados_plano">
         <h3>O seu Plano GymFlex</h3>
         <p data-label="Tipo de Plano: ">
-            <?php echo $user['tipo_p'] ?>
+            <span class=bold><?php echo $user['tipo_p'] ?></span>
         </p>
         <p data-label="Próxima Prestação: ">
             <?php echo $prox_pagam ?>
