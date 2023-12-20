@@ -94,6 +94,10 @@
                     <summary>Como posso aceder ao meu registo de treinos?</summary>
                     <p>Para aceder ao registo de treinos deve aceder à sua Área de Cliente > Registo de Treinos >  Os meus Treinos. </p>
                 </details>
+                <details class="Pergunta">
+                    <summary>Como posso alterar os meus dados pessoais?</summary>
+                    <p>Para alterar os seus dados pessoais deve aceder à sua Área de Cliente > Dados Pessoais >  Editar Dados. </p>
+                </details>
             </details>
         </section>
     </section>
