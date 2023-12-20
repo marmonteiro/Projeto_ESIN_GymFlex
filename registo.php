@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once("database/init.php");
-require_once ("database/fetchInfoTipoPlanos.php");
+require_once ("database/infoplanos.php");
 
 
 try {

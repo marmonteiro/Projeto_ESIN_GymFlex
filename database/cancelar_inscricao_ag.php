@@ -25,7 +25,5 @@ function decrementarQntdMembros($inscricao_id)
     $stmt->execute(array($inscricao_id));
 }
  
-cancelarInscricaoAG($_POST['inscricao_id']);
-decrementarQntdMembros($_POST['inscricao_id']);
 
 ?>

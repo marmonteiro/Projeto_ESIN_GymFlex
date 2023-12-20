@@ -1,9 +1,7 @@
 <?php
 session_start();
 require_once("database/init.php");
-
-
-include ("database/infoplanos.php");
+require_once ("database/infoplanos.php");
 
 try {
     $tipo_p_info = fetchInfoTipoPlanos();
