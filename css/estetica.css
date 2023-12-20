@@ -469,8 +469,8 @@ td {
 
 @media only screen and (max-width: 600px) {
     #gym_info {
-        margin: 
-} }
+        margin: 20px auto } 
+}
 
 /* RELATIVO À PÁGINAS DOS PLANOS  */
 .planos {
