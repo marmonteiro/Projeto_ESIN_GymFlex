@@ -241,6 +241,9 @@ header {
 
 }
 
+#jámembro  a:hover {
+    text-decoration: underline;
+}
 #logo_paginicial {
     max-width: 200px;
     height: auto;
