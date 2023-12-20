@@ -6,12 +6,11 @@ require_once("database/organizacao_datas.php");
 
 
 try {
-    $ano_sel = date('Y');
-    $mes_sel = date('m');
-
-
+    $ano_sel = isset($_GET['ano']) ? $_GET['ano'] : date('Y');
+    $mes_sel = isset($_GET['mes']) ? $_GET['mes'] : date('m');
     //vai buscar os detalhes do membro
     $user = fetchDetalhesMembroByEmail($_SESSION['email']);
+
 
     // vai buscar as inscricoes_ag do membro
     $inscricoes_ag = fetchInscricoesAGByEmail($_SESSION['id']);

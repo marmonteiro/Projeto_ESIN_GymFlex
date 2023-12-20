@@ -1246,7 +1246,7 @@ select {
 }
 
 #inscricao_ag li:hover {
-    border: 2px solid #000;
+    border: 1px solid #000;
     box-shadow: 0 0 5px #a60000;
 }
 
