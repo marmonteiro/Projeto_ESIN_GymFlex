@@ -1,9 +1,9 @@
 <?php
 
-function UpdatePessoa($nome, $morada, $nr_telemovel, $id) {
+function UpdatePessoa($email, $nome, $morada, $nr_telemovel, $id) {
     global $dbh;
-    $stmt = $dbh->prepare('UPDATE Pessoa SET nome = ?, morada = ?, nr_telemovel = ? WHERE id = ?');
-    $stmt->execute([$nome, $morada, $nr_telemovel, $id]);
+    $stmt = $dbh->prepare('UPDATE Pessoa SET email, nome = ?, morada = ?, nr_telemovel = ? WHERE id = ?');
+    $stmt->execute([$email, $nome, $morada, $nr_telemovel, $id]);
 }
 
 function UpdateMembro($altura, $peso, $nr_cartao, $id) {

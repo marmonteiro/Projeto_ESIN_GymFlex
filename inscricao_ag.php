@@ -18,6 +18,7 @@ if ($_SESSION['disponiveis_ag'] == 0) {
 
 try {
     
+
     //calculo da quantidade de aulas de grupo disponiveis
     $quantidade_ag = fetchQuantidadeAGByEmail($_SESSION['email']);
     $NRinscricoes_ag = fetchNRInscricoesAGByEmail($_SESSION['email']);
@@ -34,6 +35,13 @@ try {
         $nome_ginasio = $ginasio['nome'];
         $id_ginasio = $ginasio['id'];
     }
+
+    // compara datas para organizar cronologicamente
+    function compareDates($a, $b) //está a ser usada!!
+    {
+        return strtotime($a['data']) - strtotime($b['data']);
+    }
+
 
 
 } catch (PDOException $e) {

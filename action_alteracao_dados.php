@@ -14,7 +14,7 @@ if (!isset($_SESSION['email'])) {
 try {
 
 
-    UpdatePessoa($_POST['nome'], $_POST['morada'], $_POST['nr_telemovel'], $_SESSION['id']);
+    UpdatePessoa($_POST['email'], $_POST['nome'], $_POST['morada'], $_POST['nr_telemovel'], $_SESSION['id']);
 
 
     UpdateMembro($_POST['altura'], $_POST['peso'], $_POST['nr_cartao'], $_SESSION['id']);
