@@ -118,8 +118,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
-    /* Isso permite que os botões quebrem para a próxima linha se não couberem*/
+    flex-wrap: wrap; /* Isso permite que os botões quebrem para a próxima linha se não couberem*/
 }
 
 .barra a {

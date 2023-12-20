@@ -1,5 +1,5 @@
-<h3>Alteração de Dados</h3>
-<h4>Altere os dados que deseja e clique em "Alterar".</h4>
+<h3> Editar os seus dados</h3>
+<h4> Edite os dados que deseja e clique em "Alterar".</h4>
 <p id="msg_erro"><?php echo $_SESSION['msg'] ; unset ($_SESSION['msg'])?></p>
 <form action="action_editar-dados.php" method="post">
 

@@ -15,7 +15,6 @@ function fetchPlanoMembroByMembroID($id) //vai buscar o plano atual do membro (d
     return $user;
 };
 
-
 function fetchInfoTipoPlanosdif($planoAtual) //vai buscar os tipos de planos disponiveis (nome, preco) exceto o plano atual
 {
     global $dbh;
