@@ -23,8 +23,6 @@ try {
     $imc = $_POST['peso'] / ($_POST['altura'] / 100 * $_POST['altura'] / 100);
     UpdateIMC($imc, $_SESSION['id']);
 
-
-
     header('Location: area_cliente.php');
     exit();
 
@@ -56,8 +54,9 @@ try {
         }
     }
 
+} 
 
-} catch (PDOException $e) {
+    catch (PDOException $e) {
     $error_msg = $e->getMessage();
     if (strpos($error_msg, 'UNIQUE constraint failed: Pessoa.email')) {
         $_SESSION['msg'] = 'E-mail já está registado!';
