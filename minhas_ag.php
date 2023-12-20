@@ -10,8 +10,8 @@ try {
     $user = fetchDetalhesMembroByEmail($_SESSION['email']);
 
     
-    $ano_sel = isset($_GET['ano']) ? $_GET['ano'] : date('Y');
-    $mes_sel = isset($_GET['mes']) ? $_GET['mes'] : date('m');
+    $ano_sel = $_GET['ano'] ;
+    $mes_sel = $_GET['mes'] ;
 
     // vai buscar as inscricoes_ag do membro
     $inscricoes_ag = fetchInscricoesAGByEmail($_SESSION['id']);

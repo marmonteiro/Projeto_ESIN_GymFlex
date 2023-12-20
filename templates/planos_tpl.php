@@ -1,3 +1,5 @@
+<h1> Planos de Membro</h1>
+<h4> Escolha o plano que melhor se adequa a si e junte-se à equipa GymFlex.</h4>
 <div class="planos">
     <?php foreach ($tipo_p_info as $plano): ?>
         <div class="retangulo_planos">

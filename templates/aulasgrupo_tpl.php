@@ -1,4 +1,5 @@
-<h4> As nossas aulas de grupos são comuns em todos os ginásios! <h4>
+<h1> Aulas de Grupo </h1>
+<h4> Participa nas nossas aulas de grupo em qualquer um dos nossos clubes.<h4>
 <div class="aulas">
 <?php if (isset($aulas) && !empty($aulas)) : ?>
     <?php foreach ($aulas as $aula) : ?>

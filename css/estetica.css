@@ -3,7 +3,7 @@
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #f4f4f4;
-    color: #333;
+    color: #000000;
     margin: 0;
     padding: 0;
 }
@@ -22,9 +22,6 @@ a {
     color: #A60000;
 }
 
-a:hover {
-    text-decoration: underline;
-}
 
 h1 {
     text-align: center;
@@ -64,17 +61,22 @@ h4 {
 
 .button {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 5px 10px;
     text-decoration: none;
     background-color: #a60000;
     color: white;
     border-radius: 5px;
     margin-bottom: 10px;
+    transition: all 0.3s ease;
 }
 
+.button a:hover {
+    text-decoration: none;
+
+}
 
 .button:hover {
-    background-color: #750000;
+    background-color: #000000;
 }
 
 
@@ -397,14 +399,23 @@ header {
 }
 
 /* RELATIVO ÀS PÁGINAS de CADA CLUBE INDIVIDUALMENTE */
+#gym_info  {
+    border-radius: 30px;
+    margin: 50px 300px;
+    background-color: #ffffff;
+}
 .mapa {
     display: block;
     margin: 0 auto;
-    transition: transform 0.3s ease;
+    border: #000000 2px solid;
+    transition: all 0.3s ease;
 }
 
 .mapa:hover {
-    transform: scale(1.2); 
+    transform: scale(1.1); 
+    box-shadow: 0 0 15px #000000;
+    
+
 }
 
 .titulos_clubes {
@@ -422,7 +433,7 @@ table {
 }
 
 td {
-    border: 1px solid #1d1b1b;
+    border: none;
     padding: 15px;
     text-align: center;
     vertical-align: top;
@@ -443,6 +454,7 @@ td {
     flex-direction: column;
 }
 
+
 /* RELATIVO À PÁGINAS DOS PLANOS  */
 .planos {
     display: flex;
@@ -452,9 +464,10 @@ td {
 }
 
 .bold {
-    font-family: Contrail One, sans-serif;
     letter-spacing: 0.05rem;
     font-size: 18px;
+    font-weight: bold;
+    color: #A60000;
 }
 
 .retangulo_planos {
@@ -936,6 +949,15 @@ input::file-selector-button:hover {
     padding: 10px;
     margin-bottom: 20px;
     text-align: center;
+    transition: all 0.3s ease;
+}
+
+#dados_pessoais:hover,
+#dados_plano:hover,
+#insc_aulas_grupo:hover,
+#reg_treinos:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px #6d0000;
 }
 
 #dados_plano,
@@ -954,7 +976,7 @@ input::file-selector-button:hover {
 
 }
 
-#dados_pessoais img {
+#profile_pic {
     width: 200px;
     height: 200px;
     object-fit: cover;
@@ -967,6 +989,17 @@ input::file-selector-button:hover {
 #Area_Cliente p::before {
     content: attr(data-label);
     font-weight: bold;
+}
+
+#botao_icon img {
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+}
+
+#botao_icon {
+    display: flex;
+    align-items: center;
 }
 
 #esquerda {
@@ -1086,8 +1119,7 @@ input::file-selector-button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px;
-    padding: 10px;
+    margin-bottom: 70px;
 }
 
 #alteracao_dados label,

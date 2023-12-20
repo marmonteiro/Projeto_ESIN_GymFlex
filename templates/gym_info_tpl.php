@@ -1,7 +1,8 @@
-<div class="club-info">
+<div id="gym_info">
+    <div class="club-info">
         <h2>
             <?php echo $nome_ginasio ?>
-</h2>
+        </h2>
         <p> <span class=bold> Morada:</span>
             <?php echo $morada_ginasio ?>
         </p>
@@ -13,15 +14,15 @@
         </p>
         <!-- <img class="imagem clube" src="<?php echo $imagem_ginasio ?>" alt="GymFlex Porto"> -->
     </div>
-    
+
     <div class="titulos_clubes">
-           <p>Como chegar:</p>
+        <p>Como chegar:</p>
         <img class="mapa" src="<?php echo $mapa_ginasio ?>" alt="Mapa GymFlex">
     </div>
 
     <div>
         <div class="titulos_clubes">
-           <p>A nossa equipa:</p>
+            <p>A nossa equipa:</p>
         </div>
         <table>
             <tr>
@@ -37,7 +38,7 @@
                                 <?php endif; ?>
                             <?php endforeach; ?>
                         <?php else: ?>
-                            <li class="listaEquipa" >Nenhum nutricionista encontrado</li class="listaEquipa">
+                            <li class="listaEquipa">Nenhum nutricionista encontrado</li class="listaEquipa">
                         <?php endif; ?>
                     </ul class="listaEquipa">
                 </td>
@@ -60,3 +61,4 @@
             </tr>
         </table>
     </div>
+</div>
