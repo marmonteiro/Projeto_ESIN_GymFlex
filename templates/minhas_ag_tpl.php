@@ -12,7 +12,7 @@
                 <?php } ?>
             </select>
             <button type="submit" class="button_submit" name="submit">
-                Filtrar
+                <span>Filtrar</span>
                 <img src="imagens/icons/filter_icon.png" alt="Filtrar">
             </button>
         </h2>
@@ -46,13 +46,13 @@
             <div id="treinos_ag_mes">
                 <?php if (isset($inscricoes_por_mes[$mes_sel])) {
                     usort($inscricoes_por_mes[$mes_sel], 'compareDates'); //organiza cronologicamente
-                    
+            
                     foreach ($inscricoes_por_mes[$mes_sel] as $inscricao) { ?>
-                        <details class="treino_ag" id="<? echo $class?>">
+                        <details class="treino_ag" id="<? echo $class ?>">
                             <summary>
                                 <?php echo $inscricao['tipo_ag'] ?>
                             </summary>
-                            <p >
+                            <p>
                                 <?php echo $inscricao['data'] ?>
                             </p>
                             <p data-label="Início: ">

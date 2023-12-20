@@ -85,8 +85,12 @@ h4 {
     height: 20px;
     width: 20px;
     margin-right: 5px;
+    vertical-align: middle;
 }
 
+button img{
+    margin-bottom: 2px;
+}
 #botao_icon {
     display: flex;
     align-items: center;
@@ -481,6 +485,11 @@ td {
     font-size: 18px;
     font-weight: bold;
     color: #A60000;
+}
+
+.black_bold {
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .retangulo_planos {
@@ -1041,9 +1050,10 @@ input::file-selector-button:hover {
     font-weight: bold;
 }
 
-.treino_ag {
+.treino_ag, #treinos_ag_mes  {
     text-align: center;
 }
+
 
 #resgisto_t_ag {
     display: flex;
@@ -1064,8 +1074,11 @@ input::file-selector-button:hover {
 }
 
 #ginasio, label[for="ginasio"] {
-    font-size: 20px; 
+    font-size: 18px; 
     margin-bottom: 10px;
+}
+#ginasio {
+    font-size: 20px
 }
 
 #select_ano input[type="submit"],
@@ -1207,11 +1220,11 @@ select {
     border: 1px solid #ccc;
     border-radius: 10px;
     padding: 10px;
-    transform: all 0.3s ease;
+    transition: all 0.3s ease; 
 }
 
 #inscricao_ag li:hover {
-    box-shadow: 0 0 3px #a60000;
+    box-shadow: 0 0 5px #a60000;
 }
 
 /* Estilo para o formulário dentro de cada item */
