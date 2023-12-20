@@ -59,7 +59,7 @@ h4 {
     margin: 0.5rem 0;
 }
 
-.button {
+.button, button {
     display: inline-block;
     padding: 5px 10px;
     text-decoration: none;
@@ -68,15 +68,33 @@ h4 {
     border-radius: 5px;
     margin-bottom: 10px;
     transition: all 0.3s ease;
+    border: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: Montserrat;
+    font-size: 18px;
+
 }
+
 
 .button a:hover {
     text-decoration: none;
 
 }
 
-.button:hover {
+.button:hover, button:hover {
     background-color: #000000;
+}
+
+#botao_icon img, button img{
+    height: 20px;
+    width: 20px;
+    margin-right: 5px;
+}
+
+#botao_icon {
+    display: flex;
+    align-items: center;
 }
 
 
@@ -991,7 +1009,7 @@ input::file-selector-button:hover {
     font-weight: bold;
 }
 
-#botao_icon img {
+#botao_icon img{
     height: 20px;
     width: 20px;
     margin-right: 5px;
@@ -1198,5 +1216,11 @@ select {
 #inscricao_ag li form {
     display: flex;
     flex-direction: column;
+}
+
+#filtrar_ano {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
