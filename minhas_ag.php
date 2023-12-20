@@ -6,14 +6,12 @@ require_once("database/organizacao_datas.php");
 
 
 try {
+    $ano_sel = date('Y');
+    $mes_sel = date('m');
+
 
     //vai buscar os detalhes do membro
     $user = fetchDetalhesMembroByEmail($_SESSION['email']);
-
-
-
-    $ano_sel = isset($_GET['ano']) ? $_GET['ano'] : date('Y');
-    $mes_sel = isset($_GET['mes']) ? $_GET['mes'] : date('m');
 
     // vai buscar as inscricoes_ag do membro
     $inscricoes_ag = fetchInscricoesAGByEmail($_SESSION['id']);
@@ -39,10 +37,6 @@ try {
         $ano = date('Y', strtotime($inscricao['data']));
         $anos_inscricoes[$ano] = $ano;
     }
-
-        
-    $isPastEvent = $inscricao['data'] < date('Y-m-d');
-    $class = $isPastEvent ? 'ocorrida' : ''; // Applica classe se aula já ocorreu
 
 
 

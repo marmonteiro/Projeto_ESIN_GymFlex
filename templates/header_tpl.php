@@ -41,7 +41,7 @@
                     </p>
                 </div>
             <?php } else { ?> <!-- se sessão não iniciada -->
-                <a id="login_btn" href="login.php"><img src=imagens/area_cliente.png>Login</a>
+                <a id="login_btn" href="login.php"><img src=imagens/icons/area_cliente.png>Login</a>
                 <a id="torne_semembro" href="registo.php"><img src=imagens/icons/peso_icon.png>Torne-se Membro!</a>
             <?php } ?>
 

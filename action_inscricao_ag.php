@@ -24,6 +24,7 @@ try {
 
 
     header('Location: inscricao_ag.php');
+
     exit();
     
     }
