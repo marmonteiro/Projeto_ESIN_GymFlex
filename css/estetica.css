@@ -635,13 +635,13 @@ td {
     margin-bottom: 20px;
     width: 50%;
     max-width: 800px;
-    margin: 10px auto;
+    margin: 30px auto;
     padding: 20px;
     overflow: hidden;
 }
 
 .Categoria>details {
-    margin: 10px;
+    margin: 20px;
     padding: 10px;
 }
 
@@ -1168,10 +1168,13 @@ input::file-selector-button:hover {
     align-items: center;
     margin: 20px;
     padding: 10px;
+    margin-top: 32px;
+    margin-bottom: 32px;
 }
 
 #editar-foto #profile_pic{
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    margin-top: 30px;
 }
 
 #cancelado, .empty {
@@ -1222,6 +1225,8 @@ select {
 #inscricao_ag {
     margin-left: 70px; /* Adicione a margem desejada ao lado esquerdo */
     margin-right: 70px; /* Adicione a margem desejada ao lado direito */
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 /* Estilo para a lista (ul) */
@@ -1231,6 +1236,7 @@ select {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin: 20px;
 }
 
 /* Estilo para cada item da lista (li) */
