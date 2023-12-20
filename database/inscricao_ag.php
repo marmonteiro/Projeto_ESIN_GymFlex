@@ -83,6 +83,13 @@ function fetchAulasRegistadas($membro_id) {
     return $AulasRegistadas;
 }
 
+function fetchAllGinasios() {
+    global $dbh;
+    $stmt = $dbh->prepare('SELECT id, nome FROM Ginasio');
+    $stmt->execute();
+    return $stmt->fetchAll();
+}
+
 //INSCRIÇÃO NA AULA DE GRUPO
 
 // Verifica se o membro já está inscrito na aula de grupo

@@ -28,15 +28,13 @@ try {
 
 
     //vai buscar todos os ginasios a base de dados
-    $stmt = $dbh->prepare('SELECT id, nome FROM Ginasio');
-    $stmt->execute();
-    $ginasios = $stmt->fetchAll();
+    $ginasios = fetchAllGinasios ();
 
     foreach ($ginasios as $ginasio) {
         $nome_ginasio = $ginasio['nome'];
         $id_ginasio = $ginasio['id'];
     }
-
+    
 
 
 
