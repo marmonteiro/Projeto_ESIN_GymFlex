@@ -220,7 +220,6 @@ header {
 
 /*PÁGINA INICIAL*/
 /*HEADER*/
-
 #header_paginicial {
     display: flex;
     flex-direction: column;
@@ -589,11 +588,11 @@ td {
         flex: 0 0 calc(33.33% - 20px); /* 3 colunas em telas maiores que 900px */
     }
 }
+
 /* PÁGINA AJUDA */
 #FAQ {
     margin-top: 20px;
 }
-
 
 .Categoria {
     background-color: #FFFFFF;
@@ -770,7 +769,6 @@ input[type="password"] {
 }
 
 /*PÁGINA REGISTO*/
-
 #area_registo {
     display: flex;
     flex-direction: column;
@@ -910,7 +908,6 @@ input::file-selector-button { /* botão de escolher ficheiro */
 input::file-selector-button:hover {
     background-color: #e9e2e29a;
 }
-
 
 /* termos e condições checkbox*/
 #termos[type="checkbox"] {
@@ -1184,7 +1181,6 @@ input::file-selector-button:hover {
 }
 
 /* inscriçao ag*/
-
 select {
     margin-bottom: 30px;
 }
