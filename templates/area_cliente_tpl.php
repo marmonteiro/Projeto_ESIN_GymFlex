@@ -114,7 +114,6 @@
                 </a>
             <?php } else { ?>
                 <p>Só pode alterar o seu plano 2 meses após a última adesão.</p>
-                <p> Última alteração: </p>
             <?php } ?>
         </div>
 
