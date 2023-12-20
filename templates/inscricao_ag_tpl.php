@@ -55,14 +55,14 @@
                             <h3>
                                 <?php echo $aula['nome_tipo']; ?>
                             </h3>
-                            <p>Dia:
+                            <p> <span class=bold> Dia: </span>
                                 <?php echo $aula['data'] . ' (' . $aula['dia_semana'] . ')'; ?>
                             </p>
-                            <p>Hora:
+                            <p> <span class=bold> Hora:</span>
                                 <?php echo $aula['hora_inicio'] . ' - ' . $aula['hora_fim']; ?>
                             </p>
                             <?php if ($aula['capacidade_tipo'] - $aula['qntd_membros'] > 0) { ?>
-                                <p>Vagas Disponíveis:
+                                <p> <span class=bold> Vagas Disponíveis: </span>
                                     <?php echo $aula['capacidade_tipo'] - $aula['qntd_membros']; ?>
                                 </p>
                                 <input type="submit" value="Inscrever">
