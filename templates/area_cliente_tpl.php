@@ -162,10 +162,10 @@
         <h3> Registo de Treinos </h3>
         <div>
             <p>Ainda pode treinar mais
-                <span class=bold><?php echo $tempo_treino_restante ?></span> hr este mês nos ginásios GymFlex.
+                <span class=bold><?php echo $tempo_treino_restante ?> hr</span> este mês nos ginásios GymFlex.
             </p>
             <div>
-                <a href='minhas_ag.php?ano=<?php echo $ano_sel ?>&mes=<?php echo $mes_sel ?>' class="button">
+                <a href='treinos.php?ano=<?php echo $ano_sel ?>&mes=<?php echo $mes_sel ?>' class="button">
                     <div id="botao_icon"><img src="imagens/train_icon.png">
                         Os meus Treinos
                     </div>

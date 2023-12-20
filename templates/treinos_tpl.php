@@ -20,7 +20,7 @@
 <div id="resgisto_t_ag">
     <div id="meses">
         <?php foreach ($meses as $mes_num => $mes_nome) { ?>
-            <p><a href='minhas_ag.php?ano=<?php echo $_GET["ano"] ?>&mes=<?php echo $mes_num ?>'>
+            <p><a href='treinos.php?ano=<?php echo $_GET["ano"] ?>&mes=<?php echo $mes_num ?>'>
                     <?php echo $mes_nome ?>
                 </a></p>
         <?php } ?>
@@ -43,6 +43,7 @@
 
             <div id="treinos_ag_mes">
                 <?php if (isset($treinos_por_mes[$mes_sel])) {
+                    usort($treinos_por_mes[$mes_sel], 'compareDates'); //organiza cronologicamente
                     foreach ($treinos_por_mes[$mes_sel] as $treino) { ?>
                         <details id="treino_ag">
                             <summary>

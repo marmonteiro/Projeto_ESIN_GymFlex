@@ -45,6 +45,7 @@
 
             <div id="treinos_ag_mes">
                 <?php if (isset($inscricoes_por_mes[$mes_sel])) {
+                    usort($inscricoes_por_mes[$mes_sel], 'compareDates'); //organiza cronologicamente
                     foreach ($inscricoes_por_mes[$mes_sel] as $inscricao) { ?>
                         <details id="treino_ag">
                             <summary>
@@ -63,7 +64,7 @@
                                 <?php echo $inscricao['duracao_ag'] ?> hr
                             </p>
                             <p>
-                                <?php echo $treino['nome_ginasio'] ?>
+                                <?php echo $inscricao['nome_ginasio'] ?>
                             </p>
 
                             <?php if ($inscricao['data'] > date('Y-m-d')) { ?>
