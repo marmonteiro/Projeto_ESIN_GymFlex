@@ -77,7 +77,7 @@
 
                                 </button>
                             <?php } else { ?>
-                                <p>Não há mais vagas disponíveis.</p>
+                                <p><span class=bold >Não há mais vagas disponíveis.</span></p>
                             <?php } ?>
                         </form>
                     </li>
