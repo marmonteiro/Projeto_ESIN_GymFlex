@@ -1,7 +1,8 @@
 <?php
 session_start();
 require_once("database/init.php");
-include("database/area_cliente.php");
+require_once("database/area_cliente.php");
+require_once("database/organizacao_datas.php");
 
 
 try {
@@ -38,13 +39,6 @@ try {
         $ano = date('Y', strtotime($inscricao['data']));
         $anos_inscricoes[$ano] = $ano;
     }
-
-    
-        // compara datas para organizar cronologicamente
-        function compareDates($a, $b) //está a ser usada!! 
-        {
-            return strtotime($a['data']) - strtotime($b['data']);
-        }
 
         
 

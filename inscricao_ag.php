@@ -2,6 +2,7 @@
 session_start();
 require_once("database/init.php");
 require_once("database/inscricao_ag.php");
+require_once("database/organizacao_datas.php");
 
 
 if (!isset($_SESSION["email"])) {
@@ -36,11 +37,6 @@ try {
         $id_ginasio = $ginasio['id'];
     }
 
-    // compara datas para organizar cronologicamente
-    function compareDates($a, $b) //está a ser usada!!
-    {
-        return strtotime($a['data']) - strtotime($b['data']);
-    }
 
 
 
