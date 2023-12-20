@@ -6,7 +6,6 @@ if (!isset($_SESSION['email'])) {
     header('Location: login.php');
     exit();
 }
-
 include("database/alteracao_plano.php");
 
 
