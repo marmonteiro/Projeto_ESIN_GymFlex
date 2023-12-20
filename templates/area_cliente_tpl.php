@@ -89,11 +89,11 @@
         <p data-label="Tipo de Plano: ">
             <span class=bold><?php echo $user['tipo_p'] ?></span>
         </p>
-        <p data-label="Próxima Prestação: ">
-            <?php echo $prox_pagam ?>
-        </p>
         <p data-label="Data de Adesão: ">
             <?php echo $user['data_adesao'] ?>
+        </p>
+        <p data-label="Próxima Prestação: ">
+            <?php echo $prox_pagam ?>
         </p>
         <p data-label="Nutricionista: ">
             <?php echo $user['nutricionista_nome'] ?>
