@@ -15,6 +15,12 @@ if (!loginSuccess($_SESSION['email'], $oldpassword)) {
   die();
 }
 
+if ($oldpassword == $newpassword) {
+  $_SESSION['msg'] = 'A senha nova é igual à antiga.';
+  header('Location: editar-pass.php');
+  die();
+}
+
 if (strlen($newpassword) < 8) {
   $_SESSION['msg'] = 'A senha deve ter pelo menos 8 caracteres.';
   header('Location: editar-pass.php');
@@ -27,11 +33,6 @@ if ($newpassword != $confirm_password) {
   die();
 }
 
-if ($newpassword = $oldpassword) {
-  $_SESSION['msg'] = 'A senha nova é igual à antiga.';
-  header('Location: editar-pass.php');
-  die();
-}
 
 try {
   updatePassMembroByEmail($newpassword, $_SESSION['email']);

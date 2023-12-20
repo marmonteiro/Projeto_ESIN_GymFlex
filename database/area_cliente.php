@@ -1,8 +1,7 @@
 <?php 
-
 function fetchInscricoesAGByEmail($id) //inscricoes_ag 
 {
-    global $dbh;
+global $dbh;
     $stmt = $dbh->prepare('
             SELECT Ginasio.nome AS nome_ginasio,
             Aulagrupo.data,
