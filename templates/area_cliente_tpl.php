@@ -47,6 +47,7 @@
                 <div id="alterar_dados">
                     <a href="alteracao_foto.php" class="button">Alterar Foto</a>
                     <a href="alteracao_dados.php" class="button">Alterar Dados</a>
+                    <a href="editar-pass.php" class="button filled-button button-submit" type="button">Editar Senha</a>
                 </div>
                 <div id="dados_fisicos">
                     <p data-label="Idade: ">
