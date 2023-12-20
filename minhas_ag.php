@@ -41,6 +41,8 @@ try {
     }
 
         
+    $isPastEvent = $inscricao['data'] < date('Y-m-d');
+    $class = $isPastEvent ? 'ocorrida' : ''; // Applica classe se aula já ocorreu
 
 
 

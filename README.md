@@ -31,7 +31,6 @@ Adicionalmente, é possível registar um novo membro e aceder as diferentes func
 
 Notas:
 - Caso o membro tenha efetuado o login os botões das páginas de aulas de grupo e planos altera;
-- Para verificar o registo de aulas de grupo e treinos é necessário escolher o ano e de seguida carregar em filtrar, de modo a aparecer a informação desejada.
 
 
 Na elaboração do site foi utilizado sqlite, css, html e php.

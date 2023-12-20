@@ -45,11 +45,11 @@
                 <?php if (isset($treinos_por_mes[$mes_sel])) {
                     usort($treinos_por_mes[$mes_sel], 'compareDates'); //organiza cronologicamente
                     foreach ($treinos_por_mes[$mes_sel] as $treino) { ?>
-                        <details id="treino_ag">
+                        <details class="treino_ag" id="<? echo $class?>">
                             <summary>
                                 <?php echo $treino['data'] ?>
                             </summary>
-                            <p data-label="Entrada: ">
+                            <p data-label="Entrada: " >
                                 <?php echo $treino['hora_entrada'] ?>
                             </p>
                             <p data-label="Saída: ">
