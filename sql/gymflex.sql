@@ -164,7 +164,7 @@ VALUES
   ('Pedro Almeida', 'Rua das Flores 789', 246813579, '933456789', 'pedro@gmail.com', '1998-03-10'),
   ('Marta Santos', 'Travessa da Praia 357', 135792468, '944567890', 'marta@gmail.com', '2001-08-25'),
   ('Carlos Pereira', 'Avenida da Liberdade 789', 567891234, '955678901', 'carlos@hotmail.com', '1980-09-30'),
-  ('Ana Rodrigues', 'Rua do Carmo 159', 987123456, '966789012', 'pu', '1995-06-18'),
+  ('Ana Rodrigues', 'Rua do Carmo 159', 987123456, '966789012', 'ana@hotmai.com', '1995-06-18'),
   ('Rui Oliveira', 'Praça da República 753', 345678912, '977890123', 'rui@hotmail.com', '1978-11-05'),
   ('Sofia Costa', 'Largo do Rossio 951', 891234567, '988901234', 'sofia@gmail.com', '1992-04-30'),
   ('Jorge Fernandes', 'Rua do Comércio 246', 678912345, '999012345', 'jorge@gmail.com', '1987-02-12'),
