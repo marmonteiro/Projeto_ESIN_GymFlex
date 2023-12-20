@@ -19,9 +19,9 @@ try {
 
     $alteracaoPermitida = calculoAlteracaoPermitida($user['data_adesao']);
 
-    $prox_pagam = calculoProxPagamento($user['data_adesao']);
 
-
+    $first_data_adesao = getFirstDateAdesaoForMember($_SESSION['email']);
+    $prox_pagam = calculoProxPagamento($first_data_adesao);
 
     //vai buscar info dos treinos do membro
     $treinos = fetchTreinos($_SESSION['id']);

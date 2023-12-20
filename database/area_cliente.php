@@ -110,6 +110,15 @@ function calculoAlteracaoPermitida($data_adesao)
     return $alteracaoPermitida;
 }
 
+function getFirstDateAdesaoForMember($memberId) {
+    global $dbh;
+
+    $stmt = $dbh->prepare('SELECT MIN(data_adesao) AS first_date FROM Plano WHERE membro = ?');
+    $stmt->execute([$memberId]);
+    $first_data_adesao = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    return $first_data_adesao['first_date'];
+}
 
 $meses = array(
     '01' => 'Janeiro',
