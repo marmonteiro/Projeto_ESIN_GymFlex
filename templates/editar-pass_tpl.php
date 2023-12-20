@@ -1,7 +1,7 @@
-<div class="column">
+<div class="editar-pass">
     <h2> Alteração de Senha </h2>
     <form method='POST' action="action_editar-pass.php">
-        <div class="form-block">
+        <div class="bloco-pass">
             <label>Senha Antiga</label>
             <input name="Antiga" type="password" required="required">
             <label>Nova Senha</label>
