@@ -513,12 +513,12 @@ td {
 
 .retangulo_planos:nth-child(2):hover {
     transform: translateY(15px);
-    box-shadow: 0 0 20px #b07c7c;
+    box-shadow: 0 0 20px #966666;
 }
 
 .retangulo_planos:nth-child(3):hover {
     transform: translateY(15px);
-    box-shadow: 0 0 25px #950404;
+    box-shadow: 0 0 25px #5f0101;
 }
 
 .planos_duvidas {
