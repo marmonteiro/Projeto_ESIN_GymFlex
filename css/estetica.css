@@ -993,7 +993,7 @@ input::file-selector-button:hover {
 
 }
 
-#profile_pic {
+#profile_photo {
     width: 200px;
     height: 200px;
     object-fit: cover;

@@ -23,7 +23,7 @@
         <h3>Dados Pessoais</h3>
         <div id="info_dados_pessoais">
             <div id="esquerda">
-                <img src="imagens/membros/<?php echo $_SESSION['id'] ?>.png" id="profile_pic">
+                <img src="imagens/membros/<?php echo $_SESSION['id'] ?>.png" id="profile_photo">
                 <p data-label="Nome: ">
                     <?php echo $user['nome'] ?>
                 </p>
