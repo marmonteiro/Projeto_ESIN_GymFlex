@@ -151,7 +151,7 @@
             <?php } ?>
         </div>
         <div>
-            <a href="minhas_ag.php" class="button">
+            <a href='minhas_ag.php?ano=<?php echo $ano_sel ?>&mes=<?php echo $mes_sel ?>' class="button">
                 <div id="botao_icon"> <img src="imagens/group_icon.png"> As minhas Aulas de Grupo
                 </div>
             </a>
@@ -165,7 +165,7 @@
                 <span class=bold><?php echo $tempo_treino_restante ?></span> hr este mês nos ginásios GymFlex.
             </p>
             <div>
-                <a href="treinos.php" class="button">
+                <a href='minhas_ag.php?ano=<?php echo $ano_sel ?>&mes=<?php echo $mes_sel ?>' class="button">
                     <div id="botao_icon"><img src="imagens/train_icon.png">
                         Os meus Treinos
                     </div>
