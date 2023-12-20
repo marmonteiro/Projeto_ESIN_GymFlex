@@ -65,7 +65,7 @@
                                 <p> <span class=bold> Vagas Disponíveis: </span>
                                     <?php echo $aula['capacidade_tipo'] - $aula['qntd_membros']; ?>
                                 </p>
-                                <input type="submit" value="Inscrever">
+                                <input type="submit" class="button" value="Inscrever">
                             <?php } else { ?>
                                 <p>Não há mais vagas disponíveis.</p>
                             <?php } ?>
