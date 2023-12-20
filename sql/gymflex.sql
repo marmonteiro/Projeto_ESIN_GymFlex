@@ -214,9 +214,12 @@ VALUES
   ((SELECT id FROM Pessoa WHERE nome = 'Ricardo Fernandes')),
   ((SELECT id FROM Pessoa WHERE nome = 'Lara Marques'));
 
+INSERT INTO Membro (pwd, peso, altura, imc, sexo, nutricionista, nr_cartao)
+VALUES 
+  ('0b14d501a594442a01c6859541bcb3e8164d183d32937b851835442f69d5c94e', 70.5, 175, (70.5 / (1.75 * 1.75)), 'M' , (SELECT id FROM Pessoa WHERE nome = 'Sofia Costa'),'1234567800001234');
+
 INSERT INTO Membro (pwd, peso, altura, imc, sexo ,personaltrainer, nutricionista, nr_cartao)
 VALUES 
-  ('0b14d501a594442a01c6859541bcb3e8164d183d32937b851835442f69d5c94e', 70.5, 175, (70.5 / (1.75 * 1.75)), 'M' , (SELECT id FROM Pessoa WHERE nome = 'Carlos Pereira'), (SELECT id FROM Pessoa WHERE nome = 'Sofia Costa'),'1234567800001234'),
   ('6cf615d5bcaac778352a8f1f3360d23f02f34ec182e259897fd6ce485d7870d4', 65.0, 165, (65.0 / (1.65 * 1.65)), 'F' , (SELECT id FROM Pessoa WHERE nome = 'Ana Rodrigues'), (SELECT id FROM Pessoa WHERE nome = 'Jorge Fernandes'),'1234567800001234'),
   ('5906ac361a137e2d286465cd6588ebb5ac3f5ae955001100bc41577c3d751764', 68.0, 160, (68.0 / (1.60 * 1.60)), 'M' , (SELECT id FROM Pessoa WHERE nome = 'Rui Oliveira'), (SELECT id FROM Pessoa WHERE nome = 'Inês Marques'),'1234567800001234'),
   ('42f99c0763c83212b6bc55fc40de5a2c6eefc3ebdfc0912c75b52402a72b2a1a', 75.0, 180, (75.0 / (1.80 * 1.80)), 'M' , (SELECT id FROM Pessoa WHERE nome = 'Manuel Pereira'), (SELECT id FROM Pessoa WHERE nome = 'Teresa Oliveira'),'1234567800001234'),

@@ -5,7 +5,7 @@
     <?php if ($_SESSION["disponiveis_ag"] > 1) { ?>
         <h4>Tem direito a mais
             <span class=bold><?php echo $_SESSION["disponiveis_ag"] ?></span> aulas de grupo este mês.
-    </h4>
+        </h4>
     <?php } elseif ($_SESSION["disponiveis_ag"] == 1) { ?>
         <h4>Tem direito a mais <span class=bold>1</span> aula de grupo este mês.</h4>
     <?php } ?>
@@ -43,11 +43,12 @@
     $ginasio = $_POST['ginasio'];
     $aulasDisponiveis = fetchAGByGinasio($ginasio);
 
-    if (isset($aulasDisponiveis) && !empty($aulasDisponiveis)) { ?>
+    if (isset($aulasDisponiveis) && !empty($aulasDisponiveis)) { 
+        usort($aulasDisponiveis, 'compareDates'); //organiza cronologicamente ?>
         <h2>Aulas Disponíveis</h2>
         <ul>
             <?php foreach ($aulasDisponiveis as $aula) {
-                usort($aulasDisponiveis, 'compareDates'); //organiza cronologicamente
+
                 if (strtotime($aula['data']) > time()) { ?> <!-- apenas mostra as aulas que ainda não aconteceram -->
                     <li>
                         <form method="post" action="action_inscricao_ag.php">

@@ -98,21 +98,25 @@
         <p data-label="Nutricionista: ">
             <?php echo $user['nutricionista_nome'] ?>
         </p>
-        <p data-label="Personal Trainer: ">
-            <?php echo $user['personaltrainer_nome'] ?>
-        </p>
-
+        <?php if (isset($user['personaltrainer_nome'])) { ?>
+            <p data-label="Personal Trainer: ">
+                <?php echo $user['personaltrainer_nome'] ?>
+            </p>
+        <?php } else { ?>
+            <p>Personal Trainer não está incluído no seu plano.</p>
+        <?php } ?>
         <div>
             <?php if ($alteracaoPermitida) { ?>
                 <a href="alteracao_plano.php" class="button">
-                    <div id=botao_icon>
+                    <div id="botao_icon"> 
                         <img src="imagens/icons/change_icon.png">Alterar Plano
                     </div>
                 </a>
             <?php } else { ?>
-                <p">Só pode alterar o seu plano 2 meses após a última adesão.</p>
-                <?php } ?>
+                <p>Só pode alterar o seu plano 2 meses após a última adesão.</p>
+            <?php } ?>
         </div>
+
         <div>
             <a href="cancelamento.php" class="button">
                 <div id="botao_icon">
