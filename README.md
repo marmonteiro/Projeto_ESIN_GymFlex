@@ -14,10 +14,10 @@ Gymflex Website - Grupo G
 
  De seguida, corre-se o seguinte comando no terminal do VisualStudioCode:
     -> linux/mac: 
-     sudo docker run -d -p 8080:8080 -it --name=nome_container -v ~/caminho_pasta_projeto/ESIN:/var/www/html quay.io/vesica/php73:dev;
+     sudo docker run -d -p 8080:8080 -it --name=nome_container -v ~/caminho_pasta_projeto/Projeto_ESIN_GymFlex:/var/www/html quay.io/vesica/php73:dev;
     
     -> windows: 
-     docker run -d -p 8080:8080 -it --name=nome_container -v C:\caminho_pasta_projeto\ESIN:/var/www/html quay.io/vesica/php73:dev;
+     docker run -d -p 8080:8080 -it --name=nome_container -v C:\caminho_pasta_projeto\Projeto_ESIN_GymFlex:/var/www/html quay.io/vesica/php73:dev;
 
  O caminho_pasta_projeto deverá ser substituido de acordo com a localização do ficheiro.
 
