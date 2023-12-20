@@ -1,7 +1,6 @@
 <?php 
 function fetchInfoTipoPlanos()
 {
-
   global $dbh;
   $stmt = $dbh->prepare('SELECT * FROM Tipo_p');
   $stmt->execute();

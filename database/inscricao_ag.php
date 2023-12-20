@@ -1,21 +1,6 @@
-<?php function fetchQuantidadeAGByEmail($email) { //quantidade_ag do ultimo plano
-    global $dbh;
-    $stmt = $dbh->prepare('
-    SELECT Tipo_p.quantidade_ag
-    FROM Plano
-    INNER JOIN Membro ON Plano.membro = Membro.id
-    INNER JOIN Tipo_p ON Plano.tipo_p = Tipo_p.nome
-    INNER JOIN Pessoa ON Membro.id = Pessoa.id
-    WHERE Pessoa.email = ?
-    ORDER BY Plano.data_adesao DESC
-    LIMIT 1
-');
-    $stmt->execute(array($email));
-    $quantidade_ag = $stmt->fetchColumn();
-    return $quantidade_ag;
-}
+<?php 
 
-function fetchNRInscricoesAGByEmail($email) //inscricoes_ag (do mês atual)
+function fetchNRInscricoesAGByEmail($email) //NR inscricoes_ag (do mês atual) do membro
 {
     global $dbh;
     $stmt = $dbh->prepare('
@@ -49,4 +34,32 @@ function fetchAGByGinasio($ginasio) //vai buscar as aulas de grupo disponiveis n
     $aulasDisponiveis = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $aulasDisponiveis;
 }
+
+
+//INSCRIÇÃO NA AULA DE GRUPO
+
+// Verifica se o membro já está inscrito na aula de grupo
+function VerificacaoInscAulaGrupo($membro_id, $aula_id) {
+    global $dbh;
+    $stmt = $dbh->prepare('SELECT COUNT(*) AS num_rows FROM Inscricao_ag WHERE membro = ? AND aulagrupo = ?');
+    $stmt->execute(array($membro_id, $aula_id));
+    $registo = $stmt->fetch(PDO::FETCH_ASSOC);
+    return $registo['num_rows'];
+}
+
+// +1 qntd_membros na aula de grupo
+function IncrementoQntdMembros($aula_id) {
+    global $dbh;
+    $stmt = $dbh->prepare('UPDATE Aulagrupo SET qntd_membros = qntd_membros + 1 WHERE id = ?');
+    $stmt->execute(array($aula_id));
+}
+
+// Entrada na tabela Inscricao_ag
+function InscricaoAG($membro_id, $aula_id) {
+    global $dbh;
+    $stmt = $dbh->prepare('INSERT INTO Inscricao_ag (membro, aulagrupo) VALUES (?, ?)');
+    $stmt->execute(array($membro_id, $aula_id));
+}
+
+
 ?>

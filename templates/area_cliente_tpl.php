@@ -25,22 +25,22 @@
             <div id="esquerda">
                 <img src="imagens/membros/<?php echo $_SESSION['id'] ?>.png">
                 <p data-label="Nome: ">
-                    <?php echo $nome ?>
+                    <?php echo $user['nome'] ?>
                 </p>
                 <p data-label="E-mail: ">
                     <?php echo $_SESSION["email"] ?>
                 </p>
                 <p data-label="Data de Nascimento: ">
-                    <?php echo $data_nascimento ?>
+                    <?php echo $user['data_nascimento'] ?>
                 </p>
                 <p data-label="Nº Telemóvel: ">
-                    <?php echo $nr_telemovel ?>
+                    <?php echo $user['nr_telemovel'] ?>
                 </p>
                 <p data-label="Morada: ">
-                    <?php echo $morada ?>
+                    <?php echo $user['morada'] ?>
                 </p>
                 <p data-label="NIF: ">
-                    <?php echo $nif ?>
+                    <?php echo $user['nif'] ?>
                 </p>
             </div>
             <div id="direita">
@@ -50,16 +50,16 @@
                 </div>
                 <div id="dados_fisicos">
                     <p data-label="Idade: ">
-                        <?php echo $idade ?> anos
+                        <?php echo $user['idade'] ?> anos
                     </p>
                     <p data-label="Altura: ">
-                        <?php echo $altura / 100 ?> m
+                        <?php echo $user['altura'] / 100 ?> m
                     </p>
                     <p data-label="Peso: ">
-                        <?php echo $peso ?> kg
+                        <?php echo $user['peso'] ?> kg
                     </p>
                     <p data-label="IMC: ">
-                        <?php printf("%.1f", $imc) ?> %
+                        <?php printf("%.1f", $user['imc']) ?> %
                     </p>
                 </div>
             </div>
@@ -69,19 +69,19 @@
     <div id="dados_plano">
         <h3>O seu Plano GymFlex</h3>
         <p data-label="Tipo de Plano: ">
-            <?php echo $tipo_plano ?>
+            <?php echo $user['tipo_p'] ?>
         </p>
         <p data-label="Próxima Prestação: ">
             <?php echo $prox_pagam ?>
         </p>
         <p data-label="Data de Adesão: ">
-            <?php echo $data_adesao ?>
+            <?php echo $user['data_adesao'] ?>
         </p>
         <p data-label="Nutricionista: ">
-            <?php echo $nutricionista_nome ?>
+            <?php echo $user['nutricionista_nome'] ?>
         </p>
         <p data-label="Personal Trainer: ">
-            <?php echo $personaltrainer_nome ?>
+            <?php echo $user['personaltrainer_nome'] ?>
         </p>
 
         <div>
@@ -101,18 +101,18 @@
         <div>
             <?php if ($_SESSION['disponiveis_ag'] > 1) { ?>
                 <p>
-                    Tens direito a mais
+                    Tem direito a mais
                     <?php echo $disponiveis_ag ?> aulas de grupo este mês.
                 </p>
                 <a href="inscricao_ag.php" class="button">Inscrever em Aulas de Grupo</a>
             <?php } elseif ($_SESSION['disponiveis_ag'] == 1) { ?>
                 <p>
-                    Tens direito a mais 1 aula de grupo este mês.
+                    Tem direito a mais 1 aula de grupo este mês.
                 </p>
                 <a href="inscricao_ag.php" class="button">Inscrever em Aulas de Grupo</a>
             <?php } elseif ($_SESSION["disponiveis_ag"] < 1) { ?>
-                <p data-label="Aulas de Grupo Disponíveis">
-                    Não tens direito a mais aulas de grupo este mês.
+                <p>
+                    Não tem direito a mais aulas de grupo este mês.
                 </p>
             <?php } ?>
         </div>
@@ -124,7 +124,7 @@
     <div id="reg_treinos">
         <h3> Registo de Treinos </h3>
         <div>
-            <p>Ainda podes treinar mais
+            <p>Ainda pode treinar mais
                 <?php echo $tempo_treino_restante ?> hr este mês nos ginásios GymFlex.
             </p>
             <div>

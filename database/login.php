@@ -14,8 +14,8 @@ function loginSuccess($email, $password)
   return $stmt->fetch();
 }
 
-function fetchNomeandIDByEmail($email)
-{ //Tendo o email, vai buscar o nome do user
+function fetchNomeandIDByEmail($email) //Tendo o email, vai buscar o nome do user e o seu id
+{ 
   global $dbh;
   $stmt = $dbh->prepare('SELECT Membro.id, Pessoa.nome FROM Membro INNER JOIN Pessoa ON Membro.id = Pessoa.id WHERE Pessoa.email = ?');
   $stmt->execute(array($email));

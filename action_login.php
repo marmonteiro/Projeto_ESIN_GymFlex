@@ -2,32 +2,26 @@
 session_start();
 require_once("database/init.php");
 
-
-// vai buscar dados do formulário
-$email = $_POST['email'];
-$password = $_POST['password'];
-
 require_once("database/login.php");
 
 
-// if email and password are correct, create session
 try {
   
-  if ($user = loginSuccess($email, $password)) {
+  if ($user = loginSuccess($_POST['email'], $_POST['password'])) { //se o login for bem sucedido
     $_SESSION['email'] = $email;
     $membro = fetchNomeandIDByEmail($email);
     $_SESSION['id'] = $membro['id'];
     $_SESSION['nome'] = $membro['nome'];
 
-    header('Location: area_cliente.php'); // login successful
+    header('Location: area_cliente.php'); 
     exit();
 
-  } else { // login failed
+  } else { // login falhado
     $_SESSION['msg'] = 'E-mail ou Password incorretos!';
   }
 
 } catch (PDOException $e) {
-  $_SESSION['msg'] = 'Error: ' . $e->getMessage();
+  $_SESSION['msg'] = 'Erro: ' . $e->getMessage();
 }
 
 header('Location: login.php');

@@ -10,6 +10,20 @@ if (!isset($_SESSION['email'])) {
 include("database/area_cliente.php");
 
 try {
+
+    if (strlen($nome) < 3) {
+        $_SESSION['msg'] = 'Nome inválido.';
+        header('Location: registo.php');
+        die();
+    }
+
+    if (strlen($nr_telemovel) != 9) {
+        $_SESSION['msg'] = 'Número de telemóvel inválido.';
+        header('Location: registo.php');
+        die();
+    }
+
+
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($pwd == hash('sha256', $_POST["password"])) {
 
@@ -23,6 +37,7 @@ try {
             exit();
         }
     }
+    
     
 } catch (PDOException $e) {
     $error_msg = $e->getMessage();

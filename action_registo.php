@@ -21,8 +21,8 @@ require_once 'database/registo.php';
 
 //Error Handling
 
-if (strlen($email) == 0) {
-    $_SESSION['msg'] = 'E-mail inválido.';
+if (strlen($nome) < 3) {
+    $_SESSION['msg'] = 'Nome inválido.';
     header('Location: registo.php');
     die();
 }
