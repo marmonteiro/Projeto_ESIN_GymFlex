@@ -402,16 +402,21 @@ header {
 /* RELATIVO ÀS PÁGINAS de CADA CLUBE INDIVIDUALMENTE */
 #gym_info  {
     border-radius: 30px;
-    margin: 50px auto;
+    /* margin: 50px auto; */
+    margin: 5% auto;
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 20px;
+    width: 80%; 
+    max-width: 800px;
 }
 
 .mapa {
+    box-sizing: border-box;
+    width: 100%;
     display: flex;
     margin: 0 auto;
     border: #000000 2px solid;
@@ -461,7 +466,8 @@ td {
 
 @media only screen and (max-width: 600px) {
     #gym_info {
-        margin: 20px auto } 
+        margin: 20px auto;
+        width: 90%; } 
 }
 
 /* RELATIVO À PÁGINAS DOS PLANOS  */
