@@ -41,6 +41,7 @@ Adicionalmente, é possível registar um novo membro e aceder as diferentes func
 
 - Notas:
   -> Caso o membro tenha efetuado o login os botões das páginas de aulas de grupo e planos altera;
+  -> Sempre que se clica no logotipo presente no header somos encaminhados para a página principal do site.
 
 
 - Na elaboração do site foi utilizado sqlite, css, html e php.
