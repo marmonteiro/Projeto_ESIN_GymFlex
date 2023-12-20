@@ -48,19 +48,19 @@
 
                     <a href="alteracao_foto.php" class="button">
                         <div id=botao_icon>
-                            <img src="imagens/foto_icon.png">Alterar Foto
+                            <img src="imagens/icons/foto_icon.png">Alterar Foto
                         </div>
                     </a>
                     <a href="alteracao_dados.php" class="button">
                         <div id=botao_icon>
-                            <img src="imagens/edit_icon.png">Alterar Dados
+                            <img src="imagens/icons/edit_icon.png">Alterar Dados
                         </div>
                     </a>
                     <div id=botao_icon>
 
                         <a href="editar-pass.php" class="button filled-button button-submit" type="button">
                             <div id=botao_icon>
-                                <img src="imagens/lock_icon.png">Alterar Senha
+                                <img src="imagens/icons/lock_icon.png">Alterar Senha
                             </div>
                         </a>
 
@@ -106,7 +106,7 @@
             <?php if ($alteracaoPermitida) { ?>
                 <a href="alteracao_plano.php" class="button">
                     <div id=botao_icon>
-                        <img src="imagens/change_icon.png">Alterar Plano
+                        <img src="imagens/icons/change_icon.png">Alterar Plano
                     </div>
                 </a>
             <?php } else { ?>
@@ -116,7 +116,7 @@
         <div>
             <a href="cancelamento.php" class="button">
                 <div id="botao_icon">
-                    <img src="imagens/x_icon.png">
+                    <img src="imagens/icons/x_icon.png">
                     Cancelar Subscrição
                 </div>
             </a>
@@ -132,7 +132,7 @@
                     <span class=bold><?php echo $disponiveis_ag ?> </span>aulas de grupo este mês.
                 </p>
                 <a href="inscricao_ag.php" class="button">
-                    <div id="botao_icon"> <img src="imagens/plus_icon.png">Inscrever em Aulas de Grupo
+                    <div id="botao_icon"> <img src="imagens/icons/plus_icon.png">Inscrever em Aulas de Grupo
                     </div>
                 </a>
 
@@ -141,7 +141,7 @@
                     Tem direito a mais <span class=bold>1</span> aula de grupo este mês.
                 </p>
                 <a href="inscricao_ag.php" class="button">
-                    <div id="botao_icon"> <img src="imagens/plus_icon.png">Inscrever em Aulas de Grupo
+                    <div id="botao_icon"> <img src="imagens/icons/plus_icon.png">Inscrever em Aulas de Grupo
                     </div>
                 </a>
             <?php } elseif ($_SESSION["disponiveis_ag"] < 1) { ?>
@@ -152,7 +152,7 @@
         </div>
         <div>
             <a href='minhas_ag.php?ano=<?php echo $ano_sel ?>&mes=<?php echo $mes_sel ?>' class="button">
-                <div id="botao_icon"> <img src="imagens/group_icon.png"> As minhas Aulas de Grupo
+                <div id="botao_icon"> <img src="imagens/icons/group_icon.png"> As minhas Aulas de Grupo
                 </div>
             </a>
         </div>
@@ -166,7 +166,7 @@
             </p>
             <div>
                 <a href='treinos.php?ano=<?php echo $ano_sel ?>&mes=<?php echo $mes_sel ?>' class="button">
-                    <div id="botao_icon"><img src="imagens/train_icon.png">
+                    <div id="botao_icon"><img src="imagens/icons/train_icon.png">
                         Os meus Treinos
                     </div>
                 </a>
