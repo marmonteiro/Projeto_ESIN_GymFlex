@@ -1261,3 +1261,7 @@ select {
     width: 100%;
     margin-bottom: 10px;
 }
+
+.bloco-pass input:hover {
+    box-shadow: 0 0 3px #a60000;
+}
