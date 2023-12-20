@@ -17,32 +17,10 @@ try {
     // calcula a idade do membro
     $idade = date_diff(date_create($user['data_nascimento']), date_create('today'))->y;
 
-    // calcula a data da próxima prestação
-    function calculoProxPagamento($data_adesao)
-    {
-        $data_atual = time();
-        $data_adesao_form = strtotime($data_adesao);
-        $dia_adesao = date('d', $data_adesao_form); // dia da data de adesão
-        $prox_pagam_form = strtotime("next month", $data_atual);
-        $mes_proxpagam = date('m', $prox_pagam_form); // mês da próxima prestação
-        $ano_proxpagam = date('Y', $prox_pagam_form); // ano da próxima prestação
-        $prox_pagam = $ano_proxpagam . '-' . $mes_proxpagam . '-' . $dia_adesao;
-        return $prox_pagam;
-    }
+    $alteracaoPermitida = calculoAlteracaoPermitida($user['data_adesao']);
 
     $prox_pagam = calculoProxPagamento($user['data_adesao']);
 
-
-
-
-    //verifica se o membro pode alterar o plano (se já passaram 5 meses desde a adesão)
-    function calculoAlteracaoPermitida($data_adesao)
-    {
-        $ha2Meses = date('Y-m-d', strtotime('-2 months'));
-        $alteracaoPermitida = strtotime($data_adesao) <= strtotime($ha2Meses); //será true se já passaram 2 meses desde a adesão
-        return $alteracaoPermitida;
-    }
-    $alteracaoPermitida = calculoAlteracaoPermitida($user['data_adesao']);
 
 
     //vai buscar info dos treinos do membro
