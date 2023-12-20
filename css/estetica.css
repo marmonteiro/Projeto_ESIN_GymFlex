@@ -1222,6 +1222,8 @@ select {
 #inscricao_ag {
     margin-left: 70px; /* Adicione a margem desejada ao lado esquerdo */
     margin-right: 70px; /* Adicione a margem desejada ao lado direito */
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 /* Estilo para a lista (ul) */
@@ -1231,6 +1233,7 @@ select {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin: 15px;
 }
 
 /* Estilo para cada item da lista (li) */
