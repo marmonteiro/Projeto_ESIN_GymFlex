@@ -1,8 +1,9 @@
 <?php
 session_start();
 require_once("database/init.php");
-
-include ("database/alteracao_plano.php");
+require_once("database/registo.php");
+require_once("database/login.php");
+require_once ("database/alteracao_plano.php");
 
 try {
     
@@ -19,7 +20,15 @@ if (!$alteracaoPermitida) {
     exit();
 }
 
-// Adiciona nova entrada na tabela Plano
+if ($tipo_p === 'Intermédio' || $tipo_p === 'Avançado') {
+    // Dá o PT com menos clientes ao novo membro se o plano for Intermédio ou Avançado
+    $atrPT = assignPT($dbh);
+
+    // Update da tabela Membro com o PT
+    $stmtPT = $dbh->prepare('UPDATE Membro SET personaltrainer = ? WHERE id = ?');
+    $stmtPT->execute(array($atrPT, $_SESSION['id']));
+}
+
 $currentTimestamp = date('Y-m-d');
 
 $stmt = $dbh->prepare('INSERT INTO Plano (membro, tipo_p, data_adesao) VALUES (?, ?, ?)');
