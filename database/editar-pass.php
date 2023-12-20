@@ -1,5 +1,4 @@
 <?php
-
 function updatePassMembrobyEmail($password, $email)
 {
   global $dbh;

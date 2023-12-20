@@ -220,7 +220,6 @@ header {
 
 /*PÁGINA INICIAL*/
 /*HEADER*/
-
 #header_paginicial {
     display: flex;
     flex-direction: column;
@@ -372,7 +371,6 @@ header {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-
 }
 
 .clubes img {
@@ -403,16 +401,21 @@ header {
 /* RELATIVO ÀS PÁGINAS de CADA CLUBE INDIVIDUALMENTE */
 #gym_info  {
     border-radius: 30px;
-    margin: 50px 300px;
+    /* margin: 50px auto; */
+    margin: 5% auto;
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     padding: 20px;
+    width: 80%; 
+    max-width: 800px;
 }
 
 .mapa {
+    box-sizing: border-box;
+    width: 100%;
     display: flex;
     margin: 0 auto;
     border: #000000 2px solid;
@@ -462,7 +465,8 @@ td {
 
 @media only screen and (max-width: 600px) {
     #gym_info {
-        margin: 20px auto } 
+        margin: 20px auto;
+        width: 90%; } 
 }
 
 /* RELATIVO À PÁGINAS DOS PLANOS  */
@@ -584,11 +588,11 @@ td {
         flex: 0 0 calc(33.33% - 20px); /* 3 colunas em telas maiores que 900px */
     }
 }
+
 /* PÁGINA AJUDA */
 #FAQ {
     margin-top: 20px;
 }
-
 
 .Categoria {
     background-color: #FFFFFF;
@@ -765,7 +769,6 @@ input[type="password"] {
 }
 
 /*PÁGINA REGISTO*/
-
 #area_registo {
     display: flex;
     flex-direction: column;
@@ -905,7 +908,6 @@ input::file-selector-button { /* botão de escolher ficheiro */
 input::file-selector-button:hover {
     background-color: #e9e2e29a;
 }
-
 
 /* termos e condições checkbox*/
 #termos[type="checkbox"] {
@@ -1127,16 +1129,16 @@ input::file-selector-button:hover {
     border-color: transparent transparent transparent #333; 
 }
 
-/*ALTERAÇÃO DE DADOS*/
-#alteracao_dados {
+/*EDITAR DADOS*/
+#editar_dados {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 70px;
 }
 
-#alteracao_dados label,
-#alteracao_dados input {
+#editar_dados label,
+#editar_dados input {
     display: block;
     margin-bottom: 15px; 
 }
@@ -1144,7 +1146,7 @@ input::file-selector-button:hover {
 /**/
 #cancelamento,
 #cancelado,
-#alteracao_plano, #alteracao_foto {
+#alteracao_plano, #editar-foto {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1179,7 +1181,6 @@ input::file-selector-button:hover {
 }
 
 /* inscriçao ag*/
-
 select {
     margin-bottom: 30px;
 }

@@ -15,6 +15,6 @@ try {
 }
 
 include("templates/header_tpl.php");
-include("templates/alteracao_dados_tpl.php");
+include("templates/editar-dados_tpl.php");
 include("templates/footer_tpl.php");
 ?>

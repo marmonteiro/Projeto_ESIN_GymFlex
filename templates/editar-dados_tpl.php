@@ -1,9 +1,9 @@
 <h3>Alteração de Dados</h3>
 <h4>Altere os dados que deseja e clique em "Alterar".</h4>
 <p id="msg_erro"><?php echo $_SESSION['msg'] ; unset ($_SESSION['msg'])?></p>
-<form action="action_alteracao_dados.php" method="post">
+<form action="action_editar-dados.php" method="post">
 
-    <div id="alteracao_dados">
+    <div id="editar_dados">
 
         <label for="nome">Nome:</label>
         <input type="text" name="nome" id="nome" value="<?php echo $user['nome'] ?>" required>

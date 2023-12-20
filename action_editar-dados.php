@@ -2,7 +2,7 @@
 session_start();
 require_once("database/init.php");
 require_once("database/area_cliente.php");
-require_once("database/alteracao_dados.php");
+require_once("database/editar-dados.php");
 
 if (!isset($_SESSION['email'])) {
     header('Location: login.php');
@@ -22,8 +22,6 @@ try {
 
     $imc = $_POST['peso'] / ($_POST['altura'] / 100 * $_POST['altura'] / 100);
     UpdateIMC($imc, $_SESSION['id']);
-
-
 
     header('Location: area_cliente.php');
     exit();
@@ -45,19 +43,20 @@ try {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($pwd == hash('sha256', $_POST["password"])) {
 
-            include("database/alteracao_dados.php");
+            include("database/editar-dados.php");
             header('Location: area_cliente.php');
             exit();
 
         } else {
             $_SESSION['msg'] = 'Password inválida.';
-            header('Location: alteracao_dados.php');
+            header('Location: editar-dados.php');
             exit();
         }
     }
 
+} 
 
-} catch (PDOException $e) {
+    catch (PDOException $e) {
     $error_msg = $e->getMessage();
     if (strpos($error_msg, 'UNIQUE constraint failed: Pessoa.email')) {
         $_SESSION['msg'] = 'E-mail já está registado!';
@@ -66,6 +65,6 @@ try {
     } else {
         $_SESSION['msg'] = "Alteração falhou! ($error_msg)";
     }
-    header('Location: alteracao_dados.php');
+    header('Location: editar-dados.php');
 }
 ?>
