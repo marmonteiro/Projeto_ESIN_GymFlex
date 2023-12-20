@@ -1167,6 +1167,10 @@ input::file-selector-button:hover {
     padding: 10px;
 }
 
+#editar-foto #profile_pic{
+    margin-bottom: 20px;
+}
+
 #cancelado {
     font-size: 20px;
     padding-top: 50px;
@@ -1198,6 +1202,17 @@ select {
     margin-bottom: 30px;
 }
 
+.select-e-icon{
+    position: relative;
+    display: flex;
+    vertical-align: middle;
+}
+
+.select-e-icon img {
+    height: 40px;
+    width: 40px;
+}
+
 #inscricao_ag {
     margin-left: 70px; /* Adicione a margem desejada ao lado esquerdo */
     margin-right: 70px; /* Adicione a margem desejada ao lado direito */
@@ -1218,13 +1233,14 @@ select {
     margin-bottom: 20px;
     max-width: 400px;
     box-sizing: border-box;
-    border: 1px solid #ccc;
+    border: 2px solid #ccc;
     border-radius: 10px;
     padding: 10px;
     transition: all 0.3s ease; 
 }
 
 #inscricao_ag li:hover {
+    border: 2px solid #000;
     box-shadow: 0 0 5px #a60000;
 }
 

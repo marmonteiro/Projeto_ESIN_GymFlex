@@ -20,19 +20,22 @@
 
     <form method="post" action="inscricao_ag.php">
         <label for="ginasio">Escolha o clube mais perto de si:</label>
-        <select id='ginasio' name='ginasio'>
-
-            <?php
-            if (isset($ginasios) && !empty($ginasios)) {
-                foreach ($ginasios as $ginasio) {
-                    $nome_ginasio = $ginasio['nome'];
-                    $id_ginasio = $ginasio['id'];
-                    $selected = (isset($_POST['ginasio']) && $_POST['ginasio'] == $id_ginasio) ? 'selected' : '';
-                    echo "<option value='$id_ginasio' $selected>$nome_ginasio</option>"; //opções tem valor=id do ginásio 
+        <div class="select-e-icon">
+            <img src="imagens/icons/local.png">
+            <select id='ginasio' name='ginasio'>
+                <?php
+                if (isset($ginasios) && !empty($ginasios)) {
+                    foreach ($ginasios as $ginasio) {
+                        $nome_ginasio = $ginasio['nome'];
+                        $id_ginasio = $ginasio['id'];
+                        $selected = (isset($_POST['ginasio']) && $_POST['ginasio'] == $id_ginasio) ? 'selected' : '';
+                        echo "<option value='$id_ginasio' $selected>$nome_ginasio</option>"; // opções tem valor=id do ginásio 
+                    }
                 }
-            }
-            ?>
-        </select>
+                ?>
+            </select>
+
+        </div>
         <input type="submit" value="Selecionar" class="button">
     </form>
 
@@ -53,23 +56,26 @@
                     <li>
                         <form method="post" action="action_inscricao_ag.php">
                             <input type="hidden" name="aula_id" value="<?php echo $aula['id']; ?>">
-                            <h3>
+                            <h4>
                                 <?php echo $aula['nome_tipo']; ?>
-                            </h3>
-                            <p> <span class=black_bold> Dia: </span>
-                                <span class=black_bold><?php echo $aula['data'] . ' (' . $aula['dia_semana'] . ')'; ?></span>
+                            </h4>
+                            <p>
+                            <span class="black_bold"><?php echo $aula['data']; ?></span> (<?php echo $aula['dia_semana']; ?>)
+
                             </p>
                             <p> <span class=black_bold> Hora:</span>
                                 <?php echo $aula['hora_inicio'] . ' - ' . $aula['hora_fim']; ?>
                             </p>
                             <?php if ($aula['capacidade_tipo'] - $aula['qntd_membros'] > 0) { ?>
                                 <p> <span class=black_bold> Vagas Disponíveis: </span>
-                                    <span class=bold ><?php echo $aula['capacidade_tipo'] - $aula['qntd_membros']; ?></span>
+                                    <span class=bold>
+                                        <?php echo $aula['capacidade_tipo'] - $aula['qntd_membros']; ?>
+                                    </span>
                                 </p>
                                 <button type="submit" class="button_submit" name="submit" value="Inscrever">
                                     <img src="imagens/icons/plus_icon.png" alt="Filtrar">
                                     <span>Inscrever</span>
-                                    
+
                                 </button>
                             <?php } else { ?>
                                 <p>Não há mais vagas disponíveis.</p>

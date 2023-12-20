@@ -71,7 +71,10 @@
                             <?php if ($inscricao['data'] > date('Y-m-d')) { ?>
                                 <form action="action_cancelar_ag.php" method="POST">
                                     <input type="hidden" name="inscricao_id" value="<?php echo $inscricao['id'] ?>">
-                                    <input type="submit" value="Cancelar Inscrição">
+                                    <button type="submit" class="button_submit" name="submit" value="Inscrever">
+                                    <img src="imagens/icons/minus_icon.png" alt="Filtrar">
+                                    <span>Cancelar Inscrição</span>
+                                </button>
                                 </form>
 
                             <?php } ?>
