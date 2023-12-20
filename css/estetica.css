@@ -1133,6 +1133,10 @@ input::file-selector-button:hover {
     padding: 10px;
 }
 
+.treino_ag button {
+    font-size: 15px;
+}
+
 .treino_ag summary:before {
     border-color: transparent transparent transparent #a60000;
 }
@@ -1170,10 +1174,13 @@ input::file-selector-button:hover {
     margin-bottom: 20px;
 }
 
-#cancelado {
+#cancelado, .empty {
     font-size: 20px;
-    padding-top: 50px;
-    padding-bottom: 50px
+    padding-top: 60px;
+    padding-bottom: 60px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #alteracao_plano #tipo_plano {
@@ -1239,7 +1246,7 @@ select {
 }
 
 #inscricao_ag li:hover {
-    border: 2px solid #000;
+    border: 1px solid #000;
     box-shadow: 0 0 5px #a60000;
 }
 

@@ -4,7 +4,7 @@
       <p>Bem-vindo ao GymFlex, ficamos contentes por eleger o nosso ginásio. Ao utilizar os nossos serviços, está a  concordar com os seguintes termos e condições:</p>
 
       <h2>1. Adesão e Pagamento</h2>
-      <p>1.1 Ao inscrever-se no GymFlex, concorda em fornecer informações pessoais precisas e completas durante o processo de inscrição.</p>
+      <p>1.1 Ao inscrever-se no GymFlex, concorda em fornecer informações pessoais verdadeiras e completas durante o processo de inscrição.</p>
       <p>1.2 O pagamento da taxa de adesão e das mensalidades deve ser feito de acordo com os termos acordados no momento da inscrição.</p>
 
       <h2>2. Uso das Instalações</h2>
@@ -13,7 +13,7 @@
 
       <h2>3. Cancelamento e Reembolso</h2>
       <p>3.1 Os membros podem cancelar a sua subscrição de acordo com as condições especificadas no contrato.</p>
-      <p>3.2 O GymFlex possui o direito de rever as políticas de cancelamento e reembolso a qualquer momento.</p>
+      <p>3.2 O GymFlex possui o direito de rever as políticas de cancelamento e reembolso a qualquer momento, sendo os membros avisados dessa revisão.</p>
 
       <h2>4. Responsabilidades do Membro</h2>
       <p>4.1 Os membros devem seguir todas as regras e regulamentos do ginásio.</p>

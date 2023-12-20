@@ -19,11 +19,11 @@ try {
     IncrementoQntdMembros($_POST['aula_id']);
     
     InscricaoAG($_SESSION['id'], $_POST['aula_id']);
-
     $_SESSION['msg'] = 'Inscrição realizada com sucesso!';
 
 
     header('Location: inscricao_ag.php');
+
     exit();
     
     }
