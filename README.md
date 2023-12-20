@@ -43,6 +43,6 @@ Adicionalmente, é possível registar um novo membro e aceder as diferentes func
   -> Caso o membro tenha efetuado o login os botões das páginas de aulas de grupo e planos altera;
 
 
-Na elaboração do site foi utilizado sqlite, css, html e php.
+- Na elaboração do site foi utilizado sqlite, css, html e php.
 
 
