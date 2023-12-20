@@ -43,9 +43,9 @@
     $ginasio = $_POST['ginasio'];
     $aulasDisponiveis = fetchAGByGinasio($ginasio);
 
-    if (isset($aulasDisponiveis) && !empty($aulasDisponiveis)) { 
+    if (isset($aulasDisponiveis) && !empty($aulasDisponiveis)) {
         usort($aulasDisponiveis, 'compareDates'); //organiza cronologicamente ?>
-        <h2>Aulas Disponíveis</h2>
+        <h3>Aulas Disponíveis:</h3>
         <ul>
             <?php foreach ($aulasDisponiveis as $aula) {
 
@@ -56,17 +56,21 @@
                             <h3>
                                 <?php echo $aula['nome_tipo']; ?>
                             </h3>
-                            <p> <span class=bold> Dia: </span>
-                                <?php echo $aula['data'] . ' (' . $aula['dia_semana'] . ')'; ?>
+                            <p> <span class=black_bold> Dia: </span>
+                                <span class=black_bold><?php echo $aula['data'] . ' (' . $aula['dia_semana'] . ')'; ?></span>
                             </p>
-                            <p> <span class=bold> Hora:</span>
+                            <p> <span class=black_bold> Hora:</span>
                                 <?php echo $aula['hora_inicio'] . ' - ' . $aula['hora_fim']; ?>
                             </p>
                             <?php if ($aula['capacidade_tipo'] - $aula['qntd_membros'] > 0) { ?>
-                                <p> <span class=bold> Vagas Disponíveis: </span>
-                                    <?php echo $aula['capacidade_tipo'] - $aula['qntd_membros']; ?>
+                                <p> <span class=black_bold> Vagas Disponíveis: </span>
+                                    <span class=bold ><?php echo $aula['capacidade_tipo'] - $aula['qntd_membros']; ?></span>
                                 </p>
-                                <input type="submit" class="button" value="Inscrever">
+                                <button type="submit" class="button_submit" name="submit" value="Inscrever">
+                                    <img src="imagens/icons/plus_icon.png" alt="Filtrar">
+                                    <span>Inscrever</span>
+                                    
+                                </button>
                             <?php } else { ?>
                                 <p>Não há mais vagas disponíveis.</p>
                             <?php } ?>
