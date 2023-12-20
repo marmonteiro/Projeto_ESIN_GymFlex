@@ -1041,7 +1041,6 @@ input::file-selector-button:hover {
     margin-bottom: 50px;
 }
 
-
 /*PÁGINAS DE REGISTO DE TREINOS + REGISTO AULAS DE GRUPO */
 .treino_ag p::before {
     content: attr(data-label);
