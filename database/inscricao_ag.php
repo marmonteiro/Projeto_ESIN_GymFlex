@@ -52,6 +52,36 @@ function fetchAGByGinasio($ginasio) //vai buscar as aulas de grupo disponiveis n
     return $aulasDisponiveis;
 }
 
+function fetchDetalhesAula($aulagrupo_id) {
+    global $dbh; 
+
+    $stmt = $dbh->prepare('SELECT ag.data, ta.hora_inicio, ta.hora_fim
+                            FROM Aulagrupo AS ag
+                            INNER JOIN Tipo_ag AS ta ON ag.tipo_ag = ta.nome
+                            WHERE ag.id = :aulagrupo_id');
+    $stmt->bindParam(':aulagrupo_id', $aulagrupo_id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    $classDetails = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+    return $classDetails;
+}
+
+function fetchAulasRegistadas($membro_id) {
+    global $dbh; 
+
+    $stmt = $dbh->prepare('SELECT ag.data, ta.hora_inicio, ta.hora_fim
+                            FROM Aulagrupo AS ag
+                            INNER JOIN Tipo_ag AS ta ON ag.tipo_ag = ta.nome
+                            INNER JOIN Inscricao_ag AS ia ON ag.id = ia.aulagrupo
+                            WHERE ia.membro = :membro_id');
+    $stmt->bindParam(':membro_id', $membro_id, PDO::PARAM_INT);
+    $stmt->execute();
+
+    $AulasRegistadas = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    
+    return $AulasRegistadas;
+}
 
 //INSCRIÇÃO NA AULA DE GRUPO
 
@@ -79,4 +109,5 @@ function InscricaoAG($membro_id, $aula_id) {
 }
 
 
+//  
 ?>
