@@ -411,7 +411,7 @@ header {
 /* RELATIVO ÀS PÁGINAS de CADA CLUBE INDIVIDUALMENTE */
 #gym_info  {
     border-radius: 30px;
-    margin: 50px autopx;
+    margin: 50px 300px;
     background-color: #ffffff;
     display: flex;
     flex-direction: column;
@@ -419,6 +419,13 @@ header {
     text-align: center;
     padding: 20px;
 }
+
+@media screen and (max-width: 768px) {
+    #gym_info {
+        margin: 20px; /* Adjust margins for smaller screens */
+    }
+}
+
 .mapa {
     display: flex;
     margin: 0 auto;
@@ -596,12 +603,6 @@ td {
     margin-top: 20px;
 }
 
-#intro {
-    text-align: center;
-    font-size: 20px;
-    margin-block-start: 20px;
-    margin-block-end: 20px;
-}
 
 .Categoria {
     background-color: #FFFFFF;
@@ -1066,13 +1067,17 @@ input::file-selector-button:hover {
 #ginasio {
     font-family: Montserrat, sans-serif;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 25px;
     background-color: #ffffff;
     padding: 10px;
     border-radius: 5px;
-    font-size: 20px;
     cursor: pointer;
     border: transparent;
+}
+
+#ginasio, label[for="ginasio"] {
+    font-size: 20px; 
+    margin-bottom: 10px;
 }
 
 #select_ano input[type="submit"],
@@ -1187,7 +1192,6 @@ input::file-selector-button:hover {
 
 select {
     margin-bottom: 30px;
-    /* Adiciona espaço entre o seletor e o botão de envio */
 }
 
 /* Estilo para a lista (ul) */
@@ -1197,18 +1201,21 @@ select {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    /* Adiciona espaço entre as colunas */
 }
 
 /* Estilo para cada item da lista (li) */
 #inscricao_ag li {
     width: calc(33.33% - 10px);
-    /* Calcula a largura de cada item (3 itens por linha) */
     margin-bottom: 20px;
-    /* Adiciona espaço entre as linhas */
     box-sizing: border-box;
     border: 1px solid #ccc;
+    border-radius: 10px;
     padding: 10px;
+    transform: all 0.3s ease;
+}
+
+#inscricao_ag li:hover {
+    box-shadow: 0 0 3px #a60000;
 }
 
 /* Estilo para o formulário dentro de cada item */
@@ -1217,7 +1224,7 @@ select {
     flex-direction: column;
 }
 
-#filtrar_ano {
+#filtrar_ano_titulo {
     display: flex;
     justify-content: center;
     align-items: center;

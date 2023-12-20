@@ -1,8 +1,9 @@
+<h1>Ajuda</h1>
+<h2>FAQ</h2>
+<h4>Algumas das nossas perguntas mais frequentes.</h4>
 <section id="Ajuda">
-    <h1>Ajuda</h1>
+    
     <section id="FAQ">
-        <h2>FAQ</h2>
-        <p id="intro">Algumas das nossas perguntas mais frequentes.</p>
         <section>
             <details class="Categoria">
                 <summary>Informações Gerais</summary>

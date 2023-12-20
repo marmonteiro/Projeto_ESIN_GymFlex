@@ -9,13 +9,15 @@ try {
     //vai buscar os detalhes do membro
     $user = fetchDetalhesMembroByEmail($_SESSION['email']);
 
-    
-    $ano_sel = $_GET['ano'] ;
-    $mes_sel = $_GET['mes'] ;
+
+
+    $ano_sel = isset($_GET['ano']) ? $_GET['ano'] : date('Y');
+    $mes_sel = isset($_GET['mes']) ? $_GET['mes'] : date('m');
 
     // vai buscar as inscricoes_ag do membro
     $inscricoes_ag = fetchInscricoesAGByEmail($_SESSION['id']);
 
+    //definicao do array inscricoes por mes
     $inscricoes_por_mes = array();
     foreach ($inscricoes_ag as $inscricao) {
         $ano_inscricao = date('Y', strtotime($inscricao['data']));
@@ -29,11 +31,23 @@ try {
         }
     }
 
+
+    //definicao do array anos com inscricoes
     $anos_inscricoes = array();
     foreach ($inscricoes_ag as $inscricao) {
         $ano = date('Y', strtotime($inscricao['data']));
         $anos_inscricoes[$ano] = $ano;
     }
+
+    
+        // compara datas para organizar cronologicamente
+        function compareDates($a, $b) //está a ser usada!! 
+        {
+            return strtotime($a['data']) - strtotime($b['data']);
+        }
+
+        
+
 
 
 } catch (PDOException $e) {

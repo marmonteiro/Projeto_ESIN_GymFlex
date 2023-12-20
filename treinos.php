@@ -21,6 +21,7 @@ try {
     $mes_sel = isset($_GET['mes']) ? $_GET['mes'] : date('m');
 
     $treinos = fetchTreinos($_SESSION['id']);
+
     //vai buscar os treinos por mês
     $treinos_por_mes = array();
     foreach ($treinos as $treino) {
@@ -39,11 +40,14 @@ try {
     foreach ($treinos as $treino) {
         $ano = date('Y', strtotime($treino['data'])); // Obtém o ano do treino
         $anos_treinos[$ano] = $ano; // Adiciona o ano ao array
+    } 
+    
+    
+    // compara datas para organizar cronologicamente
+    function compareDates($a, $b) //está a ser usada!!
+    {
+        return strtotime($a['data']) - strtotime($b['data']);
     }
-
-
-
-
 
 
 
