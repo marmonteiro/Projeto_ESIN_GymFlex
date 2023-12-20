@@ -1,8 +1,13 @@
 <?php
+session_start();
 require_once('database/init.php');
 require_once('database/pass.php');
 require_once('database/login.php');
 
+if (!isset($_SESSION['email'])) {
+  header('Location: login.php');
+  exit();
+}
 
 $oldpassword = $_POST['Antiga'];
 $newpassword = $_POST['Nova'];
@@ -10,7 +15,7 @@ $confirm_password = $_POST['Confirme'];
 
 if (!loginSuccess($_SESSION['email'], $password)) {
   $_SESSION['msg'] = 'A senha antiga está incorreta.';
-  header('Location: editar-passgo.php'); 
+  header('Location: editar-pass.php'); 
   die();
 }
 

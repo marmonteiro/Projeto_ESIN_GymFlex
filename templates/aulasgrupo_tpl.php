@@ -23,6 +23,6 @@
     <?php if (!isset($_SESSION['email'])) { ?>
         <a href="registo.php" class="button"> Registe-se </a>
     <?php } else { ?>
-        <a href="inscricao_ag" class="button"> Inscreva-se </a>
+        <a href="inscricao_ag.php" class="button"> Inscreva-se </a>
     <?php } ?>
 </div>
