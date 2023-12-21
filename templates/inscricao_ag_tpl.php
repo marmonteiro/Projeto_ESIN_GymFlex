@@ -28,6 +28,7 @@
                     foreach ($ginasios as $ginasio) {
                         $nome_ginasio = $ginasio['nome'];
                         $id_ginasio = $ginasio['id'];
+                        $selected = (isset($_POST['ginasio']) && $_POST['ginasio'] == $id_ginasio) ? 'selected' : '';
                         echo "<option value='$id_ginasio' $selected>$nome_ginasio</option>"; // opções tem valor=id do ginásio 
                     }
                 }
